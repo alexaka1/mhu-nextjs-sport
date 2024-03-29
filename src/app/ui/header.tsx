@@ -9,6 +9,7 @@ import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
+import { usePathname } from 'next/navigation';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -26,6 +27,21 @@ type Menu =
       node: DropDownLinks;
     };
 const menus: Menu[] = [
+  {
+    type: 'dialog',
+    node: {
+      title: 'Rólunk',
+      items: [
+        { name: 'Beköszöntő', description: '', href: '/koszonto', icon: faBars },
+        { name: 'Sportágak', description: '', href: '/sportagak', icon: faBars },
+        { name: 'Helyszínek', description: '', href: '/helyszinek', icon: faBars },
+        { name: 'Szállás', description: '', href: '/szallas', icon: faBars },
+        { name: 'Programok', description: '', href: '/programok', icon: faBars },
+        { name: 'Eredmények', description: '', href: '/eredmenyek', icon: faBars },
+      ],
+      callsToAction: [],
+    },
+  },
   {
     type: 'simple',
     node: { href: '/sportagak', children: 'Sportágak' },
@@ -53,22 +69,26 @@ const menus: Menu[] = [
 ];
 
 function DialogLink({ href, children }: Readonly<{ href: string; children: ReactNode }>) {
+  const pathname = usePathname();
   return (
-    <a
+    <Link
       href={href}
-      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50"
+      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50 ${pathname === href ? 'bg-primary dark:bg-primary-600' : ''}`}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
 function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
+  const pathname = usePathname();
   return (
     <Disclosure as="div" className="-mx-3">
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50">
+          <Disclosure.Button
+            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50 ${items.some(({ href }) => href === pathname) ? 'bg-primary  dark:bg-primary-600' : ''}`}
+          >
             {title}
             <FontAwesomeIcon
               icon={faChevronDown}
@@ -82,7 +102,7 @@ function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>
                 key={item.name}
                 as={Link}
                 href={item.href}
-                className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-bg-contrast hover:bg-gray-50"
+                className={`block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-bg-contrast hover:bg-gray-50 ${pathname === item.href ? 'bg-primary dark:bg-primary-600' : ''}`}
               >
                 {item.name}
               </Disclosure.Button>
@@ -95,19 +115,31 @@ function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>
 }
 
 function PopoverLink({ href, children }: Readonly<SimpleLink>) {
+  const pathname = usePathname();
   return (
-    <Link href={href} className="text-sm font-semibold leading-6 text-bg-contrast">
+    <Link
+      href={href}
+      className={`text-sm leading-6 hover:text-bg-contrast/80 ${pathname === href ? 'font-extrabold text-primary dark:text-primary-600' : 'font-semibold text-bg-contrast'}`}
+    >
       {children}
     </Link>
   );
 }
 
 function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
+  const pathname = usePathname();
+  const isActive = items.some(({ href }) => href === pathname);
   return (
     <Popover className="relative">
-      <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-bg-contrast">
+      <Popover.Button
+        className={`${isActive ? 'font-extrabold dark:text-primary-600' : 'font-semibold text-bg-contrast'} flex items-center gap-x-1 text-sm leading-6 text-primary`}
+      >
         {title}
-        <FontAwesomeIcon icon={faChevronDown} className={`size-5 flex-none text-gray-400`} aria-hidden="true" />
+        <FontAwesomeIcon
+          icon={faChevronDown}
+          className={`size-4 flex-none ${isActive ? 'dark:text-primary-600' : 'text-gray-400'}`}
+          aria-hidden="true"
+        />
       </Popover.Button>
 
       <Transition
@@ -134,10 +166,10 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
                   />
                 </div>
                 <div className="flex-auto">
-                  <a href={item.href} className="block font-semibold text-bg-contrast">
+                  <Link href={item.href} className="block font-semibold text-bg-contrast">
                     {item.name}
                     <span className="absolute inset-0" />
-                  </a>
+                  </Link>
                   <p className="mt-1 text-gray-600 dark:text-bg-contrast/95">{item.description}</p>
                 </div>
               </div>
@@ -145,7 +177,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
           </div>
           <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 dark:bg-gray-700">
             {callsToAction.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100 dark:text-bg-contrast dark:hover:bg-gray-600"
@@ -156,7 +188,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
                   icon={item.icon}
                 />
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </Popover.Panel>
