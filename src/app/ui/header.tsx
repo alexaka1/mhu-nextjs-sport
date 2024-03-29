@@ -27,38 +27,6 @@ type Menu =
     };
 const menus: Menu[] = [
   {
-    type: 'dialog',
-    node: {
-      title: 'Versenyek',
-      items: [
-        {
-          name: 'Versenyek',
-          description: 'Jelenlegi és lezárult versenyek',
-          href: '/versenyek',
-          icon: faBars,
-        },
-        {
-          name: 'Versenyek',
-          description: 'Jelenlegi és lezárult versenyek',
-          href: '/versenyek',
-          icon: faBars,
-        },
-      ],
-      callsToAction: [
-        {
-          name: 'Versenyek',
-          href: '/versenyek',
-          icon: faBars,
-        },
-        {
-          name: 'Versenyek',
-          href: '/versenyek',
-          icon: faBars,
-        },
-      ],
-    },
-  },
-  {
     type: 'simple',
     node: { href: '/sportagak', children: 'Sportágak' },
   },
@@ -78,10 +46,10 @@ const menus: Menu[] = [
     type: 'simple',
     node: { href: '/eredmenyek', children: 'Eredmények' },
   },
-  {
-    type: 'simple',
-    node: { href: '/koszonto', children: 'Beköszöntő' },
-  },
+  // {
+  //   type: 'simple',
+  //   node: { href: '/koszonto', children: 'Beköszöntő' },
+  // },
 ];
 
 function DialogLink({ href, children }: Readonly<{ href: string; children: ReactNode }>) {
@@ -147,39 +115,39 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
         leaveFrom="opacity-100 motion-safe:translate-y-0"
         leaveTo="opacity-0 motion-safe:translate-y-1"
       >
-        <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary">
+        <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary dark:bg-gray-800">
           <div className="p-4">
             {items.map((item) => (
               <div
                 key={item.name}
-                className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50 dark:hover:bg-gray-900"
               >
-                <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-950 group-hover:dark:bg-gray-800">
                   <FontAwesomeIcon
-                    className="size-6 text-gray-600 group-hover:text-primary"
+                    className="size-6 text-gray-600 group-hover:text-primary dark:text-gray-400 group-hover:dark:text-primary-400/75"
                     aria-hidden="true"
                     icon={item.icon}
                   />
                 </div>
                 <div className="flex-auto">
-                  <a href={item.href} className="block font-semibold text-gray-900">
+                  <a href={item.href} className="block font-semibold text-bg-contrast">
                     {item.name}
                     <span className="absolute inset-0" />
                   </a>
-                  <p className="mt-1 text-gray-600">{item.description}</p>
+                  <p className="mt-1 text-gray-600 dark:text-bg-contrast/95">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+          <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 dark:bg-gray-700">
             {callsToAction.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100 dark:text-bg-contrast dark:hover:bg-gray-600"
               >
                 <FontAwesomeIcon
-                  className="size-5 flex-none text-gray-400 group-hover:text-primary"
+                  className="size-5 flex-none text-gray-400 group-hover:text-primary group-hover:dark:text-primary-400/75"
                   aria-hidden="true"
                   icon={item.icon}
                 />
@@ -197,10 +165,13 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <header className="{/*dark:bg-gray-900*/} bg-gray-100">
+      <header className="bg-gray-100 dark:bg-gray-900">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link className="block text-primary dark:text-primary-600" href="/">
+            <Link
+              className="block text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+              href="/"
+            >
               <span className="sr-only">Főoldal</span>
               <IconPlayHandball size={40} />
             </Link>
@@ -208,7 +179,7 @@ export default function Header() {
           <div className="flex lg:hidden">
             <button
               type={'button'}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
               onClick={() => setMobileMenuOpen(true)}
             >
               {/*<input type="checkbox" id="toggler" className={``} />*/}
@@ -242,7 +213,7 @@ export default function Header() {
           </div>
         </nav>
         <Transition as={Fragment} show={mobileMenuOpen}>
-          <Dialog as="div" className=" lg:hidden" onClose={setMobileMenuOpen}>
+          <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
             <div className="fixed inset-0 z-10 " />
             <Transition.Child
               as={Fragment}
@@ -253,9 +224,12 @@ export default function Header() {
               leaveFrom="opacity-100 motion-safe:translate-x-0"
               leaveTo="opacity-0 motion-safe:translate-x-full"
             >
-              <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900">
                 <div className="flex items-center justify-between">
-                  <Link className="block text-primary dark:text-primary-600" href="/">
+                  <Link
+                    className="block text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+                    href="/"
+                  >
                     <span className="sr-only">Főoldal</span>
                     <IconPlayHandball size={40} />
                   </Link>
@@ -263,10 +237,10 @@ export default function Header() {
                     type={'button'}
                     onClick={() => setMobileMenuOpen(false)}
                     // htmlFor="toggler"
-                    className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                    className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-bg-contrast"
                   >
                     <span className="sr-only">Menü bezárása</span>
-                    <XMarkIcon className="size-6" aria-hidden="true" />
+                    <XMarkIcon className="size-6 hover:scale-105" aria-hidden="true" />
                   </button>
                 </div>
                 <div className="mt-6 flow-root">
