@@ -6,33 +6,51 @@ import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment, ReactNode, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline';
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: faBars },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: faBars },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: faBars },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: faBars },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: faBars },
+type SimpleLink = { href: string; children: ReactNode };
+type DropDownLinks = {
+  title: string;
+  items: { name: string; description: string; href: string; icon: IconDefinition }[];
+  callsToAction: { name: string; href: string; icon: IconDefinition }[];
+};
+type Menu =
+  | {
+      type: 'simple';
+      node: SimpleLink;
+    }
+  | {
+      type: 'dialog';
+      node: DropDownLinks;
+    };
+const menus: Menu[] = [
+  {
+    type: 'simple',
+    node: { href: '/sportagak', children: 'Sportágak' },
+  },
+  {
+    type: 'simple',
+    node: { href: '/helyszinek', children: 'Helyszínek' },
+  },
+  {
+    type: 'simple',
+    node: { href: '/szallas', children: 'Szállás' },
+  },
+  {
+    type: 'simple',
+    node: { href: '/programok', children: 'Programok' },
+  },
+  {
+    type: 'simple',
+    node: { href: '/eredmenyek', children: 'Eredmények' },
+  },
+  {
+    type: 'simple',
+    node: { href: '/koszonto', children: 'Beköszöntő' },
+  },
 ];
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: faBars },
-  { name: 'Contact sales', href: '#', icon: faBars },
-];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
 
 function DialogLink({ href, children }: Readonly<{ href: string; children: ReactNode }>) {
   return (
@@ -45,22 +63,14 @@ function DialogLink({ href, children }: Readonly<{ href: string; children: React
   );
 }
 
-function DisclosureMenu({
-  title,
-  items,
-  callsToAction,
-}: Readonly<{
-  title: string;
-  items: { name: string; description: string; href: string; icon: IconDefinition }[];
-  callsToAction: { name: string; href: string; icon: IconDefinition }[];
-}>) {
+function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   return (
     <Disclosure as="div" className="-mx-3">
       {({ open }) => (
         <>
           <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
             {title}
-            <ChevronDownIcon className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')} aria-hidden="true" />
+            <ChevronDownIcon className={`${open ? 'rotate-180' : ''} size-5 flex-none`} aria-hidden="true" />
           </Disclosure.Button>
           <Disclosure.Panel className="mt-2 space-y-2">
             {[...items, ...callsToAction].map((item) => (
@@ -80,7 +90,7 @@ function DisclosureMenu({
   );
 }
 
-function PopoverLink({ href, children }: Readonly<{ href: string; children: ReactNode }>) {
+function PopoverLink({ href, children }: Readonly<SimpleLink>) {
   return (
     <Link href={href} className="text-sm font-semibold leading-6 text-gray-900">
       {children}
@@ -88,15 +98,7 @@ function PopoverLink({ href, children }: Readonly<{ href: string; children: Reac
   );
 }
 
-function PopoverMenu({
-  title,
-  items,
-  callsToAction,
-}: Readonly<{
-  title: string;
-  items: { name: string; description: string; href: string; icon: IconDefinition }[];
-  callsToAction: { name: string; href: string; icon: IconDefinition }[];
-}>) {
+function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   return (
     <Popover className="relative">
       <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
@@ -159,7 +161,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <header className="{/*dark:bg-gray-900*/} bg-white">
+      <header className="{/*dark:bg-gray-900*/} group bg-white">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link className="block text-primary dark:text-primary-600" href="/">
@@ -169,26 +171,41 @@ export default function Header() {
           </div>
           <div className="flex lg:hidden">
             <button
-              type="button"
+              type={'button'}
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(true)}
             >
+              {/*<input type="checkbox" id="toggler" className={``} />*/}
               <span className="sr-only">Open main menu</span>
               <FontAwesomeIcon className={`size-6`} icon={faBars} aria-hidden="true" />
             </button>
           </div>
           <Popover.Group className="hidden lg:flex lg:gap-x-12">
-            <PopoverMenu title={'Product'} items={products} callsToAction={callsToAction} />
-
-            <PopoverLink href={'#'}>Features</PopoverLink>
-            <PopoverLink href={'#'}>Marketplace</PopoverLink>
-            <PopoverLink href={'#'}>Company</PopoverLink>
+            {menus.map((menu) => {
+              switch (menu.type) {
+                case 'simple':
+                  return (
+                    <PopoverLink key={menu.node.href} href={menu.node.href}>
+                      {menu.node.children}
+                    </PopoverLink>
+                  );
+                case 'dialog':
+                  return (
+                    <PopoverMenu
+                      key={menu.node.title}
+                      title={menu.node.title}
+                      items={menu.node.items}
+                      callsToAction={menu.node.callsToAction}
+                    />
+                  );
+              }
+            })}
           </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Button href={'/login'}>Bejelentkezés</Button>
           </div>
         </nav>
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog as="div" className=" lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-10" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
@@ -197,9 +214,10 @@ export default function Header() {
                 <IconPlayHandball size={40} />
               </Link>
               <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                type={'button'}
                 onClick={() => setMobileMenuOpen(false)}
+                // htmlFor="toggler"
+                className="-m-2.5 rounded-md p-2.5 text-gray-700"
               >
                 <span className="sr-only">Close menu</span>
                 <XMarkIcon className="size-6" aria-hidden="true" />
@@ -208,10 +226,25 @@ export default function Header() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <DisclosureMenu title={'Product'} items={products} callsToAction={callsToAction} />
-                  <DialogLink href={'#'}>Features</DialogLink>
-                  <DialogLink href={'#'}>Marketplace</DialogLink>
-                  <DialogLink href={'#'}>Company</DialogLink>
+                  {menus.map((menu) => {
+                    switch (menu.type) {
+                      case 'simple':
+                        return (
+                          <DialogLink key={menu.node.href} href={menu.node.href}>
+                            {menu.node.children}
+                          </DialogLink>
+                        );
+                      case 'dialog':
+                        return (
+                          <DisclosureMenu
+                            key={menu.node.title}
+                            title={menu.node.title}
+                            items={menu.node.items}
+                            callsToAction={menu.node.callsToAction}
+                          />
+                        );
+                    }
+                  })}
                 </div>
                 <div className="py-6">
                   <Button href={'/login'}>Bejelentkezés</Button>

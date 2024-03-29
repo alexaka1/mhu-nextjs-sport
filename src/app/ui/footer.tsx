@@ -15,7 +15,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src="/vercel.svg" alt="Vercel Logó" className="dark:invert" width={100} height={24} /> -en
+              <Image src="/vercel.svg" alt="Vercel Logó" className="h-6 dark:invert" width={100} height={24} /> -en
               hosztolva.
             </a>
             <p className="prose text-balance text-bg-contrast">

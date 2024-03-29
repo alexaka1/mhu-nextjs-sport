@@ -10,8 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint",
-    "fmt": "prettier --check .",
-    "fmt:fix": "prettier --write .",
+    "fmt": "prettier --check . --experimental-ternaries",
+    "fmt:fix": "prettier --write . --experimental-ternaries",
     "doctor": "yarn dlx @yarnpkg/doctor"
   },
   "dependencies": {
