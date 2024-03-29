@@ -27,6 +27,38 @@ type Menu =
     };
 const menus: Menu[] = [
   {
+    type: 'dialog',
+    node: {
+      title: 'Versenyek',
+      items: [
+        {
+          name: 'Versenyek',
+          description: 'Jelenlegi és lezárult versenyek',
+          href: '/versenyek',
+          icon: faBars,
+        },
+        {
+          name: 'Versenyek',
+          description: 'Jelenlegi és lezárult versenyek',
+          href: '/versenyek',
+          icon: faBars,
+        },
+      ],
+      callsToAction: [
+        {
+          name: 'Versenyek',
+          href: '/versenyek',
+          icon: faBars,
+        },
+        {
+          name: 'Versenyek',
+          href: '/versenyek',
+          icon: faBars,
+        },
+      ],
+    },
+  },
+  {
     type: 'simple',
     node: { href: '/sportagak', children: 'Sportágak' },
   },
@@ -56,7 +88,7 @@ function DialogLink({ href, children }: Readonly<{ href: string; children: React
   return (
     <a
       href={href}
-      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50"
     >
       {children}
     </a>
@@ -68,7 +100,7 @@ function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>
     <Disclosure as="div" className="-mx-3">
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50">
             {title}
             <ChevronDownIcon className={`${open ? 'rotate-180' : ''} size-5 flex-none`} aria-hidden="true" />
           </Disclosure.Button>
@@ -78,7 +110,7 @@ function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>
                 key={item.name}
                 as={Link}
                 href={item.href}
-                className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-bg-contrast hover:bg-gray-50"
               >
                 {item.name}
               </Disclosure.Button>
@@ -92,7 +124,7 @@ function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>
 
 function PopoverLink({ href, children }: Readonly<SimpleLink>) {
   return (
-    <Link href={href} className="text-sm font-semibold leading-6 text-gray-900">
+    <Link href={href} className="text-sm font-semibold leading-6 text-bg-contrast">
       {children}
     </Link>
   );
@@ -101,7 +133,7 @@ function PopoverLink({ href, children }: Readonly<SimpleLink>) {
 function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   return (
     <Popover className="relative">
-      <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+      <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-bg-contrast">
         {title}
         <ChevronDownIcon className="size-5 flex-none text-gray-400" aria-hidden="true" />
       </Popover.Button>
@@ -109,13 +141,13 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
       <Transition
         as={Fragment}
         enter="transition ease-out duration-200"
-        enterFrom="opacity-0 translate-y-1"
-        enterTo="opacity-100 translate-y-0"
+        enterFrom="opacity-0 motion-safe:translate-y-1"
+        enterTo="opacity-100 motion-safe:translate-y-0"
         leave="transition ease-in duration-150"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 translate-y-1"
+        leaveFrom="opacity-100 motion-safe:translate-y-0"
+        leaveTo="opacity-0 motion-safe:translate-y-1"
       >
-        <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 bg-white ring-gray-900/5">
+        <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary">
           <div className="p-4">
             {items.map((item) => (
               <div
@@ -124,7 +156,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
               >
                 <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                   <FontAwesomeIcon
-                    className="size-6 text-gray-600 group-hover:text-indigo-600"
+                    className="size-6 text-gray-600 group-hover:text-primary"
                     aria-hidden="true"
                     icon={item.icon}
                   />
@@ -144,9 +176,13 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
               <a
                 key={item.name}
                 href={item.href}
-                className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
               >
-                <FontAwesomeIcon className="size-5 flex-none text-gray-400" aria-hidden="true" icon={item.icon} />
+                <FontAwesomeIcon
+                  className="size-5 flex-none text-gray-400 group-hover:text-primary"
+                  aria-hidden="true"
+                  icon={item.icon}
+                />
                 {item.name}
               </a>
             ))}
@@ -161,7 +197,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <header className="{/*dark:bg-gray-900*/} group bg-white">
+      <header className="{/*dark:bg-gray-900*/} bg-gray-100">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link className="block text-primary dark:text-primary-600" href="/">
@@ -172,15 +208,15 @@ export default function Header() {
           <div className="flex lg:hidden">
             <button
               type={'button'}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary"
               onClick={() => setMobileMenuOpen(true)}
             >
               {/*<input type="checkbox" id="toggler" className={``} />*/}
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Fő menü megnyitása</span>
               <FontAwesomeIcon className={`size-6`} icon={faBars} aria-hidden="true" />
             </button>
           </div>
-          <Popover.Group className="hidden lg:flex lg:gap-x-12">
+          <Popover.Group as={'menu'} className="hidden lg:flex lg:gap-x-12">
             {menus.map((menu) => {
               switch (menu.type) {
                 case 'simple':
@@ -205,54 +241,66 @@ export default function Header() {
             <Button href={'/login'}>Bejelentkezés</Button>
           </div>
         </nav>
-        <Dialog as="div" className=" lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-10" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <Link className="block text-primary dark:text-primary-600" href="/">
-                <span className="sr-only">Főoldal</span>
-                <IconPlayHandball size={40} />
-              </Link>
-              <button
-                type={'button'}
-                onClick={() => setMobileMenuOpen(false)}
-                // htmlFor="toggler"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="size-6" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {menus.map((menu) => {
-                    switch (menu.type) {
-                      case 'simple':
-                        return (
-                          <DialogLink key={menu.node.href} href={menu.node.href}>
-                            {menu.node.children}
-                          </DialogLink>
-                        );
-                      case 'dialog':
-                        return (
-                          <DisclosureMenu
-                            key={menu.node.title}
-                            title={menu.node.title}
-                            items={menu.node.items}
-                            callsToAction={menu.node.callsToAction}
-                          />
-                        );
-                    }
-                  })}
+        <Transition as={Fragment} show={mobileMenuOpen}>
+          <Dialog as="div" className=" lg:hidden" onClose={setMobileMenuOpen}>
+            <div className="fixed inset-0 z-10 " />
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 motion-safe:translate-x-full"
+              enterTo="opacity-100 motion-safe:translate-x-0"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 motion-safe:translate-x-0"
+              leaveTo="opacity-0 motion-safe:translate-x-full"
+            >
+              <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div className="flex items-center justify-between">
+                  <Link className="block text-primary dark:text-primary-600" href="/">
+                    <span className="sr-only">Főoldal</span>
+                    <IconPlayHandball size={40} />
+                  </Link>
+                  <button
+                    type={'button'}
+                    onClick={() => setMobileMenuOpen(false)}
+                    // htmlFor="toggler"
+                    className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                  >
+                    <span className="sr-only">Menü bezárása</span>
+                    <XMarkIcon className="size-6" aria-hidden="true" />
+                  </button>
                 </div>
-                <div className="py-6">
-                  <Button href={'/login'}>Bejelentkezés</Button>
+                <div className="mt-6 flow-root">
+                  <div className="-my-6 divide-y divide-gray-500/10">
+                    <div className="space-y-2 py-6">
+                      {menus.map((menu) => {
+                        switch (menu.type) {
+                          case 'simple':
+                            return (
+                              <DialogLink key={menu.node.href} href={menu.node.href}>
+                                {menu.node.children}
+                              </DialogLink>
+                            );
+                          case 'dialog':
+                            return (
+                              <DisclosureMenu
+                                key={menu.node.title}
+                                title={menu.node.title}
+                                items={menu.node.items}
+                                callsToAction={menu.node.callsToAction}
+                              />
+                            );
+                        }
+                      })}
+                    </div>
+                    <div className="py-6">
+                      <Button href={'/login'}>Bejelentkezés</Button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </Dialog.Panel>
-        </Dialog>
+              </Dialog.Panel>
+            </Transition.Child>
+          </Dialog>
+        </Transition>
       </header>
       {/*<header className="bg-white dark:bg-gray-900">*/}
       {/*  <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">*/}
