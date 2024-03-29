@@ -54,7 +54,7 @@ export default function manifest(): MetadataRoute.Manifest {
         label: 'Főoldal',
       },
       {
-        src: '/screenshots/greetings-desktop.webp',
+        src: '/screenshots/greeting-desktop.webp',
         sizes: '1062x642',
         type: 'image/webp',
         // @ts-expect-error until Next officially supports it

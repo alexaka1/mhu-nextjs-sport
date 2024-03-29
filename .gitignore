@@ -147,3 +147,6 @@ certificates
 **/public/precache**
 ### dotenv template
 .env
+
+# Sentry Config File
+.sentryclirc

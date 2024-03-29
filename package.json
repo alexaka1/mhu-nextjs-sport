@@ -21,6 +21,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.18",
+    "@sentry/nextjs": "^7.109.0",
     "@serwist/core": "^9.0.0-preview.14",
     "@serwist/next": "^9.0.0-preview.14",
     "@serwist/precaching": "^9.0.0-preview.14",
@@ -32,6 +33,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@sentry/utils": "^7.109.0",
     "@tailwindcss/typography": "^0.5.10",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20.11.30",

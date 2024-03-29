@@ -2,11 +2,11 @@
 
 import { useEffect } from 'react';
 import BackToHome from '@/app/ui/buttons/back-to-home';
+import { captureException } from '@sentry/nextjs';
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
+    captureException(error);
   }, [error]);
 
   return (
