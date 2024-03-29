@@ -6,10 +6,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment, ReactNode, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import Image from 'next/image';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
+import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -71,7 +70,11 @@ function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>
         <>
           <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50">
             {title}
-            <ChevronDownIcon className={`${open ? 'rotate-180' : ''} size-5 flex-none`} aria-hidden="true" />
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              className={`${open ? 'rotate-180' : ''} size-5 flex-none`}
+              aria-hidden="true"
+            />
           </Disclosure.Button>
           <Disclosure.Panel className="mt-2 space-y-2">
             {[...items, ...callsToAction].map((item) => (
@@ -104,7 +107,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
     <Popover className="relative">
       <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-bg-contrast">
         {title}
-        <ChevronDownIcon className="size-5 flex-none text-gray-400" aria-hidden="true" />
+        <FontAwesomeIcon icon={faChevronDown} className={`size-5 flex-none text-gray-400`} aria-hidden="true" />
       </Popover.Button>
 
       <Transition
@@ -253,7 +256,7 @@ export default function Header() {
                     className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-bg-contrast"
                   >
                     <span className="sr-only">Menü bezárása</span>
-                    <XMarkIcon className="size-6 hover:scale-105" aria-hidden="true" />
+                    <FontAwesomeIcon icon={faXmark} className="size-6 hover:scale-105" aria-hidden="true" />
                   </button>
                 </div>
                 <div className="mt-6 flow-root">
