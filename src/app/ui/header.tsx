@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Button from '@/app/ui/buttons/link';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fragment, ReactNode, useState } from 'react';
+import { Fragment, MouseEventHandler, ReactNode, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
@@ -27,21 +27,6 @@ type Menu =
       node: DropDownLinks;
     };
 const menus: Menu[] = [
-  {
-    type: 'dialog',
-    node: {
-      title: 'Rólunk',
-      items: [
-        { name: 'Beköszöntő', description: '', href: '/koszonto', icon: faBars },
-        { name: 'Sportágak', description: '', href: '/sportagak', icon: faBars },
-        { name: 'Helyszínek', description: '', href: '/helyszinek', icon: faBars },
-        { name: 'Szállás', description: '', href: '/szallas', icon: faBars },
-        { name: 'Programok', description: '', href: '/programok', icon: faBars },
-        { name: 'Eredmények', description: '', href: '/eredmenyek', icon: faBars },
-      ],
-      callsToAction: [],
-    },
-  },
   {
     type: 'simple',
     node: { href: '/sportagak', children: 'Sportágak' },
@@ -68,26 +53,36 @@ const menus: Menu[] = [
   // },
 ];
 
-function DialogLink({ href, children }: Readonly<{ href: string; children: ReactNode }>) {
+function DialogLink({
+  href,
+  children,
+  onClick,
+}: Readonly<{ href: string; children: ReactNode; onClick?: MouseEventHandler<HTMLElement> | undefined }>) {
   const pathname = usePathname();
   return (
     <Link
       href={href}
-      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50 ${pathname === href ? 'bg-primary dark:bg-primary-600' : ''}`}
+      onClick={onClick}
+      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 ${pathname === href ? 'bg-primary dark:bg-primary-600' : ''}`}
     >
       {children}
     </Link>
   );
 }
 
-function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
+function DisclosureMenu({
+  title,
+  items,
+  callsToAction,
+  onClick,
+}: Readonly<DropDownLinks & { onClick?: MouseEventHandler<HTMLElement> | undefined }>) {
   const pathname = usePathname();
   return (
     <Disclosure as="div" className="-mx-3">
       {({ open }) => (
         <>
           <Disclosure.Button
-            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-bg-contrast hover:bg-gray-50 ${items.some(({ href }) => href === pathname) ? 'bg-primary  dark:bg-primary-600' : ''}`}
+            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 ${items.some(({ href }) => href === pathname) ? 'bg-primary  dark:bg-primary-600' : ''}`}
           >
             {title}
             <FontAwesomeIcon
@@ -102,7 +97,8 @@ function DisclosureMenu({ title, items, callsToAction }: Readonly<DropDownLinks>
                 key={item.name}
                 as={Link}
                 href={item.href}
-                className={`block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-bg-contrast hover:bg-gray-50 ${pathname === item.href ? 'bg-primary dark:bg-primary-600' : ''}`}
+                onClick={onClick}
+                className={`block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 ${pathname === item.href ? 'bg-primary dark:bg-primary-600' : ''}`}
               >
                 {item.name}
               </Disclosure.Button>
@@ -119,7 +115,7 @@ function PopoverLink({ href, children }: Readonly<SimpleLink>) {
   return (
     <Link
       href={href}
-      className={`text-sm leading-6 hover:text-bg-contrast/80 ${pathname === href ? 'font-extrabold text-primary dark:text-primary-600' : 'font-semibold text-bg-contrast'}`}
+      className={`text-sm leading-6 transition-colors duration-200 hover:text-bg-contrast/80 ${pathname === href ? 'font-extrabold underline decoration-primary decoration-2 drop-shadow-lg text-primary dark:text-primary-600' : 'font-semibold text-bg-contrast'}`}
     >
       {children}
     </Link>
@@ -132,7 +128,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   return (
     <Popover className="relative">
       <Popover.Button
-        className={`${isActive ? 'font-extrabold dark:text-primary-600' : 'font-semibold text-bg-contrast'} flex items-center gap-x-1 text-sm leading-6 text-primary`}
+        className={`${isActive ? 'font-extrabold underline decoration-primary decoration-2 drop-shadow-lg dark:text-primary-600' : 'font-semibold text-bg-contrast'} flex items-center gap-x-1 text-sm leading-6 text-primary`}
       >
         {title}
         <FontAwesomeIcon
@@ -141,6 +137,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
           aria-hidden="true"
         />
       </Popover.Button>
+      <Popover.Overlay className="fixed inset-0 opacity-30 bg-black" />
 
       <Transition
         as={Fragment}
@@ -156,7 +153,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
             {items.map((item) => (
               <div
                 key={item.name}
-                className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50 dark:hover:bg-gray-900"
+                className={`group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-900 ${pathname === item.href ? 'bg-primary-600 dark:bg-primary-600' : ''}`}
               >
                 <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-950 group-hover:dark:bg-gray-800">
                   <FontAwesomeIcon
@@ -166,11 +163,15 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
                   />
                 </div>
                 <div className="flex-auto">
-                  <Link href={item.href} className="block font-semibold text-bg-contrast">
+                  <Popover.Button as={Link} href={item.href} className="block font-semibold text-bg-contrast">
                     {item.name}
                     <span className="absolute inset-0" />
-                  </Link>
-                  <p className="mt-1 text-gray-600 dark:text-bg-contrast/95">{item.description}</p>
+                  </Popover.Button>
+                  <p
+                    className={`mt-1 text-balance dark:text-bg-contrast/95 ${pathname === item.href ? 'text-bg-contrast' : 'text-gray-600'}`}
+                  >
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -180,7 +181,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100 dark:text-bg-contrast dark:hover:bg-gray-600"
+                className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 transition-colors duration-200 text-gray-900 hover:bg-gray-100 dark:text-bg-contrast dark:hover:bg-gray-600"
               >
                 <FontAwesomeIcon
                   className="size-5 flex-none text-gray-400 group-hover:text-primary group-hover:dark:text-primary-400/75"
@@ -205,7 +206,7 @@ export default function Header() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link
-              className="block text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+              className="block transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
               href="/"
             >
               <span className="sr-only">Főoldal</span>
@@ -215,7 +216,7 @@ export default function Header() {
           <div className="flex lg:hidden">
             <button
               type={'button'}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
               onClick={() => setMobileMenuOpen(true)}
             >
               {/*<input type="checkbox" id="toggler" className={``} />*/}
@@ -275,7 +276,7 @@ export default function Header() {
               <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900">
                 <div className="flex items-center justify-between">
                   <Link
-                    className="block text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+                    className="block transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
                     href="/"
                   >
                     <span className="sr-only">Főoldal</span>
@@ -285,7 +286,7 @@ export default function Header() {
                     type={'button'}
                     onClick={() => setMobileMenuOpen(false)}
                     // htmlFor="toggler"
-                    className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-bg-contrast"
+                    className="-m-2.5 rounded-md p-2.5 transition-transform duration-200 text-gray-700 dark:text-bg-contrast"
                   >
                     <span className="sr-only">Menü bezárása</span>
                     <FontAwesomeIcon icon={faXmark} className="size-6 hover:scale-105" aria-hidden="true" />
@@ -298,7 +299,11 @@ export default function Header() {
                         switch (menu.type) {
                           case 'simple':
                             return (
-                              <DialogLink key={menu.node.href} href={menu.node.href}>
+                              <DialogLink
+                                key={menu.node.href}
+                                href={menu.node.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
                                 {menu.node.children}
                               </DialogLink>
                             );
@@ -308,6 +313,7 @@ export default function Header() {
                                 key={menu.node.title}
                                 title={menu.node.title}
                                 items={menu.node.items}
+                                onClick={() => setMobileMenuOpen(false)}
                                 callsToAction={menu.node.callsToAction}
                               />
                             );
