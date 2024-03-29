@@ -9,6 +9,7 @@ import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import Image from 'next/image';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -211,6 +212,18 @@ export default function Header() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Button href={'/login'}>Bejelentkezés</Button>
           </div>
+          {/*<div className="hidden lg:flex lg:flex-1 lg:justify-end">*/}
+          {/*  <Link href={`/fiok`} title={`Fiókom`}>*/}
+          {/*    <Image*/}
+          {/*      className="inline-block size-12 rounded-full ring-1 ring-white"*/}
+          {/*      src="https://utfs.io/f/ce34ec0d-6cae-41de-b552-0059d9b027ef-c9cbbw.jpg"*/}
+          {/*      alt="Avatar"*/}
+          {/*      width={0}*/}
+          {/*      height={0}*/}
+          {/*      quality={100}*/}
+          {/*    />*/}
+          {/*  </Link>*/}
+          {/*</div>*/}
         </nav>
         <Transition as={Fragment} show={mobileMenuOpen}>
           <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
@@ -269,6 +282,18 @@ export default function Header() {
                     <div className="py-6">
                       <Button href={'/login'}>Bejelentkezés</Button>
                     </div>
+                    {/*<div className="py-6">*/}
+                    {/*  <Link href={`/fiok`} title={`Fiókom`}>*/}
+                    {/*    <Image*/}
+                    {/*      className="inline-block size-12 rounded-full ring-1 ring-white"*/}
+                    {/*      src="https://utfs.io/f/ce34ec0d-6cae-41de-b552-0059d9b027ef-c9cbbw.jpg"*/}
+                    {/*      alt="Avatar"*/}
+                    {/*      width={0}*/}
+                    {/*      height={0}*/}
+                    {/*      quality={100}*/}
+                    {/*    />*/}
+                    {/*  </Link>*/}
+                    {/*</div>*/}
                   </div>
                 </div>
               </Dialog.Panel>
@@ -276,92 +301,6 @@ export default function Header() {
           </Dialog>
         </Transition>
       </header>
-      {/*<header className="bg-white dark:bg-gray-900">*/}
-      {/*  <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">*/}
-      {/*    <div className="flex h-16 items-center justify-between">*/}
-      {/*      <div className="flex-1 md:flex md:items-center md:gap-12">*/}
-      {/*        <Link className="block text-primary dark:text-primary-600" href="/">*/}
-      {/*          <span className="sr-only">Főoldal</span>*/}
-      {/*          <IconPlayHandball size={48} />*/}
-      {/*        </Link>*/}
-      {/*      </div>*/}
-
-      {/*      <div className="md:flex md:items-center md:gap-12">*/}
-      {/*        <nav aria-label="Global" className="hidden md:block">*/}
-      {/*          <ul className="flex items-center gap-6 text-sm">*/}
-      {/*            <li>*/}
-      {/*              <a*/}
-      {/*                className="transition text-gray-500 hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"*/}
-      {/*                href="#"*/}
-      {/*              >*/}
-      {/*                About*/}
-      {/*              </a>*/}
-      {/*            </li>*/}
-
-      {/*            <li>*/}
-      {/*              <a*/}
-      {/*                className="transition text-gray-500 hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"*/}
-      {/*                href="#"*/}
-      {/*              >*/}
-      {/*                Careers*/}
-      {/*              </a>*/}
-      {/*            </li>*/}
-
-      {/*            <li>*/}
-      {/*              <a*/}
-      {/*                className="transition text-gray-500 hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"*/}
-      {/*                href="#"*/}
-      {/*              >*/}
-      {/*                History*/}
-      {/*              </a>*/}
-      {/*            </li>*/}
-
-      {/*            <li>*/}
-      {/*              <a*/}
-      {/*                className="transition text-gray-500 hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"*/}
-      {/*                href="#"*/}
-      {/*              >*/}
-      {/*                Services*/}
-      {/*              </a>*/}
-      {/*            </li>*/}
-
-      {/*            <li>*/}
-      {/*              <a*/}
-      {/*                className="transition text-gray-500 hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"*/}
-      {/*                href="#"*/}
-      {/*              >*/}
-      {/*                Projects*/}
-      {/*              </a>*/}
-      {/*            </li>*/}
-
-      {/*            <li>*/}
-      {/*              <a*/}
-      {/*                className="transition text-gray-500 hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"*/}
-      {/*                href="#"*/}
-      {/*              >*/}
-      {/*                Blog*/}
-      {/*              </a>*/}
-      {/*            </li>*/}
-      {/*          </ul>*/}
-      {/*        </nav>*/}
-      {/*        <div className="flex items-center gap-4">*/}
-      {/*          <div className="invisible sm:invisible sm:gap-4">*/}
-      {/*            <Button href={'/login'}>Bejelentkezés</Button>*/}
-      {/*          </div>*/}
-
-      {/*          <div className="block md:hidden">*/}
-      {/*            <button*/}
-      {/*              onClick={() => setMobileMenuOpen(true)}*/}
-      {/*              className="rounded p-2 transition bg-gray-100 text-gray-600 hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"*/}
-      {/*            >*/}
-      {/*              <FontAwesomeIcon className={`size-5`} icon={faBars} />*/}
-      {/*            </button>*/}
-      {/*          </div>*/}
-      {/*        </div>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</header>*/}
     </>
   );
 }
