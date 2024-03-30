@@ -2,7 +2,12 @@ import withSerwistInit from '@serwist/next';
 
 // CSP headers here is set based on Next.js recommendations:
 // https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy
-export const createCspHeaders = (nonce: string) => {
+
+/**
+ * @param nonce {string | undefined}
+ * @returns {string}
+ */
+export const createCspHeaders = (nonce) => {
   const defaultsCSPHeaders = `
     style-src 'self';
     font-src 'self';
@@ -33,20 +38,33 @@ export const createCspHeaders = (nonce: string) => {
   // for production environment white-list vitals.vercel-insights
   // based on: https://vercel.com/docs/speed-insights#content-security-policy
   if (process.env.NODE_ENV === "production") {
+    // return `
+    //   ${defaultsCSPHeaders}
+    //   default-src 'none';
+    //   script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+    //   img-src 'self' blob: data:;
+    //   connect-src 'self' https://vitals.vercel-insights.com;
+    //   `;
     return `
       ${defaultsCSPHeaders}
       default-src 'none';
-      script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+      script-src 'self' 'strict-dynamic';
       img-src 'self' blob: data:;
       connect-src 'self' https://vitals.vercel-insights.com;
       `;
   }
 
   // for dev environment enable unsafe-eval for hot-reload
+  // return `
+  //   ${defaultsCSPHeaders}
+  //   default-src 'self';
+  //   script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval';
+  //   img-src 'self' blob: data:;
+  // `;
   return `
     ${defaultsCSPHeaders}
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval';
+    script-src 'self' 'strict-dynamic' 'unsafe-eval';
     img-src 'self' blob: data:;
   `;
 }
@@ -68,8 +86,8 @@ const nextConfig = {
         source: '/(.*)',
         headers: [
           {
-            key: 'Content-Security-Policy',
-            value: cspHeader.replace(/\n/g, ''),
+            key: 'Content-Security-Policy-Report-Only',
+            value: createCspHeaders(undefined).replace(/\n/g, ''),
           },
         ],
       },
