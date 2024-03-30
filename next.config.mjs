@@ -28,8 +28,8 @@ function createCspHeaders(nonce) {
     block-all-mixed-content;
     upgrade-insecure-requests;
     report-uri ${cspEndpoint.endpoints.at(0)?.url};
-    report-to ${cspEndpoint.group};
   `;
+  //report-to ${cspEndpoint.group};
 
   // when environment is preview enable unsafe-inline scripts for vercel preview feedback/comments feature
   // and whitelist vercel's domains based on:
