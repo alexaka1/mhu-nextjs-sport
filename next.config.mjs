@@ -1,4 +1,4 @@
-import {withSentryConfig} from '@sentry/nextjs';
+import { withSentryConfig } from '@sentry/nextjs';
 import withSerwistInit from '@serwist/next';
 
 const cspEndpoint = {
@@ -6,7 +6,7 @@ const cspEndpoint = {
   max_age: 10886400,
   endpoints: [
     {
-      url: 'https://o4506996276461568.ingest.sentry.io/api/4506996280393728/security/?sentry_key=eadce7a755cd21925873fe1a8a0386fb',
+      url: 'https://o4506996276461568.ingest.us.sentry.io/api/4506996280393728/security/?sentry_key=eadce7a755cd21925873fe1a8a0386fb',
     },
   ],
   include_subdomains: true,
@@ -17,9 +17,9 @@ const cspEndpoint = {
  * @param nonce {string | undefined}
  * @returns {string}
  */
-export const createCspHeaders = (nonce) => {
+function createCspHeaders(nonce) {
   const defaultsCSPHeaders = `
-    style-src 'self';
+    style-src 'self' 'unsafe-inline';
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -28,7 +28,7 @@ export const createCspHeaders = (nonce) => {
     block-all-mixed-content;
     upgrade-insecure-requests;
     report-uri ${cspEndpoint.endpoints.at(0)?.url};
-    report-to csp-endpoint;
+    report-to ${cspEndpoint.group};
   `;
 
   // when environment is preview enable unsafe-inline scripts for vercel preview feedback/comments feature
@@ -36,12 +36,12 @@ export const createCspHeaders = (nonce) => {
   // https://vercel.com/docs/workflow-collaboration/comments/specialized-usage#using-a-content-security-policy
   // and white-list vitals.vercel-insights
   // based on: https://vercel.com/docs/speed-insights#content-security-policy
-  if (process.env?.VERCEL_ENV === "preview") {
+  if (process.env?.VERCEL_ENV === 'preview') {
     return `
       ${defaultsCSPHeaders}
       default-src 'none';
       script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline';
-      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://sockjs-mt1.pusher.com/ wss://ws-mt1.pusher.com/;
+      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://sockjs-mt1.pusher.com/ wss://ws-mt1.pusher.com/ https://o4506996276461568.ingest.us.sentry.io;
       img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob:;
       frame-src 'self' https://vercel.live/ https://vercel.com;
       `;
@@ -49,7 +49,7 @@ export const createCspHeaders = (nonce) => {
 
   // for production environment white-list vitals.vercel-insights
   // based on: https://vercel.com/docs/speed-insights#content-security-policy
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === 'production') {
     // return `
     //   ${defaultsCSPHeaders}
     //   default-src 'none';
@@ -60,12 +60,11 @@ export const createCspHeaders = (nonce) => {
     return `
       ${defaultsCSPHeaders}
       default-src 'none';
-      script-src 'self' 'strict-dynamic';
+      script-src 'self';
       img-src 'self' blob: data:;
-      connect-src 'self' https://vitals.vercel-insights.com;
+      connect-src 'self' https://vitals.vercel-insights.com https://o4506996276461568.ingest.us.sentry.io;
       `;
   }
-
   // for dev environment enable unsafe-eval for hot-reload
   // return `
   //   ${defaultsCSPHeaders}
@@ -76,8 +75,10 @@ export const createCspHeaders = (nonce) => {
   return `
     ${defaultsCSPHeaders}
     default-src 'self';
-    script-src 'self' 'strict-dynamic' 'unsafe-eval';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval';
+    worker-src 'self' blob:;
     img-src 'self' blob: data:;
+    connect-src 'self' https://o4506996276461568.ingest.us.sentry.io;
   `;
 }
 const cspHeaders = {
@@ -105,12 +106,10 @@ const nextConfig = {
     ],
   },
   async headers() {
-    return [
-      cspHeaders,
-    ];
+    return [cspHeaders];
   },
   swcMinify: true,
-  webpack: (config, {isServer}) => {
+  webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
         '@sentry/utils': false,
@@ -150,7 +149,7 @@ export default withSentryConfig(
     // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers. (increases server load)
     // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
     // side errors will fail.
-    tunnelRoute: '/monitoring',
+    // tunnelRoute: '/monitoring',
 
     // Hides source maps from generated client bundles
     hideSourceMaps: true,
