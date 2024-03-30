@@ -47,7 +47,7 @@ export default function manifest(): MetadataRoute.Manifest {
     screenshots: [
       {
         src: '/screenshots/landing-desktop.webp',
-        sizes: '1884x1042',
+        sizes: '1920x1080',
         type: 'image/webp',
         // @ts-expect-error until Next officially supports it
         form_factor: 'wide',
@@ -55,7 +55,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
       {
         src: '/screenshots/greeting-desktop.webp',
-        sizes: '1062x642',
+        sizes: '1920x1080',
         type: 'image/webp',
         // @ts-expect-error until Next officially supports it
         form_factor: 'wide',
@@ -63,7 +63,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
       {
         src: '/screenshots/landing-mobile.webp',
-        sizes: '944x1169',
+        sizes: '721x1601',
         type: 'image/webp',
         // @ts-expect-error until Next officially supports it
         form_factor: 'narrow',
