@@ -1,9 +1,18 @@
-import { withSentryConfig } from '@sentry/nextjs';
+import {withSentryConfig} from '@sentry/nextjs';
 import withSerwistInit from '@serwist/next';
 
+const cspEndpoint = {
+  group: 'csp-endpoint',
+  max_age: 10886400,
+  endpoints: [
+    {
+      url: 'https://o4506996276461568.ingest.sentry.io/api/4506996280393728/security/?sentry_key=eadce7a755cd21925873fe1a8a0386fb',
+    },
+  ],
+  include_subdomains: true,
+};
 // CSP headers here is set based on Next.js recommendations:
 // https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy
-
 /**
  * @param nonce {string | undefined}
  * @returns {string}
@@ -18,6 +27,8 @@ export const createCspHeaders = (nonce) => {
     frame-ancestors 'none';
     block-all-mixed-content;
     upgrade-insecure-requests;
+    report-uri ${cspEndpoint.endpoints.at(0)?.url};
+    report-to csp-endpoint;
   `;
 
   // when environment is preview enable unsafe-inline scripts for vercel preview feedback/comments feature
@@ -69,7 +80,19 @@ export const createCspHeaders = (nonce) => {
     img-src 'self' blob: data:;
   `;
 }
-
+const cspHeaders = {
+  source: '/(.*)',
+  headers: [
+    {
+      key: 'Content-Security-Policy-Report-Only',
+      value: createCspHeaders(undefined).replace(/\n/g, ''),
+    },
+    {
+      key: 'Report-To',
+      value: JSON.stringify(cspEndpoint).replace(/\n/g, ''),
+    },
+  ],
+};
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -83,19 +106,11 @@ const nextConfig = {
   },
   async headers() {
     return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Content-Security-Policy-Report-Only',
-            value: createCspHeaders(undefined).replace(/\n/g, ''),
-          },
-        ],
-      },
+      cspHeaders,
     ];
   },
   swcMinify: true,
-  webpack: (config, { isServer }) => {
+  webpack: (config, {isServer}) => {
     if (!isServer) {
       config.resolve.fallback = {
         '@sentry/utils': false,
