@@ -40,7 +40,7 @@ function createCspHeaders(nonce) {
       ${defaultsCSPHeaders}
       default-src 'none';
       script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline';
-      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://sockjs-mt1.pusher.com/ wss://pusher.com/ https://o4506996276461568.ingest.us.sentry.io;
+      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ https://o4506996276461568.ingest.us.sentry.io;
       img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob:;
       frame-src 'self' https://vercel.live/ https://vercel.com;
       style-src-elem 'self' 'unsafe-inline' https://vercel.live/;
