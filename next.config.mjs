@@ -42,7 +42,7 @@ function createCspHeaders(nonce) {
       script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline';
       connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ https://o4506996276461568.ingest.us.sentry.io;
       img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob:;
-      frame-src 'self' https://vercel.live/ https://vercel.com;
+      frame-src 'self' https://vercel.live/ https://vercel.com https://www.google.com/;
       style-src-elem 'self' 'unsafe-inline' https://vercel.live/;
       manifest-src 'self';
       worker-src 'self' blob:;
@@ -69,6 +69,7 @@ function createCspHeaders(nonce) {
       img-src 'self' blob: data:;
       connect-src 'self' https://vitals.vercel-insights.com https://o4506996276461568.ingest.us.sentry.io;
       font-src 'self';
+      frame-src https://www.google.com/;
       `;
   }
   // for dev environment enable unsafe-eval for hot-reload
@@ -86,6 +87,7 @@ function createCspHeaders(nonce) {
     img-src 'self' blob: data:;
     connect-src 'self' https://o4506996276461568.ingest.us.sentry.io;
     font-src 'self';
+    frame-src 'self' https://www.google.com/;
   `;
 }
 const cspHeaders = {
