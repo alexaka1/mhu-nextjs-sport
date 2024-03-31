@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 function Entry({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <article
-      className={`border-b border-solid pb-1 border-green-400
+      className={`border-b border-solid pb-1 border-gray-400
               [&:nth-child(4)]:col-start-2 [&:nth-child(4)]:col-end-3 [&:nth-child(4)]:row-start-1 [&:nth-child(4)]:row-end-4
               lg:[&:nth-child(4)]:border-r lg:[&:nth-child(4)]:border-solid lg:[&:nth-child(4)]:pr-1
               sm:[&:nth-child(4n)]:border-b-0
@@ -32,13 +32,15 @@ function Grid({ children }: Readonly<{ children: ReactNode }>) {
 export default function Page() {
   return (
     <>
-      <main className={`prose m-auto box-border max-w-7xl p-2`}>
+      <main className={`prose prose-sm m-auto box-border max-w-7xl p-2`}>
         <h1>Events</h1>
         <section>
           <h2 className={`font-medium`}>2 December</h2>
           <Grid>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>9:00 AM</h3>
+              <time className={`mx-0.5 my-0 font-medium`} dateTime={`2011-12-02T09:00:00Z`}>
+                9:00 AM
+              </time>
               <p className={`text-base`}>Life finds a way. You know what? It is beets. </p>
             </Entry>
             <Entry>
@@ -89,7 +91,9 @@ export default function Page() {
           <h2 className={`font-medium`}>3 Jan</h2>
           <Grid>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>9:00 AM</h3>
+              <time className={`mx-0.5 my-0 font-medium`} dateTime={`2012-01-03T09:00:00Z`}>
+                9:00 AM
+              </time>
               <p className={`text-base`}>Life finds a way. You know what? It is beets. </p>
             </Entry>
             <Entry>
