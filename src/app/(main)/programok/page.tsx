@@ -57,11 +57,11 @@ export default function Page() {
                 Yeah, but your scientists were so preoccupied with whether or not they could, they didn&apos;t stop to
                 think if they should.{' '}
               </p>
-              <img
-                className={`h-[250px] w-full rounded-md object-cover sm:h-min sm:object-none`}
-                src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg"
-                alt="Black and white photo of a lake"
-              />
+              {/*<img*/}
+              {/*  className={`h-[250px] w-full rounded-md object-cover sm:h-min sm:object-none`}*/}
+              {/*  src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg"*/}
+              {/*  alt="Black and white photo of a lake"*/}
+              {/*/>*/}
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>14:30 AM</h3>
@@ -80,10 +80,10 @@ export default function Page() {
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>17:30 AM</h3>
               <p className={`text-base`}>What do they got in there? King Kong? </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg/1200px-Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg"
-                alt="Black and White Eiffel Tower"
-              />
+              {/*<img*/}
+              {/*  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg/1200px-Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg"*/}
+              {/*  alt="Black and White Eiffel Tower"*/}
+              {/*/>*/}
             </Entry>
           </Grid>
         </section>
@@ -110,10 +110,10 @@ export default function Page() {
                 Yeah, but your scientists were so preoccupied with whether or not they could, they didn&apos;t stop to
                 think if they should.{' '}
               </p>
-              <img
-                src=" https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg/1200px-Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg"
-                alt="Black and White Eiffel Tower"
-              />
+              {/*<img*/}
+              {/*  src=" https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg/1200px-Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg"*/}
+              {/*  alt="Black and White Eiffel Tower"*/}
+              {/*/>*/}
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>14:30 AM</h3>
@@ -132,10 +132,10 @@ export default function Page() {
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>17:30 AM</h3>
               <p className={`text-base`}>What do they got in there? King Kong? </p>
-              <img
-                src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg"
-                alt="Black and white Mountian view"
-              />
+              {/*<img*/}
+              {/*  src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg"*/}
+              {/*  alt="Black and white Mountian view"*/}
+              {/*/>*/}
             </Entry>
           </Grid>
         </section>
