@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
+import { faMountainSun } from '@fortawesome/free-solid-svg-icons/faMountainSun';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const metadata: Metadata = {
   title: 'Programok',
@@ -8,7 +10,7 @@ export const metadata: Metadata = {
 function Entry({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <article
-      className={`border-b border-solid pb-1 border-gray-400
+      className={`border-b border-solid pb-1 border-primary dark:border-primary-600
               [&:nth-child(4)]:col-start-2 [&:nth-child(4)]:col-end-3 [&:nth-child(4)]:row-start-1 [&:nth-child(4)]:row-end-4
               lg:[&:nth-child(4)]:border-r lg:[&:nth-child(4)]:border-solid lg:[&:nth-child(4)]:pr-1
               sm:[&:nth-child(4n)]:border-b-0
@@ -23,7 +25,7 @@ function Entry({ children }: Readonly<{ children: ReactNode }>) {
 
 function Grid({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <div className="gap-1 sm:grid sm:grid-flow-col sm:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr_1fr_2fr]">
+    <div className="gap-1 sm:grid sm:grid-flow-col sm:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr_1fr_2fr_1fr]">
       {children}
     </div>
   );
@@ -32,31 +34,47 @@ function Grid({ children }: Readonly<{ children: ReactNode }>) {
 export default function Page() {
   return (
     <>
-      <main className={`prose prose-sm m-auto box-border max-w-7xl p-2`}>
-        <h1>Events</h1>
+      <main
+        className={`prose prose-sm m-auto box-border max-w-7xl p-2 dark:text-bg-contrast dark:prose-headings:text-bg-contrast`}
+      >
+        <h1 className={`dark:text-bg-contrast`}>Programok - 2024</h1>
         <section>
-          <h2 className={`font-medium`}>2 December</h2>
+          <h2 className={`font-medium`}>December 2.</h2>
           <Grid>
             <Entry>
-              <time className={`mx-0.5 my-0 font-medium`} dateTime={`2011-12-02T09:00:00Z`}>
-                9:00 AM
-              </time>
-              <p className={`text-base`}>Life finds a way. You know what? It is beets. </p>
+              <h3 className={`mx-0.5 my-0 font-medium text-primary dark:text-primary-600`}>
+                <time dateTime={`2011-12-02T09:00:00Z`}>9:00 AM</time>
+              </h3>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>10:00 AM</h3>
-              <p className={`text-base`}>I&apos;ve crashed into a beet truck </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.{' '}
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>12:30 AM</h3>
-              <p className={`text-base`}>I was part of something special. </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>13:30 AM</h3>
-              <p className={`text-base`}>
-                Yeah, but your scientists were so preoccupied with whether or not they could, they didn&apos;t stop to
-                think if they should.{' '}
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
               </p>
+              <FontAwesomeIcon
+                icon={faMountainSun}
+                className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}
+                title={`Kép helye`}
+              />
               {/*<img*/}
               {/*  className={`h-[250px] w-full rounded-md object-cover sm:h-min sm:object-none`}*/}
               {/*  src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg"*/}
@@ -65,21 +83,36 @@ export default function Page() {
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>14:30 AM</h3>
-              <p className={`text-base`}>Just my luck, no ice. God help us, we&apos;re in the hands of engineers. </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>15:30 AM</h3>
-              <p className={`text-base`}>I gave it a cold? I gave it a virus. A computer virus. </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>16:30 AM</h3>
-              <p className={`text-base`}>
-                God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.{' '}
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
               </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>17:30 AM</h3>
-              <p className={`text-base`}>What do they got in there? King Kong? </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
+              <FontAwesomeIcon
+                icon={faMountainSun}
+                className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}
+                title={`Kép helye`}
+              />
               {/*<img*/}
               {/*  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg/1200px-Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg"*/}
               {/*  alt="Black and White Eiffel Tower"*/}
@@ -88,28 +121,42 @@ export default function Page() {
           </Grid>
         </section>
         <section>
-          <h2 className={`font-medium`}>3 Jan</h2>
+          <h2 className={`font-medium`}>Január 3.</h2>
           <Grid>
             <Entry>
-              <time className={`mx-0.5 my-0 font-medium`} dateTime={`2012-01-03T09:00:00Z`}>
-                9:00 AM
-              </time>
-              <p className={`text-base`}>Life finds a way. You know what? It is beets. </p>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2012-01-03T09:00:00Z`}>9:00 AM</time>
+              </h3>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>10:00 AM</h3>
-              <p className={`text-base`}>I&apos;ve crashed into a beet truck </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>12:30 AM</h3>
-              <p className={`text-base`}>I was part of something special. </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>13:30 AM</h3>
-              <p className={`text-base`}>
-                Yeah, but your scientists were so preoccupied with whether or not they could, they didn&apos;t stop to
-                think if they should.{' '}
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
               </p>
+              <FontAwesomeIcon
+                icon={faMountainSun}
+                className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}
+                title={`Kép helye`}
+              />
               {/*<img*/}
               {/*  src=" https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg/1200px-Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg"*/}
               {/*  alt="Black and White Eiffel Tower"*/}
@@ -117,21 +164,36 @@ export default function Page() {
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>14:30 AM</h3>
-              <p className={`text-base`}>Just my luck, no ice. God help us, we&apos;re in the hands of engineers. </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>15:30 AM</h3>
-              <p className={`text-base`}>I gave it a cold? I gave it a virus. A computer virus. </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>16:30 AM</h3>
-              <p className={`text-base`}>
-                God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.{' '}
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
               </p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>17:30 AM</h3>
-              <p className={`text-base`}>What do they got in there? King Kong? </p>
+              <p className={`text-balance text-base`}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
+                enim cursus gravida.
+              </p>
+              <FontAwesomeIcon
+                icon={faMountainSun}
+                className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}
+                title={`Kép helye`}
+              />
               {/*<img*/}
               {/*  src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg"*/}
               {/*  alt="Black and white Mountian view"*/}
@@ -158,7 +220,7 @@ export default function Page() {
       {/*        February 2022*/}
       {/*      </time>*/}
       {/*      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Application UI code in Tailwind CSS</h3>*/}
-      {/*      <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">*/}
+      {/*      <p className="mb-4 text-balance text-base font-normal text-gray-500 dark:text-gray-400">*/}
       {/*        Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order*/}
       {/*        E-commerce & Marketing pages.*/}
       {/*      </p>*/}
@@ -173,7 +235,7 @@ export default function Page() {
       {/*      <div className="absolute -start-1.5 mt-1.5 size-3 rounded-full border bg-gray-200 border-white dark:bg-gray-700 dark:border-gray-900"></div>*/}
       {/*      <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2022</time>*/}
       {/*      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Marketing UI design in Figma</h3>*/}
-      {/*      <p className="text-base font-normal text-gray-500 dark:text-gray-400">*/}
+      {/*      <p className="text-balance text-base font-normal text-gray-500 dark:text-gray-400">*/}
       {/*        All of the pages and components are first designed in Figma and we keep a parity between the two versions*/}
       {/*        even as we update the project.*/}
       {/*      </p>*/}
@@ -182,7 +244,7 @@ export default function Page() {
       {/*      <div className="absolute -start-1.5 mt-1.5 size-3 rounded-full border bg-gray-200 border-white dark:bg-gray-700 dark:border-gray-900"></div>*/}
       {/*      <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2022</time>*/}
       {/*      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">E-Commerce UI code in Tailwind CSS</h3>*/}
-      {/*      <p className="text-base font-normal text-gray-500 dark:text-gray-400">*/}
+      {/*      <p className="text-balance text-base font-normal text-gray-500 dark:text-gray-400">*/}
       {/*        Get started with dozens of web components and interactive elements built on top of Tailwind CSS.*/}
       {/*      </p>*/}
       {/*    </li>*/}
