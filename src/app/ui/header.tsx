@@ -69,42 +69,7 @@ function DialogLink({
     </Link>
   );
 }
-type UserChoice = {
-  outcome: 'accepted' | 'dismissed';
-  platform: string;
-};
-type BeforeInstallPromptEvent = Event & {
-  prompt: () => Promise<UserChoice>;
-  platforms: string[];
-  userChoice: Promise<UserChoice>;
-};
-// This variable will save the event for later use.
-let deferredPrompt: BeforeInstallPromptEvent | null = null;
-let showInstall: boolean = false;
-if (window != null) {
-  // @ts-expect-error - Before BeforeInstallPromptEvent type error
-  window.addEventListener('beforeinstallprompt', (e: BeforeInstallPromptEvent) => {
-    // Prevents the default mini-infobar or install dialog from appearing on mobile
-    e.preventDefault();
-    // Save the event because you'll need to trigger it later.
-    deferredPrompt = e;
-    showInstall = true;
-    // Show your customized install prompt for your PWA
-    // Your own UI doesn't have to be a single element, you
-    // can have buttons in different locations, or wait to prompt
-    // as part of a critical journey.
-    console.log('install the app');
-    // deferredPrompt.prompt();
-  });
-}
-async function Install() {
-  showInstall = false;
-  if (deferredPrompt) {
-    await deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(outcome);
-  }
-}
+
 function DisclosureMenu({
   title,
   items,
@@ -248,15 +213,6 @@ export default function Header() {
               <IconPlayHandball size={40} />
             </Link>
           </div>
-          <button
-            className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors
-            duration-200
-            ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
-            onClick={Install}
-          >
-            Telepites
-          </button>
           <div className="flex lg:hidden">
             <button
               type={'button'}

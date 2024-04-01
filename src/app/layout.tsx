@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 import './globals.css';
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from './manifest';
 import Footer from '@/app/ui/footer';
+import InstallBanner from '@/app/ui/install-banner';
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -76,6 +77,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#650e1d" />
       </head>
       <body className={`flex min-h-svh flex-col dark:bg-gray-800`}>
+        <InstallBanner />
         {children}
         <Footer />
       </body>
