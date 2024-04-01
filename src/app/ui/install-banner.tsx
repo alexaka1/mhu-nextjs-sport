@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { captureMessage } from '@sentry/nextjs';
-import { deviceDetect, isIOS, isMobile } from 'react-device-detect';
+import { isIOS, isMobile } from 'react-device-detect';
 
 type UserChoice = {
   outcome: 'accepted' | 'dismissed';
@@ -18,14 +18,15 @@ export default function InstallBanner() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstall, setShowInstall] = useState(false);
   const [deviceType, setDeviceType] = useState<'mobil' | 'asztali' | 'iOS kezdőképernyős'>('mobil');
+  const installPrompt = (e: BeforeInstallPromptEvent) => {
+    // Prevents the default mini-infobar or install dialog from appearing on mobile
+    e.preventDefault();
+    setDeferredPrompt(e);
+    setShowInstall(true);
+  };
   if (typeof window != 'undefined' && window != null) {
     // @ts-expect-error - Before BeforeInstallPromptEvent type error
-    window.addEventListener('beforeinstallprompt', (e: BeforeInstallPromptEvent) => {
-      // Prevents the default mini-infobar or install dialog from appearing on mobile
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setShowInstall(true);
-    });
+    window.addEventListener('beforeinstallprompt', installPrompt);
   }
   useEffect(() => {
     if (isMobile) {
@@ -35,6 +36,11 @@ export default function InstallBanner() {
     } else {
       setDeviceType('asztali');
     }
+  }, []);
+  useEffect(() => {
+    // cleanup
+    // @ts-expect-error - Before BeforeInstallPromptEvent type error
+    window.removeEventListener('beforeinstallprompt', installPrompt);
   }, []);
   async function Install() {
     setShowInstall(false);
@@ -46,7 +52,7 @@ export default function InstallBanner() {
   }
   return (
     <div
-      className={`text-balance px-4 py-3 bg-primary text-bg-contrast ${showInstall || isIOS ? 'hidden standalone:block' : 'hidden'}`}
+      className={`hidden text-balance px-4 py-3 bg-primary text-bg-contrast ${showInstall || isIOS ? 'browser:block' : ''}`}
     >
       <p className="text-center text-sm font-medium">
         Már elérhető {deviceType} alkalmazásként is!&nbsp;
