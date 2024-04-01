@@ -39,7 +39,7 @@ export default function LandingLinks() {
             -&gt;
           </span>
         </h2>
-        <p className={`m-0 max-w-[30ch] text-sm text-bg-contrast/75`}>Sandra Hotel és Wesselényi Hotel</p>
+        <p className={`m-0 max-w-[30ch] text-sm text-bg-contrast/75`}>Sandra Hotel és Hotel Bessenyei</p>
       </LandingLink>
       <LandingLink href={`/programok`}>
         <h2 className={`mb-3 text-nowrap text-2xl font-semibold`}>
