@@ -10,6 +10,10 @@ const config = {
   ],
   theme: {
     extend: {
+      screens: {
+        browser: { raw: '(display-mode:browser)' },
+        standalone: { raw: '(display-mode:standalone)' },
+      },
       colors: {
         primary: {
           DEFAULT: 'oklch(33.14% 0.1186 18.15 / <alpha-value>)',

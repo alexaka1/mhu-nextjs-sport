@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { captureMessage } from '@sentry/nextjs';
 import { deviceDetect, isIOS, isMobile } from 'react-device-detect';
 
@@ -17,16 +17,25 @@ type BeforeInstallPromptEvent = Event & {
 export default function InstallBanner() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstall, setShowInstall] = useState(false);
+  const [deviceType, setDeviceType] = useState<'mobil' | 'asztali' | 'iOS kezdőképernyős'>('mobil');
   if (typeof window != 'undefined' && window != null) {
     // @ts-expect-error - Before BeforeInstallPromptEvent type error
     window.addEventListener('beforeinstallprompt', (e: BeforeInstallPromptEvent) => {
-      console.log(deviceDetect(navigator.userAgent));
       // Prevents the default mini-infobar or install dialog from appearing on mobile
       e.preventDefault();
       setDeferredPrompt(e);
       setShowInstall(true);
     });
   }
+  useEffect(() => {
+    if (isMobile) {
+      setDeviceType('mobil');
+    } else if (isIOS) {
+      setDeviceType('iOS kezdőképernyős');
+    } else {
+      setDeviceType('asztali');
+    }
+  }, []);
   async function Install() {
     setShowInstall(false);
     if (deferredPrompt) {
@@ -37,10 +46,10 @@ export default function InstallBanner() {
   }
   return (
     <div
-      className={`text-balance px-4 py-3 bg-primary text-bg-contrast ${showInstall || isIOS ? '[@media(display-mode: browser)]:block' : 'hidden'}`}
+      className={`text-balance px-4 py-3 bg-primary text-bg-contrast ${showInstall || isIOS ? 'hidden standalone:block' : 'hidden'}`}
     >
       <p className="text-center text-sm font-medium">
-        Már elérhető {isMobile ? 'mobil' : 'asztali'} alkalmazásként is!&nbsp;
+        Már elérhető {deviceType} alkalmazásként is!&nbsp;
         <button
           onClick={() => {
             void Install().then();
