@@ -114,6 +114,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'utfs.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+      }
     ],
   },
   async headers() {

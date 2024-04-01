@@ -54,7 +54,7 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>10:00 AM</h3>
               <p className={`text-balance text-base`}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.{' '}
+                enim cursus gravida.
               </p>
             </Entry>
             <Entry>
