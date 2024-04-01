@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMountainSun } from '@fortawesome/free-solid-svg-icons/faMountainSun';
+import { env } from 'process';
 
 export const metadata: Metadata = {
   title: 'Szállás',
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
 //   { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
 //   { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
 // ];
+
+const mapsApiKey = env['NEXT_PUBLIC_MAPS_API_KEY'] ?? '';
 
 export default function Lodging() {
   return (
@@ -36,7 +39,7 @@ export default function Lodging() {
               className={`min-h-96 w-full border-0`}
               loading="lazy"
               allowFullScreen={true}
-              src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSeMFrnefOEcRfHvxkjnMl70&key=AIzaSyDUNPmeSfczknA0DtaSmUQS8RPugT_NCrU"
+              src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSeMFrnefOEcRfHvxkjnMl70&key=${mapsApiKey}`}
             ></iframe>
           </div>
           {/*<dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">*/}
@@ -74,7 +77,7 @@ export default function Lodging() {
               className={`min-h-96 w-full border-0`}
               loading="lazy"
               allowFullScreen={true}
-              src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSeMFrnefOEcRTc8ve48eU88&key=AIzaSyDUNPmeSfczknA0DtaSmUQS8RPugT_NCrU"
+              src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSeMFrnefOEcRTc8ve48eU88&key=${mapsApiKey}`}
             ></iframe>
           </div>
           {/*<dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">*/}

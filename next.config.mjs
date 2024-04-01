@@ -6,7 +6,7 @@ const cspEndpoint = {
   max_age: 10886400,
   endpoints: [
     {
-      url: 'https://o4506996276461568.ingest.us.sentry.io/api/4506996280393728/security/?sentry_key=eadce7a755cd21925873fe1a8a0386fb',
+      url: process.env.NEXT_PUBLIC_SENTRY_REPORT_URI,
     },
   ],
   include_subdomains: true,
@@ -148,8 +148,8 @@ export default withSentryConfig(
 
     // Suppresses source map uploading logs during build
     silent: true,
-    org: 'alexaka1',
-    project: 'mhu-nextjs-sport',
+    org: process.env.SENTRY_ORG,
+    project: process.env.SENTRY_PROJECT,
   },
   {
     // For all available options, see:

@@ -4,9 +4,10 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import { init } from '@sentry/nextjs';
+import { env } from 'process';
 
 init({
-  dsn: 'https://eadce7a755cd21925873fe1a8a0386fb@o4506996276461568.ingest.us.sentry.io/4506996280393728',
+  dsn: env['NEXT_PUBLIC_SENTRY_DSN'],
 
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1,
