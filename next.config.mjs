@@ -170,7 +170,7 @@ export default withSentryConfig(
     hideSourceMaps: true,
 
     // Automatically tree-shake Sentry logger statements to reduce bundle size
-    disableLogger:  process.env.NODE_ENV !== 'development',
+    disableLogger: process.env.NODE_ENV !== 'development',
 
     // Enables automatic instrumentation of Vercel Cron Monitors.
     // See the following for more information:
