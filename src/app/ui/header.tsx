@@ -214,11 +214,11 @@ function UserInfo() {
   const returnUrl = new URLSearchParams({ returnUrl: pathname });
 
   if (!auth) {
-    return <Button href={`/login${returnUrl.toString()}`}>Bejelentkezés</Button>;
+    return <Button href={`/login?${returnUrl.toString()}`}>Bejelentkezés</Button>;
   }
   return (
     <>
-      <Button href={`/login${returnUrl.toString()}`}>Bejelentkezés</Button>
+      <Button href={`/login?${returnUrl.toString()}`}>Bejelentkezés</Button>
       <button
         className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors
             duration-200
