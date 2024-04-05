@@ -12,6 +12,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
 import { signOut, getSession } from 'next-auth/react';
 import Image from 'next/image';
+import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -59,7 +60,11 @@ function DialogLink({
   href,
   children,
   onClick,
-}: Readonly<{ href: string; children: ReactNode; onClick?: MouseEventHandler<HTMLElement> | undefined }>) {
+}: Readonly<{
+  href: string;
+  children: ReactNode;
+  onClick?: MouseEventHandler<HTMLElement> | undefined;
+}>) {
   const pathname = usePathname();
   return (
     <Link
@@ -200,34 +205,59 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   );
 }
 
-function UserInfo() {
-  const [auth, setAuth] = useState(false);
-  const pathname = usePathname();
-  useEffect(() => {
-    async function checkAuth() {
-      const session = await getSession();
-      console.log(session);
-      setAuth(session?.user != null);
-    }
-    void checkAuth();
-  }, []);
-
-  const returnUrl = new URLSearchParams({ returnUrl: pathname });
-
+function LoginButton({ returnUrl, auth }: Readonly<{ returnUrl: string; auth: boolean }>): ReactNode {
   if (!auth) {
-    return <Button href={`/login?${returnUrl.toString()}`}>Bejelentkezés</Button>;
+    return <Button href={`/login?${returnUrl}`}>Bejelentkezés</Button>;
   }
+  return null;
+}
+
+function UserInfo({
+  name,
+  email,
+  avatar,
+  pathname,
+  auth,
+}: Readonly<{
+  name: string;
+  email: string;
+  avatar: string;
+  pathname: string;
+  auth: boolean;
+}>): ReactNode {
+  if (!auth) {
+    return null;
+  }
+
+  function Avatar({ src, alt }: Readonly<{ src: string; alt: string }>) {
+    if (src === '') {
+      return (
+        <FontAwesomeIcon
+          icon={faUser}
+          className={`size-6 items-center justify-center rounded-full text-bg-contrast`}
+          aria-hidden="true"
+        />
+      );
+    }
+    return (
+      <Image
+        className="size-8 items-center justify-center rounded-full"
+        src={src}
+        alt={alt}
+        width={36}
+        height={36}
+        quality={100}
+      />
+    );
+  }
+
   return (
     <>
       <Popover className="relative">
-        <Popover.Button>
-          <Image
-            className="size-8 items-center justify-center rounded-full"
-            src="https://avatars.githubusercontent.com/u/22166651?v=4"
-            width={36}
-            height={36}
-            alt="felhasználó avatár"
-          />
+        <Popover.Button
+          className={`flex rounded-full text-sm focus:ring-4 focus:ring-primary-600 md:me-0 dark:focus:ring-primary-200`}
+        >
+          <Avatar src={avatar} alt={`${name} profilképe`} />
         </Popover.Button>
         <Popover.Overlay className="fixed inset-0 opacity-30 bg-black" />
         <Transition
@@ -239,24 +269,27 @@ function UserInfo() {
           leaveFrom="opacity-100 motion-safe:translate-y-0"
           leaveTo="opacity-0 motion-safe:translate-y-1"
         >
-          <Popover.Panel className="absolute -left-4 top-full z-10 mt-3 min-w-10 overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary dark:bg-gray-800">
-            <div className="p-4">
-              <p className={`text-sm text-bg-contrast`}>Martossy Alex Mark</p>
-              <div
-                className={`group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-900`}
-              >
-                <div className="flex-auto">
-                  <Popover.Button
-                    onClick={() => {
-                      void signOut({ redirect: true, callbackUrl: pathname });
-                    }}
-                    className="block font-semibold text-bg-contrast"
-                  >
-                    Kijelentkezés
-                  </Popover.Button>
-                </div>
-              </div>
+          <Popover.Panel className="absolute -left-8 z-50 my-4 list-none divide-y rounded-lg text-base shadow divide-gray-100 bg-white dark:divide-gray-600 dark:bg-gray-700">
+            <div className="px-4 py-3">
+              <span className="block text-sm text-gray-900 dark:text-bg-contrast" title={name}>
+                {name}
+              </span>
+              <span className="block truncate text-sm text-gray-500 dark:text-bg-contrast/80" title={email}>
+                {email}
+              </span>
             </div>
+            <ul className="py-2">
+              <li>
+                <Popover.Button
+                  onClick={() => {
+                    void signOut({ redirect: true, callbackUrl: pathname });
+                  }}
+                  className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Kijelentkezés
+                </Popover.Button>
+              </li>
+            </ul>
           </Popover.Panel>
         </Transition>
       </Popover>
@@ -278,11 +311,30 @@ function UserInfo() {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // const { data: session, status } = useSession();
+  const [auth, setAuth] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [avatar, setAvatar] = useState('');
+  const pathname = usePathname();
+  useEffect(() => {
+    async function checkAuth() {
+      const session = await getSession();
+      if (session?.user != null) {
+        setName(session.user.name ?? '');
+        setEmail(session.user.email ?? '');
+        setAvatar(session.user.image ?? '');
+      }
+      setAuth(session?.user != null);
+    }
+
+    void checkAuth();
+  }, []);
+
+  const returnUrl = new URLSearchParams({ returnUrl: pathname });
   return (
     <>
       <header className="bg-gray-100 dark:bg-gray-900">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav className="mx-auto flex max-w-7xl items-center p-6 lg:justify-between lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link
               className="block transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
@@ -291,17 +343,6 @@ export default function Header() {
               <span className="sr-only">Főoldal</span>
               <IconPlayHandball size={40} />
             </Link>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type={'button'}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              {/*<input type="checkbox" id="toggler" className={``} />*/}
-              <span className="sr-only">Fő menü megnyitása</span>
-              <FontAwesomeIcon className={`size-6`} icon={faBars} aria-hidden="true" />
-            </button>
           </div>
           <Popover.Group as={'menu'} className="hidden lg:flex lg:gap-x-12">
             {menus.map((menu) => {
@@ -324,21 +365,25 @@ export default function Header() {
               }
             })}
           </Popover.Group>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <UserInfo />
+          <span className={`px-4 lg:hidden`}></span>
+          <div className="lg:flex lg:flex-1 lg:justify-end">
+            <span className={`hidden lg:block`}>
+              <LoginButton returnUrl={returnUrl.toString()} auth={auth} />
+            </span>
+            <UserInfo name={name} email={email} avatar={avatar} pathname={pathname} auth={auth} />
           </div>
-          {/*<div className="hidden lg:flex lg:flex-1 lg:justify-end">*/}
-          {/*  <Link href={`/fiok`} title={`Fiókom`}>*/}
-          {/*    <Image*/}
-          {/*      className="inline-block size-12 rounded-full ring-1 ring-white"*/}
-          {/*      src="https://utfs.io/f/ce34ec0d-6cae-41de-b552-0059d9b027ef-c9cbbw.jpg"*/}
-          {/*      alt="Avatar"*/}
-          {/*      width={0}*/}
-          {/*      height={0}*/}
-          {/*      quality={100}*/}
-          {/*    />*/}
-          {/*  </Link>*/}
-          {/*</div>*/}
+          <span className={`grow lg:hidden`}></span>
+          <div className="flex lg:hidden">
+            <button
+              type={'button'}
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              {/*<input type="checkbox" id="toggler" className={``} />*/}
+              <span className="sr-only">Fő menü megnyitása</span>
+              <FontAwesomeIcon className={`size-6`} icon={faBars} aria-hidden="true" />
+            </button>
+          </div>
         </nav>
         <Transition as={Fragment} show={mobileMenuOpen}>
           <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
@@ -400,20 +445,8 @@ export default function Header() {
                       })}
                     </div>
                     <div className="py-6">
-                      <Button href={'/login'}>Bejelentkezés</Button>
+                      <LoginButton returnUrl={returnUrl.toString()} auth={auth} />
                     </div>
-                    {/*<div className="py-6">*/}
-                    {/*  <Link href={`/fiok`} title={`Fiókom`}>*/}
-                    {/*    <Image*/}
-                    {/*      className="inline-block size-12 rounded-full ring-1 ring-white"*/}
-                    {/*      src="https://utfs.io/f/ce34ec0d-6cae-41de-b552-0059d9b027ef-c9cbbw.jpg"*/}
-                    {/*      alt="Avatar"*/}
-                    {/*      width={0}*/}
-                    {/*      height={0}*/}
-                    {/*      quality={100}*/}
-                    {/*    />*/}
-                    {/*  </Link>*/}
-                    {/*</div>*/}
                   </div>
                 </div>
               </Dialog.Panel>
