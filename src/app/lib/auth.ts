@@ -10,6 +10,8 @@ import { and, eq } from 'drizzle-orm/sql/expressions/conditions';
 export const {
   handlers: { GET, POST },
   auth,
+  signIn,
+  signOut,
 } = NextAuth({
   adapter: getAdapter(),
   providers: [

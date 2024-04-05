@@ -1,11 +1,20 @@
 'use client';
 import { signIn } from 'next-auth/react';
 
-export default function Home() {
+export default function Home({
+  searchParams,
+}: Readonly<{
+  searchParams?: {
+    returnUrl?: string;
+  };
+}>) {
+  const page = searchParams?.returnUrl ?? '/eredmenyek';
   return (
     <>
       <button
-        onClick={() => signIn('github')}
+        onClick={() => {
+          void signIn('github', { callbackUrl: page });
+        }}
         className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors
             duration-200
             ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2

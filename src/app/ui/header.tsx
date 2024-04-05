@@ -4,12 +4,13 @@ import Link from 'next/link';
 import Button from '@/app/ui/buttons/link';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fragment, MouseEventHandler, ReactNode, useState } from 'react';
+import { Fragment, MouseEventHandler, ReactNode, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
+import { signOut, getSession } from 'next-auth/react';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -198,8 +199,44 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   );
 }
 
+function UserInfo() {
+  const [auth, setAuth] = useState(false);
+  const pathname = usePathname();
+  useEffect(() => {
+    async function checkAuth() {
+      const session = await getSession();
+      console.log(session);
+      setAuth(session?.user != null);
+    }
+    void checkAuth();
+  }, []);
+
+  const returnUrl = new URLSearchParams({ returnUrl: pathname });
+
+  if (!auth) {
+    return <Button href={`/login${returnUrl.toString()}`}>Bejelentkezés</Button>;
+  }
+  return (
+    <>
+      <Button href={`/login${returnUrl.toString()}`}>Bejelentkezés</Button>
+      <button
+        className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors
+            duration-200
+            ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2
+            focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
+        onClick={() => {
+          void signOut({ redirect: true, callbackUrl: pathname });
+        }}
+      >
+        Kijelentkezés
+      </button>
+    </>
+  );
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // const { data: session, status } = useSession();
   return (
     <>
       <header className="bg-gray-100 dark:bg-gray-900">
@@ -246,7 +283,7 @@ export default function Header() {
             })}
           </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Button href={'/login'}>Bejelentkezés</Button>
+            <UserInfo />
           </div>
           {/*<div className="hidden lg:flex lg:flex-1 lg:justify-end">*/}
           {/*  <Link href={`/fiok`} title={`Fiókom`}>*/}
