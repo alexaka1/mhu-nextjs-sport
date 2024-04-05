@@ -24,11 +24,9 @@ export default function InstallBanner() {
     setDeferredPrompt(e);
     setShowInstall(true);
   };
-  if (typeof window != 'undefined' && window != null) {
+  useEffect(() => {
     // @ts-expect-error - Before BeforeInstallPromptEvent type error
     window.addEventListener('beforeinstallprompt', installPrompt);
-  }
-  useEffect(() => {
     if (isMobile) {
       setDeviceType('mobil');
     } else if (isIOS) {
@@ -36,11 +34,11 @@ export default function InstallBanner() {
     } else {
       setDeviceType('asztali');
     }
-  }, []);
-  useEffect(() => {
-    // cleanup
-    // @ts-expect-error - Before BeforeInstallPromptEvent type error
-    window.removeEventListener('beforeinstallprompt', installPrompt);
+    return () => {
+      // cleanup
+      // @ts-expect-error - Before BeforeInstallPromptEvent type error
+      window.removeEventListener('beforeinstallprompt', installPrompt);
+    };
   }, []);
   async function Install() {
     setShowInstall(false);
