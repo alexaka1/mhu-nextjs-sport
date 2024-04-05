@@ -11,6 +11,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
 import { signOut, getSession } from 'next-auth/react';
+import Image from 'next/image';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -218,9 +219,50 @@ function UserInfo() {
   }
   return (
     <>
-      <Button href={`/login?${returnUrl.toString()}`}>Bejelentkezés</Button>
+      <Popover className="relative">
+        <Popover.Button>
+          <Image
+            className="size-8 items-center justify-center rounded-full"
+            src="https://avatars.githubusercontent.com/u/22166651?v=4"
+            width={36}
+            height={36}
+            alt="felhasználó avatár"
+          />
+        </Popover.Button>
+        <Popover.Overlay className="fixed inset-0 opacity-30 bg-black" />
+        <Transition
+          as={Fragment}
+          enter="transition ease-out duration-200"
+          enterFrom="opacity-0 motion-safe:translate-y-1"
+          enterTo="opacity-100 motion-safe:translate-y-0"
+          leave="transition ease-in duration-150"
+          leaveFrom="opacity-100 motion-safe:translate-y-0"
+          leaveTo="opacity-0 motion-safe:translate-y-1"
+        >
+          <Popover.Panel className="absolute -left-4 top-full z-10 mt-3 min-w-10 overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary dark:bg-gray-800">
+            <div className="p-4">
+              <p className={`text-sm text-bg-contrast`}>Martossy Alex Mark</p>
+              <div
+                className={`group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-900`}
+              >
+                <div className="flex-auto">
+                  <Popover.Button
+                    onClick={() => {
+                      void signOut({ redirect: true, callbackUrl: pathname });
+                    }}
+                    className="block font-semibold text-bg-contrast"
+                  >
+                    Kijelentkezés
+                  </Popover.Button>
+                </div>
+              </div>
+            </div>
+          </Popover.Panel>
+        </Transition>
+      </Popover>
+
       <button
-        className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors
+        className={`hidden rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors
             duration-200
             ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2
             focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
