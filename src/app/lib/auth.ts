@@ -7,7 +7,7 @@ import * as schema from '@/app/db/schema';
 import { Adapter } from '@auth/core/adapters';
 import { and, eq } from 'drizzle-orm/sql/expressions/conditions';
 import Google from '@auth/core/providers/google';
-import { OAuthConfig } from '@auth/core/providers';
+import SimpleLogin from '@/app/lib/simple-login';
 
 export const {
   handlers: { GET, POST },
@@ -26,12 +26,9 @@ export const {
       clientSecret: process.env['GOOGLE_CLIENT_SECRET'] as string,
       allowDangerousEmailAccountLinking: true,
     }),
-    {
-      id: 'simplelogin',
-      name: 'SimpleLogin',
-      type: 'oidc',
-      wellKnown: 'https://app.simplelogin.io/.well-known/openid-configuration',
-      issuer: 'https://app.simplelogin.io/',
+    SimpleLogin({
+      clientId: process.env['SIMPLELOGIN_CLIENT_ID'] as string,
+      clientSecret: process.env['SIMPLELOGIN_CLIENT_SECRET'] as string,
       profile(profile) {
         return {
           id: profile.sub,
@@ -40,23 +37,12 @@ export const {
           image: profile.avatar_url,
         };
       },
-      clientId: process.env['SIMPLELOGIN_CLIENT_ID'] as string,
-      clientSecret: process.env['SIMPLELOGIN_CLIENT_SECRET'] as string,
-    } satisfies OAuthConfig<SimpleLoginProfile>,
+    }),
   ],
   pages: {
     signIn: '/login',
   },
 });
-type SimpleLoginProfile = {
-  id: number;
-  sub: string;
-  email: string;
-  email_verified: boolean;
-  name: string;
-  avatar_url: string | undefined;
-  client: string;
-};
 
 function getAdapter(): Adapter {
   return {
