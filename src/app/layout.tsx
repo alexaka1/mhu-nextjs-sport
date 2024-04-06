@@ -6,6 +6,7 @@ import './globals.css';
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from './manifest';
 import Footer from '@/app/ui/footer';
 import InstallBanner from '@/app/ui/install-banner';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -80,6 +81,7 @@ export default function RootLayout({
         <InstallBanner />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );

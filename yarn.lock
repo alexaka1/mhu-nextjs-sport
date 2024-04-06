@@ -1718,6 +1718,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/speed-insights@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "@vercel/speed-insights@npm:1.0.10"
+  peerDependencies:
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    react: ^18 || ^19
+    svelte: ^4
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 10/5ceaad884a37c539e19f70da383f46d4e937dbd6fbad3c0d27b2c5748ca60649ce2259d24788d8564fba051926c444bbbe6e8549e303d75eb9cfb6edc2dedbde
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -4881,6 +4908,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.24"
     "@typescript-eslint/eslint-plugin": "npm:^7.5.0"
     "@typescript-eslint/parser": "npm:^7.5.0"
+    "@vercel/speed-insights": "npm:^1.0.10"
     autoprefixer: "npm:^10.4.19"
     cssnano: "npm:^6.1.2"
     drizzle-kit: "npm:^0.20.14"
@@ -4892,6 +4920,7 @@ __metadata:
     jiti: "npm:^1.21.0"
     next: "npm:14.1.4"
     next-auth: "npm:^5.0.0-beta.16"
+    next-axiom: "npm:^1.1.1"
     postcss: "npm:^8.4.38"
     prettier: "npm:^3.2.5"
     prettier-plugin-tailwindcss: "npm:^0.5.13"
@@ -5132,6 +5161,19 @@ __metadata:
     nodemailer:
       optional: true
   checksum: 10/80b8d343866f3c6bb7a7cab1218c57323378dc8871c4d2a6a397e27b1a571c6e6a32a6aaddf3d4c1bd9c8a14d19d69be695d8fa84bf55581716ff865d019944d
+  languageName: node
+  linkType: hard
+
+"next-axiom@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "next-axiom@npm:1.1.1"
+  dependencies:
+    remeda: "npm:^1.29.0"
+    whatwg-fetch: "npm:^3.6.2"
+  peerDependencies:
+    next: ">=13.4"
+    react: ">=18.0.0"
+  checksum: 10/bf8e2a8a1dff3319a7f1be59fcfd2bfce8af50ae513efb9473e8230a617653b143755d48f583fcf3a60373c7dddc13c507304dd040f914a4851c7cdae204d06b
   languageName: node
   linkType: hard
 
@@ -6189,6 +6231,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"remeda@npm:^1.29.0":
+  version: 1.57.2
+  resolution: "remeda@npm:1.57.2"
+  checksum: 10/97e5e8c80aa8b0074419c3defec1c236207c8a012273bdee93ce064a1056fa3128287f1fd136978bfcf6cb7f59fc0b3322b945a9edcbb5efa304b9de758de32c
+  languageName: node
+  linkType: hard
+
 "resolve-from@npm:^4.0.0":
   version: 4.0.0
   resolution: "resolve-from@npm:4.0.0"
@@ -7153,6 +7202,13 @@ __metadata:
   version: 3.2.3
   resolution: "webpack-sources@npm:3.2.3"
   checksum: 10/a661f41795d678b7526ae8a88cd1b3d8ce71a7d19b6503da8149b2e667fc7a12f9b899041c1665d39e38245ed3a59ab68de648ea31040c3829aa695a5a45211d
+  languageName: node
+  linkType: hard
+
+"whatwg-fetch@npm:^3.6.2":
+  version: 3.6.20
+  resolution: "whatwg-fetch@npm:3.6.20"
+  checksum: 10/2b4ed92acd6a7ad4f626a6cb18b14ec982bbcaf1093e6fe903b131a9c6decd14d7f9c9ca3532663c2759d1bdf01d004c77a0adfb2716a5105465c20755a8c57c
   languageName: node
   linkType: hard
 
