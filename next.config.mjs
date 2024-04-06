@@ -1,5 +1,10 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import withSerwistInit from '@serwist/next';
+import { fileURLToPath } from 'node:url';
+import createJiti from 'jiti';
+const jiti = createJiti(fileURLToPath(import.meta.url));
+
+jiti('./src/app/lib/env');
 
 const imageSrc = `https://utfs.io https://source.unsplash.com https://avatars.githubusercontent.com https://*.googleusercontent.com https://*.upcloudobjects.com https://app.simplelogin.io`;
 const cspEndpoint = {

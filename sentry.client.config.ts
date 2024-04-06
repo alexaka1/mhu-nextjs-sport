@@ -3,10 +3,10 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import { init, replayIntegration } from '@sentry/nextjs';
-import * as process from 'process';
+import { env } from '@/app/lib/env';
 
 init({
-  dsn: process.env['NEXT_PUBLIC_SENTRY_DSN'],
+  dsn: env.NEXT_PUBLIC_SENTRY_DSN,
 
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1,

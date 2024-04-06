@@ -2,12 +2,12 @@ import NextAuth from 'next-auth';
 import GitHub from 'next-auth/providers/github';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import { db } from '@/app/db/db';
-import * as process from 'process';
 import * as schema from '@/app/db/schema';
 import { Adapter } from '@auth/core/adapters';
 import { and, eq } from 'drizzle-orm/sql/expressions/conditions';
 import Google from '@auth/core/providers/google';
 import SimpleLogin, { SimpleLoginProfile } from '@/app/lib/simple-login';
+import { env } from '@/app/lib/env';
 
 export const {
   handlers: { GET, POST },
@@ -18,17 +18,17 @@ export const {
   adapter: getAdapter(),
   providers: [
     GitHub({
-      clientId: process.env['GITHUB_CLIENT_ID'] as string,
-      clientSecret: process.env['GITHUB_CLIENT_SECRET'] as string,
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
     Google({
-      clientId: process.env['GOOGLE_CLIENT_ID'] as string,
-      clientSecret: process.env['GOOGLE_CLIENT_SECRET'] as string,
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
       allowDangerousEmailAccountLinking: true,
     }),
     SimpleLogin<SimpleLoginProfile>({
-      clientId: process.env['SIMPLELOGIN_CLIENT_ID'] as string,
-      clientSecret: process.env['SIMPLELOGIN_CLIENT_SECRET'] as string,
+      clientId: env.SIMPLELOGIN_CLIENT_ID,
+      clientSecret: env.SIMPLELOGIN_CLIENT_SECRET,
       profile(profile) {
         return {
           id: profile.sub,

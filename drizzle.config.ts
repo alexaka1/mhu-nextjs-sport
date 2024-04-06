@@ -1,11 +1,11 @@
 import type { Config } from 'drizzle-kit';
-import process from 'process';
+import { env } from '@/app/lib/env';
 
 export default {
   schema: './src/app/db/schema.ts',
   out: './drizzle',
   driver: 'libsql',
   dbCredentials: {
-    url: process.env['TURSO_DATABASE_URL'] as string,
+    url: env.TURSO_DATABASE_URL,
   },
 } satisfies Config;
