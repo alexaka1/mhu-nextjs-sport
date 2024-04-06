@@ -1,7 +1,7 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import withSerwistInit from '@serwist/next';
 
-const imageSrc = `https://utfs.io https://source.unsplash.com https://avatars.githubusercontent.com https://*.googleusercontent.com https://*.upcloudobjects.com`;
+const imageSrc = `https://utfs.io https://source.unsplash.com https://avatars.githubusercontent.com https://*.googleusercontent.com https://*.upcloudobjects.com https://app.simplelogin.io`;
 const cspEndpoint = {
   group: 'csp-endpoint',
   max_age: 10886400,
