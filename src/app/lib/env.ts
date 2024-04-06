@@ -4,8 +4,6 @@ import * as process from 'process';
 
 export const env = createEnv({
   server: {
-    ENABLE_EXPERIMENTAL_COREPACK: z.number({ coerce: true }).max(1).min(0),
-    NEXT_TELEMETRY_DISABLED: z.number({ coerce: true }).max(1).min(0),
     SENTRY_AUTH_TOKEN: z.string(),
     SENTRY_ORG: z.string(),
     SENTRY_PROJECT: z.string(),
@@ -15,13 +13,13 @@ export const env = createEnv({
     GITHUB_CLIENT_ID: z.string(),
     GITHUB_CLIENT_SECRET: z.string(),
     AUTH_SECRET: z.string(),
-    GOOGLE_CLIENT_ID: z.string(),
-    GOOGLE_CLIENT_SECRET: z.string(),
+    GOOGLE_CLIENT_ID: z.string().optional(),
+    GOOGLE_CLIENT_SECRET: z.string().optional(),
     SIMPLELOGIN_CLIENT_ID: z.string(),
     SIMPLELOGIN_CLIENT_SECRET: z.string(),
   },
   client: {
-    NEXT_PUBLIC_MAPS_API_KEY: z.string(),
+    NEXT_PUBLIC_MAPS_API_KEY: z.string().optional(),
     NEXT_PUBLIC_SENTRY_DSN: z.string(),
     NEXT_PUBLIC_SENTRY_REPORT_URI: z.string(),
   },

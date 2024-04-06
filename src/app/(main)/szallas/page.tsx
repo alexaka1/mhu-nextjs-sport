@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMountainSun } from '@fortawesome/free-solid-svg-icons/faMountainSun';
-import { env } from 'process';
+import { env } from '@/app/lib/env';
 
 export const metadata: Metadata = {
   title: 'Szállás',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 //   { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
 // ];
 
-const mapsApiKey = env['NEXT_PUBLIC_MAPS_API_KEY'] ?? '';
+const mapsApiKey = env.NEXT_PUBLIC_MAPS_API_KEY;
 
 export default function Lodging() {
   return (
