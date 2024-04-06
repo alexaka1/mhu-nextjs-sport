@@ -240,14 +240,7 @@ function UserInfo({
       );
     }
     return (
-      <Image
-        className="size-8 items-center justify-center rounded-full"
-        src={src}
-        alt={alt}
-        width={36}
-        height={36}
-        quality={100}
-      />
+      <img className="size-8 items-center justify-center rounded-full" src={src} alt={alt} width={36} height={36} />
     );
   }
 

@@ -1,6 +1,7 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import withSerwistInit from '@serwist/next';
 
+const imageSrc = `https://utfs.io https://source.unsplash.com https://avatars.githubusercontent.com https://*.googleusercontent.com https://*.upcloudobjects.com`;
 const cspEndpoint = {
   group: 'csp-endpoint',
   max_age: 10886400,
@@ -43,7 +44,7 @@ function createCspHeaders(nonce) {
       default-src 'none';
       script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline';
       connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ ${reportUris};
-      img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob:;
+      img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob: ${imageSrc};
       frame-src 'self' https://vercel.live/ https://vercel.com https://www.google.com/;
       style-src-elem 'self' 'unsafe-inline' https://vercel.live/;
       manifest-src 'self';
@@ -68,7 +69,7 @@ function createCspHeaders(nonce) {
       script-src 'self' 'unsafe-inline';
       manifest-src 'self';
       worker-src 'self' blob:;
-      img-src 'self' blob: data:;
+      img-src 'self' blob: data: ${imageSrc};
       connect-src 'self' https://vitals.vercel-insights.com ${reportUris};
       font-src 'self';
       frame-src https://www.google.com/;
@@ -86,7 +87,7 @@ function createCspHeaders(nonce) {
     default-src 'self';
     script-src 'self' 'unsafe-inline' 'unsafe-eval';
     worker-src 'self' blob:;
-    img-src 'self' blob: data:;
+    img-src 'self' blob: data: ${imageSrc};
     connect-src 'self' ${reportUris};
     font-src 'self';
     frame-src 'self' https://www.google.com/;
