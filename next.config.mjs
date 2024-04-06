@@ -130,8 +130,8 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: '*.upcloudobjects.com'
-      }
+        hostname: '*.upcloudobjects.com',
+      },
     ],
   },
   async headers() {

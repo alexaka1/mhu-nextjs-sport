@@ -10,7 +10,7 @@ export type SimpleLoginProfile = {
   client: string;
 };
 
-export function SimpleLogin<P extends SimpleLoginProfile>(config: OAuthUserConfig<P>): OAuthConfig<P> {
+export default function SimpleLogin<P extends SimpleLoginProfile>(config: OAuthUserConfig<P>): OAuthConfig<P> {
   return {
     id: 'simplelogin',
     name: 'SimpleLogin',
@@ -28,5 +28,3 @@ export function SimpleLogin<P extends SimpleLoginProfile>(config: OAuthUserConfi
     options: config,
   };
 }
-
-export default SimpleLogin<SimpleLoginProfile>;

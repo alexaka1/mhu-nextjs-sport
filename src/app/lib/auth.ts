@@ -7,7 +7,7 @@ import * as schema from '@/app/db/schema';
 import { Adapter } from '@auth/core/adapters';
 import { and, eq } from 'drizzle-orm/sql/expressions/conditions';
 import Google from '@auth/core/providers/google';
-import SimpleLogin from '@/app/lib/simple-login';
+import SimpleLogin, { SimpleLoginProfile } from '@/app/lib/simple-login';
 
 export const {
   handlers: { GET, POST },
@@ -26,7 +26,7 @@ export const {
       clientSecret: process.env['GOOGLE_CLIENT_SECRET'] as string,
       allowDangerousEmailAccountLinking: true,
     }),
-    SimpleLogin({
+    SimpleLogin<SimpleLoginProfile>({
       clientId: process.env['SIMPLELOGIN_CLIENT_ID'] as string,
       clientSecret: process.env['SIMPLELOGIN_CLIENT_SECRET'] as string,
       profile(profile) {
