@@ -3,6 +3,7 @@ import { signIn } from 'next-auth/react';
 import { IconPlayHandball } from '@tabler/icons-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Image from 'next/image';
 
 const providers = [
   {
@@ -38,26 +39,26 @@ const providers = [
   //     void signIn('twitter', { callbackUrl: page });
   //   },
   // },
-  // {
-  //   id: 'simplelogin',
-  //   button: (
-  //     <>
-  //       <div className={`pr-2`}>
-  //         <Image
-  //           alt={`SimpleLogin`}
-  //           width={24}
-  //           height={24}
-  //           src={`/icons/simplelogin.svg`}
-  //           className={`size-6 rounded-lg p-0.5 pr-1 bg-white`}
-  //         />
-  //       </div>{' '}
-  //       SimpleLogin belépés
-  //     </>
-  //   ),
-  //   onClick: (page: string) => {
-  //     void signIn('simplelogin', { callbackUrl: page });
-  //   },
-  // },
+  {
+    id: 'simplelogin',
+    button: (
+      <>
+        <div className={`pr-2`}>
+          <Image
+            alt={`SimpleLogin`}
+            width={24}
+            height={24}
+            src={`/icons/simplelogin.svg`}
+            className={`size-6 rounded-lg p-0.5 pr-1 bg-white`}
+          />
+        </div>{' '}
+        SimpleLogin belépés
+      </>
+    ),
+    onClick: (page: string) => {
+      void signIn('simplelogin', { callbackUrl: page });
+    },
+  },
 ];
 
 export default function Home({
