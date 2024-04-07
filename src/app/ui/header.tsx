@@ -12,6 +12,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
 import { signOut, getSession } from 'next-auth/react';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
+import { setTag } from '@sentry/nextjs';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -323,6 +324,13 @@ export default function Header() {
 
     void checkAuth();
   }, []);
+  useEffect(() => {
+    const deviceType = document.getElementById('device-type');
+    if (deviceType != null) {
+      const style = window.getComputedStyle(deviceType, '::after');
+      setTag('device-type', style.content ?? 'unknown');
+    }
+  }, []);
 
   const returnUrl = new URLSearchParams({ returnUrl: pathname });
   return (
@@ -335,6 +343,11 @@ export default function Header() {
               href="/"
             >
               <span className="sr-only">Főoldal</span>
+              <div
+                aria-hidden="true"
+                className={`sr-only browser:after:content-['browser'] standalone:after:content-['standalone']`}
+                id={`device-type`}
+              ></div>
               <IconPlayHandball size={40} />
             </Link>
           </div>
