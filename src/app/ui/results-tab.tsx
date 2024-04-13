@@ -7,7 +7,7 @@ const tabs = [
     title: 'Profile',
     icon: (
       <svg
-        className="ui-selected:text-primary ui-selected:dark:text-primary-400 me-2 size-4 text-gray-400 group-hover:text-secondary-600 dark:text-gray-500 dark:group-hover:text-gray-300"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 ui-selected:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 ui-selected:dark:text-primary-400"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -22,7 +22,7 @@ const tabs = [
     title: 'Dashboard',
     icon: (
       <svg
-        className="ui-selected:text-primary ui-selected:dark:text-primary-400 me-2 size-4 text-gray-400 group-hover:text-secondary-600 dark:text-gray-500 dark:group-hover:text-gray-300"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 ui-selected:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 ui-selected:dark:text-primary-400"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -44,7 +44,7 @@ export default function ResultsTab({ className }: Readonly<{ className?: string 
             key={tab.title}
             className="me-2 focus-visible:outline-1 focus-visible:outline-primary-800 dark:focus-visible:outline-primary-600"
           >
-            <div className="ui-selected:border-primary ui-selected:text-primary ui-not-selected:border-transparent ui-selected:dark:border-primary-400 ui-selected:dark:text-primary-400 group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 hover:border-secondary-600 hover:text-secondary-600 dark:hover:text-gray-300">
+            <div className="group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 hover:border-secondary-600 hover:text-secondary-600 ui-selected:border-primary ui-selected:text-primary ui-not-selected:border-transparent dark:hover:text-gray-300 ui-selected:dark:border-primary-400 ui-selected:dark:text-primary-400">
               {tab.icon}
               {tab.title}
             </div>

@@ -166,7 +166,7 @@ export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
           </tbody>
         </table>
       </div>
-      {initial[0]?.results != data[0]!['results'] ?
+      {initial[0]?.results !== data[0]!['results'] ?
         <Link
           href={xlsx}
           target={'_blank'}
