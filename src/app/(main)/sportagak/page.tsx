@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import Image from 'next/image';
+import XlsxTable from '@/app/ui/XlsxTable';
 
 export const metadata: Metadata = {
   title: 'Sportágak',
@@ -57,6 +58,31 @@ export default function Page() {
           {/*</dl>*/}
         </div>
         <Media src={'https://source.unsplash.com/person-playing-soccer-mY2ZHBU6GRk'} alt={'Labdarúgás'} />
+        {/*<object data={``}></object>*/}
+        <object
+          data="https://utfs.io/f/4eb74c62-71af-475a-8d21-dee655cd6263-c1xsmp.pdf"
+          type="application/pdf"
+          width="100%"
+          height="100%"
+        >
+          <p className={`text-bg-contrast`}>
+            Alternative text - include a link{' '}
+            <a href="https://utfs.io/f/4eb74c62-71af-475a-8d21-dee655cd6263-c1xsmp.pdf">to the PDF!</a>
+          </p>
+        </object>
+        <object
+          data="https://utfs.io/f/527ff756-5125-43e4-a7a8-f9e69c212950-1adb5m.xlsx"
+          type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          width="100%"
+          height="100%"
+        >
+          <p className={`text-bg-contrast`}>
+            Alternative text - include a link{' '}
+            <a href="https://utfs.io/f/527ff756-5125-43e4-a7a8-f9e69c212950-1adb5m.xlsx">to the XLSX!</a>
+          </p>
+        </object>
+        <XlsxTable />
+        {/*<div className={`text-bg-contrast`} dangerouslySetInnerHTML={{ __html: html[0] as string }}></div>*/}
       </Entry>
       <Entry>
         <div className={`prose`}>
