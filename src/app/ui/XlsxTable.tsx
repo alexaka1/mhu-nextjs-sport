@@ -16,7 +16,7 @@ import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 
 const columnHelper = createColumnHelper<unknown>();
 
-export default function XlsxTable({ xlsx }: Readonly<{ xlsx: URL }>) {
+export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
   const [data, setData] = useState<Record<string, ReactNode>[]>([]);
   const [columns, setColumns] = useState<ColumnDef<unknown>[]>([]);
   const [sorting, setSorting] = useState<SortingState>([]);
