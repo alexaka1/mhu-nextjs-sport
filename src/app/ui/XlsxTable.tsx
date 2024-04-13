@@ -8,11 +8,13 @@ import {
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  SortDirection,
   SortingState,
   useReactTable,
 } from '@tanstack/react-table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { undefined } from 'zod';
 
 const columnHelper = createColumnHelper<unknown>();
 const initial = [
@@ -26,6 +28,22 @@ const initialColumn = columnHelper.accessor('results', {
   header: 'Eredmények',
   enableSorting: false,
 });
+
+const sortIcons: Record<SortDirection | 'false', ReactNode> = {
+  false: null,
+  asc: (
+    <>
+      {' '}
+      <FontAwesomeIcon icon={faSortUp} />
+    </>
+  ),
+  desc: (
+    <>
+      {' '}
+      <FontAwesomeIcon icon={faSortDown} />
+    </>
+  ),
+};
 
 export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
   const [data, setData] = useState<Record<string, ReactNode>[]>([...initial]);
@@ -81,10 +99,14 @@ export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
-                  <th scope="col" className={`px-6 py-3`} key={header.id} colSpan={header.colSpan}>
+                  <th scope="col" className={`px-6 py-3 align-middle`} key={header.id} colSpan={header.colSpan}>
                     {header.isPlaceholder ? null : (
                       <div
-                        className={header.column.getCanSort() ? 'cursor-pointer select-none' : ''}
+                        className={
+                          header.column.getCanSort() ?
+                            'flex cursor-pointer select-none flex-row items-center justify-center gap-0.5 align-middle'
+                          : ''
+                        }
                         onClick={header.column.getToggleSortingHandler()}
                         title={
                           header.column.getCanSort() ?
@@ -97,27 +119,13 @@ export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
                         }
                       >
                         {flexRender(header.column.columnDef.header, header.getContext())}
-                        {(
-                          {
-                            asc: (
-                              <>
-                                {' '}
-                                <FontAwesomeIcon icon={faSortUp} />
-                              </>
-                            ),
-                            desc: (
-                              <>
-                                {' '}
-                                <FontAwesomeIcon icon={faSortDown} />
-                              </>
-                            ),
-                          }[header.column.getIsSorted() as string] ?? header.column.getCanSort()
-                        ) ?
-                          <>
-                            {' '}
-                            <FontAwesomeIcon icon={faSort} />
-                          </>
-                        : null}
+                        {sortIcons[header.column.getIsSorted() as never] ??
+                          (header.column.getCanSort() ?
+                            <>
+                              {' '}
+                              <FontAwesomeIcon icon={faSort} />
+                            </>
+                          : null)}
                       </div>
                     )}
                   </th>

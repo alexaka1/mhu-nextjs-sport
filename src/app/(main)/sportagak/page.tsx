@@ -56,7 +56,11 @@ export default function Page() {
           {/*  ))}*/}
           {/*</dl>*/}
         </div>
-        <Media src={'https://source.unsplash.com/person-playing-soccer-mY2ZHBU6GRk'} alt={'Labdarúgás'} />
+        <Media
+          src={'https://source.unsplash.com/person-playing-soccer-mY2ZHBU6GRk'}
+          alt={'Labdarúgás'}
+          priority={true}
+        />
       </Entry>
       <Entry>
         <div className={`prose`}>
