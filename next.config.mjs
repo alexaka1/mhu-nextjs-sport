@@ -50,7 +50,7 @@ function createCspHeaders(nonce) {
       ${defaultsCSPHeaders}
       default-src 'none';
       script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline';
-      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ ${reportUris};
+      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ https://utfs.io/ ${reportUris};
       img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob: ${imageSrc};
       frame-src 'self' https://vercel.live/ https://vercel.com https://www.google.com/;
       style-src-elem 'self' 'unsafe-inline' https://vercel.live/;
@@ -95,7 +95,7 @@ function createCspHeaders(nonce) {
     script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel-scripts.com/;
     worker-src 'self' blob:;
     img-src 'self' blob: data: ${imageSrc};
-    connect-src 'self' ${reportUris};
+    connect-src 'self' ${reportUris} https://utfs.io/;
     font-src 'self';
     frame-src 'self' https://www.google.com/;
   `;

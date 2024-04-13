@@ -15,10 +15,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 
 const columnHelper = createColumnHelper<unknown>();
+const initial = [
+  {
+    results: 'Betöltés alatt...',
+  },
+];
+const initialColumn = columnHelper.accessor('results', {
+  id: 'results',
+  cell: (info) => info.getValue(),
+  header: 'Eredmények',
+  enableSorting: false,
+});
 
 export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
-  const [data, setData] = useState<Record<string, ReactNode>[]>([]);
-  const [columns, setColumns] = useState<ColumnDef<unknown>[]>([]);
+  const [data, setData] = useState<Record<string, ReactNode>[]>([...initial]);
+  const [columns, setColumns] = useState<ColumnDef<unknown>[]>([initialColumn as never]);
   const [sorting, setSorting] = useState<SortingState>([]);
   useEffect(() => {
     async function fetchData() {
@@ -86,25 +97,27 @@ export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
                         }
                       >
                         {flexRender(header.column.columnDef.header, header.getContext())}
-                        {{
-                          asc: (
-                            <>
-                              {' '}
-                              <FontAwesomeIcon icon={faSortUp} />
-                            </>
-                          ),
-                          desc: (
-                            <>
-                              {' '}
-                              <FontAwesomeIcon icon={faSortDown} />
-                            </>
-                          ),
-                        }[header.column.getIsSorted() as string] ?? (
+                        {(
+                          {
+                            asc: (
+                              <>
+                                {' '}
+                                <FontAwesomeIcon icon={faSortUp} />
+                              </>
+                            ),
+                            desc: (
+                              <>
+                                {' '}
+                                <FontAwesomeIcon icon={faSortDown} />
+                              </>
+                            ),
+                          }[header.column.getIsSorted() as string] ?? header.column.getCanSort()
+                        ) ?
                           <>
                             {' '}
                             <FontAwesomeIcon icon={faSort} />
                           </>
-                        )}
+                        : null}
                       </div>
                     )}
                   </th>
