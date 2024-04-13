@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import typography from '@tailwindcss/typography';
+import headlessui from '@headlessui/tailwindcss';
 
 const config = {
   content: [
@@ -51,6 +52,6 @@ const config = {
       },
     },
   },
-  plugins: [typography, require('tailwindcss-oklch')()],
+  plugins: [typography, require('tailwindcss-oklch')(), headlessui],
 } satisfies Config;
 export default config;

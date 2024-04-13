@@ -254,7 +254,7 @@ function UserInfo({
         >
           <Avatar src={avatar} alt={`${name} profilképe`} />
         </Popover.Button>
-        <Popover.Overlay className="fixed inset-0 opacity-30 bg-black" />
+        <Popover.Overlay className="fixed inset-0 z-20 opacity-30 bg-black" />
         <Transition
           as={Fragment}
           enter="transition ease-out duration-200"
