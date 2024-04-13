@@ -94,9 +94,11 @@ export default function XlsxTable({ xlsx }: Readonly<{ xlsx: string }>) {
   });
   return (
     <>
-      <div className={`relative overflow-x-auto shadow-md sm:rounded-lg`}>
-        <table className={`prose w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400`}>
-          <thead className={`text-xs uppercase bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-400`}>
+      <div className={`relative flex h-svh grow flex-col overflow-auto shadow-md sm:rounded-lg`}>
+        <table className={`prose relative w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400`}>
+          <thead
+            className={`sticky top-0 text-xs uppercase bg-gray-50 text-gray-700 lg:top-[unset] lg:table-header-group dark:bg-gray-700 dark:text-gray-400`}
+          >
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
