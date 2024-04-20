@@ -118,12 +118,12 @@ export default function XlsxTable({ xlsx, title }: Readonly<{ xlsx: string; titl
       >
         <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-bg-contrast">
           <UploadButton
-            className={`ut-button:bg-primary ut-allowed-content:text-bg-contrast ut-button:ut-readying:bg-primary-600 ut-button:ut-uploading:after:bg-primary-400/25`}
+            className={`duration-200 ut-button:transition-colors ut-button:bg-primary ut-allowed-content:text-bg-contrast ut-button:ut-readying:bg-primary-600 ut-button:ut-ready:hover:hover:bg-primary-600 ut-button:ut-uploading:after:bg-primary-400/25`}
             endpoint="resultUploader"
             onClientUploadComplete={(res) => {
               console.log('Files: ', res);
               alert('Sikeres feltöltés! (Szimulált)');
-              // router.refresh();
+              router.refresh();
             }}
             onUploadError={(error: Error) => {
               console.error(`ERROR! ${error.message}`);
