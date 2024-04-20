@@ -95,7 +95,7 @@ function createCspHeaders(nonce) {
     script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel-scripts.com/;
     worker-src 'self' blob:;
     img-src 'self' blob: data: ${imageSrc};
-    connect-src 'self' ${reportUris} https://utfs.io/;
+    connect-src 'self' ${reportUris} https://utfs.io/ https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
     font-src 'self';
     frame-src 'self' https://www.google.com/;
   `;

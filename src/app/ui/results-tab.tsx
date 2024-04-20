@@ -11,12 +11,19 @@ import {
   IconTargetArrow,
 } from '@tabler/icons-react';
 import UnderConstruction from '@/app/ui/under-construction';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons/faPeopleGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { type Result } from '@/app/lib/types';
 
-const tabs = [
+type Tab = {
+  title: Result;
+  icon: ReactNode;
+  content: () => ReactNode;
+};
+
+const tabs: Tab[] = [
   {
     title: 'Labdarúgás',
     icon: (

@@ -115,6 +115,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.24.1":
+  version: 7.24.4
+  resolution: "@babel/runtime@npm:7.24.4"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10/8ec8ce2c145bc7e31dd39ab66df124f357f65c11489aefacb30f431bae913b9aaa66aa5efe5321ea2bf8878af3fcee338c87e7599519a952e3a6f83aa1b03308
+  languageName: node
+  linkType: hard
+
 "@esbuild-kit/core-utils@npm:^3.3.2":
   version: 3.3.2
   resolution: "@esbuild-kit/core-utils@npm:3.3.2"
@@ -1797,6 +1806,66 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@uploadthing/dropzone@npm:0.3.1":
+  version: 0.3.1
+  resolution: "@uploadthing/dropzone@npm:0.3.1"
+  dependencies:
+    file-selector: "npm:^0.6.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    solid-js: ^1.7.11
+    svelte: ^4.2.12
+  peerDependenciesMeta:
+    react:
+      optional: true
+    solid-js:
+      optional: true
+    svelte:
+      optional: true
+  checksum: 10/1d7ae06fd976a5e65c9804f1e745dc782e9f9604cce1020906648c7443d51226993c1e732dbd36c4597c81be06c05e16d8caea7912f275ea4aadfc13df40036a
+  languageName: node
+  linkType: hard
+
+"@uploadthing/mime-types@npm:0.2.7":
+  version: 0.2.7
+  resolution: "@uploadthing/mime-types@npm:0.2.7"
+  checksum: 10/578e779b4611a0199b399c2142489cdf299a50a492d7c8cafc1275e8dcf69c385b534ef045d753a9d9749c22e68cf265fc2cf81b78f7ddd2a4d60f31458fa55a
+  languageName: node
+  linkType: hard
+
+"@uploadthing/react@npm:^6.4.4":
+  version: 6.4.4
+  resolution: "@uploadthing/react@npm:6.4.4"
+  dependencies:
+    "@uploadthing/dropzone": "npm:0.3.1"
+    "@uploadthing/shared": "npm:6.6.0"
+    file-selector: "npm:^0.6.0"
+    tailwind-merge: "npm:^2.2.1"
+  peerDependencies:
+    next: "*"
+    react: ^17.0.2 || ^18.0.0
+    uploadthing: 6.9.0
+  peerDependenciesMeta:
+    next:
+      optional: true
+  checksum: 10/10d1772692c0887f0b79eadd0921df3711290f2e66c5dface60a8af168980467231ba4375b1cd8606504375a5e91a6097c4db29497e7d3ff11fc04e56c41f46d
+  languageName: node
+  linkType: hard
+
+"@uploadthing/shared@npm:6.6.0":
+  version: 6.6.0
+  resolution: "@uploadthing/shared@npm:6.6.0"
+  dependencies:
+    std-env: "npm:^3.7.0"
+  peerDependencies:
+    "@uploadthing/mime-types": 0.2.7
+  peerDependenciesMeta:
+    "@uploadthing/mime-types":
+      optional: true
+  checksum: 10/591591091395ee5ff5544d31ebcabeb6fd0c59e0493a02c0ee2079db6f7f15acb7f836a0c1df0e47f2cf1eb00b30b10096bfd4a1c161e5518c4acf7ce2238bb8
+  languageName: node
+  linkType: hard
+
 "@vercel/speed-insights@npm:^1.0.10":
   version: 1.0.10
   resolution: "@vercel/speed-insights@npm:1.0.10"
@@ -2434,6 +2503,13 @@ __metadata:
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
   checksum: 10/9680699c8e2b3af0ae22592cb764acaf973f292a7b71b8a06720233011853a58e256c89216a10cbe889727532fd77f8bcd49a760cedfde271b8e006c20e079f2
+  languageName: node
+  linkType: hard
+
+"consola@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "consola@npm:3.2.3"
+  checksum: 10/02972dcb048c337357a3628438e5976b8e45bcec22fdcfbe9cd17622992953c4d695d5152f141464a02deac769b1d23028e8ac87f56483838df7a6bbf8e0f5a2
   languageName: node
   linkType: hard
 
@@ -3743,6 +3819,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"file-selector@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "file-selector@npm:0.6.0"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10/6add4098ae07fd1e9050b1e8d3fd9f128680c1d6648c0676af54ace4586e6e5bfcb8fdfa45b69e9131ffd8175bf630d54a445a5facf9be244f85b99ce309183e
+  languageName: node
+  linkType: hard
+
 "fill-range@npm:^7.0.1":
   version: 7.0.1
   resolution: "fill-range@npm:7.0.1"
@@ -5000,6 +5085,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.25"
     "@typescript-eslint/eslint-plugin": "npm:^7.7.0"
     "@typescript-eslint/parser": "npm:^7.7.0"
+    "@uploadthing/react": "npm:^6.4.4"
     "@vercel/speed-insights": "npm:^1.0.10"
     autoprefixer: "npm:^10.4.19"
     cssnano: "npm:^6.1.2"
@@ -5022,6 +5108,7 @@ __metadata:
     tailwindcss: "npm:^3.4.3"
     tailwindcss-oklch: "npm:^0.0.1"
     typescript: "npm:^5.4.5"
+    uploadthing: "npm:^6.9.0"
     xlsx: "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
     zod: "npm:^3.22.5"
   dependenciesMeta:
@@ -6731,6 +6818,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"std-env@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "std-env@npm:3.7.0"
+  checksum: 10/6ee0cca1add3fd84656b0002cfbc5bfa20340389d9ba4720569840f1caa34bce74322aef4c93f046391583e50649d0cf81a5f8fe1d411e50b659571690a45f12
+  languageName: node
+  linkType: hard
+
 "streamsearch@npm:^1.1.0":
   version: 1.1.0
   resolution: "streamsearch@npm:1.1.0"
@@ -6931,6 +7025,15 @@ __metadata:
   bin:
     svgo: ./bin/svgo
   checksum: 10/2fdf3f2090e17b3c309e60f69c78a2afd5a9771247adb540bae3fce467243f7a601a2a5497ef40998292da41ad828b3eabf3c18b75bf449c2d2cbf6d7f6e96d9
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^2.2.1":
+  version: 2.3.0
+  resolution: "tailwind-merge@npm:2.3.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.24.1"
+  checksum: 10/cf3b126bee82bc9ff3f60f9601b66925418db6906544198b637487b25fba1c9c307734ca37ccb8fa2355f69ad0c5aff34c5dce460809addb459a93205d9a0abe
   languageName: node
   linkType: hard
 
@@ -7263,6 +7366,35 @@ __metadata:
   bin:
     update-browserslist-db: cli.js
   checksum: 10/9074b4ef34d2ed931f27d390aafdd391ee7c45ad83c508e8fed6aaae1eb68f81999a768ed8525c6f88d4001a4fbf1b8c0268f099d0e8e72088ec5945ac796acf
+  languageName: node
+  linkType: hard
+
+"uploadthing@npm:^6.9.0":
+  version: 6.9.0
+  resolution: "uploadthing@npm:6.9.0"
+  dependencies:
+    "@uploadthing/mime-types": "npm:0.2.7"
+    "@uploadthing/shared": "npm:6.6.0"
+    consola: "npm:^3.2.3"
+    std-env: "npm:^3.7.0"
+  peerDependencies:
+    express: "*"
+    fastify: "*"
+    h3: "*"
+    next: "*"
+    tailwindcss: "*"
+  peerDependenciesMeta:
+    express:
+      optional: true
+    fastify:
+      optional: true
+    h3:
+      optional: true
+    next:
+      optional: true
+    tailwindcss:
+      optional: true
+  checksum: 10/f0c31dd26458931486c406f1b421f1aa1031015439e8f67a59ab5001c437fe07d1933a06ebe726bc36b41d091d7529411edc55459cff403c88fc0a98060cf009
   languageName: node
   linkType: hard
 

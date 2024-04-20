@@ -15,7 +15,7 @@ export default function SimpleLogin<P extends SimpleLoginProfile>(config: OAuthU
     id: 'simplelogin',
     name: 'SimpleLogin',
     type: 'oidc',
-    issuer: 'https://app.simplelogin.io/',
+    issuer: 'https://app.simplelogin.io',
     profile(profile) {
       return {
         id: profile.sub,

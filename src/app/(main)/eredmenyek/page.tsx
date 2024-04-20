@@ -3,6 +3,8 @@ import ResultsTab from '@/app/ui/results-tab';
 import { Suspense } from 'react';
 import Skeleton from '@/app/ui/skeleton';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Eredmények',
 };
