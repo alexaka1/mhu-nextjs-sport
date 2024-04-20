@@ -122,7 +122,8 @@ export default function XlsxTable({ xlsx, title }: Readonly<{ xlsx: string; titl
             endpoint="resultUploader"
             onClientUploadComplete={(res) => {
               console.log('Files: ', res);
-              router.refresh();
+              alert('Sikeres feltöltés! (Szimulált)');
+              // router.refresh();
             }}
             onUploadError={(error: Error) => {
               console.error(`ERROR! ${error.message}`);
@@ -162,7 +163,7 @@ export default function XlsxTable({ xlsx, title }: Readonly<{ xlsx: string; titl
                 }
                 return;
               }
-              alert('Sikeres törlés!');
+              alert('Sikeres törlés! (Szimulált)');
               router.refresh();
             }}
             onSubmit={(e) => {
