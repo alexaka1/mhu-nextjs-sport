@@ -18,7 +18,8 @@
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:import/recommended",
         "plugin:import/typescript",
-        "plugin:tailwindcss/recommended"
+        "plugin:tailwindcss/recommended",
+        "plugin:drizzle/recommended"
       ],
       "rules": {
         "eqeqeq": ["error", "smart"],
@@ -29,6 +30,18 @@
             "checksVoidReturn": {
               "attributes": false
             }
+          }
+        ],
+        "drizzle/enforce-delete-with-where": [
+          "error",
+          {
+            "drizzleObjectName": "db"
+          }
+        ],
+        "drizzle/enforce-update-with-where": [
+          "error",
+          {
+            "drizzleObjectName": "db"
           }
         ]
       }

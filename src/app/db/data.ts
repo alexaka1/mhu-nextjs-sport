@@ -1,8 +1,13 @@
 import { db } from '@/app/db/db';
-import { users } from '@/app/db/schema';
+import { results, users } from '@/app/db/schema';
 import { and, eq, ne } from 'drizzle-orm/sql/expressions/conditions';
 import { captureException } from '@sentry/nextjs';
-import { Result, ResultItem } from '@/app/lib/types';
+import { ResultItem } from '@/app/lib/types';
+import { createInsertSchema } from 'drizzle-zod';
+import { z } from 'zod';
+
+const insertResultSchema = createInsertSchema(results).pick({ result: true, key: true });
+type InsertResult = z.infer<typeof insertResultSchema>;
 
 export async function isAdmin(email: string): Promise<boolean> {
   try {
@@ -28,9 +33,9 @@ export async function deleteResultByUrl(url: string): Promise<void> {
   }
 }
 
-export async function insertResult({ url, resultType }: { url: string; resultType: Result }): Promise<void> {
+export async function insertResult({ key, result }: InsertResult): Promise<void> {
   try {
-    console.log('Insert result into DB', url, resultType);
+    console.log('Insert result into DB', key, result);
     await Promise.resolve();
   } catch (e) {
     console.error(e);

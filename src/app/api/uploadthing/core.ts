@@ -23,6 +23,8 @@ export const ourFileRouter = {
     .middleware(async ({ req }) => {
       // This code runs on your server before upload
       const headers = req.headers;
+      // todo: validate mime types
+      // console.log('files: ', files);
       const resultType = decodeURIComponent(headers.get('resultType') ?? '');
       const parsedResult = Result.safeParse(resultType);
       if (!parsedResult.success) {
@@ -38,7 +40,8 @@ export const ourFileRouter = {
     })
     .onUploadComplete(async ({ metadata, file }) => {
       // This code RUNS ON YOUR SERVER after upload
-      await uploadResult({ url: file.url, resultType: metadata.result });
+      // console.log('file: ', file);
+      await uploadResult({ key: file.key, result: metadata.result });
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
       return { uploadedBy: metadata.userId, result: metadata.result };
     }),
@@ -46,7 +49,7 @@ export const ourFileRouter = {
 
 export type OurFileRouter = typeof ourFileRouter;
 
-async function canEdit(): Promise<{ authorized: boolean; userId: string | null }> {
+async function canEdit(): Promise<{ authorized: false; userId: string | null } | { authorized: true; userId: string }> {
   const session = await auth();
   const email = session?.user?.email;
   if (!isNullOrEmpty(email)) {

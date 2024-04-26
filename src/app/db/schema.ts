@@ -1,5 +1,6 @@
 import { integer, sqliteTable, text, primaryKey } from 'drizzle-orm/sqlite-core';
 import type { AdapterAccount } from '@auth/core/adapters';
+import { Result, ResultType } from '@/app/lib/types';
 
 export const users = sqliteTable('user', {
   id: text('id').notNull().primaryKey(),
@@ -51,5 +52,22 @@ export const verificationTokens = sqliteTable(
   },
   (vt) => ({
     compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
+  }),
+);
+
+export const results = sqliteTable(
+  'result',
+  {
+    key: text('key').notNull(),
+    result: text('result').notNull().$type<Result>(),
+    type: text('type').$type<ResultType>(),
+    createdAt: integer('createdAt', { mode: 'timestamp_ms' })
+      .notNull()
+      .$defaultFn(() => new Date()),
+    isDeleted: integer('isDeleted', { mode: 'boolean' }).default(false),
+    deletedAt: integer('deletedAt', { mode: 'timestamp_ms' }),
+  },
+  (r) => ({
+    compoundKey: primaryKey({ columns: [r.key, r.result] }),
   }),
 );

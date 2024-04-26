@@ -12,7 +12,7 @@ export async function deleteResult(url: string) {
   revalidatePath('/eredmenyek');
 }
 
-export async function uploadResult(result: { url: string; resultType: Result }) {
+export async function uploadResult(result: { key: string; result: Result }) {
   console.log('Upload result', result);
   await insertResult(result);
   revalidatePath('/eredmenyek');
