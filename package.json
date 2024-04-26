@@ -12,7 +12,9 @@
     "lint:fix": "next lint",
     "fmt": "prettier --check . --experimental-ternaries",
     "fmt:fix": "prettier --write . --experimental-ternaries",
-    "doctor": "yarn dlx @yarnpkg/doctor"
+    "doctor": "yarn dlx @yarnpkg/doctor",
+    "migrations": "drizzle-kit generate:sqlite",
+    "migrations:up": "tsx --env-file=.env src/app/db/migrate.ts"
   },
   "dependencies": {
     "@auth/core": "^0.30.0",
@@ -67,6 +69,7 @@
     "serwist": "^9.0.2",
     "tailwindcss": "^3.4.3",
     "tailwindcss-oklch": "^0.0.1",
+    "tsx": "^4.7.3",
     "typescript": "^5.4.5"
   },
   "dependenciesMeta": {

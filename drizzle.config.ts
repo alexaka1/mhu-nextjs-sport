@@ -8,4 +8,6 @@ export default {
   dbCredentials: {
     url: env.TURSO_DATABASE_URL,
   },
+  strict: true,
+  verbose: true,
 } satisfies Config;
