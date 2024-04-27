@@ -5,8 +5,6 @@ import Skeleton from '@/app/ui/skeleton';
 import { canEditResults, getResults } from '@/app/lib/actions';
 import { Result } from '@/app/lib/types';
 
-// export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
   title: 'Eredmények',
 };
