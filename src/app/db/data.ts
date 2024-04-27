@@ -70,13 +70,18 @@ export async function updateAvatar({
   return { updatedId: '' };
 }
 
-export async function getResultItems(): Promise<Array<ResultItem>> {
+export async function getResultItems(sportag: string): Promise<Array<ResultItem>> {
   try {
+    let where: unknown = eq(results.isDeleted, false);
+    const parsed = Result.safeParse(sportag);
+    if (sportag !== '' && parsed.success) {
+      where = and(where as never, eq(results.result, parsed.data));
+    }
     const result = await db
       .select({ key: results.key, result: results.result, type: results.type })
       .from(results)
       .orderBy(desc(results.createdAt))
-      .where(eq(results.isDeleted, false))
+      .where(where as never)
       .all();
     if (result?.length === 0) {
       return [];

@@ -37,8 +37,8 @@ export async function updateUserAvatar({
   return await updateAvatar({ id, avatar: avatar ?? null });
 }
 
-export async function getResults(): Promise<ResultItem[]> {
-  const results = await getResultItems();
+export async function getResults(sportag: string): Promise<ResultItem[]> {
+  const results = await getResultItems(sportag);
   const urls = await utapi.getFileUrls(results.map((r) => r.key));
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
