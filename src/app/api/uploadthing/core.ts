@@ -10,6 +10,7 @@ import { FileUploadData } from 'uploadthing/types';
 
 const f = createUploadthing();
 const fileSize = 8_000_000;
+const allowed = 'Csak xlsx és pdf fájlok tölthetőek fel';
 
 const resultUploader = {
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
@@ -44,7 +45,6 @@ export const ourFileRouter = {
     })
     .onUploadComplete(async ({ metadata, file }) => {
       // This code RUNS ON YOUR SERVER after upload
-      console.log('file: ', file);
       await uploadResult({ key: file.key, result: metadata.result, type: file.type as ResultType });
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
       return { uploadedBy: metadata.userId, result: metadata.result };
@@ -75,7 +75,7 @@ function validateFiles(files: Array<FileUploadData>) {
     }
     const parsedResultType = resultTypeSchema.safeParse(fileType);
     if (!parsedResultType.success) {
-      throw new UploadThingError(`Nem megengedett fájltípus: ${file?.name}`);
+      throw new UploadThingError(`${allowed}: ${file?.name}`);
     }
   }
 }
