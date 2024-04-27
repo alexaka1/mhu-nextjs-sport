@@ -25,8 +25,10 @@ type Tab = {
 function getResults(results: ResultItem[], canEdit?: boolean) {
   const tables = results.map((result) => {
     switch (result.type) {
-      case 'xlsx':
-        return <XlsxTable key={result.url} title={result.title} xlsx={result.url} canEdit={canEdit} />;
+      case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+        return <XlsxTable key={result.url} title={result.result} xlsx={result.url ?? '#'} canEdit={canEdit} />;
+      case 'application/pdf':
+        return <iframe key={result.url} src={result.url} className={`size-full`} />;
       default:
         return null;
     }
@@ -177,7 +179,7 @@ export default function ResultsTab({
                 <Upload title={tab.title} canEdit={canEdit} />
               </div>
               {getResults(
-                results.filter((x) => x.title === tab.title),
+                results.filter((x) => x.result === tab.title),
                 canEdit,
               )}
             </Tab.Panel>

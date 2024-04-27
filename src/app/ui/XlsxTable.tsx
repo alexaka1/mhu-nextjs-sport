@@ -128,6 +128,9 @@ export default function XlsxTable({
   useEffect(() => {
     async function fetchData() {
       try {
+        if (xlsx == null) {
+          return;
+        }
         const file = await (await fetch(xlsx)).arrayBuffer();
         const wb = read(file);
         const sheetName = wb.SheetNames[0];

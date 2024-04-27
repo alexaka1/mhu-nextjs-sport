@@ -8,6 +8,13 @@
       "when": 1714136186376,
       "tag": "0000_cold_patch",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714208400304,
+      "tag": "0001_tense_pandemic",
+      "breakpoints": true
     }
   ]
 }

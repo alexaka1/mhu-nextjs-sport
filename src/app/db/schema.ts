@@ -60,7 +60,7 @@ export const results = sqliteTable(
   {
     key: text('key').notNull(),
     result: text('result').notNull().$type<Result>(),
-    type: text('type').$type<ResultType>(),
+    type: text('type').notNull().$type<ResultType>(),
     createdAt: integer('createdAt', { mode: 'timestamp_ms' })
       .notNull()
       .$defaultFn(() => new Date()),

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+
 export const Result = z.enum([
   'Labdarúgás',
   'Úszás',
@@ -11,6 +12,9 @@ export const Result = z.enum([
 ]);
 export type Result = z.infer<typeof Result>;
 
-export const ResultType = z.enum(['xlsx', 'pdf']);
-export type ResultType = z.infer<typeof ResultType>;
-export type ResultItem = { url: string; type: ResultType; title: Result };
+export const resultTypeSchema = z.enum([
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'application/pdf',
+] as const);
+export type ResultType = z.infer<typeof resultTypeSchema>;
+export type ResultItem = { key: string; type: ResultType; result: Result; url?: string };
