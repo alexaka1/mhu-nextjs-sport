@@ -64,7 +64,7 @@ function getResults(results: ResultItem[], canEdit?: boolean) {
               <object data={result.url} type={result.type} className={`h-dvh w-full`}>
                 <iframe
                   src={pdfIframe.toString()}
-                  loading={'lazy'}
+                  loading={'eager'}
                   referrerPolicy={'no-referrer'}
                   className={`h-dvh w-full`}
                 >
