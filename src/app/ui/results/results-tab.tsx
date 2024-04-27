@@ -50,7 +50,7 @@ function getResults(results: ResultItem[], canEdit?: boolean) {
               title={result.result}
               fileKey={result.key}
             >
-              <iframe id={result.key} src={result.url} className={`size-full`} />
+              <iframe id={result.key} src={result.url} className={`h-dvh w-full`} />
             </ResultsTable>
           </>
         );
