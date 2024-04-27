@@ -1,5 +1,5 @@
 import { type ResultItem } from '@/app/lib/types';
-import { Upload } from '@/app/ui/results/upload-result';
+import { UploadResult } from '@/app/ui/results/upload-result';
 import ResultsContent from '@/app/ui/results/results-tab-content';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
 
@@ -19,7 +19,7 @@ export default function ResultsTab({
       <ResultsTabLinks />
       <div className={`flex flex-col gap-1`}>
         <div className={`flex flex-row items-center justify-center pt-1`}>
-          <Upload title={result} canEdit={canEdit} />
+          <UploadResult title={result} canEdit={canEdit} />
         </div>
         <ResultsContent results={results} canEdit={canEdit} />
       </div>

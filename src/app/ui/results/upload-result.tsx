@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { UploadButton } from '@/app/ui/uploadthing';
 
-export function Upload({ title, canEdit }: { title: string; canEdit?: boolean }): ReactNode {
+export function UploadResult({ title, canEdit }: { title: string; canEdit?: boolean }): ReactNode {
   const router = useRouter();
   if (!canEdit) {
     return null;

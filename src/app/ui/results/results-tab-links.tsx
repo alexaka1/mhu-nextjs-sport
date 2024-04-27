@@ -114,8 +114,8 @@ export default function ResultsTabLinks() {
         >
           <Link
             href={`/eredmenyek/${encodeURIComponent(tab.title)}`}
-            className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 hover:border-secondary-600 hover:text-secondary-600
-              data-[selected=false]:border-transparent data-[selected=true]:border-primary data-[selected=true]:text-primary dark:hover:text-gray-300 data-[selected=true]:dark:border-primary-400 data-[selected=true]:dark:text-primary-400`}
+            className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent hover:border-secondary-600
+              hover:text-secondary-600 data-[selected=true]:border-primary data-[selected=true]:text-primary dark:hover:text-gray-300 data-[selected=true]:dark:border-primary-400 data-[selected=true]:dark:text-primary-400`}
             data-selected={pathname === `/eredmenyek/${encodeURIComponent(tab.title)}`}
           >
             {tab.icon}
