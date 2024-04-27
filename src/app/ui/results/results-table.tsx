@@ -21,7 +21,9 @@ export default function ResultsTable({
 }>) {
   const [url, setUrl] = useState<string>('');
   useEffect(() => {
-    setUrl(`${window.location.href}#${fileKey}`);
+    const location = new URL(window.location.href);
+    location.hash = fileKey;
+    setUrl(location.toString());
   }, [fileKey]);
   return (
     <>

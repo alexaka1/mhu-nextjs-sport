@@ -4,6 +4,7 @@ import { and, eq, ne } from 'drizzle-orm/sql/expressions/conditions';
 import { captureException } from '@sentry/nextjs';
 import { Result, ResultItem, resultTypeSchema } from '@/app/lib/types';
 import { z } from 'zod';
+import { desc } from 'drizzle-orm/sql/expressions/select';
 
 const insertResultSchema = z.object({ key: z.string(), result: Result, type: resultTypeSchema });
 type InsertResult = z.infer<typeof insertResultSchema>;
@@ -78,6 +79,7 @@ export async function getResultItems(): Promise<Array<ResultItem>> {
     const result = await db
       .select({ key: results.key, result: results.result, type: results.type })
       .from(results)
+      .orderBy(desc(results.createdAt))
       .where(eq(results.isDeleted, false))
       .all();
     if (result?.length === 0) {

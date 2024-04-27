@@ -1,6 +1,6 @@
 'use client';
 import { Tab } from '@headlessui/react';
-import XlsxTable from '@/app/ui/XlsxTable';
+import XlsxTable from '@/app/ui/results/xlsx-table';
 import {
   IconBallBasketball,
   IconBallFootball,
@@ -61,7 +61,7 @@ function getResults(results: ResultItem[], canEdit?: boolean) {
   return tables.length > 0 ? tables : <h1 className={`prose text-bg-contrast`}>Nincs eredmény az adott sportágban.</h1>;
 }
 
-const tabs: Tab[] = [
+const tabs = [
   {
     title: 'Labdarúgás',
     icon: (
@@ -142,7 +142,7 @@ const tabs: Tab[] = [
       />
     ),
   },
-];
+] as const satisfies Array<Tab>;
 
 export default function ResultsTab({
   className,
@@ -192,13 +192,10 @@ export default function ResultsTab({
             </div>
           </Tab>
         ))}
-        {/*<Tab disabled>*/}
-        {/*  <a className="inline-block cursor-not-allowed rounded-t-lg p-4 text-gray-400 dark:text-gray-500">Disabled</a>*/}
-        {/*</Tab>*/}
       </Tab.List>
       <Tab.Panels>
-        {tabs.map((tab) =>
-          canShow ?
+        {canShow ?
+          tabs.map((tab) => (
             <Tab.Panel key={tab.title} className={`flex flex-col gap-1`}>
               <div className={`flex flex-row items-center justify-center pt-1`}>
                 <Upload title={tab.title} canEdit={canEdit} />
@@ -208,10 +205,8 @@ export default function ResultsTab({
                 canEdit,
               )}
             </Tab.Panel>
-          : null,
-        )}
-        {/*<Tab.Panel>Content 2</Tab.Panel>*/}
-        {/*<Tab.Panel>Disabled content</Tab.Panel>*/}
+          ))
+        : null}
       </Tab.Panels>
     </Tab.Group>
   );
