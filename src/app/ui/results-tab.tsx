@@ -16,6 +16,7 @@ import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons/faPeopleGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { type Result, type ResultItem } from '@/app/lib/types';
 import { Upload } from '@/app/ui/uploadthing';
+import ResultsTable from '@/app/ui/results/results-table';
 
 type Tab = {
   title: Result;
@@ -26,9 +27,33 @@ function getResults(results: ResultItem[], canEdit?: boolean) {
   const tables = results.map((result) => {
     switch (result.type) {
       case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-        return <XlsxTable key={result.url} title={result.result} xlsx={result.url ?? '#'} canEdit={canEdit} />;
+        return (
+          <>
+            <ResultsTable
+              key={result.key}
+              file={result.url ?? '#'}
+              canEdit={canEdit}
+              title={result.result}
+              fileKey={result.key}
+            >
+              <XlsxTable fileUrl={result.url ?? '#'} id={result.key} />
+            </ResultsTable>
+          </>
+        );
       case 'application/pdf':
-        return <iframe key={result.url} src={result.url} className={`size-full`} />;
+        return (
+          <>
+            <ResultsTable
+              key={result.key}
+              file={result.url ?? '#'}
+              canEdit={canEdit}
+              title={result.result}
+              fileKey={result.key}
+            >
+              <iframe id={result.key} src={result.url} className={`size-full`} />
+            </ResultsTable>
+          </>
+        );
       default:
         return null;
     }

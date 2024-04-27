@@ -1,15 +1,14 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { deleteResultByUrl, getResultItems, insertResult, isAdmin, updateAvatar } from '../db/data';
+import { deleteResultByKey, getResultItems, insertResult, isAdmin, updateAvatar } from '../db/data';
 import { auth } from '@/app/lib/auth';
 import { isNullOrEmpty } from '@/app/utils';
 import { type Result, ResultItem, ResultType } from '@/app/lib/types';
 import utapi from '@/app/lib/uploadthing';
 
-export async function deleteResult(url: string) {
-  console.log('Delete result', url);
-  await deleteResultByUrl(url);
+export async function deleteResult(key: string) {
+  await deleteResultByKey(key);
   revalidatePath('/eredmenyek');
 }
 

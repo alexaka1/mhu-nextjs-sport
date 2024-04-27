@@ -22,10 +22,9 @@ export async function isAdmin(email: string): Promise<boolean> {
   return false;
 }
 
-export async function deleteResultByUrl(url: string): Promise<void> {
+export async function deleteResultByKey(key: string): Promise<void> {
   try {
-    console.log('Delete result in DB', url);
-    await Promise.resolve();
+    await db.update(results).set({ isDeleted: true, deletedAt: new Date() }).where(eq(results.key, key)).execute();
   } catch (e) {
     console.error(e);
     captureException(e);
