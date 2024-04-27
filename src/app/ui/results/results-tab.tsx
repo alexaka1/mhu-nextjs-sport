@@ -1,19 +1,18 @@
-import { type ResultItem } from '@/app/lib/types';
 import { UploadResult } from '@/app/ui/results/upload-result';
 import ResultsContent from '@/app/ui/results/results-tab-content';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
+import { canEditResults, getResults } from '@/app/lib/actions';
 
-export default function ResultsTab({
+export default async function ResultsTab({
   className,
-  canEdit,
-  results,
   result,
 }: Readonly<{
   className?: string;
-  canEdit?: boolean;
-  results: ResultItem[];
   result: string;
 }>) {
+  const canEdit = await canEditResults();
+  const results = await getResults(result);
+
   return (
     <div className={className}>
       <ResultsTabLinks />
