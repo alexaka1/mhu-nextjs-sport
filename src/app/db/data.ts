@@ -17,7 +17,6 @@ export async function isAdmin(email: string): Promise<boolean> {
     }
     return user.every((u) => u.isAdmin === 1);
   } catch (e) {
-    console.error(e);
     captureException(e);
   }
   return false;
@@ -27,7 +26,6 @@ export async function deleteResultByKey(key: string): Promise<void> {
   try {
     await db.update(results).set({ isDeleted: true, deletedAt: new Date() }).where(eq(results.key, key)).execute();
   } catch (e) {
-    console.error(e);
     captureException(e);
   }
 }
@@ -37,7 +35,6 @@ export async function insertResult({ key, result, type }: InsertResult): Promise
     const parsed = insertResultSchema.parse({ key, result, type });
     await db.insert(results).values(parsed).execute();
   } catch (e) {
-    console.error(e);
     captureException(e);
   }
 }
@@ -68,7 +65,6 @@ export async function updateAvatar({
       .returning({ updatedId: users.id });
     return returning[0] ?? { updatedId: '' };
   } catch (e) {
-    console.error(e);
     captureException(e);
   }
   return { updatedId: '' };
@@ -87,7 +83,6 @@ export async function getResultItems(): Promise<Array<ResultItem>> {
     }
     return result;
   } catch (e) {
-    console.error(e);
     captureException(e);
   }
   return [];
