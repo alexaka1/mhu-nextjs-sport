@@ -50,19 +50,22 @@ function getResults(results: ResultItem[], canEdit?: boolean) {
               title={result.result}
               fileKey={result.key}
             >
-              <object data={result.url} type={result.type} className={`h-dvh w-full`}>
-                <iframe
-                  src={`https://docs.google.com/viewerng/viewer?url=${encodeURIComponent(result.url!)}&embedded=true`}
-                >
-                  <p className={`prose text-balance p-2 text-bg-contrast`}>
-                    Ez az eszköz nem támogatja a PDF-ek megjelenítését. Kérjük, töltsd le a PDF-et:{' '}
-                    <a className={`decoration-primary text-primary dark:text-primary-400`} href={result.url}>
-                      PDF letöltése
-                    </a>
-                    .
-                  </p>
-                </iframe>
-              </object>
+              {/*<object data={result.url} type={result.type} className={`h-dvh w-full`}>*/}
+              <iframe
+                src={`https://docs.google.com/viewerng/viewer?url=${encodeURIComponent(result.url!)}&embedded=true`}
+                loading={'lazy'}
+                referrerPolicy={'no-referrer'}
+                className={`h-dvh w-full`}
+              >
+                <p className={`prose text-balance p-2 text-bg-contrast`}>
+                  Ez az eszköz nem támogatja a PDF-ek megjelenítését. Kérjük, töltsd le a PDF-et:{' '}
+                  <a className={`decoration-primary text-primary dark:text-primary-400`} href={result.url}>
+                    PDF letöltése
+                  </a>
+                  .
+                </p>
+              </iframe>
+              {/*</object>*/}
             </ResultsTable>
           </>
         );
