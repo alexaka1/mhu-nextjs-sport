@@ -39,11 +39,11 @@ export async function updateUserAvatar({
 
 export async function getResults(sportag: string): Promise<ResultItem[]> {
   const results = await getResultItems(sportag);
-  const urls = await utapi.getFileUrls(results.map((r) => r.key));
+  const { data } = await utapi.getFileUrls(results.map((r) => r.key));
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
     if (result != null) {
-      result.url = urls.find((u) => u.key === result.key)?.url;
+      result.url = data.find((u) => u.key === result.key)?.url;
     }
   }
   return results;

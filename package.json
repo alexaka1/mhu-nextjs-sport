@@ -31,9 +31,9 @@
     "@sentry/nextjs": "^7.112.2",
     "@serwist/next": "^9.0.2",
     "@t3-oss/env-nextjs": "^0.10.1",
-    "@tabler/icons-react": "^3.2.0",
+    "@tabler/icons-react": "^3.3.0",
     "@tanstack/react-table": "^8.16.0",
-    "@uploadthing/react": "^6.4.4",
+    "@uploadthing/react": "^6.5.1",
     "@vercel/speed-insights": "^1.0.10",
     "drizzle-orm": "^0.30.9",
     "drizzle-zod": "^0.5.1",
@@ -44,9 +44,9 @@
     "react": "^18.3.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
-    "uploadthing": "^6.9.0",
+    "uploadthing": "^6.10.1",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz",
-    "zod": "^3.23.4"
+    "zod": "^3.23.5"
   },
   "devDependencies": {
     "@sentry/utils": "^7.112.2",
@@ -55,8 +55,8 @@
     "@types/node": "^20.12.7",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.1",
     "drizzle-kit": "^0.20.17",
@@ -71,7 +71,7 @@
     "serwist": "^9.0.2",
     "tailwindcss": "^3.4.3",
     "tailwindcss-oklch": "^0.0.1",
-    "tsx": "^4.7.3",
+    "tsx": "^4.8.2",
     "typescript": "^5.4.5"
   },
   "dependenciesMeta": {

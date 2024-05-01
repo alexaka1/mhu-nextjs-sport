@@ -63,7 +63,7 @@ async function canEdit(): Promise<{ authorized: false; userId: string | null } |
   return { authorized: false, userId: null };
 }
 
-function validateFiles(files: Array<FileUploadData>) {
+function validateFiles(files: Readonly<Array<FileUploadData>>) {
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
     const fileType = file?.type;
