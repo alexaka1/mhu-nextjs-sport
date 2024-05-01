@@ -81,8 +81,8 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=20.0.0",
-    "yarn": ">=4.1.1",
+    "node": "^20.0.0",
+    "yarn": "^4.1.1",
     "npm": "Please use Yarn to install dependencies. 'yarn install'"
   }
 }
