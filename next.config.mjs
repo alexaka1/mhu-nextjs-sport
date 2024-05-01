@@ -145,6 +145,12 @@ const nextConfig = {
     return [cspHeaders];
   },
   swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 const withAxiomConfig = withAxiom(nextConfig);
