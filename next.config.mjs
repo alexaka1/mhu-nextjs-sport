@@ -145,15 +145,6 @@ const nextConfig = {
     return [cspHeaders];
   },
   swcMinify: true,
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        '@sentry/utils': false,
-      };
-    }
-
-    return config;
-  },
 };
 
 const withAxiomConfig = withAxiom(nextConfig);
