@@ -2,7 +2,7 @@
   "name": "mhu-nextjs-sport",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "yarn@4.1.1+sha256.f3cc0eda8e5560e529c7147565b30faa43b4e472d90e8634d7134a37c7f59781",
+  "packageManager": "pnpm@7.33.7+sha256.d1581d46ed10f54ff0cbdd94a2373b1f070202b0fbff29f27c2ce01460427043",
   "scripts": {
     "dev": "next dev --turbo",
     "dev:sw": "next dev --experimental-https --turbo",
