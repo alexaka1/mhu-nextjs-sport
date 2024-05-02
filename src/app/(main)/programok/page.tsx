@@ -25,37 +25,37 @@ export default function Page() {
       >
         <h1 className={`dark:text-bg-contrast`}>Programok - 2024</h1>
         <section>
-          <h2 className={`font-medium`}>December 2.</h2>
+          <h2 className={`font-medium`}>Június 28. péntek</h2>
           <Grid>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium text-primary dark:text-primary-600`}>
-                <time dateTime={`2011-12-02T09:00:00Z`}>9:00</time>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T10:30:00`}>10:30</time> -{' '}
+                <time dateTime={`2024-06-28T12:00:00`}>12:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Érkezés, szállás elfoglalása és regisztráció.</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T12:00:00`}>12:00</time>
               </h3>
               <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
+                Technikai értekezlet a Nyíregyházi Egyetem közös helyiségben 12:00 órától, ezért{' '}
+                <span className={`font-bold`}>
+                  kérjük a sportfelelősöket, hogy ezen időpontig a helyszínre mindenképp érkezzenek meg!
+                </span>
               </p>
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>10:00</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T12:30:00`}>12:30</time>
+              </h3>
+              <p className={`text-balance text-base`}>Megnyitó a Nyíregyházi Egyetem sportudvarán.</p>
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>12:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-            </Entry>
-            <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>13:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Futás - atlétikai pálya.</p>
               {/*<FontAwesomeIcon*/}
               {/*  icon={faMountainSun}*/}
               {/*  className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}*/}
@@ -63,110 +63,90 @@ export default function Page() {
               {/*/>*/}
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>14:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Labdarúgás - futballpályák.</p>
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>15:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Kosárlabda - sportcsarnok T2 terem.</p>
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>16:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Asztalitenisz - atlétika pálya melletti sportcsarnok.</p>
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>17:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-              {/*<FontAwesomeIcon*/}
-              {/*  icon={faMountainSun}*/}
-              {/*  className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}*/}
-              {/*  title={`Kép helye`}*/}
-              {/*/>*/}
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T18:00:00`}>18:00</time> -{' '}
+                <time dateTime={`2024-06-28T19:00:00`}>19:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Vacsora</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T20:00:00`}>20:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Esti zenés rendezvény: Campus Étterem és Bistro</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T21:00:00`}>21:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Darts - Campus Étterem és Bistro.</p>
             </Entry>
           </Grid>
         </section>
         <section>
-          <h2 className={`font-medium`}>Január 3.</h2>
+          <h2 className={`font-medium`}>Június 29. szombat</h2>
           <Grid>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
-                <time dateTime={`2012-01-03T09:00:00Z`}>9:00</time>
+                <time dateTime={`2024-06-29T07:00:00`}>7:00</time> - <time dateTime={`2024-06-29T08:00:00`}>8:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Reggeli.</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-29T09:00:00`}>9:00</time> - <time dateTime={`2024-06-29T11:00:00`}>11:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Úszás - egyetemi uszoda.</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Labdarúgás folytatás - futballpályák.</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Kosárlabda folytatás - sportcsarnok T2 terem.</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
               </h3>
               <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
+                asztalitenisz folytatás - atlétika pálya melletti sportcsarnok.
               </p>
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>10:00</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-29T07:00:00`}>13:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Eredményhirdetés</p>
             </Entry>
             <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>12:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-            </Entry>
-            <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>13:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-              {/*<FontAwesomeIcon*/}
-              {/*  icon={faMountainSun}*/}
-              {/*  className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}*/}
-              {/*  title={`Kép helye`}*/}
-              {/*/>*/}
-            </Entry>
-            <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>14:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-            </Entry>
-            <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>15:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-            </Entry>
-            <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>16:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-            </Entry>
-            <Entry>
-              <h3 className={`mx-0.5 my-0 font-medium`}>17:30</h3>
-              <p className={`text-balance text-base`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet vehicula ipsum. Vivamus eu leo id
-                enim cursus gravida.
-              </p>
-              {/*<FontAwesomeIcon*/}
-              {/*  icon={faMountainSun}*/}
-              {/*  className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}*/}
-              {/*  title={`Kép helye`}*/}
-              {/*/>*/}
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-29T14:00:00`}>14:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Ebéd</p>
             </Entry>
           </Grid>
         </section>
