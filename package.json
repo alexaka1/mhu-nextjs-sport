@@ -51,7 +51,7 @@
     "zod": "^3.23.6"
   },
   "devDependencies": {
-    "@alexaka1/tailwindcss-oklch": "^0.0.3",
+    "@alexaka1/tailwindcss-oklch": "^0.0.4",
     "@sentry/utils": "^7.112.2",
     "@tailwindcss/typography": "^0.5.13",
     "@tanstack/eslint-plugin-query": "^5.32.1",
