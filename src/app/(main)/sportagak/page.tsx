@@ -444,10 +444,7 @@ export default function Page() {
           <p>Fehér felsőben játszani nem lehet!</p>
           <p>Labdát a szervezők biztosítanak, míg ütőt a játékosok hoznak magukkal.</p>
           <h3>Lebonyolítás</h3>
-          <p>
-            A verseny lebonyolítása a futballal azonos sorsolás alapján történik, de a helyosztók során a csoportok 1-2.
-            helyezettjei részére keresztbe játszás nincs.
-          </p>
+          <p>A verseny lebonyolítása az alábbi sorsolás alapján történik.</p>
           <DataList>
             <DataListEntry>
               <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
@@ -640,8 +637,8 @@ export default function Page() {
           </DataList>
           <h3>Szabályok</h3>
           <p>
-            A csapatokat a futball sorsolásával egyezően állítottuk csoportba, a csoportokban körmérkőzés, majd 1-4.,
-            5-8., 9-12. helyekért helyosztó mérkőzések zajlanak.
+            A csapatokat sorsolással állítottuk csoportba, a csoportokban körmérkőzéseket játszanak. Az 1-4. helyekért
+            játszanak a végjátékban.
           </p>
           <p>A játékidő 10 perc vagy 15 pont. Döntetlen esetén 2 perc hosszabbítás lesz.</p>
           <p>
