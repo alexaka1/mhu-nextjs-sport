@@ -11,7 +11,7 @@ export default function DarkModeToggle() {
       <input
         id={'dark-mode-toggle'}
         type="checkbox"
-        className="sr-only"
+        className="hidden"
         value="dark"
         onChange={(v) => {
           if (v.target.checked) {

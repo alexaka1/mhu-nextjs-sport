@@ -4,8 +4,6 @@ import { Suspense } from 'react';
 import Skeleton from '@/app/ui/skeleton';
 import { Result } from '@/app/lib/types';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
-import { UploadResult } from '@/app/ui/results/upload-result';
-import ResultsContent from '@/app/ui/results/results-tab-content';
 
 type Props = {
   params?: {
