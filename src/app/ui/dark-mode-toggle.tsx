@@ -3,9 +3,19 @@
 import { useTheme } from 'next-themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
 
 export default function DarkModeToggle() {
-  const { setTheme } = useTheme();
+  const { setTheme, systemTheme, theme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  useEffect(() => {
+    if (currentTheme === 'dark') {
+      const toggle = document.getElementById('dark-mode-toggle') as HTMLInputElement | null;
+      if (toggle && !toggle.checked) {
+        toggle.click();
+      }
+    }
+  }, []);
   return (
     <label className="dui-swap dui-swap-rotate" title={'Sötét/Világos mód'}>
       <input
