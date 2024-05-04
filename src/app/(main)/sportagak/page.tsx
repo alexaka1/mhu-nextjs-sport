@@ -8,16 +8,18 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="flex flex-col bg-white dark:bg-gray-800">
-      <EntryContent>
-        <p className={`p-1 pt-4`}>
-          A sporttalálkozó rendezésével és szervezésével kapcsolatos bármilyen kérdés vagy probléma esetén forduljatok
-          elsődlegesen{' '}
-          <span className={`inline-block max-w-full text-balance font-medium`}>dr. Mészáros Attilához</span> a{' '}
-          <a href="tel:+36703845041">06/70/384-5041</a> telefonszámon, vagy a{' '}
-          <a href={`mailto:meszaros.attila@mku.hu`}>meszaros.attila@mku.hu</a> e-mail címen. A helyszínen a kijelölt
-          csapatfelelősökhöz, a sporttal kapcsolatos kérdésekben pedig a helyszínen a sportági felelősökhöz.
-        </p>
-      </EntryContent>
+      <div className={`mx-auto`}>
+        <EntryContent>
+          <p className={`p-1 pt-4`}>
+            A sporttalálkozó rendezésével és szervezésével kapcsolatos bármilyen kérdés vagy probléma esetén forduljatok
+            elsődlegesen{' '}
+            <span className={`inline-block max-w-full text-balance font-medium`}>dr. Mészáros Attilához</span> a{' '}
+            <a href="tel:+36703845041">06/70/384-5041</a> telefonszámon, vagy a{' '}
+            <a href={`mailto:meszaros.attila@mku.hu`}>meszaros.attila@mku.hu</a> e-mail címen. A helyszínen a kijelölt
+            csapatfelelősökhöz, a sporttal kapcsolatos kérdésekben pedig a helyszínen a sportági felelősökhöz.
+          </p>
+        </EntryContent>
+      </div>
       <Entry>
         <EntryContent>
           <Title id={`Labdarúgás`}>Labdarúgás</Title>
