@@ -14,6 +14,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons/faPeopleGroup';
 import { usePathname } from 'next/navigation';
+import { faSection } from '@fortawesome/free-solid-svg-icons';
 
 type Tab = {
   title: Result;
@@ -88,6 +89,16 @@ const tabs = [
         className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
         aria-hidden="true"
         stroke={1.5}
+      />
+    ),
+  },
+  {
+    title: 'Főügyészi verseny',
+    icon: (
+      <FontAwesomeIcon
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        aria-hidden="true"
+        icon={faSection}
       />
     ),
   },
