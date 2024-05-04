@@ -4,7 +4,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      disallow: '/',
+      allow: '/',
+      disallow: ['/login', '/koszonto'],
     },
+    sitemap: 'https://sport.martossy.hu/sitemap.xml',
   };
 }
