@@ -14,6 +14,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons/faPeopleGroup';
 import { usePathname } from 'next/navigation';
+import { faSection } from '@fortawesome/free-solid-svg-icons';
 
 type Tab = {
   title: Result;
@@ -92,6 +93,16 @@ const tabs = [
     ),
   },
   {
+    title: 'Főügyészi verseny',
+    icon: (
+      <FontAwesomeIcon
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        aria-hidden="true"
+        icon={faSection}
+      />
+    ),
+  },
+  {
     title: 'Csapatverseny',
     icon: (
       <FontAwesomeIcon
@@ -116,7 +127,10 @@ export default function ResultsTabLinks() {
             href={`/eredmenyek/${encodeURIComponent(tab.title)}`}
             className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent hover:border-secondary-600
               hover:text-secondary-600 data-active:border-primary data-active:text-primary dark:hover:text-gray-300 data-active:dark:border-primary-400 data-active:dark:text-primary-400`}
-            data-active={pathname === `/eredmenyek/${encodeURIComponent(tab.title)}`}
+            data-active={
+              pathname === `/eredmenyek/${encodeURIComponent(tab.title)}` ||
+              (pathname === '/eredmenyek' && tab.title === 'Csapatverseny')
+            }
           >
             {tab.icon}
             {tab.title}

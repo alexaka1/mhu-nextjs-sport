@@ -9,6 +9,7 @@ export const Result = z.enum([
   'Darts',
   'Kosárlabda',
   'Csapatverseny',
+  'Főügyészi verseny',
 ]);
 export type Result = z.infer<typeof Result>;
 

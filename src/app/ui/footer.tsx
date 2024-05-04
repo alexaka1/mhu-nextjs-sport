@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
-import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -9,15 +8,15 @@ export default function Footer() {
       <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className={`flex flex-col items-start gap-2`}>
-            <a
-              className="pointer-events-none flex place-items-center gap-2 p-8 text-bg-contrast lg:pointer-events-auto lg:p-0"
-              href="https://vercel.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src="/vercel.svg" alt="Vercel Logó" className="h-6 dark:invert" width={100} height={24} /> -en
-              hosztolva.
-            </a>
+            {/*<a*/}
+            {/*  className="pointer-events-none flex place-items-center gap-2 p-8 text-bg-contrast lg:pointer-events-auto lg:p-0"*/}
+            {/*  href="https://vercel.com"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noopener noreferrer"*/}
+            {/*>*/}
+            {/*  <Image src="/vercel.svg" alt="Vercel Logó" className="h-6 dark:invert" width={100} height={24} /> -en*/}
+            {/*  hosztolva.*/}
+            {/*</a>*/}
             <p className="prose text-balance text-bg-contrast">
               Ez a weboldal egy hobbi projekt keretében készült. Nem hivatalos. Nem kapcsolódik semmilyen hivatalos
               szervezethez. A forráskód elérhető a GitHub-on.

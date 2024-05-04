@@ -1,87 +1,25 @@
 import { Metadata } from 'next';
-import { ReactNode } from 'react';
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag } from '@fortawesome/free-solid-svg-icons/faHashtag';
+import { DataList, DataListEntry, Entry, EntryContent, Media, Title } from '@/app/ui/text-content';
 
 export const metadata: Metadata = {
   title: 'Sportágak',
 };
 
-function Title({ children, id }: Readonly<{ children: ReactNode; id: string }>) {
-  return (
-    <h2
-      id={id}
-      className="group/title flex flex-row text-3xl font-bold capitalize tracking-tight transition-colors duration-200 text-gray-900 sm:text-4xl dark:text-bg-contrast"
-    >
-      <a href={`#${id}`} className={`flex items-center align-middle standalone:hidden print:hidden`}>
-        <FontAwesomeIcon
-          icon={faHashtag}
-          className={`invisible size-6 group-hover/title:visible dark:text-bg-contrast`}
-        />
-      </a>
-      {children}
-    </h2>
-  );
-}
-
-function Media({ src, alt, priority }: Readonly<{ src: string; alt: string; priority?: boolean }>) {
-  return (
-    <div className="grid gap-4 sm:gap-6 lg:gap-8">
-      <Image
-        src={src}
-        alt={alt}
-        width={400}
-        height={400}
-        priority={priority}
-        className={`hidden size-auto rounded-lg object-scale-down lg:block print:hidden`}
-      />
-    </div>
-  );
-}
-
-function Entry({ children }: Readonly<{ children: ReactNode }>) {
-  return (
-    <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 px-4 py-6 sm:gap-y-16 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8 print:grid-cols-1 print:py-0 print:[page-break-after:always] [&>div:first-of-type]:even:lg:order-last">
-      {children}
-    </div>
-  );
-}
-
-function EntryContent({ children }: Readonly<{ children: ReactNode }>) {
-  return (
-    <div
-      className={`prose mx-auto prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify
-          prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto
-          prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-bg-contrast prose-p:dark:text-bg-contrast
-          prose-a:dark:text-primary-600 prose-ol:dark:text-bg-contrast prose-ul:dark:text-bg-contrast`}
-    >
-      {children}
-    </div>
-  );
-}
-
-function DataListEntry({ children }: Readonly<{ children: ReactNode }>) {
-  return <div className="border-t pt-4 border-gray-200">{children}</div>;
-}
-
-function DataList({ children }: Readonly<{ children: ReactNode }>) {
-  return <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">{children}</dl>;
-}
-
 export default function Page() {
   return (
     <main className="flex flex-col bg-white dark:bg-gray-800">
-      <EntryContent>
-        <p className={`p-1 pt-4`}>
-          A sporttalálkozó rendezésével és szervezésével kapcsolatos bármilyen kérdés vagy probléma esetén forduljatok
-          elsődlegesen{' '}
-          <span className={`inline-block max-w-full text-balance font-medium`}>dr. Mészáros Attilához</span> a{' '}
-          <a href="tel:+36703845041">06/70/384-5041</a> telefonszámon, vagy a{' '}
-          <a href={`mailto:meszaros.attila@mku.hu`}>meszaros.attila@mku.hu</a> e-mail címen. A helyszínen a kijelölt
-          csapatfelelősökhöz, a sporttal kapcsolatos kérdésekben pedig a helyszínen a sportági felelősökhöz.
-        </p>
-      </EntryContent>
+      <div className={`mx-auto`}>
+        <EntryContent>
+          <p className={`p-1 pt-4`}>
+            A sporttalálkozó rendezésével és szervezésével kapcsolatos bármilyen kérdés vagy probléma esetén forduljatok
+            elsődlegesen{' '}
+            <span className={`inline-block max-w-full text-balance font-medium`}>dr. Mészáros Attilához</span> a{' '}
+            <a href="tel:+36703845041">06/70/384-5041</a> telefonszámon, vagy a{' '}
+            <a href={`mailto:meszaros.attila@mku.hu`}>meszaros.attila@mku.hu</a> e-mail címen. A helyszínen a kijelölt
+            csapatfelelősökhöz, a sporttal kapcsolatos kérdésekben pedig a helyszínen a sportági felelősökhöz.
+          </p>
+        </EntryContent>
+      </div>
       <Entry>
         <EntryContent>
           <Title id={`Labdarúgás`}>Labdarúgás</Title>
@@ -444,10 +382,7 @@ export default function Page() {
           <p>Fehér felsőben játszani nem lehet!</p>
           <p>Labdát a szervezők biztosítanak, míg ütőt a játékosok hoznak magukkal.</p>
           <h3>Lebonyolítás</h3>
-          <p>
-            A verseny lebonyolítása a futballal azonos sorsolás alapján történik, de a helyosztók során a csoportok 1-2.
-            helyezettjei részére keresztbe játszás nincs.
-          </p>
+          <p>A verseny lebonyolítása az alábbi sorsolás alapján történik.</p>
           <DataList>
             <DataListEntry>
               <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
@@ -640,8 +575,8 @@ export default function Page() {
           </DataList>
           <h3>Szabályok</h3>
           <p>
-            A csapatokat a futball sorsolásával egyezően állítottuk csoportba, a csoportokban körmérkőzés, majd 1-4.,
-            5-8., 9-12. helyekért helyosztó mérkőzések zajlanak.
+            A csapatokat sorsolással állítottuk csoportba, a csoportokban körmérkőzéseket játszanak. Az 1-4. helyekért
+            játszanak a végjátékban.
           </p>
           <p>A játékidő 10 perc vagy 15 pont. Döntetlen esetén 2 perc hosszabbítás lesz.</p>
           <p>

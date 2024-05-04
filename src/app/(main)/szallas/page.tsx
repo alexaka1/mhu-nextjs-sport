@@ -25,7 +25,10 @@ export default function Lodging() {
       <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 [&>div:first-of-type]:even:lg:order-last">
         <div className={`prose`}>
           <Link className={``} href={`https://sandraifjusagiszallo.hu/`} target={'_blank'} prefetch={false}>
-            <h2 className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75">
+            <h2
+              id={`sandra`}
+              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75"
+            >
               Sandra Hotel
             </h2>
           </Link>
@@ -62,7 +65,10 @@ export default function Lodging() {
       <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 [&>div:first-of-type]:even:lg:order-last">
         <div className={`prose`}>
           <Link className={``} href={`https://bessenyeihotel.hu/`} target={'_blank'} prefetch={false}>
-            <h2 className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75">
+            <h2
+              id={`bessenyei`}
+              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75"
+            >
               Hotel Bessenyei
             </h2>
           </Link>

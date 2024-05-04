@@ -106,7 +106,7 @@ export default function Page() {
           <Grid>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
-                <time dateTime={`2024-06-29T07:00:00`}>7:00</time> - <time dateTime={`2024-06-29T08:00:00`}>8:00</time>
+                <time dateTime={`2024-06-29T07:00:00`}>7:00</time> - <time dateTime={`2024-06-29T09:00:00`}>9:00</time>
               </h3>
               <p className={`text-balance text-base`}>Reggeli.</p>
             </Entry>
