@@ -1645,12 +1645,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.12.7":
-  version: 20.12.7
-  resolution: "@types/node@npm:20.12.7"
+"@types/node@npm:^20.12.8":
+  version: 20.12.8
+  resolution: "@types/node@npm:20.12.8"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10/b4a28a3b593a9bdca5650880b6a9acef46911d58cf7cfa57268f048e9a7157a7c3196421b96cea576850ddb732e3b54bc982c8eb5e1e5ef0635d4424c2fce801
+  checksum: 10/1feab4c8cb08588eea10811ed4d02485a5cde47fdf92e7b3193fc9f8ee39ea556f6e3124dc6d5378354466ed5f7e5fbe5e20f625908de40ea37560368a50f72c
   languageName: node
   linkType: hard
 
@@ -3035,9 +3035,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"drizzle-orm@npm:^0.30.9":
-  version: 0.30.9
-  resolution: "drizzle-orm@npm:0.30.9"
+"drizzle-orm@npm:^0.30.10":
+  version: 0.30.10
+  resolution: "drizzle-orm@npm:0.30.10"
   peerDependencies:
     "@aws-sdk/client-rds-data": ">=3"
     "@cloudflare/workers-types": ">=3"
@@ -3115,7 +3115,7 @@ __metadata:
       optional: true
     sqlite3:
       optional: true
-  checksum: 10/c0709bc452e1027f965caa069cba4dc858b8113b7bfc74c0faf3b24ad7152ab3fc3002232b9530d97d2fe540bf29a69700aa3d36604adb43195881eddde7a710
+  checksum: 10/a44a908930d5485abe3cd3332cf29f9100a4f17383d128fc42130ead46d01a57bd681f855fd3b8d6b7638da8163029199b756c256acb327132dbac896bb1e3cc
   languageName: node
   linkType: hard
 
@@ -5330,7 +5330,7 @@ __metadata:
     "@tailwindcss/typography": "npm:^0.5.13"
     "@tanstack/react-table": "npm:^8.16.0"
     "@total-typescript/ts-reset": "npm:^0.5.1"
-    "@types/node": "npm:^20.12.7"
+    "@types/node": "npm:^20.12.8"
     "@types/react": "npm:^18.3.1"
     "@types/react-dom": "npm:^18.3.0"
     "@typescript-eslint/eslint-plugin": "npm:^7.8.0"
@@ -5340,7 +5340,7 @@ __metadata:
     autoprefixer: "npm:^10.4.19"
     cssnano: "npm:^7.0.1"
     drizzle-kit: "npm:^0.20.17"
-    drizzle-orm: "npm:^0.30.9"
+    drizzle-orm: "npm:^0.30.10"
     drizzle-zod: "npm:^0.5.1"
     eslint: "npm:^8.57.0"
     eslint-config-next: "npm:14.2.3"
@@ -5359,11 +5359,11 @@ __metadata:
     react-dom: "npm:^18.3.1"
     serwist: "npm:^9.0.2"
     tailwindcss: "npm:^3.4.3"
-    tsx: "npm:^4.8.2"
+    tsx: "npm:^4.9.0"
     typescript: "npm:^5.4.5"
     uploadthing: "npm:^6.10.1"
     xlsx: "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
-    zod: "npm:^3.23.5"
+    zod: "npm:^3.23.6"
   dependenciesMeta:
     eslint@8.57.0:
       unplugged: true
@@ -7479,9 +7479,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:^4.8.2":
-  version: 4.8.2
-  resolution: "tsx@npm:4.8.2"
+"tsx@npm:^4.9.0":
+  version: 4.9.0
+  resolution: "tsx@npm:4.9.0"
   dependencies:
     esbuild: "npm:~0.20.2"
     fsevents: "npm:~2.3.3"
@@ -7491,7 +7491,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 10/77f10c8c7a05dd3cdf159bd58f5c4a20074f62e45b5b0fac8becf79f47909693db26ceab12fd4249caae208c9109a75c75c2aff7ba61413a2080c7e0434f97d1
+  checksum: 10/75d176ceca8e17b28d220bd2c32350f41eb9189569c27950b890774bce318c5fa026b475cae8180dee90ad40737136cf741d868d8a8469084e7dab54a930f351
   languageName: node
   linkType: hard
 
@@ -7943,9 +7943,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.23.5":
-  version: 3.23.5
-  resolution: "zod@npm:3.23.5"
-  checksum: 10/e9169bc3d477f48cfcf193a755926dc2cbed20b59b51256a772de02ad6f7b016b121087209fcd2e5bbd62ad625e8c0583dff16c24cfee0bfeaa95f23155a38af
+"zod@npm:^3.23.6":
+  version: 3.23.6
+  resolution: "zod@npm:3.23.6"
+  checksum: 10/a3b0ea904f0615c67ef01ab3abc4e917d3bb87d46fc39515bcb68e59450b54f175dc9d29ddc7e13217dd456099729afa0b76609db135ca158e3ccebcac6153d9
   languageName: node
   linkType: hard
