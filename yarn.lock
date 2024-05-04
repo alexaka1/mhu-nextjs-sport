@@ -1556,6 +1556,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/eslint-plugin-query@npm:^5.32.1":
+  version: 5.32.1
+  resolution: "@tanstack/eslint-plugin-query@npm:5.32.1"
+  dependencies:
+    "@typescript-eslint/utils": "npm:^6.20.0"
+  peerDependencies:
+    eslint: ^8.0.0
+  checksum: 10/5563c6a1a3d8e12348bbedc711c36c467c7d19d48a986dbe632237b54a7755950852d4ff66313b5ca99e29a78adc32744c00690986017b3fd7263c4bec270b92
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-core@npm:5.34.1":
+  version: 5.34.1
+  resolution: "@tanstack/query-core@npm:5.34.1"
+  checksum: 10/537c16192397b07b6c36c74aaa2e29b5238db1d6899cabb843e86c38f4240fbc2c73ec36ed5c03d355be7ead4758b316a3e006faeb06a598d6dd0b7a957351e4
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-devtools@npm:5.32.1":
+  version: 5.32.1
+  resolution: "@tanstack/query-devtools@npm:5.32.1"
+  checksum: 10/2eddf002cf8e4f6d7a4cd532f3e6e75ae8627b1b0f94ad5797ab173de797ad303696c25a66727187fd13f42cb50d6f3509133def5b6c8893d3312ae77f5914ec
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query-devtools@npm:^5.34.1":
+  version: 5.34.1
+  resolution: "@tanstack/react-query-devtools@npm:5.34.1"
+  dependencies:
+    "@tanstack/query-devtools": "npm:5.32.1"
+  peerDependencies:
+    "@tanstack/react-query": ^5.34.1
+    react: ^18.0.0
+  checksum: 10/454972a26af406fd0fd0253693a2a31b745b6796f25503255f588d49cb5d79fde2907cf1d82027d73fbb3979b16d78d21458c76af66d1fcec8ec69eb93b4c69b
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:^5.34.1":
+  version: 5.34.1
+  resolution: "@tanstack/react-query@npm:5.34.1"
+  dependencies:
+    "@tanstack/query-core": "npm:5.34.1"
+  peerDependencies:
+    react: ^18.0.0
+  checksum: 10/71193ab030d5fb1f18b1403cff9e39dd8d281f2c2179562a9c96335d2449858e54a0e72baff292c7aff1d23d5c4a62198ed1738f50fe50686bff423be0b5575f
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-table@npm:^8.16.0":
   version: 8.16.0
   resolution: "@tanstack/react-table@npm:8.16.0"
@@ -1622,7 +1670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:^7.0.15":
+"@types/json-schema@npm:^7.0.12, @types/json-schema@npm:^7.0.15":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
   checksum: 10/1a3c3e06236e4c4aab89499c428d585527ce50c24fe8259e8b3926d3df4cfbbbcf306cfc73ddfb66cbafc973116efd15967020b0f738f63e09e64c7d260519e7
@@ -1698,7 +1746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semver@npm:^7.5.8":
+"@types/semver@npm:^7.5.0, @types/semver@npm:^7.5.8":
   version: 7.5.8
   resolution: "@types/semver@npm:7.5.8"
   checksum: 10/3496808818ddb36deabfe4974fd343a78101fa242c4690044ccdc3b95dcf8785b494f5d628f2f47f38a702f8db9c53c67f47d7818f2be1b79f2efb09692e1178
@@ -1782,6 +1830,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/scope-manager@npm:6.21.0":
+  version: 6.21.0
+  resolution: "@typescript-eslint/scope-manager@npm:6.21.0"
+  dependencies:
+    "@typescript-eslint/types": "npm:6.21.0"
+    "@typescript-eslint/visitor-keys": "npm:6.21.0"
+  checksum: 10/fe91ac52ca8e09356a71dc1a2f2c326480f3cccfec6b2b6d9154c1a90651ab8ea270b07c67df5678956c3bbf0bbe7113ab68f68f21b20912ea528b1214197395
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/scope-manager@npm:7.2.0":
   version: 7.2.0
   resolution: "@typescript-eslint/scope-manager@npm:7.2.0"
@@ -1819,6 +1877,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/types@npm:6.21.0":
+  version: 6.21.0
+  resolution: "@typescript-eslint/types@npm:6.21.0"
+  checksum: 10/e26da86d6f36ca5b6ef6322619f8ec55aabcd7d43c840c977ae13ae2c964c3091fc92eb33730d8be08927c9de38466c5323e78bfb270a9ff1d3611fe821046c5
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/types@npm:7.2.0":
   version: 7.2.0
   resolution: "@typescript-eslint/types@npm:7.2.0"
@@ -1830,6 +1895,25 @@ __metadata:
   version: 7.8.0
   resolution: "@typescript-eslint/types@npm:7.8.0"
   checksum: 10/3c7100ecd251c54126c8e4cf00f353cd421a88bf23ac3dc48ff40b1b530596467b4b4fd7e1c91e61a561fe03a6f53eb11acd043fd9f30388d995f32399f43bee
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/typescript-estree@npm:6.21.0":
+  version: 6.21.0
+  resolution: "@typescript-eslint/typescript-estree@npm:6.21.0"
+  dependencies:
+    "@typescript-eslint/types": "npm:6.21.0"
+    "@typescript-eslint/visitor-keys": "npm:6.21.0"
+    debug: "npm:^4.3.4"
+    globby: "npm:^11.1.0"
+    is-glob: "npm:^4.0.3"
+    minimatch: "npm:9.0.3"
+    semver: "npm:^7.5.4"
+    ts-api-utils: "npm:^1.0.1"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/b32fa35fca2a229e0f5f06793e5359ff9269f63e9705e858df95d55ca2cd7fdb5b3e75b284095a992c48c5fc46a1431a1a4b6747ede2dd08929dc1cbacc589b8
   languageName: node
   linkType: hard
 
@@ -1885,6 +1969,33 @@ __metadata:
   peerDependencies:
     eslint: ^8.56.0
   checksum: 10/49b7077e22e4456d41cd8fa71126ffd37b0eb325ba49af5495a6fddf3d8529960dd3aaa8d73a7a35f0c42ee4da0849b6cbc00ebefff50f2e3cb8330bbb788d91
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/utils@npm:^6.20.0":
+  version: 6.21.0
+  resolution: "@typescript-eslint/utils@npm:6.21.0"
+  dependencies:
+    "@eslint-community/eslint-utils": "npm:^4.4.0"
+    "@types/json-schema": "npm:^7.0.12"
+    "@types/semver": "npm:^7.5.0"
+    "@typescript-eslint/scope-manager": "npm:6.21.0"
+    "@typescript-eslint/types": "npm:6.21.0"
+    "@typescript-eslint/typescript-estree": "npm:6.21.0"
+    semver: "npm:^7.5.4"
+  peerDependencies:
+    eslint: ^7.0.0 || ^8.0.0
+  checksum: 10/b404a2c55a425a79d054346ae123087d30c7ecf7ed7abcf680c47bf70c1de4fabadc63434f3f460b2fa63df76bc9e4a0b9fa2383bb8a9fcd62733fb5c4e4f3e3
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:6.21.0":
+  version: 6.21.0
+  resolution: "@typescript-eslint/visitor-keys@npm:6.21.0"
+  dependencies:
+    "@typescript-eslint/types": "npm:6.21.0"
+    eslint-visitor-keys: "npm:^3.4.1"
+  checksum: 10/30422cdc1e2ffad203df40351a031254b272f9c6f2b7e02e9bfa39e3fc2c7b1c6130333b0057412968deda17a3a68a578a78929a8139c6acef44d9d841dc72e1
   languageName: node
   linkType: hard
 
@@ -5328,6 +5439,9 @@ __metadata:
     "@t3-oss/env-nextjs": "npm:^0.10.1"
     "@tabler/icons-react": "npm:^3.3.0"
     "@tailwindcss/typography": "npm:^0.5.13"
+    "@tanstack/eslint-plugin-query": "npm:^5.32.1"
+    "@tanstack/react-query": "npm:^5.34.1"
+    "@tanstack/react-query-devtools": "npm:^5.34.1"
     "@tanstack/react-table": "npm:^8.16.0"
     "@total-typescript/ts-reset": "npm:^0.5.1"
     "@types/node": "npm:^20.12.8"

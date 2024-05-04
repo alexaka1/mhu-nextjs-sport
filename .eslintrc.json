@@ -19,7 +19,8 @@
         "plugin:import/recommended",
         "plugin:import/typescript",
         "plugin:tailwindcss/recommended",
-        "plugin:drizzle/recommended"
+        "plugin:drizzle/recommended",
+        "plugin:@tanstack/eslint-plugin-query/recommended"
       ],
       "rules": {
         "eqeqeq": ["error", "smart"],
