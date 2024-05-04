@@ -83,7 +83,7 @@ export default function Page() {
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T18:00:00`}>18:00</time> -{' '}
-                <time dateTime={`2024-06-28T19:00:00`}>19:00</time>
+                <time dateTime={`2024-06-28T20:00:00`}>20:00</time>
               </h3>
               <p className={`text-balance text-base`}>Vacsora</p>
             </Entry>
@@ -127,6 +127,12 @@ export default function Page() {
                 <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
               </h3>
               <p className={`text-balance text-base`}>Kosárlabda folytatás - sportcsarnok T2 terem.</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
+              </h3>
+              <p className={`text-balance text-base`}>Főügyészi verseny</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
