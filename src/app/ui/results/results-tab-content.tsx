@@ -56,5 +56,7 @@ export default function ResultsContent({ results, canEdit }: Readonly<{ results:
         return null;
     }
   });
-  return tables.length > 0 ? tables : <h1 className={`prose text-bg-contrast`}>Nincs eredmény az adott sportágban.</h1>;
+  return tables.length > 0 ?
+      tables
+    : <h1 className={`prose mx-auto p-4 text-bg-contrast`}>Nincs eredmény az adott sportágban.</h1>;
 }

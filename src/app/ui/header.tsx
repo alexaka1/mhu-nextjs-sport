@@ -336,7 +336,6 @@ export default function Header() {
       setTag('device-type', style.content ?? 'unknown');
     }
   }, []);
-
   const returnUrl = new URLSearchParams({ returnUrl: pathname });
   return (
     <>

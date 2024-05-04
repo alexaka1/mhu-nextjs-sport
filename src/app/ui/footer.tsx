@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
+import DarkModeToggle from '@/app/ui/dark-mode-toggle';
 
 export default function Footer() {
   return (
@@ -21,6 +22,7 @@ export default function Footer() {
               Ez a weboldal egy hobbi projekt keretében készült. Nem hivatalos. Nem kapcsolódik semmilyen hivatalos
               szervezethez. A forráskód elérhető a GitHub-on.
             </p>
+            <DarkModeToggle />
           </div>
 
           <ul className="mt-8 flex flex-wrap justify-center gap-6 sm:mt-0 sm:flex-nowrap sm:justify-end">
@@ -114,7 +116,6 @@ export default function Footer() {
           {/*  </ul>*/}
           {/*</div>*/}
         </div>
-
         <p className="prose whitespace-nowrap text-balance text-xs text-bg-contrast">
           &copy; 2024. <span className="inline-block max-w-full text-balance">Martossy Alex Márk.</span> Minden jog
           fenntartva.

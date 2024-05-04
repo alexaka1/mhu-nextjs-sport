@@ -3,6 +3,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ReactNode, useState } from 'react';
+import { ThemeProvider } from 'next-themes';
 
 export function Providers({ children }: Readonly<{ children: ReactNode }>) {
   const [queryClient] = useState<QueryClient>(
@@ -17,9 +18,11 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <ThemeProvider attribute={'class'} enableSystem={true}>
+      <QueryClientProvider client={queryClient}>
+        {children}
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
