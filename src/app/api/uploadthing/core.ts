@@ -15,9 +15,11 @@ const allowed = 'Csak xlsx és pdf fájlok tölthetőek fel';
 const resultUploader = {
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
     maxFileSize: '8MB',
+    maxFileCount: 2,
   },
   'application/pdf': {
     maxFileSize: '8MB',
+    maxFileCount: 2,
   },
 } as const satisfies FileRouterInputConfig;
 
