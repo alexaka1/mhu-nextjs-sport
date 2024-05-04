@@ -31,7 +31,7 @@ export default function DarkModeToggle() {
           }
         }}
       />
-      <FontAwesomeIcon icon={faSun} className={`dui-swap-off size-7 text-primary`} />
+      <FontAwesomeIcon icon={faSun} className={`dui-swap-off size-7 text-primary dark:text-bg-contrast`} />
       <FontAwesomeIcon icon={faMoon} className={`dui-swap-on size-7 fill-current`} />
     </label>
   );
