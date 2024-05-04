@@ -13,7 +13,6 @@ import { usePathname } from 'next/navigation';
 import { signOut, getSession } from 'next-auth/react';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
-import { useTheme } from 'next-themes';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -317,7 +316,6 @@ export default function Header() {
   const [email, setEmail] = useState('');
   const [avatar, setAvatar] = useState('');
   const pathname = usePathname();
-  const { systemTheme, theme, setTheme } = useTheme();
   useEffect(() => {
     async function checkAuth() {
       const session = await getSession();
@@ -338,7 +336,6 @@ export default function Header() {
       setTag('device-type', style.content ?? 'unknown');
     }
   }, []);
-  const currentTheme = theme === 'system' ? systemTheme : theme;
   const returnUrl = new URLSearchParams({ returnUrl: pathname });
   return (
     <>
@@ -384,12 +381,6 @@ export default function Header() {
             <span className={`hidden lg:block`}>
               <LoginButton returnUrl={returnUrl.toString()} auth={auth} />
             </span>
-            <button
-              onClick={() => (currentTheme === 'dark' ? setTheme('light') : setTheme('dark'))}
-              className="bg-red bottom-32 rounded-lg px-8 py-2 text-2xl transition-all duration-100 text-white hover:bg-gray-600 md:text-4xl dark:bg-gray-50 dark:text-gray-800 dark:hover:bg-gray-300"
-            >
-              Toggle Mode
-            </button>
             <UserInfo name={name} email={email} avatar={avatar} pathname={pathname} auth={auth} />
           </div>
           <span className={`grow lg:hidden`}></span>
