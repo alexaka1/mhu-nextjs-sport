@@ -10,6 +10,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
 import { extractRouterConfig } from 'uploadthing/server';
 import { ourFileRouter } from '@/app/api/uploadthing/core';
+import { Providers } from '@/app/providers';
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -84,11 +85,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#650e1d" />
       </head>
       <body className={`flex min-h-svh flex-col dark:bg-gray-800`}>
-        <InstallBanner />
-        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-        {children}
-        <Footer />
-        <SpeedInsights />
+        <Providers>
+          <InstallBanner />
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+          {children}
+          <Footer />
+          <SpeedInsights />
+        </Providers>
       </body>
     </html>
   );

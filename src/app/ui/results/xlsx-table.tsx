@@ -1,6 +1,6 @@
 'use client';
 import { ReactNode, useEffect, useState } from 'react';
-import { utils, read } from 'xlsx';
+import { read, utils } from 'xlsx';
 import { captureException } from '@sentry/nextjs';
 import {
   ColumnDef,
@@ -15,6 +15,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { env } from 'process';
+import { useQuery } from '@tanstack/react-query';
 
 const columnHelper = createColumnHelper<unknown>();
 const initial = [
@@ -52,14 +53,15 @@ export default function XlsxTable({
   fileUrl: string;
   id: string;
 }>) {
-  const [data, setData] = useState<Record<string, ReactNode>[]>([...initial]);
+  const [getData, setData] = useState<Record<string, ReactNode>[]>([...initial]);
   const [columns, setColumns] = useState<ColumnDef<unknown>[]>([initialColumn as never]);
   const [sorting, setSorting] = useState<SortingState>([]);
-  useEffect(() => {
-    async function fetchData() {
+  const { status, data, error } = useQuery({
+    queryKey: [fileUrl],
+    queryFn: async () => {
       try {
         if (fileUrl == null) {
-          return;
+          return null;
         }
         const file = await (await fetch(fileUrl)).arrayBuffer();
         const wb = read(file);
@@ -67,30 +69,33 @@ export default function XlsxTable({
         if (sheetName != null) {
           const ws = wb.Sheets[sheetName];
           if (ws != null) {
-            const json = utils.sheet_to_json<Record<string, ReactNode>>(ws, {});
-            setData(json);
-
-            setColumns(
-              Object.keys(json[0]!).map(
-                (key) =>
-                  columnHelper.accessor(key, {
-                    id: key,
-                    cell: (info) => info.getValue(),
-                    sortUndefined: 'last',
-                  }) as never,
-              ),
-            );
+            return utils.sheet_to_json<Record<string, ReactNode>>(ws, {});
           }
         }
       } catch (e) {
         captureException(e);
       }
+      return null;
+    },
+    staleTime: 5 * 60 * 1000,
+  });
+  useEffect(() => {
+    if (data) {
+      setData(data);
+      setColumns(
+        Object.keys(data[0]!).map(
+          (key) =>
+            columnHelper.accessor(key, {
+              id: key,
+              cell: (info) => info.getValue(),
+              sortUndefined: 'last',
+            }) as never,
+        ),
+      );
     }
-
-    void fetchData();
-  }, [fileUrl]);
+  }, [data]);
   const table = useReactTable({
-    data,
+    data: getData,
     columns,
     getCoreRowModel: getCoreRowModel(),
     debugTable: env.NODE_ENV === 'development',
@@ -100,6 +105,14 @@ export default function XlsxTable({
       sorting,
     },
   });
+
+  switch (status) {
+    case 'error':
+      return <div className={`mx-auto p-6 text-bg-contrast`}>Nem sikerült betölteni az adatokat: {error?.message}</div>;
+    case 'pending':
+      return <div className={`mx-auto animate-pulse p-6 text-bg-contrast`}>Betöltés...</div>;
+  }
+
   return (
     <>
       <table id={id} className={`relative w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400`}>
