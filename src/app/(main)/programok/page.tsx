@@ -72,6 +72,12 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
               </h3>
+              <p className={`text-balance text-base`}>Súlylökés - atlétikai pálya.</p>
+            </Entry>
+            <Entry>
+              <h3 className={`mx-0.5 my-0 font-medium`}>
+                <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
+              </h3>
               <p className={`text-balance text-base`}>Kosárlabda - sportcsarnok T2 terem.</p>
             </Entry>
             <Entry>
