@@ -28,7 +28,7 @@
     "@headlessui/tailwindcss": "^0.2.0",
     "@libsql/client": "^0.6.0",
     "@sentry/integrations": "^7.114.0",
-    "@sentry/nextjs": "^7.114.0",
+    "@sentry/nextjs": "^8.2.1",
     "@serwist/next": "^9.0.2",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tabler/icons-react": "^3.4.0",
