@@ -46,7 +46,8 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li></li>
+                  <li>Toronicza Gyula</li>
+                  <li>Dobos György</li>
                 </ul>
               </dd>
             </DataListEntry>
@@ -179,7 +180,10 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li></li>
+                  <li>Kruták Gyula</li>
+                  <li>Kisné Tarsoly Ildikó</li>
+                  <li>Reményiné Deák Mariann</li>
+                  <li>Pasztucha Éva</li>
                 </ul>
               </dd>
             </DataListEntry>
@@ -275,7 +279,10 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li className={`inline-block`}></li>
+                  <li>Diczkó Mariann</li>
+                  <li>Pasztucha Éva</li>
+                  <li>Kruták Gyula</li>
+                  <li>Csillám Enikő</li>
                 </ul>
               </dd>
             </div>
@@ -358,7 +365,8 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li></li>
+                  <li>Sável Krisztina</li>
+                  <li>Dobos Alexandra</li>
                 </ul>
               </dd>
             </DataListEntry>
@@ -448,7 +456,8 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li className={`inline-block`}></li>
+                  <li>Pintérné Varga Anita</li>
+                  <li>Szekeres Zsuzsa</li>
                 </ul>
               </dd>
             </DataListEntry>
@@ -501,7 +510,8 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li className={`inline-block max-w-full`}></li>
+                  <li>Buss Emese</li>
+                  <li>Tóth Tibor</li>
                 </ul>
               </dd>
             </DataListEntry>
@@ -586,7 +596,7 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li></li>
+                  <li className={`inline-block`}>Birta Alíz</li>
                 </ul>
               </dd>
             </DataListEntry>
@@ -676,7 +686,7 @@ export default function Page() {
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ul>
-                  <li></li>
+                  <li className={`inline-block`}>Martossy György</li>
                 </ul>
               </dd>
             </DataListEntry>
