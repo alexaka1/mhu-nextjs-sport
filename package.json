@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@alexaka1/tailwindcss-oklch": "^0.0.4",
-    "@sentry/utils": "^7.114.0",
+    "@sentry/utils": "^8.2.1",
     "@tailwindcss/typography": "^0.5.13",
     "@tanstack/eslint-plugin-query": "^5.35.6",
     "@tanstack/react-query-devtools": "^5.36.2",

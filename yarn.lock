@@ -1602,12 +1602,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/utils@npm:7.114.0, @sentry/utils@npm:^7.114.0":
+"@sentry/types@npm:8.2.1":
+  version: 8.2.1
+  resolution: "@sentry/types@npm:8.2.1"
+  checksum: 10/4bf4f6ff60f991a80fc91a871347d37b33efd2118f277daa672f37efc2d046b0999ee4577926a35e83f6b49e8f6c2125c28f09231a0acd7cf729be7713b34cd6
+  languageName: node
+  linkType: hard
+
+"@sentry/utils@npm:7.114.0":
   version: 7.114.0
   resolution: "@sentry/utils@npm:7.114.0"
   dependencies:
     "@sentry/types": "npm:7.114.0"
   checksum: 10/929fd45086cdf0a04b5e32bc0ceab98fa6a3b463aa0c337c5e4a4dfebaecc2c0ea4035c38d4b81c68585972dcb5f2e62f9737e63448b112f4270d75c3dddfd04
+  languageName: node
+  linkType: hard
+
+"@sentry/utils@npm:^8.2.1":
+  version: 8.2.1
+  resolution: "@sentry/utils@npm:8.2.1"
+  dependencies:
+    "@sentry/types": "npm:8.2.1"
+  checksum: 10/9639c2dd62bf16acc3946a5fd98786d91d9aedb9d914158e94c9f763659ef197989c6e85cad880e42f2ace0a0c29c51078ba12f8ec92cfec47f1589845f2ef13
   languageName: node
   linkType: hard
 
@@ -5915,7 +5931,7 @@ __metadata:
     "@libsql/client": "npm:^0.6.0"
     "@sentry/integrations": "npm:^7.114.0"
     "@sentry/nextjs": "npm:^7.114.0"
-    "@sentry/utils": "npm:^7.114.0"
+    "@sentry/utils": "npm:^8.2.1"
     "@serwist/next": "npm:^9.0.2"
     "@t3-oss/env-nextjs": "npm:^0.10.1"
     "@tabler/icons-react": "npm:^3.4.0"
