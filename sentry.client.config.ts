@@ -2,7 +2,7 @@
 // The config you add here will be used whenever a users loads a page in their browser.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-import { browserApiErrorsIntegration, init, replayIntegration } from '@sentry/nextjs';
+import { browserApiErrorsIntegration, browserTracingIntegration, init, replayIntegration } from '@sentry/nextjs';
 import { env } from '@/app/lib/env';
 
 const integrations = [];
@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'development') {
       blockAllMedia: true,
     }),
     browserApiErrorsIntegration(),
+    browserTracingIntegration(),
   );
 }
 
