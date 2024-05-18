@@ -31,7 +31,7 @@
     "@serwist/next": "^9.0.2",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tabler/icons-react": "^3.4.0",
-    "@tanstack/react-query": "^5.36.2",
+    "@tanstack/react-query": "^5.37.1",
     "@tanstack/react-table": "^8.17.3",
     "@uploadthing/react": "^6.5.4",
     "@vercel/speed-insights": "^1.0.10",
@@ -54,7 +54,7 @@
     "@sentry/utils": "^8.2.1",
     "@tailwindcss/typography": "^0.5.13",
     "@tanstack/eslint-plugin-query": "^5.35.6",
-    "@tanstack/react-query-devtools": "^5.36.2",
+    "@tanstack/react-query-devtools": "^5.37.1",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.2",
@@ -75,7 +75,7 @@
     "prettier-plugin-tailwindcss": "^0.5.14",
     "serwist": "^9.0.2",
     "tailwindcss": "^3.4.3",
-    "tsx": "^4.10.4",
+    "tsx": "^4.10.5",
     "typescript": "^5.4.5"
   },
   "dependenciesMeta": {

@@ -2577,33 +2577,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-devtools@npm:5.32.1":
-  version: 5.32.1
-  resolution: "@tanstack/query-devtools@npm:5.32.1"
-  checksum: 10/2eddf002cf8e4f6d7a4cd532f3e6e75ae8627b1b0f94ad5797ab173de797ad303696c25a66727187fd13f42cb50d6f3509133def5b6c8893d3312ae77f5914ec
+"@tanstack/query-devtools@npm:5.37.1":
+  version: 5.37.1
+  resolution: "@tanstack/query-devtools@npm:5.37.1"
+  checksum: 10/1c1cca96e0466623bb819be67f23bb10bba8073b8ba255e75ac07956d8f829740b9214edd1dd84e7027509d6dbfe11876da6a1364657541557562f311a238640
   languageName: node
   linkType: hard
 
-"@tanstack/react-query-devtools@npm:^5.36.2":
-  version: 5.36.2
-  resolution: "@tanstack/react-query-devtools@npm:5.36.2"
+"@tanstack/react-query-devtools@npm:^5.37.1":
+  version: 5.37.1
+  resolution: "@tanstack/react-query-devtools@npm:5.37.1"
   dependencies:
-    "@tanstack/query-devtools": "npm:5.32.1"
+    "@tanstack/query-devtools": "npm:5.37.1"
   peerDependencies:
-    "@tanstack/react-query": ^5.36.2
+    "@tanstack/react-query": ^5.37.1
     react: ^18.0.0
-  checksum: 10/fb4de3b5de8d06a36832c267491f5fe7e722f6616c15c8fbd8194711c801c223d75e10ead6018d2bd77c64b10832157a20f69cfccb6878fca9b5be3f16856ec7
+  checksum: 10/7fd8ac801671c004c69ff289fbcf923938eeb43dea19abbe3c3cee7531b56bc1bf56a651b76138f9c00444e50a8f3bc535f5fe8504d2379f4d043557c15bdf35
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.36.2":
-  version: 5.36.2
-  resolution: "@tanstack/react-query@npm:5.36.2"
+"@tanstack/react-query@npm:^5.37.1":
+  version: 5.37.1
+  resolution: "@tanstack/react-query@npm:5.37.1"
   dependencies:
     "@tanstack/query-core": "npm:5.36.1"
   peerDependencies:
     react: ^18.0.0
-  checksum: 10/003b960d499034b5c0d0f7dbccb65523ef57306e557ab96bc077f40083c7cf43a4d70ac6c42678542031644be053b65e8c014a140a1001d3b73512d4d42589be
+  checksum: 10/f7f11f0702382c7e8fc0bee7c24d11836b4c43eb5feea10282a9054afd4be554945db2887d30c2ded8c6f11018eeba93266a319b23de5f19c0fe50a445d39141
   languageName: node
   linkType: hard
 
@@ -7067,8 +7067,8 @@ __metadata:
     "@tabler/icons-react": "npm:^3.4.0"
     "@tailwindcss/typography": "npm:^0.5.13"
     "@tanstack/eslint-plugin-query": "npm:^5.35.6"
-    "@tanstack/react-query": "npm:^5.36.2"
-    "@tanstack/react-query-devtools": "npm:^5.36.2"
+    "@tanstack/react-query": "npm:^5.37.1"
+    "@tanstack/react-query-devtools": "npm:^5.37.1"
     "@tanstack/react-table": "npm:^8.17.3"
     "@total-typescript/ts-reset": "npm:^0.5.1"
     "@types/node": "npm:^20.12.12"
@@ -7102,7 +7102,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     serwist: "npm:^9.0.2"
     tailwindcss: "npm:^3.4.3"
-    tsx: "npm:^4.10.4"
+    tsx: "npm:^4.10.5"
     typescript: "npm:^5.4.5"
     uploadthing: "npm:^6.10.4"
     xlsx: "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
@@ -9631,9 +9631,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:^4.10.4":
-  version: 4.10.4
-  resolution: "tsx@npm:4.10.4"
+"tsx@npm:^4.10.5":
+  version: 4.10.5
+  resolution: "tsx@npm:4.10.5"
   dependencies:
     esbuild: "npm:~0.20.2"
     fsevents: "npm:~2.3.3"
@@ -9643,7 +9643,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 10/46155d5696fe6a9c54c54ad9aa92817261ecc2750b5ae8f1c4bf0029b7de574adf9b15b5399a8a4b8d6a8d551d37918196cb3c34bf6ad75c4ef3810eaa842755
+  checksum: 10/a99f758d45daf07a3e59d1cecca7556a75e1593d8feb60d658c18a76f21fc447009f39332f114bb8fcc74491696dd88cc94b6c21bb216451206af6bb65092e7e
   languageName: node
   linkType: hard
 
