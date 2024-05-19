@@ -487,8 +487,7 @@ export default function Page() {
             <li>Szabolcs</li>
           </ol>
         </EntryContent>
-        <div></div>
-        {/*<Media src={'https://source.unsplash.com/basketball-on-ring-QAX5Ylx-lKo'} alt={'Súlylökés'} />*/}
+        <Media src={'https://utfs.io/f/52daa2c7-ace9-478e-a9d0-09b09f11f48b-y6rnit.webp'} alt={'Súlylökés'} />
       </Entry>
       <Entry>
         <EntryContent>
