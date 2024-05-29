@@ -7016,6 +7016,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-device-detect: "npm:^2.2.3"
     react-dom: "npm:^18.3.1"
+    react-zoom-pan-pinch: "npm:^3.4.4"
     serwist: "npm:^9.0.2"
     tailwindcss: "npm:^3.4.3"
     tsx: "npm:^4.11.0"
@@ -8542,6 +8543,16 @@ __metadata:
   version: 18.3.1
   resolution: "react-is@npm:18.3.1"
   checksum: 10/d5f60c87d285af24b1e1e7eaeb123ec256c3c8bdea7061ab3932e3e14685708221bf234ec50b21e10dd07f008f1b966a2730a0ce4ff67905b3872ff2042aec22
+  languageName: node
+  linkType: hard
+
+"react-zoom-pan-pinch@npm:^3.4.4":
+  version: 3.4.4
+  resolution: "react-zoom-pan-pinch@npm:3.4.4"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 10/c02a7047923ed85f6d5e45d754d3df8403c00c2bf39fce4ef07d81961bdb3bcd549ca27b3122fba17dc2ac7eb2eb4c2b4c656bb503402aa6f7869a446a8ddff4
   languageName: node
   linkType: hard
 

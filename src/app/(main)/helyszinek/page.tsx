@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { EntryContent, Title } from '@/app/ui/text-content';
 import Link from 'next/link';
+import Image from 'next/image';
+import ZoomWrapper from '@/app/ui/zoom-wrapper';
 
 export const metadata: Metadata = {
   title: 'Helyszínek',
@@ -9,6 +11,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="mx-auto flex flex-col gap-8 p-4 bg-white dark:bg-gray-800">
+      <EntryContent>
+        <a className={`print:hidden`} href={`#map`}>
+          Ugrás a térképhez...
+        </a>
+      </EntryContent>
       <EntryContent>
         <Title id={`Szállás`}>Szállás: Nyíregyházi egyetem</Title>
         <ul>
@@ -55,6 +62,19 @@ export default function Page() {
       <EntryContent>
         <Title id={`eredményhirdetés`}>Megnyitó ünnepség és eredményhirdetés</Title>
         <p>Nyíregyházi Egyetem sportudvara, a futópálya mellett</p>
+      </EntryContent>
+      <EntryContent>
+        <ZoomWrapper>
+          <Image
+            id={`map`}
+            alt={`Térkép`}
+            src={`https://utfs.io/f/0f1feb3a-85e1-4929-92f2-04fa42e6317a-lrdnla.jpg`}
+            width={600}
+            height={1000}
+            quality={100}
+            priority={true}
+          />
+        </ZoomWrapper>
       </EntryContent>
     </main>
   );
