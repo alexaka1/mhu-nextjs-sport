@@ -65,7 +65,7 @@
     "cssnano": "^7.0.1",
     "daisyui": "^4.11.1",
     "drizzle-kit": "^0.21.4",
-    "eslint": "^8.57.0",
+    "eslint": "^9.3.0",
     "eslint-config-next": "14.2.3",
     "eslint-plugin-drizzle": "^0.2.3",
     "eslint-plugin-tailwindcss": "^3.17.0",
