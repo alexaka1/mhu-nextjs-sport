@@ -73,6 +73,8 @@ export default function Page() {
             height={1000}
             quality={100}
             priority={true}
+            unoptimized
+            className={`size-auto`}
           />
         </ZoomWrapper>
       </EntryContent>
