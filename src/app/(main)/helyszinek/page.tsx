@@ -42,7 +42,7 @@ export default function Page() {
           <li>Súlylökés</li>
           <li>Úszás</li>
         </ul>
-        <p>Az Egyetemi sportpályáktól és kollégiumoktól kb. 200 méterre lévő városi stadion salakpályái:</p>
+        <p>Az Egyetemi sportpályáktól és kollégiumoktól kb. 200 méterre lévő városi stadion műfüvespályái:</p>
         <ul>
           <li>Labdarúgás</li>
         </ul>

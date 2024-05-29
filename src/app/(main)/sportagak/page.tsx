@@ -26,7 +26,7 @@ export default function Page() {
             <DataListEntry>
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
               <dd className="mt-2 text-sm capitalize text-gray-500 dark:text-bg-contrast/80">
-                városi stadion kispályás salakpálya
+                városi stadion kispályás műfüvespálya
               </dd>
             </DataListEntry>
             <DataListEntry>
