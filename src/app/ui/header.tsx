@@ -90,7 +90,7 @@ function DisclosureMenu({
       {({ open }) => (
         <>
           <Disclosure.Button
-            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary  data-active:dark:bg-primary-600`}
+            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
             data-active={items.some(({ href }) => href === pathname)}
           >
             {title}
@@ -295,10 +295,7 @@ function UserInfo({
       </Popover>
 
       <button
-        className={`hidden rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors
-            duration-200
-            ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
+        className={`hidden rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors duration-200 ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
         onClick={() => {
           void signOut({ redirect: true, callbackUrl: pathname });
         }}
@@ -398,7 +395,7 @@ export default function Header() {
         </nav>
         <Transition as={Fragment} show={mobileMenuOpen}>
           <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
-            <div className="fixed inset-0 z-10 " />
+            <div className="fixed inset-0 z-10" />
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
