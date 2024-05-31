@@ -30,7 +30,7 @@ export default function PdfViewer({ file }: Readonly<{ file: string }>) {
   }
 
   return (
-    <div className={`flex flex-col items-center justify-center`}>
+    <div className={`flex flex-col items-center justify-center overflow-auto`}>
       <canvas ref={canvasRef} />
       {Boolean(pdfDocument && pdfDocument.numPages) && (
         <nav>
