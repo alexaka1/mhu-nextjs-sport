@@ -10,7 +10,7 @@ import { FileUploadData } from 'uploadthing/types';
 
 const f = createUploadthing();
 const fileSize = 8_000_000;
-const allowed = 'Csak xlsx és pdf fájlok tölthetőek fel';
+const allowed = 'Csak xlsx, pdf és kép fájlok tölthetőek fel';
 
 const resultUploader = {
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
@@ -20,6 +20,10 @@ const resultUploader = {
   'application/pdf': {
     maxFileSize: '8MB',
     maxFileCount: 2,
+  },
+  image: {
+    maxFileSize: '8MB',
+    maxFileCount: 4,
   },
 } as const satisfies FileRouterInputConfig;
 

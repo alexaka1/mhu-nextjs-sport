@@ -2,6 +2,7 @@
 import type { ResultItem } from '@/app/lib/types';
 import ResultsTable from '@/app/ui/results/results-table';
 import XlsxTable from '@/app/ui/results/xlsx-table';
+import ZoomWrapper from '@/app/ui/zoom-wrapper';
 
 export default function ResultsContent({ results, canEdit }: Readonly<{ results: ResultItem[]; canEdit?: boolean }>) {
   const tables = results.map((result) => {
@@ -53,7 +54,14 @@ export default function ResultsContent({ results, canEdit }: Readonly<{ results:
         );
       }
       default:
-        return null;
+        return (
+          <ResultsTable key={result.key} file={result.url} canEdit={canEdit} title={result.result} fileKey={result.key}>
+            <ZoomWrapper>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img alt={result.url} src={result.url} className={`size-auto`} />
+            </ZoomWrapper>
+          </ResultsTable>
+        );
     }
   });
   return tables.length > 0 ?
