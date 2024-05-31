@@ -2,6 +2,7 @@
 import type { ResultItem } from '@/app/lib/types';
 import ResultsTable from '@/app/ui/results/results-table';
 import XlsxTable from '@/app/ui/results/xlsx-table';
+import PdfViewer from '@/app/ui/results/pdf-viewer';
 
 export default function ResultsContent({ results, canEdit }: Readonly<{ results: ResultItem[]; canEdit?: boolean }>) {
   const tables = results.map((result) => {
@@ -32,22 +33,23 @@ export default function ResultsContent({ results, canEdit }: Readonly<{ results:
               className={`h-[36rem] w-full sm:h-svh`}
               title={`PDF megjelenítő`}
             >
-              <iframe
-                title={`PDF megjelenítő`}
-                src={pdfIframe.toString()}
-                loading={'eager'}
-                referrerPolicy={'no-referrer'}
-                className={`size-full`}
-                allow={`fullscreen`}
-              ></iframe>
-              <p className={`prose text-balance p-2 text-bg-contrast`}>
-                Ez az eszköz nem támogatja a PDF-ek megjelenítését. Ha a szöveg felett nem jelent meg semmi, akkor
-                próbáld meg{' '}
-                <a className={`decoration-primary text-primary dark:text-primary-400`} href={result.url}>
-                  letölteni a PDF-et
-                </a>
-                .
-              </p>
+              <PdfViewer file={result.url} />
+              {/*<iframe*/}
+              {/*  title={`PDF megjelenítő`}*/}
+              {/*  src={pdfIframe.toString()}*/}
+              {/*  loading={'eager'}*/}
+              {/*  referrerPolicy={'no-referrer'}*/}
+              {/*  className={`size-full`}*/}
+              {/*  allow={`fullscreen`}*/}
+              {/*></iframe>*/}
+              {/*<p className={`prose text-balance p-2 text-bg-contrast`}>*/}
+              {/*  Ez az eszköz nem támogatja a PDF-ek megjelenítését. Ha a szöveg felett nem jelent meg semmi, akkor*/}
+              {/*  próbáld meg{' '}*/}
+              {/*  <a className={`decoration-primary text-primary dark:text-primary-400`} href={result.url}>*/}
+              {/*    letölteni a PDF-et*/}
+              {/*  </a>*/}
+              {/*  .*/}
+              {/*</p>*/}
             </object>
           </ResultsTable>
         );

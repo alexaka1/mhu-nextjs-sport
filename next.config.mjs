@@ -49,7 +49,7 @@ function createCspHeaders(nonce) {
     return `
       ${defaultsCSPHeaders}
       default-src 'none';
-      script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline';
+      script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.3.136/pdf.worker.min.mjs;
       connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ https://utfs.io/ ${reportUris} https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
       img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob: ${imageSrc};
       frame-src 'self' https://vercel.live/ https://vercel.com https://www.google.com/ https://utfs.io/ https://docs.google.com/;
@@ -73,7 +73,7 @@ function createCspHeaders(nonce) {
     return `
       ${defaultsCSPHeaders}
       default-src 'none';
-      script-src 'self' 'unsafe-inline';
+      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.3.136/pdf.worker.min.mjs;
       manifest-src 'self';
       worker-src 'self' blob:;
       img-src 'self' blob: data: ${imageSrc};
@@ -92,7 +92,7 @@ function createCspHeaders(nonce) {
   return `
     ${defaultsCSPHeaders}
     default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel-scripts.com/;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel-scripts.com/ https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.3.136/pdf.worker.min.mjs;
     worker-src 'self' blob:;
     img-src 'self' blob: data: ${imageSrc};
     connect-src 'self' ${reportUris} https://utfs.io/ https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;

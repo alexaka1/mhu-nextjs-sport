@@ -11,5 +11,4 @@ export default {
     authToken: env.TURSO_AUTH_TOKEN,
   },
   strict: true,
-  verbose: true,
 } satisfies Config;
