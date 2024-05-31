@@ -81,7 +81,9 @@ function validateFiles(files: Readonly<Array<FileUploadData>>) {
     }
     const parsedResultType = resultTypeSchema.safeParse(fileType);
     if (!parsedResultType.success) {
-      throw new UploadThingError(`${allowed}: ${file?.name}`);
+      if (!fileType.startsWith('image/')) {
+        throw new UploadThingError(`${allowed}: ${file?.name}`);
+      }
     }
   }
 }
