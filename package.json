@@ -17,7 +17,7 @@
     "migrations:up": "tsx --env-file=.env src/app/db/migrate.ts"
   },
   "dependencies": {
-    "@auth/core": "^0.31.0",
+    "@auth/core": "^0.32.0",
     "@auth/drizzle-adapter": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
