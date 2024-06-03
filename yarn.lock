@@ -1086,24 +1086,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@libsql/client@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "@libsql/client@npm:0.6.1"
+"@libsql/client@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@libsql/client@npm:0.6.2"
   dependencies:
-    "@libsql/core": "npm:^0.6.1"
+    "@libsql/core": "npm:^0.6.2"
     "@libsql/hrana-client": "npm:^0.6.0"
     js-base64: "npm:^3.7.5"
     libsql: "npm:^0.3.10"
-  checksum: 10/93c591e42d0d5f782c7171993c2d231399290af38abd2842ae83fa48aa777a14778fb240951197cf58585e783193778f8d230e1e34877aa57fc6a01c5f02b2d8
+  checksum: 10/494fad437ff475bbc0750f9dc740341fb8f011c2a10ad64fe07ad41ad8ee7bbf7d1294e6e081d0605b56f787551ca6d52fec71e3d061d2269e4645f09d76cb48
   languageName: node
   linkType: hard
 
-"@libsql/core@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "@libsql/core@npm:0.6.1"
+"@libsql/core@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@libsql/core@npm:0.6.2"
   dependencies:
     js-base64: "npm:^3.7.5"
-  checksum: 10/0d60e97c64934f4bdfddf256f6145e4c9b7269fc26ecc2ff907784297efe9b50940611f3439c0c89fb447747d65ad4f591d54b8d1e0c6b2fc4fcd4ed3503f35b
+  checksum: 10/e1f6094923c7100afc3a5ac88ac01fda4b130fae1d29e57154a53cd16f6ce137f3892bd5774b75e47cb17fa832fce33a25f1ab419dea3e7747b5d99195c14993
   languageName: node
   linkType: hard
 
@@ -6769,7 +6769,7 @@ __metadata:
     "@fortawesome/react-fontawesome": "npm:^0.2.2"
     "@headlessui/react": "npm:^2.0.4"
     "@headlessui/tailwindcss": "npm:^0.2.1"
-    "@libsql/client": "npm:^0.6.1"
+    "@libsql/client": "npm:^0.6.2"
     "@sentry/nextjs": "npm:^8.7.0"
     "@sentry/utils": "npm:^8.7.0"
     "@serwist/next": "npm:^9.0.2"
