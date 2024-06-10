@@ -6806,7 +6806,7 @@ __metadata:
     next-themes: "npm:^0.3.0"
     postcss: "npm:^8.4.38"
     prettier: "npm:^3.2.5"
-    prettier-plugin-tailwindcss: "npm:^0.6.0"
+    prettier-plugin-tailwindcss: "npm:^0.6.2"
     react: "npm:^18.3.1"
     react-device-detect: "npm:^2.2.3"
     react-dom: "npm:^18.3.1"
@@ -8143,9 +8143,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "prettier-plugin-tailwindcss@npm:0.6.0"
+"prettier-plugin-tailwindcss@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "prettier-plugin-tailwindcss@npm:0.6.2"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
@@ -8194,7 +8194,7 @@ __metadata:
       optional: true
     prettier-plugin-svelte:
       optional: true
-  checksum: 10/e7cd8b763907deec6c2ef8dbf54117a23f19f878839782724910755bfc87a76d957d845c7d70a063f775af02fba9c36e5692159fbc834a157a2e497a6af445db
+  checksum: 10/36734a0aff029fe40c0706692f5a778d3902854125ad95413fead7cabed1c7ea59d4e6aff4005a11b6a92ace65e277b665c23e13e33834c75a893e50ea900461
   languageName: node
   linkType: hard
 
