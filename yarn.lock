@@ -7172,7 +7172,7 @@ __metadata:
     react-zoom-pan-pinch: "npm:^3.4.4"
     serwist: "npm:^9.0.3"
     tailwindcss: "npm:^3.4.4"
-    tsx: "npm:^4.15.5"
+    tsx: "npm:^4.15.7"
     typescript: "npm:^5.4.5"
     uploadthing: "npm:^6.12.0"
     xlsx: "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
@@ -9694,9 +9694,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:^4.15.5":
-  version: 4.15.5
-  resolution: "tsx@npm:4.15.5"
+"tsx@npm:^4.15.7":
+  version: 4.15.7
+  resolution: "tsx@npm:4.15.7"
   dependencies:
     esbuild: "npm:~0.21.4"
     fsevents: "npm:~2.3.3"
@@ -9706,7 +9706,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 10/be196bb1689960e8d4fb775e0fe7bfcea43ebbad6d30adc5ab15f94db91f068b074ed2e0bdd1adb08ae2de91cfc6d06e90da918b23c976c4774e3ff5a171445f
+  checksum: 10/b313d7b07e017bc5c69a8c8bf33c005c2090cf1160df31e9e871bb86bbd4f582fff49849ecaf212f0f79286be98dc48d761ff16181496e88a674c7eec16274b6
   languageName: node
   linkType: hard
 
