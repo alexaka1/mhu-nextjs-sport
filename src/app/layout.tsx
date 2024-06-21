@@ -7,6 +7,7 @@ import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from
 import Footer from '@/app/ui/footer';
 import InstallBanner from '@/app/ui/install-banner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
 import { extractRouterConfig } from 'uploadthing/server';
 import { ourFileRouter } from '@/app/api/uploadthing/core';
@@ -95,6 +96,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <SpeedInsights />
+          <Analytics debug={true} />
         </Providers>
       </body>
     </html>
