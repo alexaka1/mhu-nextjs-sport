@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+// eslint-disable-next-line import/no-unresolved
 import { GeistSans } from 'geist/font/sans';
+// eslint-disable-next-line import/no-unresolved
 import { GeistMono } from 'geist/font/mono';
 import { ReactNode } from 'react';
 import './globals.css';
