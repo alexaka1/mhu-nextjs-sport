@@ -1,5 +1,5 @@
 import { createEnv } from '@t3-oss/env-nextjs';
-import { vercel, uploadthing } from '@t3-oss/env-core/presets';
+import { vercel } from '@t3-oss/env-core/presets';
 import { z } from 'zod';
 import * as process from 'process';
 
@@ -30,5 +30,5 @@ export const env = createEnv({
     NEXT_PUBLIC_SENTRY_DSN: process.env['NEXT_PUBLIC_SENTRY_DSN'],
     NEXT_PUBLIC_SENTRY_REPORT_URI: process.env['NEXT_PUBLIC_SENTRY_REPORT_URI'],
   },
-  extends: [vercel(), uploadthing()],
+  extends: [vercel()],
 });

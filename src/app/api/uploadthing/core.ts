@@ -39,11 +39,13 @@ export const ourFileRouter = {
       const resultType = decodeURIComponent(headers.get('resultType') ?? '');
       const parsedResult = Result.safeParse(resultType);
       if (!parsedResult.success) {
+        // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw new UploadThingError('Ismeretlen eredménytípus');
       }
       const { authorized, userId } = await canEdit();
 
       if (!authorized) {
+        // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw new UploadThingError('Nincs jogosultság a feltöltéshez');
       }
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
@@ -74,14 +76,17 @@ function validateFiles(files: Readonly<Array<FileUploadData>>) {
     const file = files[i];
     const fileType = file?.type;
     if (file?.size == null || file?.size > fileSize) {
+      // eslint-disable-next-line @typescript-eslint/only-throw-error
       throw new UploadThingError(`Túl nagy fájl: ${file?.name}`);
     }
     if (isNullOrEmpty(fileType)) {
+      // eslint-disable-next-line @typescript-eslint/only-throw-error
       throw new UploadThingError(`Ismeretlen fájltípus: ${file?.name}`);
     }
     const parsedResultType = resultTypeSchema.safeParse(fileType);
     if (!parsedResultType.success) {
       if (!fileType.startsWith('image/')) {
+        // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw new UploadThingError(`${allowed}: ${file?.name}`);
       }
     }
