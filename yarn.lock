@@ -64,12 +64,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth/drizzle-adapter@npm:^1.5.3":
-  version: 1.5.3
-  resolution: "@auth/drizzle-adapter@npm:1.5.3"
+"@auth/core@npm:0.37.0":
+  version: 0.37.0
+  resolution: "@auth/core@npm:0.37.0"
   dependencies:
-    "@auth/core": "npm:0.35.3"
-  checksum: 10/60ffd79d52a6c024f0b20c1844c1f695f6605618fb46474736a0e78cc260830f04cbb77d07b9c2d15a24d830a0dc543766ff65b6e579288fe26aa1e00c513756
+    "@panva/hkdf": "npm:^1.2.1"
+    "@types/cookie": "npm:0.6.0"
+    cookie: "npm:0.7.1"
+    jose: "npm:^5.9.3"
+    oauth4webapi: "npm:^3.0.0"
+    preact: "npm:10.11.3"
+    preact-render-to-string: "npm:5.2.3"
+  peerDependencies:
+    "@simplewebauthn/browser": ^9.0.1
+    "@simplewebauthn/server": ^9.0.2
+    nodemailer: ^6.8.0
+  peerDependenciesMeta:
+    "@simplewebauthn/browser":
+      optional: true
+    "@simplewebauthn/server":
+      optional: true
+    nodemailer:
+      optional: true
+  checksum: 10/f877ef3b3bfd1d9d9e25658e5060c90d3b25d076ed89ae2ada45d2502143310342c96369766dae29629a767eaa6591949f57431842d154d9a7d39c8a1142b312
+  languageName: node
+  linkType: hard
+
+"@auth/drizzle-adapter@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@auth/drizzle-adapter@npm:1.7.0"
+  dependencies:
+    "@auth/core": "npm:0.37.0"
+  checksum: 10/daea49e945e753044d147733f50a3b1a5eb3dcf7816ae55ebd11a0abeefa45f98f821fd09678c9cb641580ced16794592bfe0692ae7920f2a7556450c992179c
   languageName: node
   linkType: hard
 
@@ -1803,6 +1829,13 @@ __metadata:
   version: 1.1.1
   resolution: "@panva/hkdf@npm:1.1.1"
   checksum: 10/f0dd12903751d8792420353f809ed3c7de860cf506399759fff5f59f7acfef8a77e2b64012898cee7e5b047708fa0bd91dff5ef55a502bf8ea11aad9842160da
+  languageName: node
+  linkType: hard
+
+"@panva/hkdf@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@panva/hkdf@npm:1.2.1"
+  checksum: 10/a4a9d1812f88f02bc163b365524bbaa5239cc4711e5e7be1bda68dabae1c896cf1cd12520949b0925a6910733d1afcb25ab51fd3cf06f0f69aee988fffebf56e
   languageName: node
   linkType: hard
 
@@ -3575,6 +3608,13 @@ __metadata:
   version: 0.6.0
   resolution: "cookie@npm:0.6.0"
   checksum: 10/c1f8f2ea7d443b9331680598b0ae4e6af18a618c37606d1bbdc75bec8361cce09fe93e727059a673f2ba24467131a9fb5a4eec76bb1b149c1b3e1ccb268dc583
+  languageName: node
+  linkType: hard
+
+"cookie@npm:0.7.1":
+  version: 0.7.1
+  resolution: "cookie@npm:0.7.1"
+  checksum: 10/aec6a6aa0781761bf55d60447d6be08861d381136a0fe94aa084fddd4f0300faa2b064df490c6798adfa1ebaef9e0af9b08a189c823e0811b8b313b3d9a03380
   languageName: node
   linkType: hard
 
@@ -5834,6 +5874,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^5.9.3":
+  version: 5.9.3
+  resolution: "jose@npm:5.9.3"
+  checksum: 10/9daf5511b8bfa184f1d6c265cdaf0a2b19e46f251d90703c6a5229ba76e5ac5fbd34626f263819569eb69a3f2cd2c37dab3b4fab9604258f468d343a784a9385
+  languageName: node
+  linkType: hard
+
 "js-base64@npm:^3.7.5":
   version: 3.7.7
   resolution: "js-base64@npm:3.7.7"
@@ -6182,7 +6229,7 @@ __metadata:
   dependencies:
     "@alexaka1/tailwindcss-oklch": "npm:^0.0.4"
     "@auth/core": "npm:^0.35.3"
-    "@auth/drizzle-adapter": "npm:^1.5.3"
+    "@auth/drizzle-adapter": "npm:^1.7.0"
     "@fortawesome/fontawesome-svg-core": "npm:^6.6.0"
     "@fortawesome/free-brands-svg-icons": "npm:^6.6.0"
     "@fortawesome/free-regular-svg-icons": "npm:^6.6.0"
@@ -6675,6 +6722,13 @@ __metadata:
   version: 2.11.1
   resolution: "oauth4webapi@npm:2.11.1"
   checksum: 10/94a3f9dfff0399aff4d9e5e006f813063bcb71211bd07cac119afa5a69d7b5426fe2a19ccb7643e2a2dd1f9512c50e3f2b875275f943877da2dea2112c23e83e
+  languageName: node
+  linkType: hard
+
+"oauth4webapi@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "oauth4webapi@npm:3.0.0"
+  checksum: 10/422d925029e5cd550b9928b61fede0aaec60637f4826452ca1afea517b8969727f7312a678b71f7dcda0a7dbd82246da87a424389c977fe3858644d39813c026
   languageName: node
   linkType: hard
 
