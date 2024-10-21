@@ -38,7 +38,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth/core@npm:0.35.3, @auth/core@npm:^0.35.3":
+"@auth/core@npm:0.35.3":
   version: 0.35.3
   resolution: "@auth/core@npm:0.35.3"
   dependencies:
@@ -61,6 +61,32 @@ __metadata:
     nodemailer:
       optional: true
   checksum: 10/bc5ccaf5db578e2d15e0579fac40e774786d3e4481db2d41cc6511b5092520dac2508668d960e5e86c35134cb92aca73016578b687c57cb123fdcf37d9b0240b
+  languageName: node
+  linkType: hard
+
+"@auth/core@npm:^0.37.2":
+  version: 0.37.2
+  resolution: "@auth/core@npm:0.37.2"
+  dependencies:
+    "@panva/hkdf": "npm:^1.2.1"
+    "@types/cookie": "npm:0.6.0"
+    cookie: "npm:0.7.1"
+    jose: "npm:^5.9.3"
+    oauth4webapi: "npm:^3.0.0"
+    preact: "npm:10.11.3"
+    preact-render-to-string: "npm:5.2.3"
+  peerDependencies:
+    "@simplewebauthn/browser": ^9.0.1
+    "@simplewebauthn/server": ^9.0.2
+    nodemailer: ^6.8.0
+  peerDependenciesMeta:
+    "@simplewebauthn/browser":
+      optional: true
+    "@simplewebauthn/server":
+      optional: true
+    nodemailer:
+      optional: true
+  checksum: 10/55261a23c13f48a7ef249c126bbf5c266b1754b2d40cd226f3321af8bc8320f54e5285e833b2ff35c23f3ddea5ec0d210a271c7ea0d56c45ac86d79c3d32fb02
   languageName: node
   linkType: hard
 
@@ -1803,6 +1829,13 @@ __metadata:
   version: 1.1.1
   resolution: "@panva/hkdf@npm:1.1.1"
   checksum: 10/f0dd12903751d8792420353f809ed3c7de860cf506399759fff5f59f7acfef8a77e2b64012898cee7e5b047708fa0bd91dff5ef55a502bf8ea11aad9842160da
+  languageName: node
+  linkType: hard
+
+"@panva/hkdf@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@panva/hkdf@npm:1.2.1"
+  checksum: 10/a4a9d1812f88f02bc163b365524bbaa5239cc4711e5e7be1bda68dabae1c896cf1cd12520949b0925a6910733d1afcb25ab51fd3cf06f0f69aee988fffebf56e
   languageName: node
   linkType: hard
 
@@ -3673,6 +3706,13 @@ __metadata:
   version: 0.6.0
   resolution: "cookie@npm:0.6.0"
   checksum: 10/c1f8f2ea7d443b9331680598b0ae4e6af18a618c37606d1bbdc75bec8361cce09fe93e727059a673f2ba24467131a9fb5a4eec76bb1b149c1b3e1ccb268dc583
+  languageName: node
+  linkType: hard
+
+"cookie@npm:0.7.1":
+  version: 0.7.1
+  resolution: "cookie@npm:0.7.1"
+  checksum: 10/aec6a6aa0781761bf55d60447d6be08861d381136a0fe94aa084fddd4f0300faa2b064df490c6798adfa1ebaef9e0af9b08a189c823e0811b8b313b3d9a03380
   languageName: node
   linkType: hard
 
@@ -5932,6 +5972,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^5.9.3":
+  version: 5.9.6
+  resolution: "jose@npm:5.9.6"
+  checksum: 10/3ebbda9f6a96d493944f2720bf4436347884666cd87b7087a61cff12a3b540fe6fd743b5eb8defe7bc2a45aa58992ae6687da78797d91fc4e3e5e8588aa98c7d
+  languageName: node
+  linkType: hard
+
 "js-base64@npm:^3.7.5":
   version: 3.7.7
   resolution: "js-base64@npm:3.7.7"
@@ -6279,7 +6326,7 @@ __metadata:
   resolution: "mhu-nextjs-sport@workspace:."
   dependencies:
     "@alexaka1/tailwindcss-oklch": "npm:^0.0.4"
-    "@auth/core": "npm:^0.35.3"
+    "@auth/core": "npm:^0.37.2"
     "@auth/drizzle-adapter": "npm:^1.5.3"
     "@fortawesome/fontawesome-svg-core": "npm:^6.6.0"
     "@fortawesome/free-brands-svg-icons": "npm:^6.6.0"
@@ -6773,6 +6820,13 @@ __metadata:
   version: 2.11.1
   resolution: "oauth4webapi@npm:2.11.1"
   checksum: 10/94a3f9dfff0399aff4d9e5e006f813063bcb71211bd07cac119afa5a69d7b5426fe2a19ccb7643e2a2dd1f9512c50e3f2b875275f943877da2dea2112c23e83e
+  languageName: node
+  linkType: hard
+
+"oauth4webapi@npm:^3.0.0":
+  version: 3.1.1
+  resolution: "oauth4webapi@npm:3.1.1"
+  checksum: 10/3c62ed38bb5ea14761fc5f03031819417f8dce6743068ca308cd000316f23eb24decc2cfd8c49d9da5c253be500b46fe27460b1b8fe5fe14a96cb24b4cdfc77e
   languageName: node
   linkType: hard
 
