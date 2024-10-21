@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@auth/core": "^0.35.3",
-    "@auth/drizzle-adapter": "^1.5.3",
+    "@auth/drizzle-adapter": "^1.7.2",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
