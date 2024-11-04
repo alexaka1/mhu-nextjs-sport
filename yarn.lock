@@ -64,12 +64,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth/drizzle-adapter@npm:^1.5.3":
-  version: 1.5.3
-  resolution: "@auth/drizzle-adapter@npm:1.5.3"
+"@auth/core@npm:0.37.3":
+  version: 0.37.3
+  resolution: "@auth/core@npm:0.37.3"
   dependencies:
-    "@auth/core": "npm:0.35.3"
-  checksum: 10/60ffd79d52a6c024f0b20c1844c1f695f6605618fb46474736a0e78cc260830f04cbb77d07b9c2d15a24d830a0dc543766ff65b6e579288fe26aa1e00c513756
+    "@panva/hkdf": "npm:^1.2.1"
+    cookie: "npm:1.0.1"
+    jose: "npm:^5.9.6"
+    oauth4webapi: "npm:^3.1.1"
+    preact: "npm:10.24.3"
+    preact-render-to-string: "npm:6.5.11"
+  peerDependencies:
+    "@simplewebauthn/browser": ^9.0.1
+    "@simplewebauthn/server": ^9.0.2
+    nodemailer: ^6.8.0
+  peerDependenciesMeta:
+    "@simplewebauthn/browser":
+      optional: true
+    "@simplewebauthn/server":
+      optional: true
+    nodemailer:
+      optional: true
+  checksum: 10/bec283ca9e4c85c0032da4bf57a8d18e2f4f845559eed6166b9d184950a0c97653a4d806591779a4db1099c12bdfe7925bc9219f8322bb42b1e2635259d27868
+  languageName: node
+  linkType: hard
+
+"@auth/drizzle-adapter@npm:^1.7.3":
+  version: 1.7.3
+  resolution: "@auth/drizzle-adapter@npm:1.7.3"
+  dependencies:
+    "@auth/core": "npm:0.37.3"
+  checksum: 10/ec938f24d3bac57532350974581ad1d7541464073069e8132001bc65ebcec1c274861becca3d9d26a4782c0724bb366be61d939fbe5a057704949054b1006657
   languageName: node
   linkType: hard
 
@@ -1803,6 +1828,13 @@ __metadata:
   version: 1.1.1
   resolution: "@panva/hkdf@npm:1.1.1"
   checksum: 10/f0dd12903751d8792420353f809ed3c7de860cf506399759fff5f59f7acfef8a77e2b64012898cee7e5b047708fa0bd91dff5ef55a502bf8ea11aad9842160da
+  languageName: node
+  linkType: hard
+
+"@panva/hkdf@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@panva/hkdf@npm:1.2.1"
+  checksum: 10/a4a9d1812f88f02bc163b365524bbaa5239cc4711e5e7be1bda68dabae1c896cf1cd12520949b0925a6910733d1afcb25ab51fd3cf06f0f69aee988fffebf56e
   languageName: node
   linkType: hard
 
@@ -3673,6 +3705,13 @@ __metadata:
   version: 0.6.0
   resolution: "cookie@npm:0.6.0"
   checksum: 10/c1f8f2ea7d443b9331680598b0ae4e6af18a618c37606d1bbdc75bec8361cce09fe93e727059a673f2ba24467131a9fb5a4eec76bb1b149c1b3e1ccb268dc583
+  languageName: node
+  linkType: hard
+
+"cookie@npm:1.0.1":
+  version: 1.0.1
+  resolution: "cookie@npm:1.0.1"
+  checksum: 10/4b24d4fad5ba94ab76d74a8fc33ae1dcdb5dc02013e03e9577b26f019d9dfe396ffb9b3711ba1726bcfa1b93c33d117db0f31e187838aed7753dee1abc691688
   languageName: node
   linkType: hard
 
@@ -5932,6 +5971,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^5.9.6":
+  version: 5.9.6
+  resolution: "jose@npm:5.9.6"
+  checksum: 10/3ebbda9f6a96d493944f2720bf4436347884666cd87b7087a61cff12a3b540fe6fd743b5eb8defe7bc2a45aa58992ae6687da78797d91fc4e3e5e8588aa98c7d
+  languageName: node
+  linkType: hard
+
 "js-base64@npm:^3.7.5":
   version: 3.7.7
   resolution: "js-base64@npm:3.7.7"
@@ -6280,7 +6326,7 @@ __metadata:
   dependencies:
     "@alexaka1/tailwindcss-oklch": "npm:^0.0.4"
     "@auth/core": "npm:^0.35.3"
-    "@auth/drizzle-adapter": "npm:^1.5.3"
+    "@auth/drizzle-adapter": "npm:^1.7.3"
     "@fortawesome/fontawesome-svg-core": "npm:^6.6.0"
     "@fortawesome/free-brands-svg-icons": "npm:^6.6.0"
     "@fortawesome/free-regular-svg-icons": "npm:^6.6.0"
@@ -6773,6 +6819,13 @@ __metadata:
   version: 2.11.1
   resolution: "oauth4webapi@npm:2.11.1"
   checksum: 10/94a3f9dfff0399aff4d9e5e006f813063bcb71211bd07cac119afa5a69d7b5426fe2a19ccb7643e2a2dd1f9512c50e3f2b875275f943877da2dea2112c23e83e
+  languageName: node
+  linkType: hard
+
+"oauth4webapi@npm:^3.1.1":
+  version: 3.1.2
+  resolution: "oauth4webapi@npm:3.1.2"
+  checksum: 10/4628f33fe45840feef4491f2766d877f999f3e1a4c9b3d9584e0c04a7084f5df451f27256f330b579718204f68d9f63eb27f56bfa5a2c58cf3b4288f2113b0e4
   languageName: node
   linkType: hard
 
@@ -7599,10 +7652,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"preact-render-to-string@npm:6.5.11":
+  version: 6.5.11
+  resolution: "preact-render-to-string@npm:6.5.11"
+  peerDependencies:
+    preact: ">=10"
+  checksum: 10/a77f7715f3b7e94d6157dab3708e204663a605f86bb20d70a2916c734b873640335dd4180aa79f4eeb4555c07dc4e92b9a4fadc809beeb56b206eaf41e5762dd
+  languageName: node
+  linkType: hard
+
 "preact@npm:10.11.3":
   version: 10.11.3
   resolution: "preact@npm:10.11.3"
   checksum: 10/5ecfa9aee951c62510990c031cb2990b90b9493812498e6aa65c9c748ab7161394edcfb7719ae18b894adcb923d11bdab7e81e7e5e084c90f2b849d70f95fa4f
+  languageName: node
+  linkType: hard
+
+"preact@npm:10.24.3":
+  version: 10.24.3
+  resolution: "preact@npm:10.24.3"
+  checksum: 10/e9c4c901a4ddd475a1072355b5c6c944b05797445e0d68f317ad0dbc976b831523573693ea75d2e12e7902042e3729af435377816d25558bf693ecf6b516c707
   languageName: node
   linkType: hard
 
