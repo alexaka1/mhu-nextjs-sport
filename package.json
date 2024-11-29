@@ -71,7 +71,7 @@
     "eslint-config-next": "14.2.14",
     "eslint-plugin-drizzle": "^0.2.3",
     "eslint-plugin-tailwindcss": "^3.17.4",
-    "jiti": "^1.21.6",
+    "jiti": "^2.4.1",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
