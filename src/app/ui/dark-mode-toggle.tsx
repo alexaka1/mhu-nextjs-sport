@@ -51,7 +51,7 @@ export default function DarkModeToggle() {
   const deviceIcon = isMobile ? faMobile : faComputer;
 
   return (
-    <label className="dui-swap dui-swap-rotate" title={title(theme || 'light')}>
+    <label className="dui-swap dui-swap-rotate" title={title(theme ?? 'light')}>
       <input
         id={'dark-mode-toggle'}
         type="checkbox"

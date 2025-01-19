@@ -20,7 +20,9 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
             className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600`}
             onClick={
               // Attempt to recover by trying to re-render the segment
-              () => reset()
+              () => {
+                reset();
+              }
             }
           >
             Próbáld újra

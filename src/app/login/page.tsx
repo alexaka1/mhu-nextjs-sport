@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import BackToHome from '@/app/ui/buttons/back-to-home';
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 type LoginButton = {
   id: string;
@@ -68,7 +68,7 @@ export default async function Home(
 ) {
   const searchParams = await props.searchParams;
   let page = searchParams?.returnUrl ?? '/eredmenyek';
-  if (page == null || page === '/login' || !page.startsWith('/')) {
+  if (page === '/login' || !page.startsWith('/')) {
     page = '/eredmenyek';
   }
   const session = await auth();

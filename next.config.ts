@@ -1,14 +1,10 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import withSerwistInit from '@serwist/next';
-import { fileURLToPath } from 'node:url';
-import createJiti from 'jiti';
 import { withAxiom } from 'next-axiom';
+import { env } from '@/app/lib/env';
+import { type NextConfig } from 'next';
 
-const jiti = createJiti(fileURLToPath(import.meta.url));
-
-jiti('./src/app/lib/env');
-
-const uploadThingAppId = process.env.UPLOADTHING_APP_ID;
+const uploadThingAppId = env.UPLOADTHING_APP_ID;
 const uploadThingUrl = `https://${uploadThingAppId}.ufs.sh/`;
 const imageSrc = `https://source.unsplash.com/ https://avatars.githubusercontent.com/ https://*.googleusercontent.com/ https://*.upcloudobjects.com/ https://app.simplelogin.io/ ${uploadThingUrl}`;
 const cspEndpoint = {
@@ -16,7 +12,7 @@ const cspEndpoint = {
   max_age: 10886400,
   endpoints: [
     {
-      url: process.env.NEXT_PUBLIC_SENTRY_REPORT_URI,
+      url: env.NEXT_PUBLIC_SENTRY_REPORT_URI,
     },
   ],
   include_subdomains: true,
@@ -25,11 +21,7 @@ const reportUris = cspEndpoint.endpoints.map((endpoint) => new URL(endpoint.url)
 
 // CSP headers here is set based on Next.js recommendations:
 // https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy
-/**
- * @param nonce {string | undefined}
- * @returns {string}
- */
-function createCspHeaders(nonce) {
+function createCspHeaders(): string {
   const defaultsCSPHeaders = `
     style-src 'self' 'unsafe-inline';
     object-src ${uploadThingUrl};
@@ -38,7 +30,7 @@ function createCspHeaders(nonce) {
     frame-ancestors 'none';
     block-all-mixed-content;
     upgrade-insecure-requests;
-    report-uri ${cspEndpoint.endpoints.at(0)?.url};
+    report-uri ${cspEndpoint.endpoints.at(0)?.url ?? 'error'};
   `;
   //report-to ${cspEndpoint.group};
 
@@ -47,7 +39,7 @@ function createCspHeaders(nonce) {
   // https://vercel.com/docs/workflow-collaboration/comments/specialized-usage#using-a-content-security-policy
   // and white-list vitals.vercel-insights
   // based on: https://vercel.com/docs/speed-insights#content-security-policy
-  if (process.env.VERCEL_ENV === 'preview') {
+  if (env.VERCEL_ENV === 'preview') {
     return `
       ${defaultsCSPHeaders}
       default-src 'none';
@@ -108,7 +100,7 @@ const cspHeaders = {
   headers: [
     {
       key: 'Content-Security-Policy',
-      value: createCspHeaders(undefined).replace(/\n/g, ''),
+      value: createCspHeaders().replace(/\n/g, ''),
     },
     {
       key: 'Report-To',
@@ -117,13 +109,13 @@ const cspHeaders = {
   ],
 };
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: new URL(uploadThingUrl).hostname,
+        pathname: '/f/*',
       },
       {
         protocol: 'https',
@@ -143,10 +135,10 @@ const nextConfig = {
       },
     ],
   },
-  async headers() {
-    return [cspHeaders];
+  headers() {
+    return Promise.resolve([cspHeaders]);
   },
-};
+} satisfies NextConfig;
 
 const withAxiomConfig = withAxiom(nextConfig);
 
@@ -163,16 +155,13 @@ export default withSentryConfig(serwistConfig, {
 
   // Suppresses source map uploading logs during build
   silent: true,
-  org: process.env.SENTRY_ORG,
-  project: process.env.SENTRY_PROJECT,
+  org: env.SENTRY_ORG,
+  project: env.SENTRY_PROJECT,
   // For all available options, see:
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 
   // Upload a larger set of source maps for prettier stack traces (increases build time)
   widenClientFileUpload: true,
-
-  // Transpiles SDK to be compatible with IE11 (increases bundle size)
-  transpileClientSDK: false,
 
   // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers. (increases server load)
   // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of
@@ -180,7 +169,9 @@ export default withSentryConfig(serwistConfig, {
   // tunnelRoute: '/monitoring',
 
   // Hides source maps from generated client bundles
-  hideSourceMaps: true,
+  sourcemaps: {
+    deleteSourcemapsAfterUpload: true,
+  },
 
   // Automatically tree-shake Sentry logger statements to reduce bundle size
   disableLogger: process.env.NODE_ENV !== 'development',

@@ -2,7 +2,7 @@ import { db } from '@/app/db/db';
 import { results, users } from '@/app/db/schema';
 import { and, eq, ne } from 'drizzle-orm/sql/expressions/conditions';
 import { captureException } from '@sentry/nextjs';
-import { Result, ResultItem, resultTypeSchema } from '@/app/lib/types';
+import { Result, type ResultItem, resultTypeSchema } from '@/app/lib/types';
 import { z } from 'zod';
 import { desc } from 'drizzle-orm/sql/expressions/select';
 
@@ -85,7 +85,7 @@ export async function getResultItems(sportag: string): Promise<Array<ResultItem>
       .orderBy(desc(results.createdAt))
       .where(where as never)
       .all();
-    if (result?.length === 0) {
+    if (result.length === 0) {
       return [];
     }
     return result;

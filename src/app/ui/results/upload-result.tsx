@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { UploadButton } from '@/app/ui/uploadthing';
 
@@ -23,7 +23,7 @@ export function UploadResult({ title, canEdit }: { title: string; canEdit?: bool
       content={{
         button: ({ ready, uploadProgress, isUploading }) => {
           if (uploadProgress) {
-            return `Feltöltés: ${uploadProgress}%`;
+            return `Feltöltés: ${uploadProgress.toString()}%`;
           }
           if (isUploading) {
             return 'Folyamatban...';

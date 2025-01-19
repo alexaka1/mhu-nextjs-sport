@@ -4,9 +4,9 @@ import { auth } from '@/app/lib/auth';
 import { isAdmin } from '@/app/db/data';
 import { isNullOrEmpty } from '@/app/utils';
 import { uploadResult } from '@/app/lib/actions';
-import { Result, ResultType, resultTypeSchema } from '@/app/lib/types';
-import { FileRouterInputConfig } from '@uploadthing/shared';
-import { FileUploadData } from 'uploadthing/types';
+import { Result, type ResultType, resultTypeSchema } from '@/app/lib/types';
+import { type FileRouterInputConfig } from '@uploadthing/shared';
+import { type FileUploadData } from 'uploadthing/types';
 
 const f = createUploadthing();
 const fileSize = 8_000_000;
@@ -72,22 +72,22 @@ async function canEdit(): Promise<{ authorized: false; userId: string | null } |
 }
 
 function validateFiles(files: Readonly<Array<FileUploadData>>) {
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    const fileType = file?.type;
-    if (file?.size == null || file?.size > fileSize) {
+  for (const file of files) {
+    const fileType = file.type;
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (file.size == null || file.size > fileSize) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
-      throw new UploadThingError(`Túl nagy fájl: ${file?.name}`);
+      throw new UploadThingError(`Túl nagy fájl: ${file.name}`);
     }
     if (isNullOrEmpty(fileType)) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
-      throw new UploadThingError(`Ismeretlen fájltípus: ${file?.name}`);
+      throw new UploadThingError(`Ismeretlen fájltípus: ${file.name}`);
     }
     const parsedResultType = resultTypeSchema.safeParse(fileType);
     if (!parsedResultType.success) {
       if (!fileType.startsWith('image/')) {
         // eslint-disable-next-line @typescript-eslint/only-throw-error
-        throw new UploadThingError(`${allowed}: ${file?.name}`);
+        throw new UploadThingError(`${allowed}: ${file.name}`);
       }
     }
   }

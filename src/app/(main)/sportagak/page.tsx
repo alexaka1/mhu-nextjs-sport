@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 import { DataList, DataListEntry, Entry, EntryContent, Media, Title } from '@/app/ui/text-content';
 
 export const metadata: Metadata = {

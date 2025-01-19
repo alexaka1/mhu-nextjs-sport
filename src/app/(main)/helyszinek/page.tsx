@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 import { EntryContent, Title } from '@/app/ui/text-content';
 import Link from 'next/link';
 import Image from 'next/image';

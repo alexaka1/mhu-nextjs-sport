@@ -1,15 +1,15 @@
 'use client';
-import { ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { read, utils } from 'xlsx';
 import { captureException } from '@sentry/nextjs';
 import {
-  ColumnDef,
+  type ColumnDef,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
-  SortDirection,
-  SortingState,
+  type SortDirection,
+  type SortingState,
   useReactTable,
 } from '@tanstack/react-table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -60,9 +60,6 @@ export default function XlsxTable({
     queryKey: [fileUrl],
     queryFn: async () => {
       try {
-        if (fileUrl == null) {
-          return null;
-        }
         const file = await (await fetch(fileUrl)).arrayBuffer();
         const wb = read(file);
         const sheetName = wb.SheetNames[0];
@@ -80,10 +77,10 @@ export default function XlsxTable({
     staleTime: 5 * 60 * 1000,
   });
   useEffect(() => {
-    if (data) {
+    if (data?.[0]) {
       setData(data);
       setColumns(
-        Object.keys(data[0]!).map(
+        Object.keys(data[0]).map(
           (key) =>
             columnHelper.accessor(key, {
               id: key,
@@ -108,7 +105,7 @@ export default function XlsxTable({
 
   switch (status) {
     case 'error':
-      return <div className={`mx-auto p-6 text-bg-contrast`}>Nem sikerült betölteni az adatokat: {error?.message}</div>;
+      return <div className={`mx-auto p-6 text-bg-contrast`}>Nem sikerült betölteni az adatokat: {error.message}</div>;
     case 'pending':
       return <div className={`mx-auto animate-pulse p-6 text-bg-contrast`}>Betöltés...</div>;
   }
@@ -148,7 +145,7 @@ export default function XlsxTable({
                         }
                       >
                         {flexRender(header.column.columnDef.header, header.getContext())}
-                        {sortIcons[header.column.getIsSorted() as never] ??
+                        {sortIcons[header.column.getIsSorted() || 'false'] ??
                           (header.column.getCanSort() ?
                             <>
                               {' '}

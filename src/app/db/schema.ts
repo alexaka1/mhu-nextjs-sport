@@ -1,6 +1,6 @@
 import { integer, sqliteTable, text, primaryKey } from 'drizzle-orm/sqlite-core';
 import type { AdapterAccount } from '@auth/core/adapters';
-import { Result, ResultType } from '@/app/lib/types';
+import { type Result, type ResultType } from '@/app/lib/types';
 
 export const users = sqliteTable('user', {
   id: text('id').notNull().primaryKey(),
@@ -28,11 +28,11 @@ export const accounts = sqliteTable(
     id_token: text('id_token'),
     session_state: text('session_state'),
   },
-  (account) => ({
-    compoundKey: primaryKey({
+  (account) => [
+    primaryKey({
       columns: [account.provider, account.providerAccountId],
     }),
-  }),
+  ],
 );
 
 export const sessions = sqliteTable('session', {
@@ -50,9 +50,7 @@ export const verificationTokens = sqliteTable(
     token: text('token').notNull(),
     expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
   },
-  (vt) => ({
-    compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
-  }),
+  (vt) => [primaryKey({ columns: [vt.identifier, vt.token] })],
 );
 
 export const results = sqliteTable(
@@ -67,7 +65,5 @@ export const results = sqliteTable(
     isDeleted: integer('isDeleted', { mode: 'boolean' }).default(false),
     deletedAt: integer('deletedAt', { mode: 'timestamp_ms' }),
   },
-  (r) => ({
-    compoundKey: primaryKey({ columns: [r.key, r.result] }),
-  }),
+  (r) => [primaryKey({ columns: [r.key, r.result] })],
 );

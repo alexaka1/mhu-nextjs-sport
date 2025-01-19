@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import type { Result } from '@/app/lib/types';
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import {
   IconBallBasketball,
   IconBallFootball,
