@@ -58,7 +58,7 @@
   "devDependencies": {
     "@alexaka1/tailwindcss-oklch": "^0.0.4",
     "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.17.0",
+    "@eslint/js": "^9.18.0",
     "@sentry/utils": "^8.50.0",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/eslint-plugin-query": "^5.64.2",
@@ -85,7 +85,7 @@
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.2",
     "typescript": "~5.7.3",
-    "typescript-eslint": "^8.18.2"
+    "typescript-eslint": "^8.20.0"
   },
   "dependenciesMeta": {
     "eslint@9.18.0": {
