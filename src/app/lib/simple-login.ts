@@ -24,7 +24,6 @@ export default function SimpleLogin<P extends SimpleLoginProfile>(config: OAuthU
         image: profile.avatar_url,
       };
     },
-    // @ts-expect-error this is an internal property of authjs
     options: config,
   };
 }

@@ -3,7 +3,7 @@ export default function LandingBackground() {
   return (
     <Image
       alt="Nyíregyházi ügyészség épülete"
-      src={`https://utfs.io/f/dc22aeff-6c14-4963-b82e-afe5f800596a-pphhpa.JPG`}
+      src={`https://oeun8dfdch.ufs.sh/f/dc22aeff-6c14-4963-b82e-afe5f800596a-pphhpa.JPG`}
       quality={100}
       fill
       sizes="100vw"

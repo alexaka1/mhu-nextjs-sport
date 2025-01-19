@@ -44,7 +44,7 @@ export default function Home() {
           <div className={`pb-2 md:p-0`}>
             <Image
               alt="dr. Martossy György főügyész"
-              src="https://utfs.io/f/ce34ec0d-6cae-41de-b552-0059d9b027ef-c9cbbw.jpg"
+              src="https://oeun8dfdch.ufs.sh/f/ce34ec0d-6cae-41de-b552-0059d9b027ef-c9cbbw.jpg"
               quality={100}
               width={704}
               height={907}
