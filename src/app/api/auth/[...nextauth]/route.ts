@@ -1,4 +1,3 @@
-export { /* @next-codemod-error `GET` export is re-exported. Check if this component uses `params` or `searchParams`*/
-GET, /* @next-codemod-error `POST` export is re-exported. Check if this component uses `params` or `searchParams`*/
-POST } from '@/app/lib/auth';
+import { handlers } from '@/app/lib/auth'; // Referring to the auth.ts we just created
+export const { GET, POST } = handlers;
 export const runtime = 'edge'; // optional
