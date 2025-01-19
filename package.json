@@ -14,7 +14,10 @@
     "fmt:fix": "prettier --write . --experimental-ternaries",
     "doctor": "yarn dlx @yarnpkg/doctor",
     "migrations": "drizzle-kit generate:sqlite",
-    "migrations:up": "tsx --env-file=.env src/app/db/migrate.ts"
+    "migrations:up": "tsx --env-file=.env src/app/db/migrate.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@auth/core": "^0.37.4",
