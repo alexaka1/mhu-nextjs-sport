@@ -68,7 +68,7 @@ export default function Page() {
           <Image
             id={`map`}
             alt={`Térkép`}
-            src={`https://utfs.io/f/0f1feb3a-85e1-4929-92f2-04fa42e6317a-lrdnla.jpg`}
+            src={`https://oeun8dfdch.ufs.sh/f/0f1feb3a-85e1-4929-92f2-04fa42e6317a-lrdnla.jpg`}
             width={600}
             height={1000}
             quality={100}

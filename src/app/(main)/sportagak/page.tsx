@@ -487,7 +487,7 @@ export default function Page() {
             <li>Szabolcs</li>
           </ol>
         </EntryContent>
-        <Media src={'https://utfs.io/f/52daa2c7-ace9-478e-a9d0-09b09f11f48b-y6rnit.webp'} alt={'Súlylökés'} />
+        <Media src={'https://oeun8dfdch.ufs.sh/f/52daa2c7-ace9-478e-a9d0-09b09f11f48b-y6rnit.webp'} alt={'Súlylökés'} />
       </Entry>
       <Entry>
         <EntryContent>
