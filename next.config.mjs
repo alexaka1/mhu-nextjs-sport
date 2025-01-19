@@ -79,7 +79,7 @@ function createCspHeaders(nonce) {
       manifest-src 'self';
       worker-src 'self' blob:;
       img-src 'self' blob: data: ${imageSrc};
-      connect-src 'self' https://vitals.vercel-insights.com ${reportUris} ${imageSrc} https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
+      connect-src 'self' ${uploadThingUrl} https://vitals.vercel-insights.com ${reportUris} ${imageSrc} https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
       font-src 'self';
       frame-src https://www.google.com/ ${uploadThingUrl} https://docs.google.com/;
       `;
@@ -97,7 +97,7 @@ function createCspHeaders(nonce) {
     script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel-scripts.com/;
     worker-src 'self' blob:;
     img-src 'self' blob: data: ${imageSrc};
-    connect-src 'self' ${reportUris} ${imageSrc} https://*.vercel-scripts.com/ https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
+    connect-src 'self' ${reportUris} ${imageSrc} ${uploadThingUrl} https://*.vercel-scripts.com/ https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
     font-src 'self';
     frame-src 'self' https://www.google.com/ ${uploadThingUrl} https://docs.google.com/;
   `;
