@@ -59,13 +59,14 @@ const providers: LoginButton[] = [
   // },
 ];
 
-export default async function Home({
-  searchParams,
-}: Readonly<{
-  searchParams?: {
-    returnUrl?: string;
-  };
-}>) {
+export default async function Home(
+  props: Readonly<{
+    searchParams?: {
+      returnUrl?: string;
+    };
+  }>
+) {
+  const searchParams = await props.searchParams;
   let page = searchParams?.returnUrl ?? '/eredmenyek';
   if (page == null || page === '/login' || !page.startsWith('/')) {
     page = '/eredmenyek';

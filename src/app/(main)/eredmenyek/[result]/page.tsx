@@ -6,17 +6,19 @@ import { Result } from '@/app/lib/types';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
 
 type Props = {
-  params?: {
+  params?: Promise<{
     result?: string;
-  };
+  }>;
 };
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   return {
     title: `${decodeURIComponent(params?.result || ('Labdarúgás' as Result))} eredmények`,
   };
 }
-export default function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const sportag = decodeURIComponent(params?.result || ('Labdarúgás' as Result));
   return (
     <main className="flex flex-col items-center justify-center bg-white dark:bg-gray-800">
