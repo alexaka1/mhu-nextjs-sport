@@ -61,10 +61,10 @@ const providers: LoginButton[] = [
 
 export default async function Home(
   props: Readonly<{
-    searchParams?: {
+    searchParams?: Promise<{
       returnUrl?: string;
-    };
-  }>
+    }>;
+  }>,
 ) {
   const searchParams = await props.searchParams;
   let page = searchParams?.returnUrl ?? '/eredmenyek';
