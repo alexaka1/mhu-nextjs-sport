@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 //   { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
 // ];
 
-const mapsApiKey = env.NEXT_PUBLIC_MAPS_API_KEY;
+const mapsApiKey = env.NEXT_PUBLIC_MAPS_API_KEY ?? 'null';
 
 export default function Lodging() {
   return (

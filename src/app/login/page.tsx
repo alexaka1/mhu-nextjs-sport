@@ -68,7 +68,7 @@ export default async function Home(
 ) {
   const searchParams = await props.searchParams;
   let page = searchParams?.returnUrl ?? '/eredmenyek';
-  if (page == null || page === '/login' || !page.startsWith('/')) {
+  if (page === '/login' || !page.startsWith('/')) {
     page = '/eredmenyek';
   }
   const session = await auth();

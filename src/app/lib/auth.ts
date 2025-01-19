@@ -34,7 +34,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   callbacks: {
     signIn: async ({ user, account, profile }) => {
-      if (!user || !account || !profile) {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      if (user == null || !account || !profile) {
         return true;
       }
       const { provider } = account;

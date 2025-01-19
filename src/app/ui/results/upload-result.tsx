@@ -23,7 +23,7 @@ export function UploadResult({ title, canEdit }: { title: string; canEdit?: bool
       content={{
         button: ({ ready, uploadProgress, isUploading }) => {
           if (uploadProgress) {
-            return `Feltöltés: ${uploadProgress}%`;
+            return `Feltöltés: ${uploadProgress.toString()}%`;
           }
           if (isUploading) {
             return 'Folyamatban...';

@@ -60,9 +60,6 @@ export default function XlsxTable({
     queryKey: [fileUrl],
     queryFn: async () => {
       try {
-        if (fileUrl == null) {
-          return null;
-        }
         const file = await (await fetch(fileUrl)).arrayBuffer();
         const wb = read(file);
         const sheetName = wb.SheetNames[0];
@@ -80,10 +77,10 @@ export default function XlsxTable({
     staleTime: 5 * 60 * 1000,
   });
   useEffect(() => {
-    if (data) {
+    if (data?.[0]) {
       setData(data);
       setColumns(
-        Object.keys(data[0]!).map(
+        Object.keys(data[0]).map(
           (key) =>
             columnHelper.accessor(key, {
               id: key,
@@ -148,7 +145,7 @@ export default function XlsxTable({
                         }
                       >
                         {flexRender(header.column.columnDef.header, header.getContext())}
-                        {sortIcons[header.column.getIsSorted() as never] ??
+                        {sortIcons[header.column.getIsSorted() || 'false'] ??
                           (header.column.getCanSort() ?
                             <>
                               {' '}

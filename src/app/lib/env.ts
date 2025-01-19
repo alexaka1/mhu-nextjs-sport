@@ -17,6 +17,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string().optional(),
     SIMPLELOGIN_CLIENT_ID: z.string(),
     SIMPLELOGIN_CLIENT_SECRET: z.string(),
+    UPLOADTHING_TOKEN: z.string(),
+    UPLOADTHING_APP_ID: z.string(),
   },
   client: {
     NEXT_PUBLIC_MAPS_API_KEY: z.string().optional(),

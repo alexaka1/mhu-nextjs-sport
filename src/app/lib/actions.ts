@@ -5,7 +5,7 @@ import { deleteResultByKey, getResultItems, insertResult, isAdmin, updateAvatar 
 import { auth } from '@/app/lib/auth';
 import { isNullOrEmpty } from '@/app/utils';
 import { type Result, type ResultItem, type ResultType } from '@/app/lib/types';
-import utapi from '@/app/lib/uploadthing';
+import { env } from '@/app/lib/env';
 
 export async function deleteResult(key: string) {
   await deleteResultByKey(key);
@@ -39,12 +39,8 @@ export async function updateUserAvatar({
 
 export async function getResults(sportag: string): Promise<ResultItem[]> {
   const results = await getResultItems(sportag);
-  const { data } = await utapi.getFileUrls(results.map((r) => r.key));
-  for (let i = 0; i < results.length; i++) {
-    const result = results[i];
-    if (result != null) {
-      result.url = data.find((u) => u.key === result.key)?.url;
-    }
+  for (const result of results) {
+    result.url = `https://${env.UPLOADTHING_APP_ID}.ufs.sh/f/${result.key}`;
   }
   return results;
 }

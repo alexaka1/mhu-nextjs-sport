@@ -124,6 +124,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: new URL(uploadThingUrl).hostname,
+        pathname: '/f/*',
       },
       {
         protocol: 'https',

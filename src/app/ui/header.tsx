@@ -5,7 +5,20 @@ import Button from '@/app/ui/buttons/link';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment, type MouseEventHandler, type ReactNode, useEffect, useState } from 'react';
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
+import {
+  Dialog,
+  Disclosure,
+  Popover,
+  Transition,
+  DisclosureButton,
+  DisclosurePanel,
+  PopoverButton,
+  PopoverGroup,
+  TransitionChild,
+  DialogPanel,
+  PopoverBackdrop,
+  PopoverPanel,
+} from '@headlessui/react';
 import { type IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
@@ -13,6 +26,7 @@ import { usePathname } from 'next/navigation';
 import { signOut, getSession } from 'next-auth/react';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
+import { z } from 'zod';
 
 type SimpleLink = { href: string; children: ReactNode };
 type DropDownLinks = {
@@ -89,7 +103,7 @@ function DisclosureMenu({
     <Disclosure as="div" className="-mx-3">
       {({ open }) => (
         <>
-          <Disclosure.Button
+          <DisclosureButton
             className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
             data-active={items.some(({ href }) => href === pathname)}
           >
@@ -99,10 +113,10 @@ function DisclosureMenu({
               className={`${open ? 'rotate-180' : ''} size-5 flex-none`}
               aria-hidden="true"
             />
-          </Disclosure.Button>
-          <Disclosure.Panel className="mt-2 space-y-2">
+          </DisclosureButton>
+          <DisclosurePanel className="mt-2 space-y-2">
             {[...items, ...callsToAction].map((item) => (
-              <Disclosure.Button
+              <DisclosureButton
                 key={item.name}
                 as={Link}
                 href={item.href}
@@ -111,9 +125,9 @@ function DisclosureMenu({
                 data-active={pathname === item.href}
               >
                 {item.name}
-              </Disclosure.Button>
+              </DisclosureButton>
             ))}
-          </Disclosure.Panel>
+          </DisclosurePanel>
         </>
       )}
     </Disclosure>
@@ -138,7 +152,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   const isActive = items.some(({ href }) => href === pathname);
   return (
     <Popover className="relative">
-      <Popover.Button
+      <PopoverButton
         className={`flex items-center gap-x-1 text-sm font-semibold leading-6 text-bg-contrast data-active:font-extrabold data-active:underline data-active:decoration-primary data-active:decoration-2 data-active:drop-shadow-lg data-active:dark:text-primary-600`}
         data-active={isActive}
       >
@@ -148,8 +162,8 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
           className={`size-4 flex-none ${isActive ? 'dark:text-primary-600' : 'text-gray-400'}`}
           aria-hidden="true"
         />
-      </Popover.Button>
-      <Popover.Overlay className="fixed inset-0 opacity-30 bg-black" />
+      </PopoverButton>
+      <PopoverBackdrop className="fixed inset-0 opacity-30 bg-black" />
 
       <Transition
         as={Fragment}
@@ -160,7 +174,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
         leaveFrom="opacity-100 motion-safe:translate-y-0"
         leaveTo="opacity-0 motion-safe:translate-y-1"
       >
-        <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary dark:bg-gray-800">
+        <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary dark:bg-gray-800">
           <div className="p-4">
             {items.map((item) => (
               <div
@@ -175,10 +189,10 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
                   />
                 </div>
                 <div className="flex-auto">
-                  <Popover.Button as={Link} href={item.href} className="block font-semibold text-bg-contrast">
+                  <PopoverButton as={Link} href={item.href} className="block font-semibold text-bg-contrast">
                     {item.name}
                     <span className="absolute inset-0" />
-                  </Popover.Button>
+                  </PopoverButton>
                   <p
                     className={`mt-1 text-balance dark:text-bg-contrast/95 ${pathname === item.href ? 'text-bg-contrast' : 'text-gray-600'}`}
                   >
@@ -204,7 +218,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
               </Link>
             ))}
           </div>
-        </Popover.Panel>
+        </PopoverPanel>
       </Transition>
     </Popover>
   );
@@ -254,12 +268,12 @@ function UserInfo({
   return (
     <>
       <Popover className="relative">
-        <Popover.Button
+        <PopoverButton
           className={`flex rounded-full text-sm focus:ring-4 focus:ring-primary-600 md:me-0 dark:focus:ring-primary-200`}
         >
           <Avatar src={avatar} alt={`${name} profilképe`} />
-        </Popover.Button>
-        <Popover.Overlay className="fixed inset-0 z-20 opacity-30 bg-black" />
+        </PopoverButton>
+        <PopoverBackdrop className="fixed inset-0 z-20 opacity-30 bg-black" />
         <Transition
           as={Fragment}
           enter="transition ease-out duration-200"
@@ -269,7 +283,7 @@ function UserInfo({
           leaveFrom="opacity-100 motion-safe:translate-y-0"
           leaveTo="opacity-0 motion-safe:translate-y-1"
         >
-          <Popover.Panel className="absolute -left-8 z-50 my-4 list-none divide-y rounded-lg text-base shadow divide-gray-100 bg-white dark:divide-gray-600 dark:bg-gray-700">
+          <PopoverPanel className="absolute -left-8 z-50 my-4 list-none divide-y rounded-lg text-base shadow divide-gray-100 bg-white dark:divide-gray-600 dark:bg-gray-700">
             <div className="px-4 py-3">
               <span className="block text-sm text-gray-900 dark:text-bg-contrast" title={name}>
                 {name}
@@ -280,17 +294,17 @@ function UserInfo({
             </div>
             <ul className="py-2">
               <li>
-                <Popover.Button
+                <PopoverButton
                   onClick={() => {
                     void signOut({ redirect: true, callbackUrl: pathname });
                   }}
                   className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   Kijelentkezés
-                </Popover.Button>
+                </PopoverButton>
               </li>
             </ul>
-          </Popover.Panel>
+          </PopoverPanel>
         </Transition>
       </Popover>
 
@@ -305,6 +319,8 @@ function UserInfo({
     </>
   );
 }
+
+const deviceTypeSchema = z.enum(['browser', 'standalone']);
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -330,7 +346,8 @@ export default function Header() {
     const deviceType = document.getElementById('device-type');
     if (deviceType != null) {
       const style = window.getComputedStyle(deviceType, '::after');
-      setTag('device-type', style.content ?? 'unknown');
+      const parsed = deviceTypeSchema.safeParse(style.content);
+      setTag('device-type', parsed.success ? parsed.data : 'unknown');
     }
   }, []);
   const returnUrl = new URLSearchParams({ returnUrl: pathname });
@@ -352,7 +369,7 @@ export default function Header() {
               <IconPlayHandball size={40} />
             </Link>
           </div>
-          <Popover.Group as={'menu'} className="hidden lg:flex lg:gap-x-12">
+          <PopoverGroup as={'menu'} className="hidden lg:flex lg:gap-x-12">
             {menus.map((menu) => {
               switch (menu.type) {
                 case 'simple':
@@ -372,7 +389,7 @@ export default function Header() {
                   );
               }
             })}
-          </Popover.Group>
+          </PopoverGroup>
           <span className={`px-4 lg:hidden`}></span>
           <div className="lg:flex lg:flex-1 lg:justify-end">
             <span className={`hidden lg:block`}>
@@ -398,7 +415,7 @@ export default function Header() {
         <Transition as={Fragment} show={mobileMenuOpen}>
           <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
             <div className="fixed inset-0 z-10" />
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 motion-safe:translate-x-full"
@@ -407,7 +424,7 @@ export default function Header() {
               leaveFrom="opacity-100 motion-safe:translate-x-0"
               leaveTo="opacity-0 motion-safe:translate-x-full"
             >
-              <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900">
+              <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900">
                 <div className="flex items-center justify-between">
                   <Link
                     className="block transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
@@ -465,8 +482,8 @@ export default function Header() {
                     </div>
                   </div>
                 </div>
-              </Dialog.Panel>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </Dialog>
         </Transition>
       </header>

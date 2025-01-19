@@ -14,12 +14,12 @@ type Props = {
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   return {
-    title: `${decodeURIComponent(params?.result || ('Labdarúgás' as Result))} eredmények`,
+    title: `${decodeURIComponent(params?.result ?? ('Labdarúgás' satisfies Result))} eredmények`,
   };
 }
 export default async function Page(props: Props) {
   const params = await props.params;
-  const sportag = decodeURIComponent(params?.result || ('Labdarúgás' as Result));
+  const sportag = decodeURIComponent(params?.result ?? ('Labdarúgás' satisfies Result));
   return (
     <main className="flex flex-col items-center justify-center bg-white dark:bg-gray-800">
       <Suspense

@@ -72,12 +72,12 @@ async function canEdit(): Promise<{ authorized: false; userId: string | null } |
 }
 
 function validateFiles(files: Readonly<Array<FileUploadData>>) {
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    const fileType = file?.type;
-    if (file?.size == null || file.size > fileSize) {
+  for (const file of files) {
+    const fileType = file.type;
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (file.size == null || file.size > fileSize) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
-      throw new UploadThingError(`Túl nagy fájl: ${file?.name}`);
+      throw new UploadThingError(`Túl nagy fájl: ${file.name}`);
     }
     if (isNullOrEmpty(fileType)) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
