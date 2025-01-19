@@ -7,12 +7,7 @@ import SimpleLogin, { SimpleLoginProfile } from '@/app/lib/simple-login';
 import { env } from '@/app/lib/env';
 import { updateUserAvatar } from '@/app/lib/actions';
 
-export const {
-  handlers: { GET, POST },
-  auth,
-  signIn,
-  signOut,
-} = NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: DrizzleAdapter(db),
   providers: [
     GitHub({
