@@ -1,7 +1,7 @@
-/** @type {import("prettier").Config} */
+/** @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions} */
 const config = {
   experimentalTernaries: true,
-  plugins: [import.meta.resolve('prettier-plugin-tailwindcss')],
+  plugins: ['prettier-plugin-tailwindcss'],
 };
 
 export default config;
