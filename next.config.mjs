@@ -146,10 +146,6 @@ const nextConfig = {
   async headers() {
     return [cspHeaders];
   },
-  swcMinify: true,
-  experimental: {
-    instrumentationHook: true,
-  },
 };
 
 const withAxiomConfig = withAxiom(nextConfig);
