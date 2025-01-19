@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faShareNodes, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import BackToHome from '@/app/ui/buttons/back-to-home';
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 type LoginButton = {
   id: string;

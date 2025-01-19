@@ -1,15 +1,15 @@
 'use client';
-import { ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { read, utils } from 'xlsx';
 import { captureException } from '@sentry/nextjs';
 import {
-  ColumnDef,
+  type ColumnDef,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
-  SortDirection,
-  SortingState,
+  type SortDirection,
+  type SortingState,
   useReactTable,
 } from '@tanstack/react-table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -108,7 +108,7 @@ export default function XlsxTable({
 
   switch (status) {
     case 'error':
-      return <div className={`mx-auto p-6 text-bg-contrast`}>Nem sikerült betölteni az adatokat: {error?.message}</div>;
+      return <div className={`mx-auto p-6 text-bg-contrast`}>Nem sikerült betölteni az adatokat: {error.message}</div>;
     case 'pending':
       return <div className={`mx-auto animate-pulse p-6 text-bg-contrast`}>Betöltés...</div>;
   }

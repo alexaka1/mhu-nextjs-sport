@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 import LandingLinks from '@/app/ui/landing/landing-links';
 import LandingBackground from '@/app/ui/landing/landing-background';
 import LandingTitle from '@/app/ui/landing/landing-title';

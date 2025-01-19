@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Button from '@/app/ui/buttons/link';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fragment, MouseEventHandler, ReactNode, useEffect, useState } from 'react';
+import { Fragment, type MouseEventHandler, type ReactNode, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { type IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
@@ -385,7 +385,9 @@ export default function Header() {
             <button
               type={'button'}
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => {
+                setMobileMenuOpen(true);
+              }}
             >
               {/*<input type="checkbox" id="toggler" className={``} />*/}
               <span className="sr-only">Fő menü megnyitása</span>
@@ -416,7 +418,9 @@ export default function Header() {
                   </Link>
                   <button
                     type={'button'}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                    }}
                     // htmlFor="toggler"
                     className="-m-2.5 rounded-md p-2.5 transition-transform duration-200 text-gray-700 dark:text-bg-contrast"
                   >
@@ -434,7 +438,9 @@ export default function Header() {
                               <DialogLink
                                 key={menu.node.href}
                                 href={menu.node.href}
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                }}
                               >
                                 {menu.node.children}
                               </DialogLink>
@@ -445,7 +451,9 @@ export default function Header() {
                                 key={menu.node.title}
                                 title={menu.node.title}
                                 items={menu.node.items}
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                }}
                                 callsToAction={menu.node.callsToAction}
                               />
                             );

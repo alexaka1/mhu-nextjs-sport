@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 import { APP_DEFAULT_TITLE } from '@/app/manifest';
 import LandingLinks from '@/app/ui/landing/landing-links';
 import LandingBackground from '@/app/ui/landing/landing-background';

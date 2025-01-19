@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import Header from '@/app/ui/header';
 
 export default function Layout({

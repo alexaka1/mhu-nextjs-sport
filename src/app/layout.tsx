@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-// eslint-disable-next-line import/no-unresolved
+
 import { GeistSans } from 'geist/font/sans';
-// eslint-disable-next-line import/no-unresolved
+
 import { GeistMono } from 'geist/font/mono';
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import './globals.css';
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from './manifest';
 import Footer from '@/app/ui/footer';

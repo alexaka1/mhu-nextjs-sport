@@ -1,8 +1,8 @@
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 import ResultsTab from '@/app/ui/results/results-tab';
 import { Suspense } from 'react';
 import Skeleton from '@/app/ui/skeleton';
-import { Result } from '@/app/lib/types';
+import { type Result } from '@/app/lib/types';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
 
 type Props = {

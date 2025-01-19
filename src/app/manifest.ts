@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import { type MetadataRoute } from 'next';
 
 export const APP_NAME = 'Ügyészségi sporttalálkozó';
 export const APP_DEFAULT_TITLE = 'Ügyészségi sporttalálkozó';

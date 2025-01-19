@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { deleteResultByKey, getResultItems, insertResult, isAdmin, updateAvatar } from '../db/data';
 import { auth } from '@/app/lib/auth';
 import { isNullOrEmpty } from '@/app/utils';
-import { type Result, ResultItem, ResultType } from '@/app/lib/types';
+import { type Result, type ResultItem, type ResultType } from '@/app/lib/types';
 import utapi from '@/app/lib/uploadthing';
 
 export async function deleteResult(key: string) {

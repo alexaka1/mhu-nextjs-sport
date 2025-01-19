@@ -1,4 +1,4 @@
-import { OAuthConfig, OAuthUserConfig } from 'next-auth/providers';
+import { type OAuthConfig, type OAuthUserConfig } from 'next-auth/providers';
 
 export type SimpleLoginProfile = {
   id: number;
