@@ -34,7 +34,7 @@
     "@sentry/nextjs": "^8.50.0",
     "@serwist/next": "^9.0.11",
     "@t3-oss/env-nextjs": "^0.11.1",
-    "@tabler/icons-react": "^3.28.1",
+    "@tabler/icons-react": "^3.29.0",
     "@tanstack/react-query": "^5.64.2",
     "@tanstack/react-table": "^8.20.6",
     "@uploadthing/react": "^7.1.5",
