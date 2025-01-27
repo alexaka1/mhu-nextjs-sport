@@ -118,8 +118,8 @@ importers:
         specifier: ^9.18.0
         version: 9.18.0
       '@sentry/utils':
-        specifier: ^8.50.0
-        version: 8.50.0
+        specifier: ^8.51.0
+        version: 8.51.0
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
@@ -1465,10 +1465,6 @@ packages:
     engines: {node: '>= 10'}
     hasBin: true
 
-  '@sentry/core@8.50.0':
-    resolution: {integrity: sha512-q71m8Ha9YGwqn4Gd7sWvcFTRgbHXxEfU4QeIFtwMBpwHfq2Q+9koiF8DOoOHqIEOsnlvZWRQgGggIOdHzajnVw==}
-    engines: {node: '>=14.18'}
-
   '@sentry/core@8.51.0':
     resolution: {integrity: sha512-Go0KxCYLw+OBIlLSv5YsYX+x9NW43fNVcyB6rhkSp2Q5Zme3tAE6KtZFvyu4SO7G/903wisW5Q6qV6UuK/ee4A==}
     engines: {node: '>=14.18'}
@@ -1499,8 +1495,8 @@ packages:
     peerDependencies:
       react: ^16.14.0 || 17.x || 18.x || 19.x
 
-  '@sentry/utils@8.50.0':
-    resolution: {integrity: sha512-I/mx2efjhHsmM8N5mefKH7WLMEVvzjkhHAUsLhNVHAeiODIC61bdk9D6YcK578yJvIBiQdMDiqJPvaHDoOdgjg==}
+  '@sentry/utils@8.51.0':
+    resolution: {integrity: sha512-8YBPpzXugXslWFGT7T0UjzEyJypdZkUOZ/c1QZmE5YFqekFvC1M/KC+L7XwsEE1VRbGMOn8QDankW2EvYLYcMA==}
     engines: {node: '>=14.18'}
 
   '@sentry/vercel-edge@8.51.0':
@@ -5427,8 +5423,6 @@ snapshots:
       - encoding
       - supports-color
 
-  '@sentry/core@8.50.0': {}
-
   '@sentry/core@8.51.0': {}
 
   '@sentry/nextjs@8.51.0(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.56.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(next@15.1.6(@babel/core@7.26.7)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(webpack@5.97.1(esbuild@0.19.12))':
@@ -5513,9 +5507,9 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       react: 19.0.0
 
-  '@sentry/utils@8.50.0':
+  '@sentry/utils@8.51.0':
     dependencies:
-      '@sentry/core': 8.50.0
+      '@sentry/core': 8.51.0
 
   '@sentry/vercel-edge@8.51.0':
     dependencies:
