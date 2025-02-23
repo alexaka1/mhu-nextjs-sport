@@ -155,7 +155,7 @@ export default function Page() {
           </DataList>
         </EntryContent>
         <Media
-          src={'https://source.unsplash.com/person-playing-soccer-mY2ZHBU6GRk'}
+          src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhV8k8UBIaqCemy7FiDRY8lQbSThu0twHgdZrJ'}
           alt={'Labdarúgás'}
           priority={true}
         />
@@ -249,7 +249,7 @@ export default function Page() {
             </DataListEntry>
           </DataList>
         </EntryContent>
-        <Media src={'https://source.unsplash.com/people-in-swimming-pool-TVOAbbLL050'} alt={'Úszás'} />
+        <Media src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'} alt={'Úszás'} />
       </Entry>
       <Entry>
         <EntryContent>
@@ -336,7 +336,7 @@ export default function Page() {
             </DataListEntry>
           </DataList>
         </EntryContent>
-        <Media src={'https://source.unsplash.com/group-of-people-running-on-stadium-atSaEOeE8Nk'} alt={'Futás'} />
+        <Media src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhcGxtgUuI2lFLKzqZ8ibAPBoQ7uUtMSJNj01w'} alt={'Futás'} />
       </Entry>
       <Entry>
         <EntryContent>
@@ -434,7 +434,7 @@ export default function Page() {
           </DataList>
         </EntryContent>
         <Media
-          src={'https://source.unsplash.com/red-and-brown-wooden-table-tennis-racket-i0kB5B9J8Ds'}
+          src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3Hhnt80K7x39ku0hCXvmi4dqO1zWpJr7IjeKGyH'}
           alt={'Asztalitenisz'}
         />
       </Entry>
@@ -566,7 +566,7 @@ export default function Page() {
           </DataList>
           <p>Három csoport győztese a döntőben mérkőzik.</p>
         </EntryContent>
-        <Media src={'https://source.unsplash.com/red-white-and-black-round-wheel-RjqCk9MqhNg'} alt={'Darts'} />
+        <Media src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3Hhp8qiLl6ZOr8hQaE9YlIB5Smef7sCcdvHyjMJ'} alt={'Darts'} />
       </Entry>
       <Entry>
         <EntryContent>
@@ -666,7 +666,10 @@ export default function Page() {
             </DataListEntry>
           </DataList>
         </EntryContent>
-        <Media src={'https://source.unsplash.com/ball-under-basketball-ring-BfphcCvhl6E'} alt={'Kosárlabda'} />
+        <Media
+          src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhnPcT3Vx39ku0hCXvmi4dqO1zWpJr7IjeKGyH'}
+          alt={'Kosárlabda'}
+        />
       </Entry>
       <Entry>
         <EntryContent>
@@ -708,7 +711,10 @@ export default function Page() {
           <p>A legjobb 3 versenyző újra 5-5-öt dob, így alakul ki köztük a legjobb 3 sorrendje.</p>
           <p>A verseny előtt gyakorlásra lesz lehetőség.</p>
         </EntryContent>
-        <Media src={'https://source.unsplash.com/ball-under-basketball-ring-BfphcCvhl6E'} alt={'Kosárlabda'} />
+        <Media
+          src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhW3IthrXSwz75tgJrv6Uy1hoxuce0I29sfRPL'}
+          alt={'Kosárlabda'}
+        />
       </Entry>
     </main>
   );
