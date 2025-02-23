@@ -1,5 +1,5 @@
 import { createEnv } from '@t3-oss/env-nextjs';
-import { vercel } from '@t3-oss/env-core/presets';
+import { uploadthing, vercel } from '@t3-oss/env-core/presets-zod';
 import { z } from 'zod';
 
 export const env = createEnv({
@@ -17,7 +17,6 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string().optional(),
     SIMPLELOGIN_CLIENT_ID: z.string(),
     SIMPLELOGIN_CLIENT_SECRET: z.string(),
-    UPLOADTHING_TOKEN: z.string(),
     UPLOADTHING_APP_ID: z.string(),
   },
   client: {
@@ -31,5 +30,5 @@ export const env = createEnv({
     NEXT_PUBLIC_SENTRY_DSN: process.env['NEXT_PUBLIC_SENTRY_DSN'],
     NEXT_PUBLIC_SENTRY_REPORT_URI: process.env['NEXT_PUBLIC_SENTRY_REPORT_URI'],
   },
-  extends: [vercel()],
+  extends: [vercel(), uploadthing()],
 });
