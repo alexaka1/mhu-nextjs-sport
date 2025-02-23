@@ -18,7 +18,7 @@ export default function Footer() {
             {/*  <Image src="/vercel.svg" alt="Vercel Logó" className="h-6 dark:invert" width={100} height={24} /> -en*/}
             {/*  hosztolva.*/}
             {/*</a>*/}
-            <p className="prose text-balance text-bg-contrast">
+            <p className="prose text-bg-contrast text-balance">
               Ez a weboldal egy hobbi projekt keretében készült. Nem hivatalos. Nem kapcsolódik semmilyen hivatalos
               szervezethez. A forráskód elérhető a GitHub-on.
             </p>
@@ -31,11 +31,11 @@ export default function Footer() {
                 href="https://www.facebook.com/Magyarorsz%C3%A1g-%C3%9Cgy%C3%A9szs%C3%A9ge-104594918109266"
                 rel="noreferrer"
                 target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
               >
                 <span className="sr-only">Facebook</span>
 
-                <FontAwesomeIcon icon={faFacebook} className={`size-6`} />
+                <FontAwesomeIcon icon={faFacebook} className={`text-2xl`} />
               </a>
             </li>
 
@@ -44,10 +44,10 @@ export default function Footer() {
                 href="https://www.youtube.com/@MagyarorszagUgyeszsege"
                 rel="noreferrer"
                 target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
               >
                 <span className="sr-only">YouTube</span>
-                <FontAwesomeIcon icon={faYoutube} className={`size-6`} />
+                <FontAwesomeIcon icon={faYoutube} className={`text-2xl`} />
               </a>
             </li>
 
@@ -56,11 +56,11 @@ export default function Footer() {
                 href="https://twitter.com/ProsecutionHu"
                 rel="noreferrer"
                 target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
               >
                 <span className="sr-only">X</span>
 
-                <FontAwesomeIcon icon={faXTwitter} className={`size-6`} />
+                <FontAwesomeIcon icon={faXTwitter} className={`text-2xl`} />
               </a>
             </li>
 
@@ -69,17 +69,17 @@ export default function Footer() {
                 href="https://github.com/alexaka1/mhu-nextjs-sport"
                 rel="noreferrer"
                 target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
               >
                 <span className="sr-only">GitHub</span>
 
-                <FontAwesomeIcon icon={faGithub} className={`size-6`} />
+                <FontAwesomeIcon icon={faGithub} className={`text-2xl`} />
               </a>
             </li>
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 border-t pt-8 border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
+        <div className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
           {/*<div>*/}
           {/*  <p className="font-medium text-gray-900 dark:text-white">Services</p>*/}
 
@@ -116,7 +116,7 @@ export default function Footer() {
           {/*  </ul>*/}
           {/*</div>*/}
         </div>
-        <p className="prose whitespace-nowrap text-balance text-xs text-bg-contrast">
+        <p className="prose text-bg-contrast text-xs text-balance whitespace-nowrap">
           &copy; 2024. <span className="inline-block max-w-full text-balance">Martossy Alex Márk.</span> Minden jog
           fenntartva.
         </p>
