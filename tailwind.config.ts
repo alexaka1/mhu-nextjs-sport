@@ -65,6 +65,6 @@ const config = {
     themes: [],
     base: false,
   } satisfies DaisyUiConfig,
-  plugins: [typography, /*oklch({}),*/ headlessui, daisyui],
+  plugins: [typography, /*oklch({}),*/ headlessui /* daisyui*/],
 } satisfies Config;
 export default withUt(config);
