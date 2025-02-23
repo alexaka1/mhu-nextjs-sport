@@ -3,7 +3,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 import typography from '@tailwindcss/typography';
 import headlessui from '@headlessui/tailwindcss';
 import { withUt } from 'uploadthing/tw';
-import oklch from '@alexaka1/tailwindcss-oklch';
+// import oklch from '@alexaka1/tailwindcss-oklch';
 import { default as daisyui, Config as DaisyUiConfig } from 'daisyui';
 
 const config = {
@@ -65,6 +65,6 @@ const config = {
     themes: [],
     base: false,
   } satisfies DaisyUiConfig,
-  plugins: [typography, oklch({}), headlessui, daisyui],
+  plugins: [typography, /*oklch({}),*/ headlessui, daisyui],
 } satisfies Config;
 export default withUt(config);
