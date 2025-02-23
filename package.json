@@ -68,7 +68,7 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "cssnano": "7.0.6",
-    "daisyui": "4.12.24",
+    "daisyui": "5.0.12",
     "drizzle-kit": "0.30.6",
     "eslint": "9.24.0",
     "eslint-config-next": "15.2.4",
