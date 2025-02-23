@@ -37,7 +37,7 @@ export function Media({ src, alt, priority }: Readonly<{ src: string; alt: strin
 
 export function Entry({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 px-4 py-6 sm:gap-y-16 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 print:grid-cols-1 print:py-0 print:[page-break-after:always] [&>div:first-of-type]:even:lg:order-last">
+    <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 px-4 py-6 sm:gap-y-16 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 print:grid-cols-1 print:py-0 print:[page-break-after:always] lg:even:[&>div:first-of-type]:order-last">
       {children}
     </div>
   );
@@ -46,7 +46,7 @@ export function Entry({ children }: Readonly<{ children: ReactNode }>) {
 export function EntryContent({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <div
-      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-bg-contrast prose-p:dark:text-bg-contrast prose-a:dark:text-primary-600 prose-ol:dark:text-bg-contrast prose-ul:dark:text-bg-contrast`}
+      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-bg-contrast dark:prose-p:text-bg-contrast dark:prose-a:text-primary-600 dark:prose-ol:text-bg-contrast dark:prose-ul:text-bg-contrast`}
     >
       {children}
     </div>
