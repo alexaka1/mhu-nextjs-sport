@@ -3,7 +3,14 @@
 @source "../../node_modules/@uploadthing/react/dist";
 
 @plugin "@tailwindcss/typography";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: false;
+  prefix: "dui-";
+  /*styled: true;*/
+  include: swap;
+  logs: true;
+  /*exclude: reset, properties, rootcolor, rootscrollgutter, rootscroolllock, scrollbar, svg;*/
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant browser (@media (display-mode: browser));
@@ -32,11 +39,50 @@
   --color-accent-600: oklch(47.01% 0.1653 18.33);
   --color-accent-400: oklch(66.5% 0.196 18.33);
   --color-accent-200: oklch(83.2% 0.077 18.33);
-
-  --font-sans: var(--font-geist-sans) var(--font-sans);
-  --font-mono: var(--font-geist-mono) var(--font-mono);
-
 }
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), var(--font-sans);
+  --font-mono: var(--font-geist-mono), var(--font-mono);
+}
+
+/*
+  Contrast utilities: the idea here is that the contrast color is computed
+  via a CSS function (here using oklch() as in your old plugin), where
+  <alpha-value> is automatically substituted when you use an opacity modifier.
+*/
+/*@utility text-bg-contrast {*/
+/*  --tw-text-opacity: 1;*/
+/*  !**/
+/*    Here we use a CSS calculation that references custom properties*/
+/*    (e.g. --tw-bg-l, --tw-lightness-threshold, etc.) which you should define*/
+/*    in your base styles. Tailwind will replace <alpha-value> when you use classes like*/
+/*    text-bg-contrast/50.*/
+/*  *!*/
+/*  color: oklch(*/
+/*  clamp(0, calc(var(--tw-infinite) * (var(--tw-lightness-threshold) - var(--tw-bg-l) - var(--tw-bg-l-offset))), 1),*/
+/*  0,*/
+/*  0 / <alpha-value>*/
+/*  );*/
+/*}*/
+
+/*@utility text-border-contrast {*/
+/*  --tw-text-opacity: 1;*/
+/*  color: oklch(*/
+/*  clamp(0, calc(var(--tw-infinite) * (var(--tw-border-threshold) - var(--tw-border-l) - var(--tw-border-l-offset))), 1),*/
+/*  0,*/
+/*  0 / <alpha-value>*/
+/*  );*/
+/*}*/
+
+/*@utility bg-border-contrast {*/
+/*  --tw-bg-opacity: 1;*/
+/*  background-color: oklch(*/
+/*  clamp(0, calc(var(--tw-infinite) * (var(--tw-border-threshold) - var(--tw-border-l) - var(--tw-border-l-offset))), 1),*/
+/*  0,*/
+/*  0 / <alpha-value>*/
+/*  );*/
+/*}*/
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
