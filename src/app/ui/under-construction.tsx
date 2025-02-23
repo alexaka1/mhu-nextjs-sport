@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function UnderConstruction() {
   return (
     <main className="grid min-h-full grow place-items-center px-6 py-24 bg-white sm:py-32 lg:px-8 dark:bg-gray-950">
-      <div className="mx-auto max-w-screen-md px-4 py-8 text-center lg:px-12 lg:py-16">
+      <div className="mx-auto max-w-(--breakpoint-md) px-4 py-8 text-center lg:px-12 lg:py-16">
         <FontAwesomeIcon
           className={`mx-auto mb-4 size-12 text-primary dark:text-bg-contrast`}
           icon={faScrewdriverWrench}

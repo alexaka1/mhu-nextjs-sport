@@ -26,7 +26,7 @@ const tabs = [
     title: 'Labdarúgás',
     icon: (
       <IconBallFootball
-        className={`me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400`}
+        className={`me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400`}
         aria-hidden="true"
         stroke={1.5}
       />
@@ -36,7 +36,7 @@ const tabs = [
     title: 'Úszás',
     icon: (
       <IconSwimming
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -46,7 +46,7 @@ const tabs = [
     title: 'Futás',
     icon: (
       <IconRun
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -56,7 +56,7 @@ const tabs = [
     title: 'Asztalitenisz',
     icon: (
       <IconPingPong
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -66,7 +66,7 @@ const tabs = [
     title: 'Súlylökés',
     icon: (
       <IconBallVolleyball
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -76,7 +76,7 @@ const tabs = [
     title: 'Darts',
     icon: (
       <IconTargetArrow
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -86,7 +86,7 @@ const tabs = [
     title: 'Kosárlabda',
     icon: (
       <IconBallBasketball
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -96,7 +96,7 @@ const tabs = [
     title: 'Főügyészi verseny',
     icon: (
       <FontAwesomeIcon
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         icon={faSection}
       />
@@ -106,7 +106,7 @@ const tabs = [
     title: 'Csapatverseny',
     icon: (
       <FontAwesomeIcon
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
+        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
         aria-hidden="true"
         icon={faPeopleGroup}
       />
@@ -125,7 +125,7 @@ export default function ResultsTabLinks() {
         >
           <Link
             href={`/eredmenyek/${encodeURIComponent(tab.title)}`}
-            className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent hover:border-secondary-600 hover:text-secondary-600 data-active:border-primary data-active:text-primary dark:hover:text-gray-300 data-active:dark:border-primary-400 data-active:dark:text-primary-400`}
+            className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent hover:border-secondary-600 hover:text-secondary-600 data-active:border-primary data-active:text-primary dark:hover:text-gray-300 dark:data-active:border-primary-400 dark:data-active:text-primary-400`}
             data-active={
               pathname === `/eredmenyek/${encodeURIComponent(tab.title)}` ||
               (pathname === '/eredmenyek' && tab.title === 'Csapatverseny')

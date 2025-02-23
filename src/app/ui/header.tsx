@@ -84,7 +84,7 @@ function DialogLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
+      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary dark:data-active:bg-primary-600`}
       data-active={pathname === href}
     >
       {children}
@@ -104,7 +104,7 @@ function DisclosureMenu({
       {({ open }) => (
         <>
           <DisclosureButton
-            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
+            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary dark:data-active:bg-primary-600`}
             data-active={items.some(({ href }) => href === pathname)}
           >
             {title}
@@ -121,7 +121,7 @@ function DisclosureMenu({
                 as={Link}
                 href={item.href}
                 onClick={onClick}
-                className={`block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
+                className={`block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary dark:data-active:bg-primary-600`}
                 data-active={pathname === item.href}
               >
                 {item.name}
@@ -139,7 +139,7 @@ function PopoverLink({ href, children }: Readonly<SimpleLink>) {
   return (
     <Link
       href={href}
-      className={`text-sm font-semibold leading-6 transition-colors duration-200 text-bg-contrast hover:underline hover:decoration-primary hover:decoration-1 hover:text-bg-contrast/80 data-active:font-extrabold data-active:underline data-active:decoration-primary data-active:decoration-2 data-active:drop-shadow-lg data-active:text-primary hover:dark:decoration-primary-400 data-active:dark:text-primary-600`}
+      className={`text-sm font-semibold leading-6 transition-colors duration-200 text-bg-contrast hover:underline hover:decoration-primary hover:decoration-1 hover:text-bg-contrast/80 data-active:font-extrabold data-active:underline data-active:decoration-primary data-active:decoration-2 data-active:drop-shadow-lg data-active:text-primary dark:hover:decoration-primary-400 dark:data-active:text-primary-600`}
       data-active={pathname === href || pathname.startsWith(href)}
     >
       {children}
@@ -153,7 +153,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   return (
     <Popover className="relative">
       <PopoverButton
-        className={`flex items-center gap-x-1 text-sm font-semibold leading-6 text-bg-contrast data-active:font-extrabold data-active:underline data-active:decoration-primary data-active:decoration-2 data-active:drop-shadow-lg data-active:dark:text-primary-600`}
+        className={`flex items-center gap-x-1 text-sm font-semibold leading-6 text-bg-contrast data-active:font-extrabold data-active:underline data-active:decoration-primary data-active:decoration-2 data-active:drop-shadow-lg dark:data-active:text-primary-600`}
         data-active={isActive}
       >
         {title}
@@ -181,9 +181,9 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
                 key={item.name}
                 className={`group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-900 ${pathname === item.href ? 'bg-primary-600 dark:bg-primary-600' : ''}`}
               >
-                <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-950 group-hover:dark:bg-gray-800">
+                <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-950 dark:group-hover:bg-gray-800">
                   <FontAwesomeIcon
-                    className="size-6 text-gray-600 group-hover:text-primary dark:text-gray-400 group-hover:dark:text-primary-400/75"
+                    className="size-6 text-gray-600 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary-400/75"
                     aria-hidden="true"
                     icon={item.icon}
                   />
@@ -210,7 +210,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
                 className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 transition-colors duration-200 text-gray-900 hover:bg-gray-100 dark:text-bg-contrast dark:hover:bg-gray-600"
               >
                 <FontAwesomeIcon
-                  className="size-5 flex-none text-gray-400 group-hover:text-primary group-hover:dark:text-primary-400/75"
+                  className="size-5 flex-none text-gray-400 group-hover:text-primary dark:group-hover:text-primary-400/75"
                   aria-hidden="true"
                   icon={item.icon}
                 />
@@ -283,7 +283,7 @@ function UserInfo({
           leaveFrom="opacity-100 motion-safe:translate-y-0"
           leaveTo="opacity-0 motion-safe:translate-y-1"
         >
-          <PopoverPanel className="absolute -left-8 z-50 my-4 list-none divide-y rounded-lg text-base shadow divide-gray-100 bg-white dark:divide-gray-600 dark:bg-gray-700">
+          <PopoverPanel className="absolute -left-8 z-50 my-4 list-none divide-y rounded-lg text-base shadow-sm divide-gray-100 bg-white dark:divide-gray-600 dark:bg-gray-700">
             <div className="px-4 py-3">
               <span className="block text-sm text-gray-900 dark:text-bg-contrast" title={name}>
                 {name}
@@ -309,7 +309,7 @@ function UserInfo({
       </Popover>
 
       <button
-        className={`hidden rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors duration-200 ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
+        className={`hidden rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-xs transition-colors duration-200 ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
         onClick={() => {
           void signOut({ redirect: true, callbackUrl: pathname });
         }}

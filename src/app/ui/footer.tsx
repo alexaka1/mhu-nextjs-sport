@@ -6,7 +6,7 @@ import DarkModeToggle from '@/app/ui/dark-mode-toggle';
 export default function Footer() {
   return (
     <footer className="mt-auto bg-gray-50 dark:bg-gray-900 print:hidden">
-      <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+      <div className="mx-auto max-w-(--breakpoint-xl) space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className={`flex flex-col items-start gap-2`}>
             {/*<a*/}

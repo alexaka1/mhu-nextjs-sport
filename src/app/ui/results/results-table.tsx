@@ -34,7 +34,7 @@ export default function ResultsTable({
           <DeleteButton fileKey={fileKey} canEdit={canEdit} />
           <button
             onClick={() => share(url, title)}
-            className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
+            className={`transition-colors duration-200 hover:text-primary dark:hover:text-primary-600`}
             title={`Megosztás`}
           >
             <FontAwesomeIcon icon={faShareNodes} className={`size-6`} />
@@ -42,7 +42,7 @@ export default function ResultsTable({
           <Link
             href={file}
             target={'_blank'}
-            className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
+            className={`transition-colors duration-200 hover:text-primary dark:hover:text-primary-600`}
             title={'Táblázat letöltése'}
           >
             <FontAwesomeIcon icon={faDownload} className={`size-6`} />
@@ -87,7 +87,7 @@ function DeleteButton({ fileKey, canEdit }: { fileKey: string; canEdit?: boolean
     >
       <button
         type={'submit'}
-        className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
+        className={`transition-colors duration-200 hover:text-primary dark:hover:text-primary-600`}
         title={`Törlés`}
       >
         <FontAwesomeIcon icon={faTrashCan} className={`size-6`} />

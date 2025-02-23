@@ -22,7 +22,7 @@ const mapsApiKey = env.NEXT_PUBLIC_MAPS_API_KEY ?? 'null';
 export default function Lodging() {
   return (
     <main className="bg-white dark:bg-gray-800">
-      <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 [&>div:first-of-type]:even:lg:order-last">
+      <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:even:[&>div:first-of-type]:order-last">
         <div className={`prose`}>
           <Link className={``} href={`https://sandraifjusagiszallo.hu/`} target={'_blank'} prefetch={false}>
             <h2
@@ -62,7 +62,7 @@ export default function Lodging() {
           <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
         </div>
       </div>
-      <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 [&>div:first-of-type]:even:lg:order-last">
+      <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:even:[&>div:first-of-type]:order-last">
         <div className={`prose`}>
           <Link className={``} href={`https://bessenyeihotel.hu/`} target={'_blank'} prefetch={false}>
             <h2

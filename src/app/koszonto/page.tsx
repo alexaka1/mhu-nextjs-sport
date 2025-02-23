@@ -17,7 +17,7 @@ export default function Home() {
 
         <section className="grid overflow-hidden rounded-lg bg-primary-800/95 md:grid-cols-2">
           <div className="p-4 pb-0 md:flex md:items-center md:p-12 lg:px-16 lg:py-24">
-            <div className="prose mx-auto max-w-xl text-balance text-center md:text-left rtl:md:text-right">
+            <div className="prose mx-auto max-w-xl text-balance text-center md:text-left md:rtl:text-right">
               <h2 className="text-2xl font-bold capitalize text-bg-contrast md:text-3xl xl:text-5xl">
                 Kedves látogató!
               </h2>

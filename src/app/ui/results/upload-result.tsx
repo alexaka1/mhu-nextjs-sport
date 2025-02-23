@@ -10,7 +10,7 @@ export function UploadResult({ title, canEdit }: { title: string; canEdit?: bool
   }
   return (
     <UploadButton
-      className={`duration-200 ut-button:transition-colors ut-button:bg-primary ut-allowed-content:text-bg-contrast ut-button:ut-readying:bg-primary-600 ut-button:ut-ready:hover:bg-primary-600 ut-button:ut-uploading:after:bg-primary-400/25`}
+      className={`duration-200 ut-button:transition-colors ut-button:bg-primary ut-allowed-content:text-bg-contrast ut-readying:ut-button:bg-primary-600 hover:ut-ready:ut-button:bg-primary-600 ut-uploading:ut-button:after:bg-primary-400/25`}
       endpoint="resultUploader"
       onClientUploadComplete={() => {
         router.refresh();
