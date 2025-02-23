@@ -23,7 +23,7 @@ const providers: LoginButton[] = [
             width={24}
             height={24}
             src={`/icons/simplelogin.svg`}
-            className={`size-6 rounded-lg p-0.5 pr-1 bg-white`}
+            className={`size-6 rounded-lg bg-white p-0.5 pr-1`}
           />
         </div>{' '}
         SimpleLogin belépés
@@ -35,7 +35,7 @@ const providers: LoginButton[] = [
     id: 'github',
     button: (
       <>
-        <FontAwesomeIcon icon={faGithub} className={`size-6 pr-4`} /> GitHub belépés
+        <FontAwesomeIcon icon={faGithub} className={`pr-4 text-2xl`} /> GitHub belépés
       </>
     ),
     recommended: undefined,
@@ -44,7 +44,7 @@ const providers: LoginButton[] = [
     id: 'google',
     button: (
       <>
-        <FontAwesomeIcon icon={faGoogle} className={`size-6 pr-4`} /> Google belépés
+        <FontAwesomeIcon icon={faGoogle} className={`pr-4 text-2xl`} /> Google belépés
       </>
     ),
     recommended: undefined,
@@ -53,7 +53,7 @@ const providers: LoginButton[] = [
   //   id: 'twitter',
   //   button: (
   //     <>
-  //       <FontAwesomeIcon icon={faXTwitter} className={`size-6 pr-4`} /> Twitter belépés
+  //       <FontAwesomeIcon icon={faXTwitter} className={`text-2xl pr-4`} /> Twitter belépés
   //     </>
   //   ),
   // },
@@ -75,7 +75,7 @@ export default async function Home(
   if (session?.user != null) {
     return (
       <main className="prose flex min-h-full flex-1 flex-col justify-center px-6 py-12 sm:mx-auto sm:w-full sm:max-w-md lg:px-8">
-        <h2 className={`text-center text-gray-900 dark:text-bg-contrast`}>Már be van jelentkezve.</h2>
+        <h2 className={`dark:text-bg-contrast text-center text-gray-900`}>Már be van jelentkezve.</h2>
         <div className="mt-10 flex flex-col gap-3 sm:mx-auto sm:w-full sm:max-w-sm sm:gap-4">
           <BackToHome />
         </div>
@@ -86,9 +86,9 @@ export default async function Home(
     <>
       <main className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:prose sm:mx-auto sm:w-full sm:max-w-sm">
-          <IconPlayHandball size={40} className={`mx-auto h-10 w-auto text-primary dark:text-bg-contrast`} />
-          <h2 className="mt-10 text-center text-gray-900 dark:text-bg-contrast">Jelentkezz be az alkalmazásba!</h2>
-          <h4 className={`text-center dark:text-bg-contrast`}>Válassz az alábbi lehetőségek közül</h4>
+          <IconPlayHandball size={40} className={`text-primary dark:text-bg-contrast mx-auto h-10 w-auto`} />
+          <h2 className="dark:text-bg-contrast mt-10 text-center text-gray-900">Jelentkezz be az alkalmazásba!</h2>
+          <h4 className={`dark:text-bg-contrast text-center`}>Válassz az alábbi lehetőségek közül</h4>
         </div>
 
         <div className="mt-10 flex flex-col gap-3 sm:mx-auto sm:w-full sm:max-w-sm sm:gap-4">
@@ -104,10 +104,10 @@ export default async function Home(
               <button
                 form={provider.id}
                 type="submit"
-                className="relative flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-xs transition-colors duration-200 bg-primary text-bg-contrast hover:bg-secondary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400"
+                className="bg-primary text-bg-contrast hover:bg-secondary-600 focus-visible:outline-primary-400 relative flex w-full justify-center rounded-md px-3 py-1.5 text-sm leading-6 font-semibold shadow-xs transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 {provider.recommended ?
-                  <span className="absolute -right-0.5 -top-2 z-10 whitespace-nowrap rounded-full px-2.5 py-0.5 text-sm font-semibold bg-hun-green text-bg-contrast">
+                  <span className="bg-hun-green text-bg-contrast absolute -top-2 -right-0.5 z-10 rounded-full px-2.5 py-0.5 text-sm font-semibold whitespace-nowrap">
                     Javasolt
                   </span>
                 : null}

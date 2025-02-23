@@ -27,12 +27,12 @@ export default function Lodging() {
           <Link className={``} href={`https://sandraifjusagiszallo.hu/`} target={'_blank'} prefetch={false}>
             <h2
               id={`sandra`}
-              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75"
+              className="decoration-primary hover:text-primary-600 dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75 text-3xl font-bold tracking-tight text-gray-900 underline decoration-2 transition-colors duration-200 sm:text-4xl"
             >
               Sandra Hotel
             </h2>
           </Link>
-          <p className="hyphens-auto text-balance text-gray-600 dark:text-bg-contrast">
+          <p className="dark:text-bg-contrast text-balance hyphens-auto text-gray-600">
             Magyarország Észak – Keleti részén, Szabolcs megye központjában Nyíregyházán a Sóstói u 31/B. alatt
             található. A szálló közvetlenül a Nyíregyházi Egyetem területén található de közvetlen szomszédja a Városi
             stadionnak és a lőtérnek is.
@@ -56,10 +56,10 @@ export default function Lodging() {
           {/*</dl>*/}
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4 sm:gap-6 lg:gap-8">
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
         </div>
       </div>
       <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:even:[&>div:first-of-type]:order-last">
@@ -67,12 +67,12 @@ export default function Lodging() {
           <Link className={``} href={`https://bessenyeihotel.hu/`} target={'_blank'} prefetch={false}>
             <h2
               id={`bessenyei`}
-              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75"
+              className="decoration-primary hover:text-primary-600 dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75 text-3xl font-bold tracking-tight text-gray-900 underline decoration-2 transition-colors duration-200 sm:text-4xl"
             >
               Hotel Bessenyei
             </h2>
           </Link>
-          <p className="hyphens-auto text-balance text-gray-600 dark:text-bg-contrast">
+          <p className="dark:text-bg-contrast text-balance hyphens-auto text-gray-600">
             A környék látványosságai percek alatt elérhetőek. Nyíregyháza hangulatos belvárosával, szellemi életével,
             történelmi emlékeivel, kiránduló- és üdülőövezetével, és az utóbbi évek dinamikus és látványos fejlődésével
             nagy népszerűségnek örvend az idelátogató turisták, vendégek körében. A város és Sóstógyógyfürdő között
@@ -98,10 +98,10 @@ export default function Lodging() {
           {/*</dl>*/}
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4 sm:gap-6 lg:gap-8">
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`rounded-lg bg-gray-100 text-[5rem]`} title={`Kép helye`} />
         </div>
       </div>
     </main>

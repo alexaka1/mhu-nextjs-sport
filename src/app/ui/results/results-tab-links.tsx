@@ -26,7 +26,7 @@ const tabs = [
     title: 'Labdarúgás',
     icon: (
       <IconBallFootball
-        className={`me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400`}
+        className={`group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 size-4 text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300`}
         aria-hidden="true"
         stroke={1.5}
       />
@@ -36,7 +36,7 @@ const tabs = [
     title: 'Úszás',
     icon: (
       <IconSwimming
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 size-4 text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -46,7 +46,7 @@ const tabs = [
     title: 'Futás',
     icon: (
       <IconRun
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 size-4 text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -56,7 +56,7 @@ const tabs = [
     title: 'Asztalitenisz',
     icon: (
       <IconPingPong
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 size-4 text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -66,7 +66,7 @@ const tabs = [
     title: 'Súlylökés',
     icon: (
       <IconBallVolleyball
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 size-4 text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -76,7 +76,7 @@ const tabs = [
     title: 'Darts',
     icon: (
       <IconTargetArrow
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 size-4 text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -86,7 +86,7 @@ const tabs = [
     title: 'Kosárlabda',
     icon: (
       <IconBallBasketball
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 size-4 text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         stroke={1.5}
       />
@@ -96,7 +96,7 @@ const tabs = [
     title: 'Főügyészi verseny',
     icon: (
       <FontAwesomeIcon
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 text-base text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         icon={faSection}
       />
@@ -106,7 +106,7 @@ const tabs = [
     title: 'Csapatverseny',
     icon: (
       <FontAwesomeIcon
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 dark:group-data-active:text-primary-400"
+        className="group-hover:text-secondary-600 group-data-active:text-primary dark:group-data-active:text-primary-400 me-2 text-base text-gray-400 dark:text-gray-500 dark:group-hover:text-gray-300"
         aria-hidden="true"
         icon={faPeopleGroup}
       />
@@ -117,15 +117,15 @@ export default function ResultsTabLinks() {
   const pathname = usePathname();
 
   return (
-    <div className="-mb-px flex flex-wrap border-b text-center text-sm font-medium border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400">
+    <div className="-mb-px flex flex-wrap border-b border-gray-200 text-center text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400">
       {tabs.map((tab) => (
         <div
           key={tab.title}
-          className="me-2 focus-visible:outline-1 focus-visible:outline-primary-800 dark:focus-visible:outline-primary-600"
+          className="focus-visible:outline-primary-800 dark:focus-visible:outline-primary-600 me-2 focus-visible:outline-1"
         >
           <Link
             href={`/eredmenyek/${encodeURIComponent(tab.title)}`}
-            className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent hover:border-secondary-600 hover:text-secondary-600 data-active:border-primary data-active:text-primary dark:hover:text-gray-300 dark:data-active:border-primary-400 dark:data-active:text-primary-400`}
+            className={`group hover:border-secondary-600 hover:text-secondary-600 data-active:border-primary data-active:text-primary dark:data-active:border-primary-400 dark:data-active:text-primary-400 inline-flex items-center justify-center rounded-t-lg border-b-2 border-transparent p-4 dark:hover:text-gray-300`}
             data-active={
               pathname === `/eredmenyek/${encodeURIComponent(tab.title)}` ||
               (pathname === '/eredmenyek' && tab.title === 'Csapatverseny')

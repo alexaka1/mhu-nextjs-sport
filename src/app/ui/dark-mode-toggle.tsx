@@ -51,7 +51,7 @@ export default function DarkModeToggle() {
   const deviceIcon = isMobile ? faMobile : faComputer;
 
   return (
-    <label className="dui-swap dui-swap-rotate" title={title(theme ?? 'light')}>
+    <label className="dui-swap dui-swap-rotate text-[2rem]" title={title(theme ?? 'light')}>
       <input
         id={'dark-mode-toggle'}
         type="checkbox"
@@ -65,10 +65,10 @@ export default function DarkModeToggle() {
           setTheme(nextTheme());
         }}
       />
-      <FontAwesomeIcon icon={faSun} className={`dui-swap-off size-7 text-primary dark:text-bg-contrast`} />
+      <FontAwesomeIcon icon={faSun} className={`dui-swap-off text-primary dark:text-bg-contrast size-7`} />
       <FontAwesomeIcon
         icon={deviceIcon}
-        className={`dui-swap-indeterminate size-7 text-primary dark:text-bg-contrast`}
+        className={`dui-swap-indeterminate text-primary dark:text-bg-contrast size-7 opacity-0 peer-indeterminate:opacity-100`}
       />
       <FontAwesomeIcon icon={faMoon} className={`dui-swap-on size-7 fill-current`} />
     </label>

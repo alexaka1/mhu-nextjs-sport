@@ -30,22 +30,22 @@ export default function ResultsTable({
       <div
         className={`relative flex h-svh grow flex-col overflow-auto shadow-md sm:rounded-lg lg:h-full lg:overflow-x-auto`}
       >
-        <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-bg-contrast">
+        <div className="text-bg-contrast flex flex-row items-center justify-end gap-6 px-6 py-2">
           <DeleteButton fileKey={fileKey} canEdit={canEdit} />
           <button
             onClick={() => share(url, title)}
-            className={`transition-colors duration-200 hover:text-primary dark:hover:text-primary-600`}
+            className={`hover:text-primary dark:hover:text-primary-600 transition-colors duration-200`}
             title={`Megosztás`}
           >
-            <FontAwesomeIcon icon={faShareNodes} className={`size-6`} />
+            <FontAwesomeIcon icon={faShareNodes} className={`text-2xl`} />
           </button>
           <Link
             href={file}
             target={'_blank'}
-            className={`transition-colors duration-200 hover:text-primary dark:hover:text-primary-600`}
+            className={`hover:text-primary dark:hover:text-primary-600 transition-colors duration-200`}
             title={'Táblázat letöltése'}
           >
-            <FontAwesomeIcon icon={faDownload} className={`size-6`} />
+            <FontAwesomeIcon icon={faDownload} className={`text-2xl`} />
           </Link>
         </div>
         {children}
@@ -87,10 +87,10 @@ function DeleteButton({ fileKey, canEdit }: { fileKey: string; canEdit?: boolean
     >
       <button
         type={'submit'}
-        className={`transition-colors duration-200 hover:text-primary dark:hover:text-primary-600`}
+        className={`hover:text-primary dark:hover:text-primary-600 transition-colors duration-200`}
         title={`Törlés`}
       >
-        <FontAwesomeIcon icon={faTrashCan} className={`size-6`} />
+        <FontAwesomeIcon icon={faTrashCan} className={`text-2xl`} />
       </button>
     </form>
   );

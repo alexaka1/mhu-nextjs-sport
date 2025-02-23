@@ -7,12 +7,12 @@ export function Title({ children, id }: Readonly<{ children: ReactNode; id: stri
   return (
     <h2
       id={id}
-      className="group/title flex flex-row text-3xl font-bold tracking-tight transition-colors duration-200 text-gray-900 sm:text-4xl dark:text-bg-contrast"
+      className="group/title dark:text-bg-contrast flex flex-row text-3xl font-bold tracking-tight text-gray-900 transition-colors duration-200 sm:text-4xl"
     >
-      <a href={`#${id}`} className={`flex items-center align-middle standalone:hidden print:hidden`}>
+      <a href={`#${id}`} className={`standalone:hidden flex items-center align-middle print:hidden`}>
         <FontAwesomeIcon
           icon={faHashtag}
-          className={`invisible size-6 group-hover/title:visible dark:text-bg-contrast`}
+          className={`dark:text-bg-contrast invisible text-2xl group-hover/title:visible`}
         />
       </a>
       {children}
@@ -54,7 +54,7 @@ export function EntryContent({ children }: Readonly<{ children: ReactNode }>) {
 }
 
 export function DataListEntry({ children }: Readonly<{ children: ReactNode }>) {
-  return <div className="border-t pt-4 border-gray-200">{children}</div>;
+  return <div className="border-t border-gray-200 pt-4">{children}</div>;
 }
 
 export function DataList({ children }: Readonly<{ children: ReactNode }>) {
