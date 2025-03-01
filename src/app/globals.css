@@ -19,9 +19,10 @@
 @custom-variant data-active (&[data-active="true"]);
 
 @theme {
-  --tw-contrast-threshold: 0.6;    /* threshold for switching to white text :contentReference[oaicite:9]{index=9}*/
-  --tw-min-contrast-lightness: 0;   /* black */
-  --tw-max-contrast-lightness: 1;   /* white */
+  --contrast-threshold: 0.6;            /* When base color’s lightness (l) is below this, text will be light (high contrast) */
+  --min-contrast-lightness: 0;          /* Contrast lightness for light backgrounds (black text) */
+  --max-contrast-lightness: 1;          /* Contrast lightness for dark backgrounds (white text) */
+  --precision: 2;                      /* Number of decimal places to round numeric values */
 
   --color-primary: oklch(33.14% 0.1186 18.15);
   --color-primary-800: oklch(33.14% 0.1186 18.15);
@@ -101,49 +102,56 @@
 }
 
 @utility text-contrast-* {
-  /* Capture optional opacity modifier (e.g. the "50" in text-red-500/50) */
-  --alpha: calc(--modifier(integer) * 1%);  /* Converts an integer modifier to a percentage&#8203;:contentReference[oaicite:10]{index=10} */
-  /* Fetch the base color value (from theme --color-* variable or arbitrary [color]) */
+  /* Capture an optional alpha modifier (e.g. the “50” in text-red-500/50-contrast) */
+  --alpha: --modifier([percentage]);
+  /* Resolve the base color from theme or arbitrary value */
   --tw-contrast-base: --value(--color-*, [color]);
 
-  /* Compute text color in OKLCH: use the base color’s chroma (c) and hue (h),
-     but adjust lightness (l) for contrast. We invert the lightness around ~50% and
-     clamp it between the min/max contrast lightness. */
-  color: --alpha(                     /* Apply opacity (if any) to the final color&#8203;:contentReference[oaicite:11]{index=11} */
-    oklch(from var(--tw-contrast-base)
-      /* Calculate new lightness: for a dark base (low l), this yields a high value
-         (close to --max-contrast-lightness); for a light base, yields a low value
-         (close to --min-contrast-lightness). */
-    calc(
-      clamp(
-        var(--tw-min-contrast-lightness),
-          /* Interpolate new lightness based on base color’s l and the global threshold */
-        var(--tw-min-contrast-lightness)
-        + (var(--tw-max-contrast-lightness) - var(--tw-min-contrast-lightness))
-        * (1 - l / var(--tw-contrast-threshold)),
-        var(--tw-max-contrast-lightness)
+  /* Round the base color’s hue (h) to the given precision.
+     If h is invalid (NaN), the fallback 0 is used.
+     (This mimics the JS: if (Number.isNaN(h)) return "0".) */
+  --tw-hue: round(h, var(--precision));
+
+  color: --alpha(
+    oklch(
+      from var(--tw-contrast-base)
+      calc(
+        clamp(
+          var(--min-contrast-lightness),
+          var(--min-contrast-lightness)
+          + (var(--max-contrast-lightness) - var(--min-contrast-lightness))
+          * (1 - l / var(--contrast-threshold)),
+          var(--max-contrast-lightness)
+        )
       )
+      c
+        /* Use the rounded hue, falling back to 0 if necessary */
+      var(--tw-hue, 0)
     )
-    c h)
     / var(--alpha, 100%)
   );
 }
 
 @utility text-bg-contrast {
-  --alpha: calc(--modifier(integer) * 1%);
+  --alpha: --modifier([percentage]);
+  /* Use the element’s background color as the base color */
   --tw-contrast-base: var(--tw-bg-color);
+  --tw-hue: round(h, var(--precision));
   color: --alpha(
-    oklch(from var(--tw-contrast-base)
-    calc(
-      clamp(
-        var(--tw-min-contrast-lightness),
-        var(--tw-min-contrast-lightness)
-        + (var(--tw-max-contrast-lightness) - var(--tw-min-contrast-lightness))
-        * (1 - l / var(--tw-contrast-threshold)),
-        var(--tw-max-contrast-lightness)
+    oklch(
+      from var(--tw-contrast-base)
+      calc(
+        clamp(
+          var(--min-contrast-lightness),
+          var(--min-contrast-lightness)
+          + (var(--max-contrast-lightness) - var(--min-contrast-lightness))
+          * (1 - l / var(--contrast-threshold)),
+          var(--max-contrast-lightness)
+        )
       )
+      c
+      var(--tw-hue, 0)
     )
-    c h)
     / var(--alpha, 100%)
   );
 }
