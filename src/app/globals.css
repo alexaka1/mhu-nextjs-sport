@@ -19,6 +19,10 @@
 @custom-variant data-active (&[data-active="true"]);
 
 @theme {
+  --tw-lightness-threshold: 0.6;    /* threshold for switching to white text :contentReference[oaicite:9]{index=9}*/
+  --tw-min-contrast-lightness: 0;   /* black */
+  --tw-max-contrast-lightness: 1;   /* white */
+
   --color-primary: oklch(33.14% 0.1186 18.15);
   --color-primary-800: oklch(33.14% 0.1186 18.15);
   --color-primary-600: oklch(49.99% 0.183 18.06 );
@@ -41,10 +45,10 @@
   --color-accent-200: oklch(83.2% 0.077 18.33);
 }
 
-@theme inline {
-  --font-sans: var(--font-geist-sans), var(--font-sans);
-  --font-mono: var(--font-geist-mono), var(--font-mono);
-}
+/*@theme inline {*/
+/*  --font-sans: var(--font-geist-sans), var(--font-sans);*/
+/*  --font-mono: var(--font-geist-mono), var(--font-mono);*/
+/*}*/
 
 /*
   Contrast utilities: the idea here is that the contrast color is computed
@@ -83,6 +87,57 @@
 /*  0 / <alpha-value>*/
 /*  );*/
 /*}*/
+
+@utility bg-* {
+  /* Capture optional opacity modifier (e.g. the "50" in text-red-500/50) */
+  --alpha: calc(--modifier(integer) * 1%);  /* Converts an integer modifier to a percentage&#8203;:contentReference[oaicite:10]{index=10} */
+  /* Fetch the base color value (from theme --color-* variable or arbitrary [color]) */
+  --tw-bg-color: --value(--color-*, [color]);
+
+  /* Compute text color in OKLCH: use the base color’s chroma (c) and hue (h),
+     but adjust lightness (l) for contrast. We invert the lightness around ~50% and
+     clamp it between the min/max contrast lightness. */
+  background-color: var(--tw-bg-color);
+}
+
+@utility text-contrast-* {
+  /* Capture optional opacity modifier (e.g. the "50" in text-red-500/50) */
+  --alpha: calc(--modifier(integer) * 1%);  /* Converts an integer modifier to a percentage&#8203;:contentReference[oaicite:10]{index=10} */
+  /* Fetch the base color value (from theme --color-* variable or arbitrary [color]) */
+  --tw-contrast-base: --value(--color-*, [color]);
+
+  /* Compute text color in OKLCH: use the base color’s chroma (c) and hue (h),
+     but adjust lightness (l) for contrast. We invert the lightness around ~50% and
+     clamp it between the min/max contrast lightness. */
+  color: --alpha(                     /* Apply opacity (if any) to the final color&#8203;:contentReference[oaicite:11]{index=11} */
+    oklch(from var(--tw-contrast-base)
+      /* Calculate new lightness: for a dark base (low l), this yields a high value
+         (close to --max-contrast-lightness); for a light base, yields a low value
+         (close to --min-contrast-lightness). */
+    calc(
+      max(var(--tw-min-contrast-lightness),
+      min(var(--tw-max-contrast-lightness), 1 - l)
+      )
+    )
+    c h)
+    / var(--alpha, 100%)
+  );
+}
+
+@utility text-bg-contrast {
+  --alpha: calc(--modifier(integer) * 1%);
+  --tw-contrast-base: var(--tw-bg-color);
+  color: --alpha(
+    oklch(from var(--tw-contrast-base)
+    calc(
+      max(var(--tw-min-contrast-lightness),
+      min(var(--tw-max-contrast-lightness), 1 - l)
+      )
+    )
+    c h)
+    / var(--alpha, 100%)
+  );
+}
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
