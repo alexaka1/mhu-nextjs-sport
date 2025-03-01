@@ -19,7 +19,7 @@
 @custom-variant data-active (&[data-active="true"]);
 
 @theme {
-  --tw-lightness-threshold: 0.6;    /* threshold for switching to white text :contentReference[oaicite:9]{index=9}*/
+  --tw-contrast-threshold: 0.6;    /* threshold for switching to white text :contentReference[oaicite:9]{index=9}*/
   --tw-min-contrast-lightness: 0;   /* black */
   --tw-max-contrast-lightness: 1;   /* white */
 
@@ -115,8 +115,13 @@
          (close to --max-contrast-lightness); for a light base, yields a low value
          (close to --min-contrast-lightness). */
     calc(
-      max(var(--tw-min-contrast-lightness),
-      min(var(--tw-max-contrast-lightness), 1 - l)
+      clamp(
+        var(--tw-min-contrast-lightness),
+          /* Interpolate new lightness based on base color’s l and the global threshold */
+        var(--tw-min-contrast-lightness)
+        + (var(--tw-max-contrast-lightness) - var(--tw-min-contrast-lightness))
+        * (1 - l / var(--tw-contrast-threshold)),
+        var(--tw-max-contrast-lightness)
       )
     )
     c h)
@@ -130,8 +135,12 @@
   color: --alpha(
     oklch(from var(--tw-contrast-base)
     calc(
-      max(var(--tw-min-contrast-lightness),
-      min(var(--tw-max-contrast-lightness), 1 - l)
+      clamp(
+        var(--tw-min-contrast-lightness),
+        var(--tw-min-contrast-lightness)
+        + (var(--tw-max-contrast-lightness) - var(--tw-min-contrast-lightness))
+        * (1 - l / var(--tw-contrast-threshold)),
+        var(--tw-max-contrast-lightness)
       )
     )
     c h)
