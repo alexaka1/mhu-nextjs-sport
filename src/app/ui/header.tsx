@@ -46,23 +46,23 @@ type Menu =
 const menus: Menu[] = [
   {
     type: 'simple',
-    node: { href: '/sportagak', children: 'Sportágak' },
+    node: { href: '/2024/sportagak', children: 'Sportágak' },
   },
   {
     type: 'simple',
-    node: { href: '/helyszinek', children: 'Helyszínek' },
+    node: { href: '/2024/helyszinek', children: 'Helyszínek' },
   },
   {
     type: 'simple',
-    node: { href: '/szallas', children: 'Szállás' },
+    node: { href: '/2024/szallas', children: 'Szállás' },
   },
   {
     type: 'simple',
-    node: { href: '/programok', children: 'Programok' },
+    node: { href: '/2024/programok', children: 'Programok' },
   },
   {
     type: 'simple',
-    node: { href: '/eredmenyek', children: 'Eredmények' },
+    node: { href: '/2024/eredmenyek', children: 'Eredmények' },
   },
   // {
   //   type: 'simple',
