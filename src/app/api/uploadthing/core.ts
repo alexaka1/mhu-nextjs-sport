@@ -36,6 +36,7 @@ export const ourFileRouter = {
       // This code runs on your server before upload
       const headers = req.headers;
       validateFiles(files);
+      // get the year here
       const resultType = decodeURIComponent(headers.get('resultType') ?? '');
       const parsedResult = Result.safeParse(resultType);
       if (!parsedResult.success) {
@@ -48,11 +49,13 @@ export const ourFileRouter = {
         // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw new UploadThingError('Nincs jogosultság a feltöltéshez');
       }
+      // return year here
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: userId, result: parsedResult.data };
     })
     .onUploadComplete(async ({ metadata, file }) => {
       // This code RUNS ON YOUR SERVER after upload
+      // add year here
       await uploadResult({ key: file.key, result: metadata.result, type: file.type as ResultType });
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
       return { uploadedBy: metadata.userId, result: metadata.result };
