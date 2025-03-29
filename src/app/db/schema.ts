@@ -1,6 +1,6 @@
 import { integer, sqliteTable, text, primaryKey } from 'drizzle-orm/sqlite-core';
 import type { AdapterAccount } from '@auth/core/adapters';
-import { type Result, type ResultType } from '@/app/lib/types';
+import { type Result, type ResultType, type UserRolesType } from '@/app/lib/types';
 
 export const users = sqliteTable('user', {
   id: text('id').notNull().primaryKey(),
@@ -9,6 +9,7 @@ export const users = sqliteTable('user', {
   emailVerified: integer('emailVerified', { mode: 'timestamp_ms' }),
   image: text('image'),
   isAdmin: integer('isAdmin').default(0),
+  roles: text('roles', { mode: 'json' }).$type<UserRolesType>().default({ roles: [] }),
 });
 
 export const accounts = sqliteTable(
@@ -64,6 +65,7 @@ export const results = sqliteTable(
       .$defaultFn(() => new Date()),
     isDeleted: integer('isDeleted', { mode: 'boolean' }).default(false),
     deletedAt: integer('deletedAt', { mode: 'timestamp_ms' }),
+    year: integer('year').notNull(),
   },
   (r) => [primaryKey({ columns: [r.key, r.result] })],
 );

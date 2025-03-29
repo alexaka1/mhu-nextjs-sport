@@ -6,7 +6,7 @@ import { Result, type ResultItem, resultTypeSchema } from '@/app/lib/types';
 import { z } from 'zod';
 import { desc } from 'drizzle-orm/sql/expressions/select';
 
-const insertResultSchema = z.object({ key: z.string(), result: Result, type: resultTypeSchema });
+const insertResultSchema = z.object({ key: z.string(), result: Result, type: resultTypeSchema, year: z.number() });
 type InsertResult = z.infer<typeof insertResultSchema>;
 
 export async function isAdmin(email: string): Promise<boolean> {

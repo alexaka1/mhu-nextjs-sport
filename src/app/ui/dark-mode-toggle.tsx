@@ -55,7 +55,7 @@ export default function DarkModeToggle() {
       <input
         id={'dark-mode-toggle'}
         type="checkbox"
-        className={`hidden`}
+        className={``}
         ref={(input) => {
           if (input) {
             setInputState(input);

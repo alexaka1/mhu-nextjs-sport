@@ -13,7 +13,7 @@ export async function deleteResult(key: string) {
 }
 
 export async function uploadResult(result: { key: string; result: Result; type: ResultType }) {
-  await insertResult(result);
+  await insertResult({ ...result, year: 0 });
   revalidatePath('/eredmenyek');
 }
 
