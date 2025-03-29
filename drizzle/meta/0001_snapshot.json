@@ -1,8 +1,6 @@
 {
-  "version": "5",
+  "version": "6",
   "dialect": "sqlite",
-  "id": "d3ed2a11-a3ad-46ad-93a2-e9224ca3baab",
-  "prevId": "558992a3-bf6f-40aa-947b-6a8670347934",
   "tables": {
     "account": {
       "name": "account",
@@ -90,20 +88,28 @@
         "account_userId_user_id_fk": {
           "name": "account_userId_user_id_fk",
           "tableFrom": "account",
+          "columnsFrom": [
+            "userId"
+          ],
           "tableTo": "user",
-          "columnsFrom": ["userId"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {
         "account_provider_providerAccountId_pk": {
-          "columns": ["provider", "providerAccountId"],
+          "columns": [
+            "provider",
+            "providerAccountId"
+          ],
           "name": "account_provider_providerAccountId_pk"
         }
       },
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "checkConstraints": {}
     },
     "result": {
       "name": "result",
@@ -156,11 +162,15 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {
         "result_key_result_pk": {
-          "columns": ["key", "result"],
+          "columns": [
+            "key",
+            "result"
+          ],
           "name": "result_key_result_pk"
         }
       },
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "checkConstraints": {}
     },
     "session": {
       "name": "session",
@@ -192,15 +202,20 @@
         "session_userId_user_id_fk": {
           "name": "session_userId_user_id_fk",
           "tableFrom": "session",
+          "columnsFrom": [
+            "userId"
+          ],
           "tableTo": "user",
-          "columnsFrom": ["userId"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "checkConstraints": {}
     },
     "user": {
       "name": "user",
@@ -252,7 +267,8 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "checkConstraints": {}
     },
     "verificationToken": {
       "name": "verificationToken",
@@ -283,17 +299,23 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {
         "verificationToken_identifier_token_pk": {
-          "columns": ["identifier", "token"],
+          "columns": [
+            "identifier",
+            "token"
+          ],
           "name": "verificationToken_identifier_token_pk"
         }
       },
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "checkConstraints": {}
     }
   },
   "enums": {},
   "_meta": {
-    "schemas": {},
     "tables": {},
     "columns": {}
-  }
+  },
+  "id": "d3ed2a11-a3ad-46ad-93a2-e9224ca3baab",
+  "prevId": "558992a3-bf6f-40aa-947b-6a8670347934",
+  "views": {}
 }
