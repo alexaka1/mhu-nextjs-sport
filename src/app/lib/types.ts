@@ -20,3 +20,12 @@ export const resultTypeSchema = z.enum([
 ] as const);
 export type ResultType = z.infer<typeof resultTypeSchema>;
 export type ResultItem = { key: string; type: ResultType; result: Result; url?: string };
+
+export const UserRoles = z.object({
+  roles: z.array(
+    z.object({
+      years: z.array(z.number()),
+    }),
+  ),
+});
+export type UserRolesType = z.infer<typeof UserRoles>;
