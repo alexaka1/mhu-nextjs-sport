@@ -65,7 +65,7 @@ export const results = sqliteTable(
       .$defaultFn(() => new Date()),
     isDeleted: integer('isDeleted', { mode: 'boolean' }).default(false),
     deletedAt: integer('deletedAt', { mode: 'timestamp_ms' }),
-    year: integer('year').notNull().default(2024),
+    year: integer('year').notNull(),
   },
   (r) => [primaryKey({ columns: [r.key, r.result] })],
 );
