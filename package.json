@@ -64,8 +64,8 @@
     "@types/eslint": "9.6.1",
     "@types/eslint-plugin-tailwindcss": "3.17.0",
     "@types/node": "22.13.14",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
     "autoprefixer": "10.4.21",
     "cssnano": "7.0.6",
     "daisyui": "4.12.24",
@@ -90,8 +90,8 @@
     "npm": "Please use Yarn to install dependencies. 'yarn install'"
   },
   "overrides": {
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4"
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
