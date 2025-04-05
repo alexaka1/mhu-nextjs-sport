@@ -73,6 +73,7 @@
     "eslint": "9.24.0",
     "eslint-config-next": "15.2.4",
     "eslint-plugin-drizzle": "0.2.3",
+    "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-tailwindcss": "3.18.0",
     "postcss": "8.5.3",
     "prettier": "3.5.3",
