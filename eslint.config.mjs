@@ -23,7 +23,7 @@ const config = ts.config(
     // this file breaks eslint with the next/core-web-vitals rules
     // 'src/app/(years)/(redirect_to_year)/**/page.tsx',
   ]),
-  ...compat.extends('next/core-web-vitals' /*, 'next/typescript'*/ /*added by ts below*/),
+  // ...compat.extends('next/core-web-vitals' /*, 'next/typescript'*/ /*added by ts below*/),
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
   {
@@ -34,7 +34,7 @@ const config = ts.config(
       },
     },
   },
-  ...pluginQuery.configs['flat/recommended'],
+  pluginQuery.configs['flat/recommended'],
   {
     plugins: {
       drizzle,

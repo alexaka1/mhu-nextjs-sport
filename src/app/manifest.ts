@@ -1,4 +1,5 @@
 import { type MetadataRoute } from 'next';
+import { currentYear } from '@/app/ui/menus/current-year';
 
 export const APP_NAME = 'Ügyészségi sporttalálkozó';
 export const APP_DEFAULT_TITLE = 'Ügyészségi sporttalálkozó';
@@ -86,7 +87,7 @@ export default function manifest(): MetadataRoute.Manifest {
         name: 'Eredmények megtekintése',
         short_name: 'Eredmények',
         description: 'Eredmények megtekintése',
-        url: '/eredmenyek?utm_source=homescreen',
+        url: `/${currentYear}/eredmenyek?utm_source=homescreen`,
         icons: [
           {
             src: '/icons/report-analytics.svg',
@@ -99,14 +100,14 @@ export default function manifest(): MetadataRoute.Manifest {
         name: 'Programok megtekintése',
         short_name: 'Programok',
         description: 'Programok megtekintése az eseményen',
-        url: '/programok?utm_source=homescreen',
+        url: `/${currentYear}/programok?utm_source=homescreen`,
         icons: [{ src: '/icons/calendar.svg', sizes: '96x96', type: 'image/svg+xml' }],
       },
       {
         name: 'Helyszínek megtekintése',
         short_name: 'Helyszínek',
         description: 'Helyszínek megtekintése az eseményen',
-        url: '/helyszinek?utm_source=homescreen',
+        url: `/${currentYear}/helyszinek?utm_source=homescreen`,
         icons: [{ src: '/icons/soccer-field.svg', sizes: '96x96', type: 'image/svg+xml' }],
       },
     ],
