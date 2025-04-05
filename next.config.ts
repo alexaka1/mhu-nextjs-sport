@@ -44,7 +44,7 @@ function createCspHeaders(): string {
       ${defaultsCSPHeaders}
       default-src 'none';
       script-src 'self' https://vercel.live/ https://vercel.com 'unsafe-inline';
-      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ ${uploadThingUrl} ${reportUris} https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
+      connect-src 'self' https://vercel.live/ https://vercel.com https://vitals.vercel-insights.com https://*.pusher.com/ wss://*.pusher.com/ ${uploadThingUrl} ${reportUris} https://uploadthing.com/api/serverCallback https://*.uploadthing.com;
       img-src 'self' https://vercel.live/ https://vercel.com https://sockjs-mt1.pusher.com/ data: blob: ${imageSrc};
       frame-src 'self' https://vercel.live/ https://vercel.com https://www.google.com/ ${uploadThingUrl} https://docs.google.com/;
       style-src-elem 'self' 'unsafe-inline' https://vercel.live/;
@@ -71,7 +71,7 @@ function createCspHeaders(): string {
       manifest-src 'self';
       worker-src 'self' blob:;
       img-src 'self' blob: data: ${imageSrc};
-      connect-src 'self' ${uploadThingUrl} https://vitals.vercel-insights.com ${reportUris} ${imageSrc} https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
+      connect-src 'self' ${uploadThingUrl} https://vitals.vercel-insights.com ${reportUris} ${imageSrc} https://*.uploadthing.com https://uploadthing.com/api/serverCallback;
       font-src 'self';
       frame-src https://www.google.com/ ${uploadThingUrl} https://docs.google.com/;
       `;
@@ -89,7 +89,7 @@ function createCspHeaders(): string {
     script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel-scripts.com/;
     worker-src 'self' blob:;
     img-src 'self' blob: data: ${imageSrc};
-    connect-src 'self' ${reportUris} ${imageSrc} ${uploadThingUrl} https://*.vercel-scripts.com/ https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ https://uploadthing.com/api/serverCallback;
+    connect-src 'self' ${reportUris} ${imageSrc} ${uploadThingUrl} https://*.vercel-scripts.com/ https://*.uploadthing.com https://uploadthing.com/api/serverCallback;
     font-src 'self';
     frame-src 'self' https://www.google.com/ ${uploadThingUrl} https://docs.google.com/;
   `;
