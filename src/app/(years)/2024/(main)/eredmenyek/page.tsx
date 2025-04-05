@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import Skeleton from '@/app/ui/skeleton';
 import { type Result } from '@/app/lib/types';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
-import { tabs } from '@/app/(years)/2024/(main)/eredmenyek/menu';
+import { tabs } from '@/app/ui/menus/2024/menu';
 
 export const metadata: Metadata = {
   title: 'Csapatverseny eredmények',

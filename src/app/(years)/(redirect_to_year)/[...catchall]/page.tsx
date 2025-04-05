@@ -1,6 +1,5 @@
 import { redirect, RedirectType } from 'next/navigation';
-import { currentYear } from '../current-year';
-
+import { currentYear } from '@/app/ui/menus/current-year';
 import NotFound from '@/app/not-found';
 
 export default async function FallbackToCurrentYear({ params }: { params: Promise<{ catchall: string[] }> }) {

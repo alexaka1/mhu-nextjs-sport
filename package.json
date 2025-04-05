@@ -90,10 +90,6 @@
     "pnpm": "^10.0.0",
     "npm": "Please use Yarn to install dependencies. 'yarn install'"
   },
-  "overrides": {
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.1"
-  },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@sentry/cli",
