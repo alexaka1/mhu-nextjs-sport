@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import Skeleton from '@/app/ui/skeleton';
 import { type Result } from '@/app/lib/types';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
+import { tabs } from '@/app/(years)/2024/(main)/eredmenyek/menu';
 
 type Props = {
   params?: Promise<{
@@ -17,6 +18,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     title: `${decodeURIComponent(params?.result ?? ('Labdarúgás' satisfies Result))} eredmények`,
   };
 }
+
 export default async function Page(props: Props) {
   const params = await props.params;
   const sportag = decodeURIComponent(params?.result ?? ('Labdarúgás' satisfies Result));
@@ -26,14 +28,14 @@ export default async function Page(props: Props) {
         key={sportag}
         fallback={
           <div className={`w-full`}>
-            <ResultsTabLinks />
+            <ResultsTabLinks fallbackResult={'Csapatverseny'} year={2024} tabs={tabs} />
             <div className={`mx-auto flex flex-col gap-1`}>
               <Skeleton />
             </div>
           </div>
         }
       >
-        <ResultsTab className={`w-full`} result={sportag} />
+        <ResultsTab fallbackResult={'Csapatverseny'} year={2024} tabs={tabs} className={`w-full`} result={sportag} />
       </Suspense>
     </main>
   );
