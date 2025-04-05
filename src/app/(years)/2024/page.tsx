@@ -1,8 +1,8 @@
 import { type Metadata } from 'next';
 import { APP_DEFAULT_TITLE } from '@/app/manifest';
-import LandingLinks from '@/app/ui/landing/landing-links';
-import LandingBackground from '@/app/ui/landing/landing-background';
-import LandingTitle from '@/app/ui/landing/landing-title';
+import LandingLinks from '@/app/ui/landing/2024/landing-links';
+import LandingBackground from '@/app/ui/landing/2024/landing-background';
+import LandingTitle from '@/app/ui/landing/2024/landing-title';
 
 export const metadata: Metadata = {
   title: `2024 - Nyíregyháza | ${APP_DEFAULT_TITLE}`,
