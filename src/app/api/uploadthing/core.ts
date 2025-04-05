@@ -3,7 +3,7 @@ import { UploadThingError } from 'uploadthing/server';
 import { auth } from '@/app/lib/auth';
 import { isAdmin } from '@/app/db/data';
 import { isNullOrEmpty } from '@/app/utils';
-import { MeetingYear, type MeetingYearType, Result, type ResultType, resultTypeSchema } from '@/app/lib/types';
+import { MeetingYear, type MeetingYearType, Result, type ResultMimeType, resultMimeTypeSchema } from '@/app/lib/types';
 import { type FileRouterInputConfig } from '@uploadthing/shared';
 import { type FileUploadData } from 'uploadthing/types';
 import { uploadResult } from '@/app/lib/private-actions';
@@ -62,7 +62,7 @@ export const ourFileRouter = {
       await uploadResult({
         key: file.key,
         result: metadata.result,
-        type: file.type as ResultType,
+        type: file.type as ResultMimeType,
         year: metadata.year,
       });
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
@@ -100,7 +100,7 @@ function validateFiles(files: Readonly<Array<FileUploadData>>) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
       throw new UploadThingError(`Ismeretlen fájltípus: ${file.name}`);
     }
-    const parsedResultType = resultTypeSchema.safeParse(fileType);
+    const parsedResultType = resultMimeTypeSchema.safeParse(fileType);
     if (!parsedResultType.success) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
       throw new UploadThingError(`${allowed}: ${file.name}`);

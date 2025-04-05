@@ -1,6 +1,6 @@
 import { integer, sqliteTable, text, primaryKey } from 'drizzle-orm/sqlite-core';
 import type { AdapterAccount } from '@auth/core/adapters';
-import { type Result, type ResultType, type UserRolesType } from '@/app/lib/types';
+import { type Result, type ResultMimeType, type UserRolesType } from '@/app/lib/types';
 
 export const users = sqliteTable('user', {
   id: text('id').notNull().primaryKey(),
@@ -59,7 +59,7 @@ export const results = sqliteTable(
   {
     key: text('key').notNull(),
     result: text('result').notNull().$type<Result>(),
-    type: text('type').notNull().$type<ResultType>(),
+    type: text('type').notNull().$type<ResultMimeType>(),
     createdAt: integer('createdAt', { mode: 'timestamp_ms' })
       .notNull()
       .$defaultFn(() => new Date()),

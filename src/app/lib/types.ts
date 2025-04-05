@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const Result = z.enum([
+const events2024 = z.enum([
   'Labdarúgás',
   'Úszás',
   'Futás',
@@ -10,10 +10,31 @@ export const Result = z.enum([
   'Kosárlabda',
   'Csapatverseny',
   'Főügyészi verseny',
-]);
+] as const);
+const events2025 = z.enum([
+  'Női síkfutás',
+  'Férfi síkfutás',
+  'Női súlylökés',
+  'Férfi súlylökés',
+  'Női asztalitenisz',
+  'Férfi asztalitenisz',
+  'Női tollas',
+  'Férfi tollas',
+  'Női úszás',
+  'Férfi úszás',
+  'Labdarúgás',
+  'Női csocsós',
+  'Férfi csocsós',
+  'Női darts',
+  'Férfi darts',
+  'Női íjászat',
+  'Férfi íjászat',
+  'Női kosár',
+] as const);
+export const Result = z.union([events2024, events2025]);
 export type Result = z.infer<typeof Result>;
 
-export const resultTypeSchema = z
+export const resultMimeTypeSchema = z
   .enum(['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/pdf', 'image/'] as const)
   .or(
     z.custom<`image/${string}`>().and(
@@ -23,8 +44,8 @@ export const resultTypeSchema = z
         .regex(/^[a-z]+\/[a-z0-9.\-+]+$/i),
     ),
   );
-export type ResultType = z.infer<typeof resultTypeSchema>;
-export type ResultItem = { key: string; type: ResultType; result: Result; url?: string };
+export type ResultMimeType = z.infer<typeof resultMimeTypeSchema>;
+export type ResultItem = { key: string; type: ResultMimeType; result: Result; url?: string };
 
 export const UserRoles = z.object({
   roles: z.array(

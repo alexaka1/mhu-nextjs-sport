@@ -2,14 +2,14 @@ import { db } from '@/app/db/db';
 import { results, users } from '@/app/db/schema';
 import { and, eq, ne } from 'drizzle-orm/sql/expressions/conditions';
 import { captureException } from '@sentry/nextjs';
-import { Result, type ResultItem, resultTypeSchema } from '@/app/lib/types';
+import { Result, type ResultItem, resultMimeTypeSchema } from '@/app/lib/types';
 import { z } from 'zod';
 import { desc } from 'drizzle-orm/sql/expressions/select';
 
 const insertResultSchema = z.object({
   key: z.string(),
   result: Result,
-  type: z.string(),
+  type: resultMimeTypeSchema,
   year: z.number(),
 });
 type InsertResult = z.infer<typeof insertResultSchema>;
