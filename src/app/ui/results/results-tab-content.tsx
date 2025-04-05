@@ -4,7 +4,11 @@ import ResultsTable from '@/app/ui/results/results-table';
 import XlsxTable from '@/app/ui/results/xlsx-table';
 import ZoomWrapper from '@/app/ui/zoom-wrapper';
 
-export default function ResultsContent({ results, canEdit }: Readonly<{ results: ResultItem[]; canEdit?: boolean }>) {
+export default function ResultsContent({
+  results,
+  canEdit,
+  year,
+}: Readonly<{ results: ResultItem[]; canEdit?: boolean; year: number }>) {
   const tables = results.map((result) => {
     if (result.url == null) {
       return (
@@ -16,7 +20,14 @@ export default function ResultsContent({ results, canEdit }: Readonly<{ results:
     switch (result.type) {
       case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
         return (
-          <ResultsTable key={result.key} file={result.url} canEdit={canEdit} title={result.result} fileKey={result.key}>
+          <ResultsTable
+            key={result.key}
+            file={result.url}
+            canEdit={canEdit}
+            title={result.result}
+            fileKey={result.key}
+            year={year}
+          >
             <XlsxTable fileUrl={result.url} id={result.key} />
           </ResultsTable>
         );
@@ -26,7 +37,14 @@ export default function ResultsContent({ results, canEdit }: Readonly<{ results:
         pdfIframe.searchParams.set('embedded', 'true');
 
         return (
-          <ResultsTable key={result.key} file={result.url} canEdit={canEdit} title={result.result} fileKey={result.key}>
+          <ResultsTable
+            key={result.key}
+            file={result.url}
+            canEdit={canEdit}
+            title={result.result}
+            fileKey={result.key}
+            year={year}
+          >
             <object
               data={result.url}
               type={result.type}
@@ -57,7 +75,14 @@ export default function ResultsContent({ results, canEdit }: Readonly<{ results:
       }
       default:
         return (
-          <ResultsTable key={result.key} file={result.url} canEdit={canEdit} title={result.result} fileKey={result.key}>
+          <ResultsTable
+            key={result.key}
+            file={result.url}
+            canEdit={canEdit}
+            title={result.result}
+            fileKey={result.key}
+            year={year}
+          >
             <div className={`sm:mx-auto`}>
               <ZoomWrapper>
                 {/* eslint-disable-next-line @next/next/no-img-element */}

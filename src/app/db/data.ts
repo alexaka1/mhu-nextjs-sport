@@ -9,13 +9,19 @@ import { desc } from 'drizzle-orm/sql/expressions/select';
 const insertResultSchema = z.object({ key: z.string(), result: Result, type: resultTypeSchema, year: z.number() });
 type InsertResult = z.infer<typeof insertResultSchema>;
 
-export async function isAdmin(email: string): Promise<boolean> {
+export async function isAdmin(email: string, year: number): Promise<boolean> {
   try {
-    const user = await db.select({ isAdmin: users.isAdmin }).from(users).where(eq(users.email, email));
+    const user = await db
+      .select({
+        isAdmin: users.isAdmin,
+        roles: users.roles,
+      })
+      .from(users)
+      .where(eq(users.email, email));
     if (user.length === 0) {
       return false;
     }
-    return user.every((u) => u.isAdmin === 1);
+    return user.every((u) => u.isAdmin === 1 && (u.roles?.roles?.some((r) => r.years.includes(year)) ?? false));
   } catch (e) {
     captureException(e);
   }

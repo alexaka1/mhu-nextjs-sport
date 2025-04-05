@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faShareNodes, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { canEditResults, deleteResult } from '@/app/lib/actions';
+import { deleteResult } from '@/app/lib/actions';
 
 export default function ResultsTable({
   file,
   title,
   canEdit,
   fileKey,
+  year,
   children,
 }: Readonly<{
   file: string;
@@ -18,6 +19,7 @@ export default function ResultsTable({
   canEdit?: boolean;
   children: ReactNode;
   fileKey: string;
+  year: number;
 }>) {
   const [url, setUrl] = useState<string>('');
   useEffect(() => {
@@ -31,7 +33,7 @@ export default function ResultsTable({
         className={`relative flex h-svh grow flex-col overflow-auto shadow-md sm:rounded-lg lg:h-full lg:overflow-x-auto`}
       >
         <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-bg-contrast">
-          <DeleteButton fileKey={fileKey} canEdit={canEdit} />
+          <DeleteButton fileKey={fileKey} canEdit={canEdit} year={year} />
           <button
             onClick={() => share(url, title)}
             className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
@@ -54,7 +56,7 @@ export default function ResultsTable({
   );
 }
 
-function DeleteButton({ fileKey, canEdit }: { fileKey: string; canEdit?: boolean }): ReactNode {
+function DeleteButton({ fileKey, canEdit, year }: { fileKey: string; canEdit?: boolean; year: number }): ReactNode {
   const router = useRouter();
   if (!canEdit) {
     return null;
@@ -63,11 +65,10 @@ function DeleteButton({ fileKey, canEdit }: { fileKey: string; canEdit?: boolean
     <form
       action={async () => {
         try {
-          if (!(await canEditResults())) {
-            alert(`Hiba történt a törlés során! Nincs jogosultság a törléshez.`);
-            return;
+          const result = await deleteResult(fileKey, year);
+          if (result?.error != null) {
+            alert(result.error);
           }
-          await deleteResult(fileKey);
         } catch (e) {
           console.error(e);
           if (e instanceof Error) {
@@ -75,7 +76,6 @@ function DeleteButton({ fileKey, canEdit }: { fileKey: string; canEdit?: boolean
           }
           return;
         }
-        // alert('Sikeres törlés! (Szimulált)');
         router.refresh();
       }}
       onSubmit={(e) => {

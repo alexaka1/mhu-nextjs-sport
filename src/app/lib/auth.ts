@@ -5,7 +5,7 @@ import { db } from '@/app/db/db';
 import Google, { type GoogleProfile } from 'next-auth/providers/google';
 import SimpleLogin, { type SimpleLoginProfile } from '@/app/lib/simple-login';
 import { env } from '@/app/lib/env';
-import { updateUserAvatar } from '@/app/lib/actions';
+import { updateUserAvatar } from '@/app/lib/private-actions';
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: DrizzleAdapter(db),

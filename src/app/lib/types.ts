@@ -29,3 +29,5 @@ export const UserRoles = z.object({
   ),
 });
 export type UserRolesType = z.infer<typeof UserRoles>;
+export const MeetingYear = z.enum(['2025', '2024']);
+export type MeetingYearType = z.infer<typeof MeetingYear>;

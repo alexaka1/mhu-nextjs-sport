@@ -17,7 +17,7 @@ export default async function ResultsTab({
   year: number;
   fallbackResult: string;
 }>) {
-  const canEdit = await canEditResults();
+  const canEdit = await canEditResults({ year });
   const results = await getResults(result);
 
   return (
@@ -25,9 +25,9 @@ export default async function ResultsTab({
       <ResultsTabLinks tabs={tabs} year={year} fallbackResult={fallbackResult} />
       <div className={`flex flex-col gap-1`}>
         <div className={`flex flex-row items-center justify-center pt-1`}>
-          <UploadResult title={result} canEdit={canEdit} />
+          <UploadResult resultType={result} canEdit={canEdit} year={year} />
         </div>
-        <ResultsContent results={results} canEdit={canEdit} />
+        <ResultsContent results={results} canEdit={canEdit} year={year} />
       </div>
     </div>
   );
