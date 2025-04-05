@@ -1,6 +1,6 @@
 import LandingLink from '@/app/ui/buttons/landing-link';
 
-const year = 2024;
+const year = '2024';
 
 export default function LandingLinks() {
   return (

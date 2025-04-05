@@ -26,7 +26,7 @@ import { getSession, signOut } from 'next-auth/react';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
 import { z } from 'zod';
-import { DropDownLinks, Menu, SimpleLink } from '@/app/ui/menu-types';
+import { type DropDownLinks, type Menu, type SimpleLink } from '@/app/ui/menu-types';
 
 function DialogLink({
   href,

@@ -18,10 +18,10 @@ export default function ResultsTabLinks({
           className="me-2 focus-visible:outline-1 focus-visible:outline-primary-800 dark:focus-visible:outline-primary-600"
         >
           <Link
-            href={`/${year}/eredmenyek/${encodeURIComponent(tab.title)}`}
+            href={`/${year.toString()}/eredmenyek/${encodeURIComponent(tab.title)}`}
             className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent hover:border-secondary-600 hover:text-secondary-600 data-active:border-primary data-active:text-primary dark:hover:text-gray-300 data-active:dark:border-primary-400 data-active:dark:text-primary-400`}
             data-active={
-              pathname === `/${year}/eredmenyek/${encodeURIComponent(tab.title)}` ||
+              pathname === `/${year.toString()}/eredmenyek/${encodeURIComponent(tab.title)}` ||
               (pathname === '/${year}/eredmenyek' && tab.title === fallbackResult)
             }
           >

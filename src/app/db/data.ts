@@ -26,7 +26,7 @@ export async function isAdmin(email: string, year: number): Promise<boolean> {
     if (user.length === 0) {
       return false;
     }
-    return user.every((u) => u.isAdmin === 1 && (u.roles?.roles?.some((r) => r.years.includes(year)) ?? false));
+    return user.every((u) => u.isAdmin === 1 && (u.roles?.roles.some((r) => r.years.includes(year)) ?? false));
   } catch (e) {
     console.error(e);
     captureException(e);
@@ -70,7 +70,7 @@ export async function updateAvatar({
       })
       .from(users)
       .where(and(eq(users.id, id), ne(users.image, avatar ?? '')));
-    if (usersResult == null || usersResult.length !== 1 || usersResult[0] == null) {
+    if (usersResult.length !== 1 || usersResult[0] == null) {
       return { updatedId: '' };
     }
     const user = usersResult[0];

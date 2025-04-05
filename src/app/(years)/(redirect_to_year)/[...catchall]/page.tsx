@@ -11,5 +11,5 @@ export default async function RedirectToCurrentYear({ params }: { params: Promis
   if (catchall[0] === currentYear.toString()) {
     return <NotFound />;
   }
-  redirect(`/${currentYear}/${catchall.join('/')}`, RedirectType.replace);
+  redirect(`/${currentYear.toString()}/${catchall.join('/')}`, RedirectType.replace);
 }

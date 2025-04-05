@@ -14,7 +14,7 @@ export async function deleteResult(key: string, year: number) {
     };
   }
   await deleteResultByKey(key);
-  revalidatePath(`/${year}/eredmenyek`);
+  revalidatePath(`/${year.toString()}/eredmenyek`);
   return null;
 }
 
