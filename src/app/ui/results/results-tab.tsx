@@ -18,7 +18,7 @@ export default async function ResultsTab({
   fallbackResult: string;
 }>) {
   const canEdit = await canEditResults({ year });
-  const results = await getResults(result);
+  const results = await getResults(result, year);
 
   return (
     <div className={className}>

@@ -24,8 +24,8 @@ export async function canEditResults({ year }: Readonly<{ year: number }>) {
   return !isNullOrEmpty(email) && (await isAdmin(email, year));
 }
 
-export async function getResults(sportag: string): Promise<ResultItem[]> {
-  const results = await getResultItems(sportag);
+export async function getResults(sportag: string, year: number): Promise<ResultItem[]> {
+  const results = await getResultItems(sportag, year);
   for (const result of results) {
     result.url = `https://${env.UPLOADTHING_APP_ID}.ufs.sh/f/${result.key}`;
   }

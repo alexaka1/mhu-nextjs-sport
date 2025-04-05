@@ -36,9 +36,9 @@ export async function deleteResultByKey(key: string): Promise<void> {
   }
 }
 
-export async function insertResult({ key, result, type }: InsertResult): Promise<void> {
+export async function insertResult({ key, result, type, year }: InsertResult): Promise<void> {
   try {
-    const parsed = insertResultSchema.parse({ key, result, type });
+    const parsed = insertResultSchema.parse({ key, result, type, year });
     await db.insert(results).values(parsed).execute();
   } catch (e) {
     captureException(e);
@@ -76,12 +76,12 @@ export async function updateAvatar({
   return { updatedId: '' };
 }
 
-export async function getResultItems(sportag: string): Promise<Array<ResultItem>> {
+export async function getResultItems(sportag: string, year: number): Promise<Array<ResultItem>> {
   try {
     let where: unknown = eq(results.isDeleted, false);
     const parsed = Result.safeParse(sportag);
     if (sportag !== '' && parsed.success) {
-      where = and(where as never, eq(results.result, parsed.data));
+      where = and(where as never, eq(results.result, parsed.data), eq(results.year, year));
     } else {
       return [];
     }
