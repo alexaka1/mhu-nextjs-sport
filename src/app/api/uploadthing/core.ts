@@ -102,10 +102,8 @@ function validateFiles(files: Readonly<Array<FileUploadData>>) {
     }
     const parsedResultType = resultTypeSchema.safeParse(fileType);
     if (!parsedResultType.success) {
-      if (!fileType.startsWith('image/')) {
-        // eslint-disable-next-line @typescript-eslint/only-throw-error
-        throw new UploadThingError(`${allowed}: ${file.name}`);
-      }
+      // eslint-disable-next-line @typescript-eslint/only-throw-error
+      throw new UploadThingError(`${allowed}: ${file.name}`);
     }
   }
 }

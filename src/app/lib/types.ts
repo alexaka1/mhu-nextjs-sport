@@ -13,12 +13,17 @@ export const Result = z.enum([
 ]);
 export type Result = z.infer<typeof Result>;
 
-export const resultTypeSchema = z.enum([
-  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-  'application/pdf',
-  'image',
-] as const);
-export type ResultType = z.infer<typeof resultTypeSchema> | (string & {});
+export const resultTypeSchema = z
+  .enum(['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/pdf', 'image/'] as const)
+  .or(
+    z.custom<`image/${string}`>().and(
+      z
+        .string()
+        .startsWith('image/')
+        .regex(/^[a-z]+\/[a-z0-9.\-+]+$/i),
+    ),
+  );
+export type ResultType = z.infer<typeof resultTypeSchema>;
 export type ResultItem = { key: string; type: ResultType; result: Result; url?: string };
 
 export const UserRoles = z.object({
