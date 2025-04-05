@@ -3,7 +3,6 @@
 // based on https://github.com/vercel/next.js/pull/71218#issuecomment-2440754208
 import js from '@eslint/js';
 import ts from 'typescript-eslint';
-import tailwind from 'eslint-plugin-tailwindcss';
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 import drizzle from 'eslint-plugin-drizzle';
@@ -14,7 +13,6 @@ const compat = new FlatCompat({
 
 const config = ts.config(
   js.configs.recommended,
-  ...tailwind.configs['flat/recommended'],
   ...compat.extends('next/core-web-vitals' /*, 'next/typescript'*/ /*added by ts below*/),
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
