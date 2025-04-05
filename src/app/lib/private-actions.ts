@@ -1,6 +1,6 @@
 import { isNullOrEmpty } from '@/app/utils';
 import { insertResult, updateAvatar } from '@/app/db/data';
-import { MeetingYearType, Result, ResultType } from '@/app/lib/types';
+import { type MeetingYearType, Result, ResultType } from '@/app/lib/types';
 import { revalidatePath } from 'next/cache';
 
 export async function updateUserAvatar({

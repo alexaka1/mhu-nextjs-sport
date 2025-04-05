@@ -6,7 +6,12 @@ import { Result, type ResultItem, resultTypeSchema } from '@/app/lib/types';
 import { z } from 'zod';
 import { desc } from 'drizzle-orm/sql/expressions/select';
 
-const insertResultSchema = z.object({ key: z.string(), result: Result, type: resultTypeSchema, year: z.number() });
+const insertResultSchema = z.object({
+  key: z.string(),
+  result: Result,
+  type: z.string(),
+  year: z.number(),
+});
 type InsertResult = z.infer<typeof insertResultSchema>;
 
 export async function isAdmin(email: string, year: number): Promise<boolean> {
@@ -23,6 +28,7 @@ export async function isAdmin(email: string, year: number): Promise<boolean> {
     }
     return user.every((u) => u.isAdmin === 1 && (u.roles?.roles?.some((r) => r.years.includes(year)) ?? false));
   } catch (e) {
+    console.error(e);
     captureException(e);
   }
   return false;
@@ -32,15 +38,19 @@ export async function deleteResultByKey(key: string): Promise<void> {
   try {
     await db.update(results).set({ isDeleted: true, deletedAt: new Date() }).where(eq(results.key, key));
   } catch (e) {
+    console.error(e);
     captureException(e);
   }
 }
 
 export async function insertResult({ key, result, type, year }: InsertResult): Promise<void> {
   try {
+    console.log(key, result, type, year);
     const parsed = insertResultSchema.parse({ key, result, type, year });
+    console.log(parsed);
     await db.insert(results).values(parsed);
   } catch (e) {
+    console.error(e);
     captureException(e);
   }
 }
@@ -71,6 +81,7 @@ export async function updateAvatar({
       .returning({ updatedId: users.id });
     return returning[0] ?? { updatedId: '' };
   } catch (e) {
+    console.error(e);
     captureException(e);
   }
   return { updatedId: '' };
@@ -95,8 +106,8 @@ export async function getResultItems(sportag: string, year: number): Promise<Arr
     }
     return result;
   } catch (e) {
-    captureException(e);
     console.error(e);
+    captureException(e);
   }
   return [];
 }

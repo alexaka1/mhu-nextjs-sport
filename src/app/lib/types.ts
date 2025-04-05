@@ -18,7 +18,7 @@ export const resultTypeSchema = z.enum([
   'application/pdf',
   'image',
 ] as const);
-export type ResultType = z.infer<typeof resultTypeSchema>;
+export type ResultType = z.infer<typeof resultTypeSchema> | (string & {});
 export type ResultItem = { key: string; type: ResultType; result: Result; url?: string };
 
 export const UserRoles = z.object({
@@ -29,5 +29,5 @@ export const UserRoles = z.object({
   ),
 });
 export type UserRolesType = z.infer<typeof UserRoles>;
-export const MeetingYear = z.enum(['2025', '2024']);
+export const MeetingYear = z.enum(['2025', '2024'] as const);
 export type MeetingYearType = z.infer<typeof MeetingYear>;
