@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { type Metadata } from 'next';
-import LandingLinks from '@/app/ui/landing/landing-links';
-import LandingBackground from '@/app/ui/landing/landing-background';
-import LandingTitle from '@/app/ui/landing/landing-title';
+import LandingLinks from '@/app/ui/landing/2024/landing-links';
+import LandingBackground from '@/app/ui/landing/2024/landing-background';
+import LandingTitle from '@/app/ui/landing/2024/landing-title';
 
 export const metadata: Metadata = {
   title: `Köszöntő`,

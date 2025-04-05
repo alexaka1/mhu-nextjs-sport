@@ -4,7 +4,7 @@ import typography from '@tailwindcss/typography';
 import headlessui from '@headlessui/tailwindcss';
 import { withUt } from 'uploadthing/tw';
 import oklch from '@alexaka1/tailwindcss-oklch';
-import { default as daisyui, Config as DaisyUiConfig } from 'daisyui';
+import { default as daisyui, type Config as DaisyUiConfig } from 'daisyui';
 
 const config = {
   content: [

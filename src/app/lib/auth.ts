@@ -3,9 +3,9 @@ import GitHub, { type GitHubProfile } from 'next-auth/providers/github';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import { db } from '@/app/db/db';
 import Google, { type GoogleProfile } from 'next-auth/providers/google';
-import SimpleLogin, { type SimpleLoginProfile } from '@/app/lib/simple-login';
+import SimpleLogin, { type SimpleLoginProfile } from 'next-auth/providers/simplelogin';
 import { env } from '@/app/lib/env';
-import { updateUserAvatar } from '@/app/lib/actions';
+import { updateUserAvatar } from '@/app/lib/private-actions';
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: DrizzleAdapter(db),

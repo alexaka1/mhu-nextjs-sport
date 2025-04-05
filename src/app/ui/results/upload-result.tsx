@@ -3,7 +3,15 @@ import { type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { UploadButton } from '@/app/ui/uploadthing';
 
-export function UploadResult({ title, canEdit }: { title: string; canEdit?: boolean }): ReactNode {
+export function UploadResult({
+  resultType,
+  canEdit,
+  year,
+}: {
+  resultType: string;
+  canEdit?: boolean;
+  year: number;
+}): ReactNode {
   const router = useRouter();
   if (!canEdit) {
     return null;
@@ -19,7 +27,7 @@ export function UploadResult({ title, canEdit }: { title: string; canEdit?: bool
         console.error(`ERROR! ${error.message}`);
         alert(`Hiba történt a feltöltés során: ${error.message}`);
       }}
-      headers={{ resultType: encodeURIComponent(title) }}
+      headers={{ resultType: encodeURIComponent(resultType), year: year.toString() }}
       content={{
         button: ({ ready, uploadProgress, isUploading }) => {
           if (uploadProgress) {

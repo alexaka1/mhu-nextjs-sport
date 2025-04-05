@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import Skeleton from '@/app/ui/skeleton';
 import { type Result } from '@/app/lib/types';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
+import { tabs } from '@/app/ui/menus/2024/menu';
 
 export const metadata: Metadata = {
   title: 'Csapatverseny eredmények',
@@ -17,14 +18,14 @@ export default function Page() {
         key={sportag}
         fallback={
           <div className={`w-full`}>
-            <ResultsTabLinks />
+            <ResultsTabLinks fallbackResult={sportag} year={2024} tabs={tabs} />
             <div className={`mx-auto flex flex-col gap-1`}>
               <Skeleton />
             </div>
           </div>
         }
       >
-        <ResultsTab className={`w-full`} result={sportag} />
+        <ResultsTab fallbackResult={sportag} year={2024} tabs={tabs} className={`w-full`} result={sportag} />
       </Suspense>
     </main>
   );

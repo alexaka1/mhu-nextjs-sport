@@ -3,10 +3,10 @@ import { UploadThingError } from 'uploadthing/server';
 import { auth } from '@/app/lib/auth';
 import { isAdmin } from '@/app/db/data';
 import { isNullOrEmpty } from '@/app/utils';
-import { uploadResult } from '@/app/lib/actions';
-import { Result, type ResultType, resultTypeSchema } from '@/app/lib/types';
+import { MeetingYear, type MeetingYearType, Result, type ResultMimeType, resultMimeTypeSchema } from '@/app/lib/types';
 import { type FileRouterInputConfig } from '@uploadthing/shared';
 import { type FileUploadData } from 'uploadthing/types';
+import { uploadResult } from '@/app/lib/private-actions';
 
 const f = createUploadthing();
 const fileSize = 8_000_000;
@@ -37,38 +37,55 @@ export const ourFileRouter = {
       const headers = req.headers;
       validateFiles(files);
       const resultType = decodeURIComponent(headers.get('resultType') ?? '');
+      const year = decodeURIComponent(headers.get('year') ?? '');
       const parsedResult = Result.safeParse(resultType);
       if (!parsedResult.success) {
         // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw new UploadThingError('Ismeretlen eredménytípus');
       }
-      const { authorized, userId } = await canEdit();
+      const parsedYear = MeetingYear.safeParse(year);
+      if (!parsedYear.success) {
+        // eslint-disable-next-line @typescript-eslint/only-throw-error
+        throw new UploadThingError('Ismeretlen év');
+      }
+      const { authorized, userId } = await canEdit(parsedYear.data);
 
       if (!authorized) {
         // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw new UploadThingError('Nincs jogosultság a feltöltéshez');
       }
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
-      return { userId: userId, result: parsedResult.data };
+      return { userId: userId, result: parsedResult.data, year: parsedYear.data };
     })
     .onUploadComplete(async ({ metadata, file }) => {
       // This code RUNS ON YOUR SERVER after upload
-      await uploadResult({ key: file.key, result: metadata.result, type: file.type as ResultType });
+      await uploadResult({
+        key: file.key,
+        result: metadata.result,
+        type: file.type as ResultMimeType,
+        year: metadata.year,
+      });
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
-      return { uploadedBy: metadata.userId, result: metadata.result };
+      return { uploadedBy: metadata.userId, result: metadata.result, year: metadata.year };
     }),
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof ourFileRouter;
 
-async function canEdit(): Promise<{ authorized: false; userId: string | null } | { authorized: true; userId: string }> {
+async function canEdit(year: MeetingYearType): Promise<
+  | { authorized: false; userId: string | null }
+  | {
+      authorized: true;
+      userId: string;
+    }
+> {
   const session = await auth();
   const email = session?.user?.email;
-  if (!isNullOrEmpty(email)) {
-    const admin = await isAdmin(email);
-    return { authorized: admin, userId: email };
+  if (isNullOrEmpty(email)) {
+    return { authorized: false, userId: null };
   }
-  return { authorized: false, userId: null };
+  const admin = await isAdmin(email, parseInt(year, 10));
+  return { authorized: admin, userId: email };
 }
 
 function validateFiles(files: Readonly<Array<FileUploadData>>) {
@@ -83,12 +100,10 @@ function validateFiles(files: Readonly<Array<FileUploadData>>) {
       // eslint-disable-next-line @typescript-eslint/only-throw-error
       throw new UploadThingError(`Ismeretlen fájltípus: ${file.name}`);
     }
-    const parsedResultType = resultTypeSchema.safeParse(fileType);
+    const parsedResultType = resultMimeTypeSchema.safeParse(fileType);
     if (!parsedResultType.success) {
-      if (!fileType.startsWith('image/')) {
-        // eslint-disable-next-line @typescript-eslint/only-throw-error
-        throw new UploadThingError(`${allowed}: ${file.name}`);
-      }
+      // eslint-disable-next-line @typescript-eslint/only-throw-error
+      throw new UploadThingError(`${allowed}: ${file.name}`);
     }
   }
 }

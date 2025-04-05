@@ -80,45 +80,44 @@ export default function Footer() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 border-t pt-8 border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
-          {/*<div>*/}
-          {/*  <p className="font-medium text-gray-900 dark:text-white">Services</p>*/}
+          <div>
+            <p className="font-medium text-gray-900 dark:text-white">Sporttalálkozók</p>
 
-          {/*  <ul className="mt-6 space-y-4 text-sm">*/}
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        1on1 Coaching*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
+            <ul className="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="/2025" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  2025 - Békéscsaba
+                </a>
+              </li>
+              <li>
+                <a href="/2024" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  2024 - Nyíregyháza
+                </a>
+              </li>
 
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        Company Review*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
+              {/*    <li>*/}
+              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+              {/*        Accounts Review*/}
+              {/*      </a>*/}
+              {/*    </li>*/}
 
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        Accounts Review*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
+              {/*    <li>*/}
+              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+              {/*        HR Consulting*/}
+              {/*      </a>*/}
+              {/*    </li>*/}
 
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        HR Consulting*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
-
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        SEO Optimisation*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
+              {/*    <li>*/}
+              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+              {/*        SEO Optimisation*/}
+              {/*      </a>*/}
+              {/*    </li>*/}
+            </ul>
+          </div>
         </div>
         <p className="prose whitespace-nowrap text-balance text-xs text-bg-contrast">
-          &copy; 2024. <span className="inline-block max-w-full text-balance">Martossy Alex Márk.</span> Minden jog
-          fenntartva.
+          &copy; {new Date().getFullYear()}.{' '}
+          <span className="inline-block max-w-full text-balance">Martossy Alex Márk.</span> Minden jog fenntartva.
         </p>
       </div>
     </footer>
