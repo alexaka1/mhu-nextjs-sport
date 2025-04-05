@@ -18,7 +18,7 @@ export default function Footer() {
             {/*  <Image src="/vercel.svg" alt="Vercel Logó" className="h-6 dark:invert" width={100} height={24} /> -en*/}
             {/*  hosztolva.*/}
             {/*</a>*/}
-            <p className="prose text-bg-contrast text-balance">
+            <p className="prose text-balance text-bg-contrast">
               Ez a weboldal egy hobbi projekt keretében készült. Nem hivatalos. Nem kapcsolódik semmilyen hivatalos
               szervezethez. A forráskód elérhető a GitHub-on.
             </p>
@@ -31,7 +31,7 @@ export default function Footer() {
                 href="https://www.facebook.com/Magyarorsz%C3%A1g-%C3%9Cgy%C3%A9szs%C3%A9ge-104594918109266"
                 rel="noreferrer"
                 target="_blank"
-                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
+                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
               >
                 <span className="sr-only">Facebook</span>
 
@@ -44,7 +44,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@MagyarorszagUgyeszsege"
                 rel="noreferrer"
                 target="_blank"
-                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
+                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
               >
                 <span className="sr-only">YouTube</span>
                 <FontAwesomeIcon icon={faYoutube} className={`size-6`} />
@@ -56,7 +56,7 @@ export default function Footer() {
                 href="https://twitter.com/ProsecutionHu"
                 rel="noreferrer"
                 target="_blank"
-                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
+                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
               >
                 <span className="sr-only">X</span>
 
@@ -69,7 +69,7 @@ export default function Footer() {
                 href="https://github.com/alexaka1/mhu-nextjs-sport"
                 rel="noreferrer"
                 target="_blank"
-                className="text-primary dark:text-bg-contrast transition hover:opacity-75"
+                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
               >
                 <span className="sr-only">GitHub</span>
 
@@ -79,44 +79,43 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
-          {/*<div>*/}
-          {/*  <p className="font-medium text-gray-900 dark:text-white">Services</p>*/}
+        <div className="grid grid-cols-1 gap-8 border-t pt-8 border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
+          <div>
+            <p className="font-medium text-gray-900 dark:text-white">Sporttalálkozók</p>
 
-          {/*  <ul className="mt-6 space-y-4 text-sm">*/}
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        1on1 Coaching*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
+            <ul className="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="/2025" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  2025 - Békéscsaba
+                </a>
+              </li>
+              <li>
+                <a href="/2024" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  2024 - Nyíregyháza
+                </a>
+              </li>
 
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        Company Review*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
+              {/*    <li>*/}
+              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+              {/*        Accounts Review*/}
+              {/*      </a>*/}
+              {/*    </li>*/}
 
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        Accounts Review*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
+              {/*    <li>*/}
+              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+              {/*        HR Consulting*/}
+              {/*      </a>*/}
+              {/*    </li>*/}
 
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        HR Consulting*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
-
-          {/*    <li>*/}
-          {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-          {/*        SEO Optimisation*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
+              {/*    <li>*/}
+              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+              {/*        SEO Optimisation*/}
+              {/*      </a>*/}
+              {/*    </li>*/}
+            </ul>
+          </div>
         </div>
-        <p className="prose text-bg-contrast text-xs text-balance whitespace-nowrap">
+        <p className="prose whitespace-nowrap text-balance text-xs text-bg-contrast">
           &copy; {new Date().getFullYear()}.{' '}
           <span className="inline-block max-w-full text-balance">Martossy Alex Márk.</span> Minden jog fenntartva.
         </p>
