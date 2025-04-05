@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const events2024 = z.enum([
+export const events2024 = z.enum([
   'Labdarúgás',
   'Úszás',
   'Futás',
@@ -11,7 +11,7 @@ const events2024 = z.enum([
   'Csapatverseny',
   'Főügyészi verseny',
 ] as const);
-const events2025 = z.enum([
+export const events2025 = z.enum([
   'Női síkfutás',
   'Férfi síkfutás',
   'Női súlylökés',

@@ -1,5 +1,5 @@
 import { type MetadataRoute } from 'next';
-import { Result } from '@/app/lib/types';
+import { events2024 } from '@/app/lib/types';
 
 const years: Array<{ year: number; pages: MetadataRoute.Sitemap }> = [
   {
@@ -69,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 }
 
 function results2024(): MetadataRoute.Sitemap {
-  return Result.options.map((result) => ({
+  return events2024.options.map((result) => ({
     url: `https://sport.martossy.hu/2024/eredmenyek/${encodeURIComponent(result)}`,
     lastModified: new Date(),
     changeFrequency: 'never',
