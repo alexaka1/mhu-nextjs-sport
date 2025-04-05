@@ -7,6 +7,7 @@ import tailwind from 'eslint-plugin-tailwindcss';
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 import drizzle from 'eslint-plugin-drizzle';
+import { globalIgnores } from 'eslint/config';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -15,6 +16,13 @@ const compat = new FlatCompat({
 const config = ts.config(
   js.configs.recommended,
   ...tailwind.configs['flat/recommended'],
+  globalIgnores([
+    '**/**/node_modules',
+    '**/**/.next',
+    '**/**/public',
+    // this file breaks eslint with the next/core-web-vitals rules
+    // 'src/app/(years)/(redirect_to_year)/**/page.tsx',
+  ]),
   ...compat.extends('next/core-web-vitals' /*, 'next/typescript'*/ /*added by ts below*/),
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
@@ -74,9 +82,6 @@ const config = ts.config(
         },
       ],
     },
-  },
-  {
-    ignores: ['**/**/node_modules', '**/**/.next', '**/**/public'],
   },
 );
 export default config;
