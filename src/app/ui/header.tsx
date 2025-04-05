@@ -7,68 +7,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment, type MouseEventHandler, type ReactNode, useEffect, useState } from 'react';
 import {
   Dialog,
+  DialogPanel,
   Disclosure,
-  Popover,
-  Transition,
   DisclosureButton,
   DisclosurePanel,
+  Popover,
+  PopoverBackdrop,
   PopoverButton,
   PopoverGroup,
-  TransitionChild,
-  DialogPanel,
-  PopoverBackdrop,
   PopoverPanel,
+  Transition,
+  TransitionChild,
 } from '@headlessui/react';
-import { type IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
-import { signOut, getSession } from 'next-auth/react';
+import { getSession, signOut } from 'next-auth/react';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
 import { z } from 'zod';
-
-type SimpleLink = { href: string; children: ReactNode };
-type DropDownLinks = {
-  title: string;
-  items: { name: string; description: string; href: string; icon: IconDefinition }[];
-  callsToAction: { name: string; href: string; icon: IconDefinition }[];
-};
-type Menu =
-  | {
-      type: 'simple';
-      node: SimpleLink;
-    }
-  | {
-      type: 'dialog';
-      node: DropDownLinks;
-    };
-const menus: Menu[] = [
-  {
-    type: 'simple',
-    node: { href: '/sportagak', children: 'Sportágak' },
-  },
-  {
-    type: 'simple',
-    node: { href: '/helyszinek', children: 'Helyszínek' },
-  },
-  {
-    type: 'simple',
-    node: { href: '/szallas', children: 'Szállás' },
-  },
-  {
-    type: 'simple',
-    node: { href: '/programok', children: 'Programok' },
-  },
-  {
-    type: 'simple',
-    node: { href: '/eredmenyek', children: 'Eredmények' },
-  },
-  // {
-  //   type: 'simple',
-  //   node: { href: '/koszonto', children: 'Beköszöntő' },
-  // },
-];
+import { DropDownLinks, Menu, SimpleLink } from '@/app/ui/menu-types';
 
 function DialogLink({
   href,
@@ -322,7 +280,7 @@ function UserInfo({
 
 const deviceTypeSchema = z.enum(['browser', 'standalone']);
 
-export default function Header() {
+export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [auth, setAuth] = useState(false);
   const [name, setName] = useState('');
