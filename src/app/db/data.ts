@@ -30,7 +30,7 @@ export async function isAdmin(email: string, year: number): Promise<boolean> {
 
 export async function deleteResultByKey(key: string): Promise<void> {
   try {
-    await db.update(results).set({ isDeleted: true, deletedAt: new Date() }).where(eq(results.key, key)).execute();
+    await db.update(results).set({ isDeleted: true, deletedAt: new Date() }).where(eq(results.key, key));
   } catch (e) {
     captureException(e);
   }
@@ -39,7 +39,7 @@ export async function deleteResultByKey(key: string): Promise<void> {
 export async function insertResult({ key, result, type, year }: InsertResult): Promise<void> {
   try {
     const parsed = insertResultSchema.parse({ key, result, type, year });
-    await db.insert(results).values(parsed).execute();
+    await db.insert(results).values(parsed);
   } catch (e) {
     captureException(e);
   }
@@ -54,16 +54,16 @@ export async function updateAvatar({
 }>): Promise<Readonly<{ updatedId: string }>> {
   try {
     // select user where image is not the same as the new avatar
-    const user = await db
+    const usersResult = await db
       .select({
         userId: users.id,
       })
       .from(users)
-      .where(and(eq(users.id, id), ne(users.image, avatar ?? '')))
-      .get();
-    if (user == null) {
+      .where(and(eq(users.id, id), ne(users.image, avatar ?? '')));
+    if (usersResult == null || usersResult.length !== 1 || usersResult[0] == null) {
       return { updatedId: '' };
     }
+    const user = usersResult[0];
     const returning = await db
       .update(users)
       .set({ image: avatar })
@@ -78,10 +78,10 @@ export async function updateAvatar({
 
 export async function getResultItems(sportag: string, year: number): Promise<Array<ResultItem>> {
   try {
-    let where: unknown = eq(results.isDeleted, false);
+    let where: unknown = and(eq(results.isDeleted, false));
     const parsed = Result.safeParse(sportag);
     if (sportag !== '' && parsed.success) {
-      where = and(where as never, eq(results.result, parsed.data), eq(results.year, year));
+      where = and(eq(results.isDeleted, false), eq(results.result, parsed.data), eq(results.year, year));
     } else {
       return [];
     }
@@ -89,14 +89,14 @@ export async function getResultItems(sportag: string, year: number): Promise<Arr
       .select({ key: results.key, result: results.result, type: results.type })
       .from(results)
       .orderBy(desc(results.createdAt))
-      .where(where as never)
-      .all();
+      .where(where as never);
     if (result.length === 0) {
       return [];
     }
     return result;
   } catch (e) {
     captureException(e);
+    console.error(e);
   }
   return [];
 }
