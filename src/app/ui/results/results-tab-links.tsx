@@ -11,7 +11,10 @@ export default function ResultsTabLinks({
   const pathname = usePathname();
 
   return (
-    <div className="-mb-px flex flex-wrap border-b text-center text-sm font-medium border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400">
+    <nav
+      aria-label={`Eredmények`}
+      className="-mb-px flex flex-wrap border-b text-center text-sm font-medium border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+    >
       {tabs.map((tab) => (
         <div
           key={tab.title}
@@ -30,6 +33,6 @@ export default function ResultsTabLinks({
           </Link>
         </div>
       ))}
-    </div>
+    </nav>
   );
 }
