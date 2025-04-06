@@ -18,14 +18,15 @@ export default function Home() {
         <section className="grid overflow-hidden rounded-lg bg-primary-800/95 md:grid-cols-2">
           <div className="p-4 pb-0 md:flex md:items-center md:p-12 lg:px-16 lg:py-24">
             <div className="prose mx-auto max-w-xl text-balance text-center md:text-left rtl:md:text-right">
-              <h2 className="text-2xl font-bold capitalize text-bg-contrast md:text-3xl xl:text-5xl">
+              <h2 className="sr-only">Főűgyész köszöntője</h2>
+              <span className="text-2xl font-bold capitalize text-bg-contrast md:text-3xl xl:text-5xl">
                 Kedves látogató!
-              </h2>
+              </span>
 
               <blockquote className={`prose hyphens-auto italic text-bg-contrast xl:text-3xl`}>
                 <p className="md:mt-4">
                   Idén negyvenkettedik alkalommal kerül megrendezésre a{' '}
-                  <span className={`font-bold capitalize`}>Regionális ügyészségi sporttalálkozó</span>. 2024. június
+                  <em className={`font-bold capitalize`}>Regionális ügyészségi sporttalálkozó</em>. 2024. június
                   28-29-én a Szabolcs-Szatmár-Bereg Vármegyei Főügyészség látja vendégül a Kelet-Magyarországi vármegyék
                   csapatait. Az esemény a Nyíregyházi Egyetem sportpályáin és kollégiumaiban kerül megrendezésre.
                 </p>

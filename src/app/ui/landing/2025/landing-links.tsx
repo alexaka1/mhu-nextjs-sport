@@ -4,7 +4,10 @@ const year = '2025';
 
 export default function LandingLinks() {
   return (
-    <div className="grid rounded-lg text-center bg-primary/95 xl:w-full xl:max-w-7xl xl:grid-cols-3 xl:text-left">
+    <nav
+      aria-label={`Elsődleges`}
+      className="grid rounded-lg text-center bg-primary/95 xl:w-full xl:max-w-7xl xl:grid-cols-3 xl:text-left"
+    >
       {/*<LandingLink href={`/${year}/koszonto`}>*/}
       {/*  <h2 className={`mb-3 inline-block text-nowrap text-2xl font-semibold`}>*/}
       {/*    Beköszöntő{' '}*/}
@@ -59,6 +62,6 @@ export default function LandingLinks() {
         </h2>
         <p className={`m-0 max-w-[30ch] text-balance text-sm text-bg-contrast/75`}></p>
       </LandingLink>
-    </div>
+    </nav>
   );
 }

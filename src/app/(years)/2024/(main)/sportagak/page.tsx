@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <main className="flex flex-col bg-white dark:bg-gray-800">
       <div className={`mx-auto`}>
+        <h1 className="sr-only">Sportágak</h1>
         <EntryContent>
           <p className={`p-1 pt-4`}>
             A sporttalálkozó rendezésével és szervezésével kapcsolatos bármilyen kérdés vagy probléma esetén forduljatok
@@ -67,9 +68,9 @@ export default function Page() {
           </ol>
           <p>
             A játékosok csak terem- vagy salak/műfüves cipőt használhatnak.{' '}
-            <span className={`inline-block max-w-full text-balance font-bold uppercase`}>
+            <em className={`inline-block max-w-full text-balance font-bold uppercase`}>
               Stoplis cipő használata tilos!
-            </span>{' '}
+            </em>{' '}
             A mérkőzések <span className={`underline decoration-from-font`}>2 &times; 12 percig tartanak</span>,{' '}
             <span className={`italic`}>
               a csapatok 5 fő mezőnyjátékosból és 1 fő kapusból, továbbá mérkőzésenként maximum 4 fő cserejátékosból
@@ -545,7 +546,7 @@ export default function Page() {
               <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ol start={5}>
-                  <li>Pest </li>
+                  <li>Pest</li>
                   <li>Békés</li>
                   <li>Központi Nyomozó Főügyészség</li>
                   <li>Szolnok</li>

@@ -21,14 +21,18 @@ export default async function ResultsTab({
   const results = await getResults(result, year);
 
   return (
-    <div className={className}>
-      <ResultsTabLinks tabs={tabs} year={year} fallbackResult={fallbackResult} />
-      <div className={`flex flex-col gap-1`}>
-        <div className={`flex flex-row items-center justify-center pt-1`}>
-          <UploadResult resultType={result} canEdit={canEdit} year={year} />
+    <>
+      <h1 className="sr-only">Eredmények - {year}. év</h1>
+      <div className={className}>
+        <ResultsTabLinks tabs={tabs} year={year} fallbackResult={fallbackResult} />
+        <h2 className="sr-only">{result}</h2>
+        <div className={`flex flex-col gap-2`}>
+          <div className={`flex flex-row items-center justify-center pt-1`}>
+            <UploadResult resultType={result} canEdit={canEdit} year={year} />
+          </div>
+          <ResultsContent results={results} canEdit={canEdit} year={year} />
         </div>
-        <ResultsContent results={results} canEdit={canEdit} year={year} />
       </div>
-    </div>
+    </>
   );
 }

@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { captureMessage } from '@sentry/nextjs';
 import { isIOS, isMobile } from 'react-device-detect';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 type UserChoice = {
   outcome: 'accepted' | 'dismissed';
@@ -13,6 +14,8 @@ type BeforeInstallPromptEvent = Event & {
   platforms: string[];
   userChoice: Promise<UserChoice>;
 };
+
+const bannerDismissedKey = 'pwa-banner-dismissed';
 
 export default function InstallBanner() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
@@ -25,6 +28,11 @@ export default function InstallBanner() {
     setShowInstall(true);
   };
   useEffect(() => {
+    const bannerDismissed = localStorage.getItem(bannerDismissedKey);
+    if (bannerDismissed === 'true') {
+      // User has dismissed the banner before, let the browser handle the prompt
+      return;
+    }
     // @ts-expect-error - Before BeforeInstallPromptEvent type error
     window.addEventListener('beforeinstallprompt', installPrompt);
     if (isMobile) {
@@ -40,25 +48,26 @@ export default function InstallBanner() {
       window.removeEventListener('beforeinstallprompt', installPrompt);
     };
   }, []);
+
   async function Install() {
     setShowInstall(false);
     if (deferredPrompt) {
       await deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      captureMessage(`User response to the install prompt: ${outcome}`, 'info');
+      await deferredPrompt.userChoice;
     }
   }
+
   return (
-    <div
-      className={`hidden text-balance px-4 py-3 bg-primary text-bg-contrast print:hidden ${showInstall || isIOS ? 'browser:block' : ''}`}
+    <aside
+      className={`hidden grid-flow-col grid-cols-[2fr_auto] items-center gap-6 text-balance px-4 py-3 bg-primary text-bg-contrast print:hidden ${showInstall || isIOS ? 'browser:inline-grid' : ''}`}
     >
-      <p className="text-center text-sm font-medium">
+      <p className="text-pretty text-center text-sm font-medium">
         Már elérhető {deviceType} alkalmazásként is!&nbsp;
         <button
           onClick={() => {
             void Install().then();
           }}
-          className="inline-block underline"
+          className="inline-block text-pretty underline"
         >
           Telepítsd az alkalmazást az eszközödre!
         </button>
@@ -72,6 +81,15 @@ export default function InstallBanner() {
       {/*>*/}
       {/*  Telepites*/}
       {/*</button>*/}
-    </div>
+      <button
+        onClick={() => {
+          localStorage.setItem(bannerDismissedKey, 'true');
+          setShowInstall(false);
+        }}
+        title="Bezárás"
+      >
+        <FontAwesomeIcon icon={faTimes} className="size-6" />
+      </button>
+    </aside>
   );
 }
