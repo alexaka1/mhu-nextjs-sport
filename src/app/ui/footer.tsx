@@ -24,95 +24,103 @@ export default function Footer() {
             </p>
             <DarkModeToggle />
           </div>
+          <h2 id={`social-links`} className={`sr-only`}>
+            Közösségi oldalak
+          </h2>
+          <nav aria-labelledby={`social-links`}>
+            <menu className="mt-8 flex flex-wrap justify-center gap-6 sm:mt-0 sm:flex-nowrap sm:justify-end">
+              <li>
+                <a
+                  href="https://www.facebook.com/Magyarorsz%C3%A1g-%C3%9Cgy%C3%A9szs%C3%A9ge-104594918109266"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                >
+                  <span className="sr-only">Facebook</span>
 
-          <ul className="mt-8 flex flex-wrap justify-center gap-6 sm:mt-0 sm:flex-nowrap sm:justify-end">
-            <li>
-              <a
-                href="https://www.facebook.com/Magyarorsz%C3%A1g-%C3%9Cgy%C3%A9szs%C3%A9ge-104594918109266"
-                rel="noreferrer"
-                target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
-              >
-                <span className="sr-only">Facebook</span>
+                  <FontAwesomeIcon icon={faFacebook} className={`size-6`} />
+                </a>
+              </li>
 
-                <FontAwesomeIcon icon={faFacebook} className={`size-6`} />
-              </a>
-            </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@MagyarorszagUgyeszsege"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                >
+                  <span className="sr-only">YouTube</span>
+                  <FontAwesomeIcon icon={faYoutube} className={`size-6`} />
+                </a>
+              </li>
 
-            <li>
-              <a
-                href="https://www.youtube.com/@MagyarorszagUgyeszsege"
-                rel="noreferrer"
-                target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
-              >
-                <span className="sr-only">YouTube</span>
-                <FontAwesomeIcon icon={faYoutube} className={`size-6`} />
-              </a>
-            </li>
+              <li>
+                <a
+                  href="https://twitter.com/ProsecutionHu"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                >
+                  <span className="sr-only">X</span>
 
-            <li>
-              <a
-                href="https://twitter.com/ProsecutionHu"
-                rel="noreferrer"
-                target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
-              >
-                <span className="sr-only">X</span>
+                  <FontAwesomeIcon icon={faXTwitter} className={`size-6`} />
+                </a>
+              </li>
 
-                <FontAwesomeIcon icon={faXTwitter} className={`size-6`} />
-              </a>
-            </li>
+              <li>
+                <a
+                  href="https://github.com/alexaka1/mhu-nextjs-sport"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                >
+                  <span className="sr-only">GitHub</span>
 
-            <li>
-              <a
-                href="https://github.com/alexaka1/mhu-nextjs-sport"
-                rel="noreferrer"
-                target="_blank"
-                className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
-              >
-                <span className="sr-only">GitHub</span>
-
-                <FontAwesomeIcon icon={faGithub} className={`size-6`} />
-              </a>
-            </li>
-          </ul>
+                  <FontAwesomeIcon icon={faGithub} className={`size-6`} />
+                </a>
+              </li>
+            </menu>
+          </nav>
         </div>
 
         <div className="grid grid-cols-1 gap-8 border-t pt-8 border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
           <div>
-            <p className="font-medium text-gray-900 dark:text-white">Sporttalálkozók</p>
+            <p id="year-links" className="font-medium text-gray-900 dark:text-white">
+              Sporttalálkozók
+            </p>
 
-            <ul className="mt-6 space-y-4 text-sm">
-              <li>
-                <a href="/2025" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
-                  2025 - Békéscsaba
-                </a>
-              </li>
-              <li>
-                <a href="/2024" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
-                  2024 - Nyíregyháza
-                </a>
-              </li>
+            <nav aria-labelledby="year-links">
+              <menu className="mt-6 space-y-4 text-sm">
+                <li>
+                  <a href="/2025" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                    2025 - Békéscsaba
+                  </a>
+                </li>
+                <li>
+                  <a href="/2024" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                    2024 - Nyíregyháza
+                  </a>
+                </li>
 
-              {/*    <li>*/}
-              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-              {/*        Accounts Review*/}
-              {/*      </a>*/}
-              {/*    </li>*/}
+                {/*    <li>*/}
+                {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+                {/*        Accounts Review*/}
+                {/*      </a>*/}
+                {/*    </li>*/}
 
-              {/*    <li>*/}
-              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-              {/*        HR Consulting*/}
-              {/*      </a>*/}
-              {/*    </li>*/}
+                {/*    <li>*/}
+                {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+                {/*        HR Consulting*/}
+                {/*      </a>*/}
+                {/*    </li>*/}
 
-              {/*    <li>*/}
-              {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
-              {/*        SEO Optimisation*/}
-              {/*      </a>*/}
-              {/*    </li>*/}
-            </ul>
+                {/*    <li>*/}
+                {/*      <a href="#" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">*/}
+                {/*        SEO Optimisation*/}
+                {/*      </a>*/}
+                {/*    </li>*/}
+              </menu>
+            </nav>
           </div>
         </div>
         <p className="prose whitespace-nowrap text-balance text-xs text-bg-contrast">
