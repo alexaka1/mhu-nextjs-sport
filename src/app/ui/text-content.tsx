@@ -9,7 +9,11 @@ export function Title({ children, id }: Readonly<{ children: ReactNode; id: stri
       id={id}
       className="group/title flex flex-row text-3xl font-bold tracking-tight transition-colors duration-200 text-gray-900 sm:text-4xl dark:text-bg-contrast"
     >
-      <a href={`#${id}`} className={`flex items-center align-middle standalone:hidden print:hidden`}>
+      <a
+        href={`#${id}`}
+        aria-labelledby={id}
+        className={`flex items-center align-middle standalone:hidden print:hidden`}
+      >
         <FontAwesomeIcon
           icon={faHashtag}
           className={`invisible size-6 group-hover/title:visible dark:text-bg-contrast`}

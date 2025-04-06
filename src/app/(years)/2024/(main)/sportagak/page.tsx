@@ -68,9 +68,9 @@ export default function Page() {
           </ol>
           <p>
             A játékosok csak terem- vagy salak/műfüves cipőt használhatnak.{' '}
-            <span className={`inline-block max-w-full text-balance font-bold uppercase`}>
+            <em className={`inline-block max-w-full text-balance font-bold uppercase`}>
               Stoplis cipő használata tilos!
-            </span>{' '}
+            </em>{' '}
             A mérkőzések <span className={`underline decoration-from-font`}>2 &times; 12 percig tartanak</span>,{' '}
             <span className={`italic`}>
               a csapatok 5 fő mezőnyjátékosból és 1 fő kapusból, továbbá mérkőzésenként maximum 4 fő cserejátékosból

@@ -21,10 +21,10 @@ export default function Page() {
         <Title id={`Szállás`}>Szállás: Nyíregyházi egyetem</Title>
         <ul>
           <li>
-            <Link href={`/szallas#bessenyei`}>Bessenyei Hotel</Link>
+            <Link href={`szallas#bessenyei`}>Bessenyei Hotel</Link>
           </li>
           <li>
-            <Link href={`/szallas#sandra`}>Sandra Hotel</Link>
+            <Link href={`szallas#sandra`}>Sandra Hotel</Link>
           </li>
         </ul>
       </EntryContent>

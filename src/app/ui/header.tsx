@@ -312,7 +312,7 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
   return (
     <>
       <header className="bg-gray-100 dark:bg-gray-900 print:hidden">
-        <nav className="mx-auto flex max-w-7xl items-center p-6 lg:justify-between lg:px-8" aria-label="Global">
+        <nav className="mx-auto flex max-w-7xl items-center p-6 lg:justify-between lg:px-8" aria-label="Elsődleges">
           <div className="flex lg:flex-1">
             <Link
               className="block transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
