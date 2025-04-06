@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <main className="flex flex-col bg-white dark:bg-gray-800">
       <div className={`mx-auto`}>
+        <h1 className="sr-only">Sportágak</h1>
         <EntryContent>
           <p className={`p-1 pt-4`}>
             A sporttalálkozó rendezésével és szervezésével kapcsolatos bármilyen kérdés vagy probléma esetén forduljatok
@@ -545,7 +546,7 @@ export default function Page() {
               <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ol start={5}>
-                  <li>Pest </li>
+                  <li>Pest</li>
                   <li>Békés</li>
                   <li>Központi Nyomozó Főügyészség</li>
                   <li>Szolnok</li>
