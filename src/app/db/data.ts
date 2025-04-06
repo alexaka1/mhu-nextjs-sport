@@ -1,6 +1,6 @@
 import { db } from '@/app/db/db';
 import { results, users } from '@/app/db/schema';
-import { and, eq, ne } from 'drizzle-orm/sql/expressions/conditions';
+import { and, eq, isNull, ne, or } from 'drizzle-orm/sql/expressions/conditions';
 import { captureException } from '@sentry/nextjs';
 import { Result, type ResultItem, resultMimeTypeSchema } from '@/app/lib/types';
 import { z } from 'zod';
@@ -63,19 +63,23 @@ export async function updateAvatar({
   avatar: string | null;
 }>): Promise<Readonly<{ updatedId: string }>> {
   try {
+    const avatarNotNull = avatar ?? '';
     // select user where image is not the same as the new avatar
     const usersResult = await db
       .select({
         userId: users.id,
+        image: users.image,
       })
       .from(users)
-      .where(and(eq(users.id, id), ne(users.image, avatar ?? '')));
+      // for equality get user with null image or different image
+      .where(and(eq(users.id, id), or(ne(users.image, avatarNotNull), isNull(users.image))));
     if (usersResult.length !== 1 || usersResult[0] == null) {
       return { updatedId: '' };
     }
     const user = usersResult[0];
     const returning = await db
       .update(users)
+      // the new image could be null, if the IDP gives us null
       .set({ image: avatar })
       .where(eq(users.id, user.userId))
       .returning({ updatedId: users.id });
