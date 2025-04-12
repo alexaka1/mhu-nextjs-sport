@@ -15,19 +15,19 @@ importers:
         specifier: 1.8.0
         version: 1.8.0
       '@fortawesome/fontawesome-svg-core':
-        specifier: ^6.7.2
+        specifier: 6.7.2
         version: 6.7.2
       '@fortawesome/free-brands-svg-icons':
-        specifier: ^6.7.2
+        specifier: 6.7.2
         version: 6.7.2
       '@fortawesome/free-regular-svg-icons':
-        specifier: ^6.7.2
+        specifier: 6.7.2
         version: 6.7.2
       '@fortawesome/free-solid-svg-icons':
-        specifier: ^6.7.2
+        specifier: 6.7.2
         version: 6.7.2
       '@fortawesome/react-fontawesome':
-        specifier: ^0.2.2
+        specifier: 0.2.2
         version: 0.2.2(@fortawesome/fontawesome-svg-core@6.7.2)(react@19.1.0)
       '@headlessui/react':
         specifier: 2.2.1
