@@ -2,7 +2,13 @@
 // The config you add here will be used whenever a users loads a page in their browser.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-import { browserApiErrorsIntegration, browserTracingIntegration, init, replayIntegration } from '@sentry/nextjs';
+import {
+  browserApiErrorsIntegration,
+  browserTracingIntegration,
+  captureRouterTransitionStart,
+  init,
+  replayIntegration,
+} from '@sentry/nextjs';
 import { env } from '@/app/lib/env';
 
 const integrations = [];
@@ -36,3 +42,4 @@ init({
   // You can remove this option if you're not planning to use the Sentry Session Replay feature:
   integrations: integrations,
 });
+export const onRouterTransitionStart = captureRouterTransitionStart;
