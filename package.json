@@ -30,7 +30,7 @@
     "@headlessui/tailwindcss": "0.2.2",
     "@libsql/client": "0.15.4",
     "@sentry/nextjs": "9.13.0",
-    "@serwist/next": "9.0.13",
+    "@serwist/next": "9.0.14",
     "@t3-oss/env-nextjs": "0.12.0",
     "@tabler/icons-react": "3.31.0",
     "@tanstack/react-query": "5.74.4",
