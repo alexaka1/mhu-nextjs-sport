@@ -5,6 +5,7 @@
     ":pinDependencies",
     "security:openssf-scorecard",
     ":automergeRequireAllStatusChecks",
-    ":rebaseStalePrs"
+    ":rebaseStalePrs",
+    "npm:unpublishSafe"
   ]
 }
