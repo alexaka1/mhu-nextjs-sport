@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import DarkModeToggle from '@/app/ui/dark-mode-toggle';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -92,14 +93,14 @@ export default function Footer() {
             <nav aria-labelledby="year-links">
               <menu className="mt-6 space-y-4 text-sm">
                 <li>
-                  <a href="/2025" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  <Link href="/2025" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
                     2025 - Békéscsaba
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/2024" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  <Link href="/2024" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
                     2024 - Nyíregyháza
-                  </a>
+                  </Link>
                 </li>
 
                 {/*    <li>*/}

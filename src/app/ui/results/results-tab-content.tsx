@@ -75,7 +75,7 @@ export default function ResultsContent({
             <ResultsTable file={result.url} canEdit={canEdit} title={result.result} fileKey={result.key} year={year}>
               <div className={`sm:mx-auto`}>
                 <ZoomWrapper>
-                  {/* !eslint-disable-next-line @next/next/no-img-element */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img alt={result.url} src={result.url} className={`size-auto`} />
                 </ZoomWrapper>
               </div>

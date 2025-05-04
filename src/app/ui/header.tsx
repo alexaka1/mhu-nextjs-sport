@@ -218,7 +218,7 @@ function UserInfo({
     }
     return (
       // User images should not be optimized because unauthorized sources throw an error instead of just not showing, which is unaccepatable
-      // !eslint-disable-next-line @next/next/no-img-element
+      // eslint-disable-next-line @next/next/no-img-element
       <img className="size-8 items-center justify-center rounded-full" src={src} alt={alt} width={36} height={36} />
     );
   }
