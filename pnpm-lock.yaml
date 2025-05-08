@@ -46,10 +46,10 @@ importers:
         version: 9.0.14(next@15.3.1(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)(webpack@5.98.0(esbuild@0.25.2))
       '@t3-oss/env-core':
         specifier: 0.13.4
-        version: 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.3)
+        version: 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.4)
       '@t3-oss/env-nextjs':
         specifier: 0.13.4
-        version: 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.3)
+        version: 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.4)
       '@tabler/icons-react':
         specifier: 3.31.0
         version: 3.31.0(react@19.1.0)
@@ -108,8 +108,8 @@ importers:
         specifier: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
         version: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
       zod:
-        specifier: 3.24.3
-        version: 3.24.3
+        specifier: 3.24.4
+        version: 3.24.4
     devDependencies:
       '@alexaka1/tailwindcss-oklch':
         specifier: 0.0.4
@@ -4489,6 +4489,9 @@ packages:
   zod@3.24.3:
     resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
 
+  zod@3.24.4:
+    resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
+
 snapshots:
 
   '@alexaka1/tailwindcss-oklch@0.0.4':
@@ -5081,8 +5084,8 @@ snapshots:
       express-rate-limit: 7.5.0(express@5.1.0)
       pkce-challenge: 5.0.0
       raw-body: 3.0.0
-      zod: 3.24.3
-      zod-to-json-schema: 3.24.5(zod@3.24.3)
+      zod: 3.24.4
+      zod-to-json-schema: 3.24.5(zod@3.24.4)
     transitivePeerDependencies:
       - supports-color
 
@@ -5759,19 +5762,19 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.3)':
+  '@t3-oss/env-core@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.4)':
     dependencies:
       arktype: 2.1.20
     optionalDependencies:
       typescript: 5.8.3
-      zod: 3.24.3
+      zod: 3.24.4
 
-  '@t3-oss/env-nextjs@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.3)':
+  '@t3-oss/env-nextjs@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.4)':
     dependencies:
-      '@t3-oss/env-core': 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.3)
+      '@t3-oss/env-core': 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.24.4)
     optionalDependencies:
       typescript: 5.8.3
-      zod: 3.24.3
+      zod: 3.24.4
     transitivePeerDependencies:
       - arktype
 
@@ -7100,7 +7103,7 @@ snapshots:
       minimatch: 3.1.2
       natural-compare: 1.4.0
       optionator: 0.9.4
-      zod: 3.24.3
+      zod: 3.24.4
     optionalDependencies:
       jiti: 1.21.7
     transitivePeerDependencies:
@@ -9006,8 +9009,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-to-json-schema@3.24.5(zod@3.24.3):
+  zod-to-json-schema@3.24.5(zod@3.24.4):
     dependencies:
-      zod: 3.24.3
+      zod: 3.24.4
 
   zod@3.24.3: {}
+
+  zod@3.24.4: {}
