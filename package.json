@@ -41,7 +41,7 @@
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",
     "drizzle-orm": "0.43.1",
-    "geist": "1.4.1",
+    "geist": "1.4.2",
     "next": "15.3.1",
     "next-auth": "5.0.0-beta.27",
     "next-axiom": "1.9.1",
