@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
-
-import { GeistSans } from 'geist/font/sans';
-
-import { GeistMono } from 'geist/font/mono';
+import { Geist, Geist_Mono } from 'next/font/google';
 import { type ReactNode } from 'react';
 import './globals.css';
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from './manifest';
@@ -72,6 +69,16 @@ export const metadata: Metadata = {
   },
 };
 
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -80,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="hu"
-      className={`${GeistSans.variable} ${GeistMono.variable} subpixel-antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} subpixel-antialiased`}
       suppressHydrationWarning={true}
     >
       <head>
