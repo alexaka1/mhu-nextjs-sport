@@ -29,7 +29,7 @@
     "@headlessui/react": "2.2.3",
     "@headlessui/tailwindcss": "0.2.2",
     "@libsql/client": "0.15.5",
-    "@sentry/nextjs": "9.17.0",
+    "@sentry/nextjs": "9.18.0",
     "@serwist/next": "9.0.14",
     "@t3-oss/env-nextjs": "0.13.4",
     "@t3-oss/env-core": "0.13.4",
