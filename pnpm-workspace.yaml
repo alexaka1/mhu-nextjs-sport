@@ -1,7 +1,12 @@
-# uploadthing and t3-env do not play well with pnpm
-shamefullyHoist: true
 packageManagerStrictVersion: true
 savePrefix: ''
-#publicHoistPattern:
-#  - '*eslint*'
-#  - '*@nextui-org/*'
+publicHoistPattern:
+  - '*eslint*'
+  - '*@nextui-org/*'
+# uploadthing and t3-env do not play well with pnpm
+  - '@uploadthing/*'
+  - '@t3-oss/*'
+  - '@sentry/core'
+onlyBuiltDependencies:
+  - '@sentry/cli'
+  - '@vercel/speed-insights'

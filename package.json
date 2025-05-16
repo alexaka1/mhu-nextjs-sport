@@ -32,12 +32,10 @@
     "@sentry/nextjs": "9.18.0",
     "@serwist/next": "9.0.14",
     "@t3-oss/env-nextjs": "0.13.4",
-    "@t3-oss/env-core": "0.13.4",
     "@tabler/icons-react": "3.31.0",
     "@tanstack/react-query": "5.76.0",
     "@tanstack/react-table": "8.21.3",
     "@uploadthing/react": "7.3.0",
-    "@uploadthing/shared": "7.1.7",
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",
     "drizzle-orm": "0.43.1",
@@ -88,13 +86,5 @@
     "node": "^22.0.0",
     "pnpm": "^10.0.0",
     "npm": "Please use Yarn to install dependencies. 'yarn install'"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@sentry/cli",
-      "@vercel/speed-insights",
-      "esbuild",
-      "sharp"
-    ]
   }
 }
