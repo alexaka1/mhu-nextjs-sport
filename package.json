@@ -37,7 +37,7 @@
     "@tanstack/react-query": "5.76.0",
     "@tanstack/react-table": "8.21.3",
     "@uploadthing/react": "7.3.0",
-    "@uploadthing/shared": "7.1.7",
+    "@uploadthing/shared": "7.1.8",
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",
     "drizzle-orm": "0.43.1",
