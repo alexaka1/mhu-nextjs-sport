@@ -49,7 +49,7 @@
     "react-zoom-pan-pinch": "3.7.0",
     "uploadthing": "7.7.2",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz",
-    "zod": "3.25.47"
+    "zod": "3.25.48"
   },
   "devDependencies": {
     "@alexaka1/tailwindcss-oklch": "0.0.4",
