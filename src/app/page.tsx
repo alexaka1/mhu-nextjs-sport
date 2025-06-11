@@ -1,3 +1,3 @@
-import Home from '@/app/(years)/2024/page';
-export { metadata } from '@/app/(years)/2024/page';
+import Home from '@/app/(years)/2025/page';
+export { metadata } from '@/app/(years)/2025/page';
 export default Home;
