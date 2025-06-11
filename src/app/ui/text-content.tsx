@@ -50,7 +50,7 @@ export function Entry({ children }: Readonly<{ children: ReactNode }>) {
 export function EntryContent({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <div
-      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-bg-contrast prose-p:dark:text-bg-contrast prose-a:dark:text-primary-600 prose-ol:dark:text-bg-contrast prose-ul:dark:text-bg-contrast`}
+      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-bg-contrast prose-p:dark:text-bg-contrast prose-a:dark:text-primary-600 prose-ol:dark:text-bg-contrast prose-ul:dark:text-bg-contrast prose-td:dark:text-bg-contrast`}
     >
       {children}
     </div>
