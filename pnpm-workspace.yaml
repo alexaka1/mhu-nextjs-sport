@@ -1,12 +1,12 @@
-packageManagerStrictVersion: true
-savePrefix: ''
-publicHoistPattern:
-  - '*eslint*'
-  - '*@nextui-org/*'
-# uploadthing and t3-env do not play well with pnpm
-  - '@uploadthing/*'
-  - '@t3-oss/*'
-  - '@sentry/core'
 onlyBuiltDependencies:
   - '@sentry/cli'
   - '@vercel/speed-insights'
+  - msgpackr-extract
+packageManagerStrictVersion: true
+publicHoistPattern:
+  - '*eslint*'
+  - '*@nextui-org/*'
+  - '@uploadthing/*'
+  - '@t3-oss/*'
+  - '@sentry/core'
+savePrefix: ''
