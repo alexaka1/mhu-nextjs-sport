@@ -22,7 +22,7 @@ export default function Page() {
       </div>
       <Entry>
         <EntryContent>
-          <Title id={`Labdarúgás`}>Asztalitenisz [női, férfi]</Title>
+          <Title id={`Asztalitenisz`}>Asztalitenisz [női, férfi]</Title>
           <DataList>
             <DataListEntry>
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
@@ -210,242 +210,51 @@ export default function Page() {
       </Entry>
       <Entry>
         <EntryContent>
-          <Title id={`Úszás`}>Úszás</Title>
+          <Title id={`Csocso`}>Csocsó</Title>
           <DataList>
             <DataListEntry>
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                Egyetemi uszoda (25 méteres medence)
-              </dd>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">Csaba Park rendezvénysátor</dd>
             </DataListEntry>
             <DataListEntry>
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <time dateTime={`2024-06-29T09:00`}>2024. június 29. szombat 9:00 - 11:00</time>
+                <time dateTime={`2024-06-28T21:00`}>2025. június 28. szombat 21:00 órától</time>
               </dd>
             </DataListEntry>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ul>
-                  <li>Kruták Gyula</li>
-                  <li>Kisné Tarsoly Ildikó</li>
-                  <li>Reményiné Deák Mariann</li>
-                  <li>Pasztucha Éva</li>
-                </ul>
-              </dd>
-            </DataListEntry>
+            {/*<DataListEntry>*/}
+            {/*  <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>*/}
+            {/*  <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">*/}
+            {/*    <ul>*/}
+            {/*      <li></li>*/}
+            {/*      <li></li>*/}
+            {/*      <li></li>*/}
+            {/*      <li></li>*/}
+            {/*    </ul>*/}
+            {/*  </dd>*/}
+            {/*</DataListEntry>*/}
           </DataList>
           <h3>Szabályok</h3>
           <p>
-            A teljesítendő táv csapatonként mellúszásban 4 &times; 50 méter, azaz csapattagonként 2 hossz (25 m-es
-            medencében), amely a faltól indulással és a fal érintésével számít teljesítettnek. Bukóforduló nem
-            engedélyezett!
+            A csapatot egy férfi és egy női versenyző alkotja. A verseny két asztalon zajlik, 4 csoportban úgy, hogy a
+            csoportokban mindenki játszik mindenkivel.
           </p>
           <p>
-            Az indulás a vízből, a medence falától való elrugaszkodással történik, a falat kézzel meg kell érinteni,
-            majd ezt követően történhet a váltás, amelyek sorrendjét a csapatok döntik el.
+            Ezt követően a csoportok azonos helyén végzettek játszanak egymással az 1-4., 5-8. és 9-12. helyeken A-B és
+            C-D beosztásban, majd a győztesek az 1., 5. és 9. helyért, stb.
           </p>
           <p>
-            A végső sorrendet az elért időeredmények határozzák meg, tehát a versenyzők által leúszott időeredmények
-            összegzését követően a legjobb időt úszó csapat a nyertes.
+            A mérkőzést az nyeri, aki a meccs folyamán előbb eléri a hat lőtt gólt. Csoportbeosztás a futballal azonos.
           </p>
-          <p>
-            Megyénként 4 fő indul, a férfiak-nők aránya 2-2. Egy személy egy távot úszhat, a csapatnak mindenképp 4
-            főből kell állnia!
-          </p>
-          <p>
-            Az uszodatérben papucs használata – a nézőknek is – kötelező. és a váltás is a medencében történik, a végső
-            sorrendet az elért időeredmények határozzák meg.
-          </p>
-          <h3 className={`-mb-14 font-bold`}>
-            <span className={`uppercase`}>Abc</span> sorrend!
-          </h3>
-          <DataList>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Első futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ol>
-                  <li className={``}>Bács-Kiskun</li>
-                  <li className={``}>Békés</li>
-                  <li className={``}>Borsod-Abaúj</li>
-                  <li className={``}>Csongrád-Csanád</li>
-                </ol>
-              </dd>
-            </DataListEntry>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Második futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ol start={5}>
-                  <li className={``}>Főváros</li>
-                  <li className={``}>Hajdú-Bihar</li>
-                  <li className={``}>Heves-Nógrád</li>
-                  <li className={``}>Jász-Nagykun-Szolnok</li>
-                </ol>
-              </dd>
-            </DataListEntry>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Harmadik futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ol start={9}>
-                  <li className={``}>Központi Nyomozó Főügyészség</li>
-                  <li className={``}>Legfőbb Ügyészség</li>
-                  <li className={``}>Pest</li>
-                  <li className={``}>Szabolcs</li>
-                </ol>
-              </dd>
-            </DataListEntry>
-          </DataList>
-        </EntryContent>
-        <Media src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'} alt={'Úszás'} />
-      </Entry>
-      <Entry>
-        <EntryContent>
-          <Title id={`Futás`}>Női és Férfi Síkfutás</Title>
-          <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-            <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">atlétikai pálya</dd>
-            </div>
-            <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <time dateTime={`2024-06-28`}>2024. június 28. péntek</time>
-                <ul>
-                  <li>
-                    <time dateTime={`2024-06-28T13:00`}>13.00 óra</time>
-                    (női futam)
-                  </li>
-                  <li>
-                    <time dateTime={`2024-06-28T13:30`}>13.00 óra</time>
-                    (férfi futam)
-                  </li>
-                </ul>
-              </dd>
-            </div>
-            <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ul>
-                  <li>Diczkó Mariann</li>
-                  <li>Pasztucha Éva</li>
-                  <li>Kruták Gyula</li>
-                  <li>Csillám Enikő</li>
-                </ul>
-              </dd>
-            </div>
-          </dl>
-          <h3>Szabályok</h3>
-          <p>
-            A résztvevő női és férfi versenyzők 400 méteres atlétika pályán (rekortán) futnak, a nők 200 méteres, a
-            férfiak 400 méteres távon.
-          </p>
-          <p>
-            Először a női, majd a férfi verseny zajlik, 3-3 futamban. A futamokban egyszerre 4-4 csapat képviselői
-            indulnak, a női és férfi futambeosztások azonosak.
-          </p>
-          <p>Szöges cipő használata nem engedélyezett.</p>
-          <h3 className={`-mb-14 font-bold italic underline`}>
-            <span className={`uppercase`}>Abc</span> sorrend szerint a futás!
-          </h3>
-          <DataList>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Első futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ol>
-                  <li className={``}>Bács-Kiskun</li>
-                  <li className={``}>Békés</li>
-                  <li className={``}>Borsod-Abaúj</li>
-                  <li className={``}>Csongrád-Csanád</li>
-                </ol>
-              </dd>
-            </DataListEntry>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Második futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ol>
-                  <li className={``}>Főváros</li>
-                  <li className={``}>Hajdú-Bihar</li>
-                  <li className={``}>Heves-Nógrád</li>
-                  <li className={``}>Jász-Nagykun-Szolnok</li>
-                </ol>
-              </dd>
-            </DataListEntry>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Harmadik futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ol>
-                  <li className={``}>Központi Nyomozó Főügyészség</li>
-                  <li className={``}>Legfőbb Ügyészség</li>
-                  <li className={``}>Pest</li>
-                  <li className={``}>Szabolcs</li>
-                </ol>
-              </dd>
-            </DataListEntry>
-          </DataList>
-        </EntryContent>
-        <Media src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhcGxtgUuI2lFLKzqZ8ibAPBoQ7uUtMSJNj01w'} alt={'Futás'} />
-      </Entry>
-      <Entry>
-        <EntryContent>
-          <Title id={`Asztalitenisz`}>Asztalitenisz (Női-Férfi)</Title>
-          <DataList>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                Atlétika pálya melletti sportcsarnok
-              </dd>
-            </DataListEntry>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ul>
-                  <li>
-                    <time dateTime={`2024-06-28T13:00`}>2024. június 28. péntek 13:00 - 17:30</time>
-                  </li>
-                  <li>
-                    <time dateTime={`2024-06-29T10:00`}>2024. június 29. szombat 10:00 - 12:00</time>
-                  </li>
-                </ul>
-              </dd>
-            </DataListEntry>
-            <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                <ul>
-                  <li>Sável Krisztina</li>
-                  <li>Dobos Alexandra</li>
-                </ul>
-              </dd>
-            </DataListEntry>
-          </DataList>
-          <h3>Szabályok</h3>
-          <p>
-            A mérkőzések 2 nyert szettig tartanak. A játszmát az a játékos nyeri, aki előbb éri el a 11 pontot, kivéve,
-            ha mindkét játékos 10 pontot szerzett. Ebben az esetben a játszmát az a játékos nyeri, akinek elsőként lesz
-            2 ponttal többje, mint ellenfelének.
-          </p>
-          <p>
-            A játékosok az adogatás és a fogadás rendjének a jogát sorsolással döntik el, és a győztes választhat, hogy
-            elsőként adogat vagy elsőként fogad. A játékosok 3-3 adogatásonként cserélik az adogató személyét.
-          </p>
-          <p>
-            A játékosok játszmánként térfelet cserélnek. A mérkőzések során az eredményt a versenyzők számolják, majd a
-            mérkőzés végeredményét – <span className={`italic`}>az egyes játszmák eredményének megadásával</span> – a
-            sportági felelősnek diktálják be.
-          </p>
-          <p>Fehér felsőben játszani nem lehet!</p>
-          <p>Labdát a szervezők biztosítanak, míg ütőt a játékosok hoznak magukkal.</p>
-          <h3>Lebonyolítás</h3>
-          <p>A verseny lebonyolítása az alábbi sorsolás alapján történik.</p>
+          <h3 className={`-mb-14 font-bold`}>Csoportbeosztás</h3>
           <DataList>
             <DataListEntry>
               <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ol>
-                  <li>Főváros</li>
-                  <li>Csongrád</li>
-                  <li>Heves-Nógrád</li>
+                  <li>Borsod</li>
+                  <li>Szolnok</li>
+                  <li>LegfÜ</li>
                 </ol>
               </dd>
             </DataListEntry>
@@ -453,8 +262,8 @@ export default function Page() {
               <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ol>
-                  <li>Legfőbb Ügyészség</li>
-                  <li>Szolnok</li>
+                  <li>Szabolcs</li>
+                  <li>Hajdú</li>
                   <li>Békés</li>
                 </ol>
               </dd>
@@ -463,9 +272,9 @@ export default function Page() {
               <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ol>
-                  <li>Szabolcs</li>
-                  <li>Központi Nyomozó Főügyészség</li>
                   <li>Bács</li>
+                  <li>KNYF</li>
+                  <li>Heves-Nógrád</li>
                 </ol>
               </dd>
             </DataListEntry>
@@ -474,17 +283,500 @@ export default function Page() {
               <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                 <ol>
                   <li>Pest</li>
-                  <li>Hajdú</li>
-                  <li>Borsod</li>
+                  <li>Főváros</li>
+                  <li>Csongrád</li>
                 </ol>
               </dd>
             </DataListEntry>
           </DataList>
+          <h3>Csoportmérkőzések</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>1. asztal</th>
+                <th>2. asztal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A1-A2</td>
+                <td>C1-C2</td>
+              </tr>
+              <tr>
+                <td>B1-B2</td>
+                <td>D1-D2</td>
+              </tr>
+              <tr>
+                <td>A1-A3</td>
+                <td>C1-C3</td>
+              </tr>
+              <tr>
+                <td>B1-B3</td>
+                <td>D1-D3</td>
+              </tr>
+              <tr>
+                <td>A2-A3</td>
+                <td>C2-C3</td>
+              </tr>
+              <tr>
+                <td>B2-B3</td>
+                <td>D2-D3</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Helyosztók</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>1. asztal</th>
+                <th>2. asztal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A/3-B/3 (13. mérkőzés)</td>
+                <td>C/3-B/3 (14. m.)</td>
+              </tr>
+              <tr>
+                <td>A/2-B/2 (15. m.)</td>
+                <td>C/2-D/2 (16. m.)</td>
+              </tr>
+              <tr>
+                <td>A/1-B/1 (17. m.)</td>
+                <td>C/1-D/1 (18. m.)</td>
+              </tr>
+              <tr>
+                <td>13. m gy.-14. m. gy. (9. hely)</td>
+                <td>13. m v.-14. m. v. (11. hely)</td>
+              </tr>
+              <tr>
+                <td>15. m.gy – 16. m. gy. (5. hely)</td>
+                <td>15. m. v – 16. m. v. (7. hely)</td>
+              </tr>
+              <tr>
+                <td>17. m. gy – 18. m. gy. (1. hely)</td>
+                <td>17. m. v – 18. m. v. (3. hely)</td>
+              </tr>
+            </tbody>
+          </table>
         </EntryContent>
-        <Media
-          src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3Hhnt80K7x39ku0hCXvmi4dqO1zWpJr7IjeKGyH'}
-          alt={'Asztalitenisz'}
-        />
+        {/*<Media src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'} alt={'Úszás'} />*/}
+      </Entry>
+      <Entry>
+        <EntryContent>
+          <Title id={`Darts`}>Darts</Title>
+          <DataList>
+            <DataListEntry>
+              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">Csaba Park rendezvénysátor </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <time dateTime={`2024-06-28T21:00`}>2025. június 27. péntek 21:00 órától</time>
+              </dd>
+            </DataListEntry>
+            {/*<DataListEntry >*/}
+            {/*  <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>*/}
+            {/*  <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">*/}
+            {/*    <ul>*/}
+            {/*      <li></li>*/}
+            {/*      <li></li>*/}
+            {/*      <li></li>*/}
+            {/*      <li></li>*/}
+            {/*    </ul>*/}
+            {/*  </dd>*/}
+            {/*</DataListEntry>*/}
+          </DataList>
+          <h3>Szabályok</h3>
+          <p>
+            A női és férfi versenyzők külön-külön versenyeznek és eredményeik a csapatpontszámba külön-külön számítanak
+            be. Egységes versenykiírás vonatkozik mindkét nemre.
+          </p>
+          <p>
+            A verseny sorsolása azonos a labdarúgáséval, lebonyolítása pedig a sportcsarnokban rendezett sportágakéval.
+          </p>
+          <p>A versenyhez két tábla áll rendelkezésre, egy a férfiak, egy a nők részére. </p>
+          <p>
+            Női és férfi versenyzőnként egy meccs 12 sorozatnyi (1 sorozat 3 nyíl) dobásból áll. 301-ről kezdődő sima
+            kiszállóval történik a verseny. A győzelemhez egy nyert parti szükséges. Az adott partin belül maximum (12)
+            sorozat esetén az a győztes, aki közelebb áll a nullához. Amennyiben a kezdőjátékos eléri a nullát, a
+            második játékos még ledobja a saját körét és ez alapján állapítjuk meg a parti eredményét. Pontegyenlőség
+            esetén a már ledobott pontszámon kívül plusz egy dobás, aki nagyobbat dob, az nyer.
+          </p>
+          <h3 className={`-mb-14 font-bold italic underline`}>Csoportbeosztás</h3>
+          <DataList>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>Szolnok</li>
+                  <li>Pest</li>
+                  <li>Főváros</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>Csongrád</li>
+                  <li>Bács</li>
+                  <li>Hajdú</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>KNYF</li>
+                  <li>Békés</li>
+                  <li>Borsod</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>LegfÜ</li>
+                  <li>Szabolcs</li>
+                  <li>Heves-Nógrád</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+          </DataList>
+          <h3>Darts, nők az 1. táblán, férfiak a 2. táblán</h3>
+          <h4>Csoportmérkőzések</h4>
+          <table>
+            <tbody>
+              <tr>
+                <td>A1-A2</td>
+                <td>B1-B3</td>
+              </tr>
+              <tr>
+                <td>C1-C2</td>
+                <td>D1-D3</td>
+              </tr>
+              <tr>
+                <td>B1-B2</td>
+                <td>A2-A3</td>
+              </tr>
+              <tr>
+                <td>D1-D2</td>
+                <td>C2-C3</td>
+              </tr>
+              <tr>
+                <td>A1-A3</td>
+                <td>B2-B3</td>
+              </tr>
+              <tr>
+                <td>C1-C3</td>
+                <td>D2-D3</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4>Helyosztók</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>1. asztal</th>
+                <th>2. asztal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A/3-B/3 (13. mérkőzés)</td>
+                <td> C/3-B/3 (14. m.)</td>
+              </tr>
+              <tr>
+                <td>A/2-B/2 (15. m.)</td>
+                <td>C/2-D/2 (16. m.)</td>
+              </tr>
+              <tr>
+                <td>A/1-B/1 (17. m.)</td>
+                <td>C/1-D/1 (18. m.)</td>
+              </tr>
+              <tr>
+                <td>13. m gy.-14. m. gy. (9. hely)</td>
+                <td>13. m v.-14. m. v. (11. hely)</td>
+              </tr>
+              <tr>
+                <td>15. m.gy – 16. m. gy. (5. hely)</td>
+                <td>15. m. v – 16. m. v. (7. hely)</td>
+              </tr>
+              <tr>
+                <td>17. m. gy – 18. m. gy. (1. hely)</td>
+                <td>17. m. v – 18. m. v. (3. hely)</td>
+              </tr>
+            </tbody>
+          </table>
+        </EntryContent>
+        {/*<Media src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhcGxtgUuI2lFLKzqZ8ibAPBoQ7uUtMSJNj01w'} alt={'Futás'} />*/}
+      </Entry>
+      <Entry>
+        <EntryContent>
+          <Title id={`Labdarugas`}>Férfi labdarúgás</Title>
+          <DataList>
+            <DataListEntry>
+              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                Kórház utcai „Fű2” műfüves pálya [péntek-szombat], valamint a Gál Ferenc Egyetem műfüves pályája
+                [vasárnap]
+              </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ul>
+                  <li>
+                    <time dateTime={`2025-06-27T15:00`}>2025. június 27, péntek 15:00-18:00 óra</time>
+                  </li>
+                  <li>
+                    <time dateTime={`2025-06-28T14:00`}>2025. június 28, szombat 14.00-18:00 óra</time>
+                  </li>
+                  <li>
+                    <time dateTime={`2025-06-29T10:00`}>
+                      2025. június 29, vasárnap éremosztó mérkőzések 10:00-11:00 óra
+                    </time>
+                  </li>
+                </ul>
+              </dd>
+            </DataListEntry>
+            {/*<DataListEntry>*/}
+            {/*  <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>*/}
+            {/*  <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">*/}
+            {/*    <ul>*/}
+            {/*      <li></li>*/}
+            {/*      <li></li>*/}
+            {/*    </ul>*/}
+            {/*  </dd>*/}
+            {/*</DataListEntry>*/}
+          </DataList>
+          <h3>Fontosabb szabályok</h3>
+          <p>
+            A résztvevő csapatokat négy 3 csapatos csoportba sorsoljuk. A mérkőzések két pályán kerülnek megrendezésre.
+            A csoportmeccseken a győzelemért három pont jár, döntetlen esetén mindkét csapat egy-egy pontot kap. A
+            csoportok sorrendje a körmérkőzések után alakul ki.
+          </p>
+          <p>Pontazonosság esetén a csoportok sorrendjét az alábbiak szerint állapítjuk meg:</p>
+          <ol>
+            <li>Egymás elleni eredmény</li>
+            <li>Gólkülönbség</li>
+            <li>Rúgott gólok száma</li>
+            <li>Sorsolás</li>
+          </ol>
+          <p>
+            Mivel a nagyméretű műfüves pályán kerül kialakításra két kispálya, a vonalak részben bólyázással lesznek
+            kialakítva!
+          </p>
+          <p>
+            A játékosok csak terem- vagy salak/műfüves cipőt használhatnak. STOPLIS CIPŐ HASZNÁLATA TILOS! A mérkőzések
+            2*12 percig tartanak, a csapatok 5 fő mezőnyjátékosból és 1 fő kapusból, továbbá mérkőzésenként maximum 5 fő
+            cserejátékosból állnak. A mérkőzésekről külön jegyzőkönyvek készülnek, a csapatkapitány a kijelölt sportági
+            felelősöknél előre le kell adja a mérkőzésre nevezett játékosok nevét és mezszámát.
+          </p>
+          <h3>A mérkőzések a kispályás labdarúgás szabályi szerint kerülnek megrendezésre az alábbiak szerint</h3>
+          <ul>
+            <li>
+              a támadó csapat tagjáról az alapvonalon túlra került labdát a kapus kidobással vagy kirúgással, akár a
+              felezővonalon túlra is játékba hozhatja, de a játékba hozatalhoz a labda el kell, hogy hagyja a büntető
+              területet
+            </li>
+            <li>a játékban lévő labdával a kapus is érhet el gólt, akár kidobásból is</li>
+            <li>az oldalbedobást és hazaadást a kapus kézzel nem foghatja meg</li>
+            <li>
+              az oldalbedobást és <span className={`underline`}>hazaadást</span> a kapus kézzel nem foghatja meg
+            </li>
+            <li>
+              a védekező csapat tagjáról – beleértve a kapust is – az alapvonalon túlra került labda szögletrúgással,
+              míg az oldalvonalon túlra került labda bedobással és <span className={`underline`}>berúgással</span> is
+              játékba hozható
+            </li>
+            <li>
+              a kiállítás 2 perces, vagy végleges lehet, a 2 perces kiállítást követően akár a kiállított játékos, vagy
+              a csapat másik tagja is pályára léphet
+            </li>
+            <li>végleges kiállítás esetén a kiállított játékos helyére 5 perc elteltével új játékos léphet pályára</li>
+            <li>
+              <q>becsúszás</q> nem engedélyezett, ezt a játékvezető szabadrúgással bünteti
+            </li>
+            <li>
+              a csoportmérkőzéseket követően, az <q>egyenes</q> kieséses szakaszban döntetlen esetén 3-3 büntetőrúgás
+              dönti el a mérkőzést, majd amennyiben továbbra is döntetlen, 1-1 rúgó, felváltva következik, azzal, hogy a
+              csapatok minden tagjának (ideértve a kapust is) büntetőjét követően lőhet újra az, aki már korábban is
+              szerepelt.
+            </li>
+          </ul>
+          <h3 className={`-mb-14 font-bold italic underline`}>Csoportbeosztás</h3>
+          <DataList>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>KNYF</li>
+                  <li>Bács</li>
+                  <li>LegfÜ</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>Borsod</li>
+                  <li>Heves-Nógrád</li>
+                  <li>Békés</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>Pest</li>
+                  <li>Főváros</li>
+                  <li>Szabolcs</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+            <DataListEntry>
+              <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                <ol>
+                  <li>Csongrád</li>
+                  <li>Szolnok</li>
+                  <li>Hajdú-Bihar</li>
+                </ol>
+              </dd>
+            </DataListEntry>
+          </DataList>
+          <h3>Csoportmérkőzések [péntek]</h3>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1. pálya</th>
+                <th>2. pálya</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>15:00</td>
+                <td>A1-A2</td>
+                <td>C1-C2</td>
+              </tr>
+              <tr>
+                <td>15:30</td>
+                <td>B1-B2</td>
+                <td>D1-D2</td>
+              </tr>
+              <tr>
+                <td>16:00</td>
+                <td>A1-A3</td>
+                <td>C1-C3</td>
+              </tr>
+              <tr>
+                <td>16:30</td>
+                <td>B1-B3</td>
+                <td>D1-D3</td>
+              </tr>
+              <tr>
+                <td>17:00</td>
+                <td>A2-A3</td>
+                <td>C2-C3</td>
+              </tr>
+              <tr>
+                <td>17:30</td>
+                <td>B2-B3</td>
+                <td>D2-D3</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Play off kör [szombat]</h3>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1. pálya</th>
+                <th>2. pálya</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>14:30</td>
+                <td>A/1-B/2 (13. mérkőzés)</td>
+                <td>C/1-D/2 (14. m.)</td>
+              </tr>
+              <tr>
+                <td>15:00</td>
+                <td>B/1-A/2 (15. m.)</td>
+                <td>D/1-C/2 (16. m.)</td>
+              </tr>
+              <tr>
+                <td>15:30</td>
+                <td>A/3-B/3 (17. m.)</td>
+                <td>C/3-D/3 (18. m.)</td>
+              </tr>
+              <tr>
+                <td>16:00</td>
+                <td>13. m v-14. m. v. (19. m.)</td>
+                <td>15. m. v-16. m. v. (20. m.)</td>
+              </tr>
+              <tr>
+                <td>16:30</td>
+                <td>17. m. gy – 18. m. gy. (9. hely)</td>
+                <td>17. m. v – 18. m. v. (11. hely)</td>
+              </tr>
+              <tr>
+                <td>17:00</td>
+                <td>19. m. gy – 20. m. gy. (5. hely)</td>
+                <td>19. m. v – 20. m. v. (7. hely)</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Elődöntők</h3>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1. pálya</th>
+                <th>2. pálya</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>17:30</td>
+                <td>13. m. gy. – 14. m. gy (ed.1).</td>
+                <td>15. m. gy.-16. m. gy. (ed. 2.)</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Bronzmérkőzés és döntő [vasárnap], egyetemi pálya</h3>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10:00</td>
+                <td>ed. 1. v. – ed. 2. v. (bronzmérkőzés)</td>
+              </tr>
+              <tr>
+                <td>10:30</td>
+                <td>ed. 1. gy. – ed. 2. gy. (döntő)</td>
+              </tr>
+            </tbody>
+          </table>
+        </EntryContent>
+        {/*<Media*/}
+        {/*  src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3Hhnt80K7x39ku0hCXvmi4dqO1zWpJr7IjeKGyH'}*/}
+        {/*  alt={'Asztalitenisz'}*/}
+        {/*/>*/}
       </Entry>
       <Entry>
         <EntryContent>
