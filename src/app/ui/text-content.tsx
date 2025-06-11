@@ -41,9 +41,9 @@ export function Media({ src, alt, priority }: Readonly<{ src: string; alt: strin
 
 export function Entry({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 px-4 py-6 sm:gap-y-16 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 print:grid-cols-1 print:py-0 print:[page-break-after:always] [&>div:first-of-type]:even:lg:order-last">
+    <article className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 px-4 py-6 sm:gap-y-16 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 print:grid-cols-1 print:py-0 print:[page-break-after:always] [&>div:first-of-type]:even:lg:order-last">
       {children}
-    </div>
+    </article>
   );
 }
 
