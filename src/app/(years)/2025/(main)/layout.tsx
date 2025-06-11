@@ -7,18 +7,18 @@ const menus: Menu[] = [
     type: 'simple',
     node: { href: '/2025/sportagak', children: 'Sportágak' },
   },
-  {
-    type: 'simple',
-    node: { href: '/2025/helyszinek', children: 'Helyszínek' },
-  },
-  {
-    type: 'simple',
-    node: { href: '/2025/szallas', children: 'Szállás' },
-  },
-  {
-    type: 'simple',
-    node: { href: '/2025/programok', children: 'Programok' },
-  },
+  // {
+  //   type: 'simple',
+  //   node: { href: '/2025/helyszinek', children: 'Helyszínek' },
+  // },
+  // {
+  //   type: 'simple',
+  //   node: { href: '/2025/szallas', children: 'Szállás' },
+  // },
+  // {
+  //   type: 'simple',
+  //   node: { href: '/2025/programok', children: 'Programok' },
+  // },
   {
     type: 'simple',
     node: { href: '/2025/eredmenyek', children: 'Eredmények' },
