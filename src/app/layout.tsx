@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     description: APP_DESCRIPTION,
     images: [
       {
-        url: 'https://sport.martossy.hu/screenshots/landing-desktop-2025.webp',
+        url: '/screenshots/landing-desktop-2025.webp',
         height: 1884,
         width: 1042,
       },
       {
-        url: 'https://sport.martossy.hu/screenshots/landing-mobile-2025.webp',
+        url: '/screenshots/landing-mobile-2025.webp',
         height: 944,
         width: 1169,
       },
@@ -59,10 +59,7 @@ export const metadata: Metadata = {
       template: APP_TITLE_TEMPLATE,
     },
     description: APP_DESCRIPTION,
-    images: [
-      'https://sport.martossy.hu/screenshots/landing-desktop-2025.webp',
-      'https://sport.martossy.hu/screenshots/landing-mobile-2025.webp',
-    ],
+    images: ['/screenshots/landing-desktop-2025.webp', '/screenshots/landing-mobile-2025.webp'],
   },
   other: {
     'darkreader-lock': 'true',
