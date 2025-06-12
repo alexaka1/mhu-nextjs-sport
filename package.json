@@ -31,7 +31,7 @@
     "@libsql/client": "0.15.8",
     "@sentry/nextjs": "9.27.0",
     "@serwist/next": "9.0.14",
-    "@t3-oss/env-nextjs": "0.13.6",
+    "@t3-oss/env-nextjs": "0.13.7",
     "@tabler/icons-react": "3.34.0",
     "@tanstack/react-query": "5.80.6",
     "@tanstack/react-table": "8.21.3",
