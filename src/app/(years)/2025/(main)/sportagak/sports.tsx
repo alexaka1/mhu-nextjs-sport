@@ -229,8 +229,8 @@ export default function Sports() {
                   </table>
                 </EntryContent>
                 {/*<Media*/}
-                {/*  src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhV8k8UBIaqCemy7FiDRY8lQbSThu0twHgdZrJ'}*/}
-                {/*  alt={'Labdarúgás'}*/}
+                {/*  src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3Hh9qsLqmfI6QosfZhX37bT4H8GNrJnDtd5UmWl'}*/}
+                {/*  alt={'Asztalitenisz'}*/}
                 {/*  priority={true}*/}
                 {/*/>*/}
               </Entry>
@@ -1215,10 +1215,10 @@ export default function Sports() {
                     </tbody>
                   </table>
                 </EntryContent>
-                <Media
-                  src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhnPcT3Vx39ku0hCXvmi4dqO1zWpJr7IjeKGyH'}
-                  alt={'Kosárlabda'}
-                />
+                {/*<Media*/}
+                {/*  src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhnPcT3Vx39ku0hCXvmi4dqO1zWpJr7IjeKGyH'}*/}
+                {/*  alt={'Kosárlabda'}*/}
+                {/*/>*/}
               </Entry>
             </TabPanel>
             <TabPanel>
@@ -1530,10 +1530,10 @@ export default function Sports() {
                     </DataListEntry>
                   </DataList>
                 </EntryContent>
-                <Media
-                  src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'}
-                  alt={'Úszás'}
-                />
+                {/*<Media*/}
+                {/*  src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'}*/}
+                {/*  alt={'Úszás'}*/}
+                {/*/>*/}
               </Entry>
             </TabPanel>
           </TabPanels>
