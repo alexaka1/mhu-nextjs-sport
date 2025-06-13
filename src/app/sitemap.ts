@@ -11,32 +11,32 @@ const years: Array<{ year: number; pages: MetadataRoute.Sitemap }> = [
         changeFrequency: 'daily',
       },
       {
-        url: 'https://sport.martossy.hu/2024/koszonto',
+        url: 'https://sport.martossy.hu/2025/koszonto',
         lastModified: new Date(),
         changeFrequency: 'never',
       },
       {
-        url: 'https://sport.martossy.hu/2024/sportagak',
+        url: 'https://sport.martossy.hu/2025/sportagak',
         lastModified: new Date(),
         changeFrequency: 'never',
       },
       {
-        url: 'https://sport.martossy.hu/2024/helyszinek',
+        url: 'https://sport.martossy.hu/2025/helyszinek',
         lastModified: new Date(),
         changeFrequency: 'never',
       },
       {
-        url: 'https://sport.martossy.hu/2024/szallas',
+        url: 'https://sport.martossy.hu/2025/hasznos-informaciok',
         lastModified: new Date(),
         changeFrequency: 'never',
       },
+      // {
+      //   url: 'https://sport.martossy.hu/2025/programok',
+      //   lastModified: new Date(),
+      //   changeFrequency: 'never',
+      // },
       {
-        url: 'https://sport.martossy.hu/2024/programok',
-        lastModified: new Date(),
-        changeFrequency: 'never',
-      },
-      {
-        url: 'https://sport.martossy.hu/2024/eredmenyek',
+        url: 'https://sport.martossy.hu/2025/eredmenyek',
         lastModified: new Date(),
         changeFrequency: 'never',
       },
