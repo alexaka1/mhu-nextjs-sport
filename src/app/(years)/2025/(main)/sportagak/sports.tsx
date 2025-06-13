@@ -3,7 +3,6 @@
 import { DataList, DataListEntry, Entry, EntryContent, Media, Title } from '@/app/ui/text-content';
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import { tabs } from './menu';
 
 export default function Sports() {
@@ -11,31 +10,15 @@ export default function Sports() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const tabParam = searchParams.get('tab');
-  const initialTabIndex = tabParam ? parseInt(tabParam, 10) : 0;
+  // parse tab index from URL, default to 0, clamp to [0..tabs.length-1]
+  const raw = parseInt(searchParams.get('tab') ?? '0', 10);
+  const selectedIndex = Number.isNaN(raw) || raw < 0 || raw >= tabs.length ? 0 : raw;
 
-  const [selectedIndex, setSelectedIndex] = useState(
-    initialTabIndex >= 0 && initialTabIndex < tabs.length ? initialTabIndex : 0,
-  );
   const handleTabChange = (index: number) => {
-    setSelectedIndex(index);
-
-    // Create new search params
     const params = new URLSearchParams(searchParams.toString());
     params.set('tab', index.toString());
-
-    // Update URL without causing a page reload
     router.replace(`${pathname}?${params.toString()}`);
   };
-
-  useEffect(() => {
-    const tabParam = searchParams.get('tab');
-    const urlTabIndex = tabParam ? parseInt(tabParam, 10) : 0;
-
-    if (urlTabIndex >= 0 && urlTabIndex < tabs.length && urlTabIndex !== selectedIndex) {
-      setSelectedIndex(urlTabIndex);
-    }
-  }, [searchParams, selectedIndex]);
 
   return (
     <>
@@ -48,7 +31,7 @@ export default function Sports() {
           >
             {tabs.map((tab) => (
               <Tab
-                key={tab.title as string}
+                key={tab.title}
                 className="group me-2 inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent focus-visible:outline-1 focus-visible:outline-primary-800 data-[hover]:border-secondary-600 data-[selected]:border-primary data-[hover]:text-secondary-600 data-[selected]:text-primary dark:focus-visible:outline-primary-600 data-[selected]:dark:border-primary-400 dark:data-[hover]:text-gray-300 data-[selected]:dark:text-primary-400"
               >
                 {tab.icon}
