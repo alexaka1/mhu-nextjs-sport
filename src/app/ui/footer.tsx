@@ -45,7 +45,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="https://www.youtube.com/@MagyarorszagUgyeszsege"
+                  href="https://youtube.com/channel/UCouE-RnAm6zOsykseIe1wUA"
                   rel="noreferrer"
                   target="_blank"
                   className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
@@ -57,7 +57,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="https://twitter.com/ProsecutionHu"
+                  href="https://x.com/ProsecutionHu"
                   rel="noreferrer"
                   target="_blank"
                   className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
