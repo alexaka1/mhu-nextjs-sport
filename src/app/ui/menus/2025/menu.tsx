@@ -76,7 +76,7 @@ export const tabs = [
     ),
   },
   {
-    title: 'Női tollas',
+    title: 'Tollas',
     icon: (
       <IconFeather
         className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
@@ -86,25 +86,7 @@ export const tabs = [
     ),
   },
   {
-    title: 'Férfi tollas',
-    icon: (
-      <IconFeather
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
-        aria-hidden="true"
-      />
-    ),
-  },
-  {
-    title: 'Női úszás',
-    icon: (
-      <IconSwimming
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
-        aria-hidden="true"
-      />
-    ),
-  },
-  {
-    title: 'Férfi úszás',
+    title: 'Úszás',
     icon: (
       <IconSwimming
         className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
@@ -122,16 +104,7 @@ export const tabs = [
     ),
   },
   {
-    title: 'Női csocsós',
-    icon: (
-      <IconSoccerField
-        className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"
-        aria-hidden="true"
-      />
-    ),
-  },
-  {
-    title: 'Férfi csocsós',
+    title: 'Csocsó',
     icon: (
       <IconSoccerField
         className="me-2 size-4 text-gray-400 group-hover:text-secondary-600 group-data-active:text-primary dark:text-gray-500 dark:group-hover:text-gray-300 group-data-active:dark:text-primary-400"

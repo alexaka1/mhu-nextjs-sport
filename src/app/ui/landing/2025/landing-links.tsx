@@ -35,6 +35,15 @@ export default function LandingLinks() {
         </h2>
         <p className={`m-0 max-w-[30ch] text-sm text-bg-contrast/75`}></p>
       </LandingLink>
+      <LandingLink href={`/${year}/hasznos-informaciok`}>
+        <h2 className={`mb-3 text-nowrap text-2xl font-semibold`}>
+          Hasznos információk{' '}
+          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+            -&gt;
+          </span>
+        </h2>
+        <p className={`m-0 max-w-[30ch] text-sm text-bg-contrast/75`}></p>
+      </LandingLink>
       {/*<LandingLink href={`/${year}/szallas`}>*/}
       {/*  <h2 className={`mb-3 text-nowrap text-2xl font-semibold`}>*/}
       {/*    Szállás{' '}*/}

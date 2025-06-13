@@ -11,6 +11,10 @@ const menus: Menu[] = [
     type: 'simple',
     node: { href: '/2025/helyszinek', children: 'Helyszínek' },
   },
+  {
+    type: 'simple',
+    node: { href: '/2025/hasznos-informaciok', children: 'Hasznos információk' },
+  },
   // {
   //   type: 'simple',
   //   node: { href: '/2025/szallas', children: 'Szállás' },
