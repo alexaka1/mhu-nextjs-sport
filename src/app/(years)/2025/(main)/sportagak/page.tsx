@@ -837,7 +837,7 @@ export default function Page() {
       </Entry>
       <Entry>
         <EntryContent>
-          <Title id={`Sikfutas`}>Női és féfri síkfutás</Title>
+          <Title id={`Sikfutas`}>Női és férfi síkfutás</Title>
           <DataList>
             <DataListEntry>
               <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
