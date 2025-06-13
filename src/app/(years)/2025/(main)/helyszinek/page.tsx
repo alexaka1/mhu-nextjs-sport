@@ -2,9 +2,6 @@ import { type Metadata } from 'next';
 import { Entry, EntryContent, Media, Title } from '@/app/ui/text-content';
 import Image from 'next/image';
 import ZoomWrapper from '@/app/ui/zoom-wrapper';
-import { env } from '@/app/lib/env';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMountainSun } from '@fortawesome/free-solid-svg-icons/faMountainSun';
 import GoogleMapsEmbedded from '@/app/ui/google-maps-embed';
 
 export const metadata: Metadata = {

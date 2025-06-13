@@ -2,7 +2,6 @@ import { type Metadata } from 'next';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMountainSun } from '@fortawesome/free-solid-svg-icons/faMountainSun';
-import { env } from '@/app/lib/env';
 import GoogleMapsEmbedded from '@/app/ui/google-maps-embed';
 
 export const metadata: Metadata = {
