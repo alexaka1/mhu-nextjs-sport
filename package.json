@@ -9,6 +9,7 @@
     "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
     "dev:sw": "next dev --experimental-https",
+    "scan": "next dev & npx react-scan@latest localhost:3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
