@@ -24,7 +24,12 @@ export function Title({ children, id }: Readonly<{ children: ReactNode; id: stri
   );
 }
 
-export function Media({ src, alt, priority }: Readonly<{ src: string; alt: string; priority?: boolean }>) {
+export function Media({
+  src,
+  alt,
+  priority,
+  alwaysShow,
+}: Readonly<{ src: string; alt: string; priority?: boolean; alwaysShow?: true }>) {
   return (
     <div className="grid gap-4 sm:gap-6 lg:gap-8">
       <Image
@@ -33,7 +38,8 @@ export function Media({ src, alt, priority }: Readonly<{ src: string; alt: strin
         width={400}
         height={400}
         priority={priority}
-        className={`hidden size-auto rounded-lg object-scale-down lg:block print:hidden`}
+        data-show={alwaysShow}
+        className={`hidden size-auto rounded-lg object-scale-down data-[show=true]:block lg:block print:hidden data-[show=true]:print:hidden`}
       />
     </div>
   );
