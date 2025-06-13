@@ -10,13 +10,9 @@ import { uploadResult } from '@/app/lib/private-actions';
 
 const f = createUploadthing();
 const fileSize = 8_000_000;
-const allowed = 'Csak xlsx, pdf és kép fájlok tölthetőek fel';
+const allowed = 'Csak pdf és kép fájlok tölthetőek fel';
 
 const resultUploader = {
-  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
-    maxFileSize: '8MB',
-    maxFileCount: 2,
-  },
   'application/pdf': {
     maxFileSize: '8MB',
     maxFileCount: 2,

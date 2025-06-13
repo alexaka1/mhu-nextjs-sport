@@ -47,6 +47,13 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: 'portrait-primary',
     screenshots: [
       {
+        src: '/screenshots/landing-desktop-2025.webp',
+        sizes: '1920x1080',
+        type: 'image/webp',
+        form_factor: 'wide',
+        label: 'Főoldal 2025',
+      },
+      {
         src: '/screenshots/landing-desktop.webp',
         sizes: '1920x1080',
         type: 'image/webp',
@@ -59,6 +66,13 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/webp',
         form_factor: 'wide',
         label: 'Köszöntő',
+      },
+      {
+        src: '/screenshots/landing-mobile-2025.webp',
+        sizes: '721x1601',
+        type: 'image/webp',
+        form_factor: 'narrow',
+        label: 'Főoldal 2025',
       },
       {
         src: '/screenshots/landing-mobile.webp',

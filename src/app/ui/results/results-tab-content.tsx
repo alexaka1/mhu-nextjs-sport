@@ -1,7 +1,6 @@
 'use client';
 import type { ResultItem } from '@/app/lib/types';
 import ResultsTable from '@/app/ui/results/results-table';
-import XlsxTable from '@/app/ui/results/xlsx-table';
 import ZoomWrapper from '@/app/ui/zoom-wrapper';
 import { Fragment } from 'react';
 
@@ -21,15 +20,6 @@ export default function ResultsContent({
       );
     }
     switch (result.type) {
-      case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-        return (
-          <Fragment key={result.key}>
-            <Heading />
-            <ResultsTable file={result.url} canEdit={canEdit} title={result.result} fileKey={result.key} year={year}>
-              <XlsxTable fileUrl={result.url} id={result.key} />
-            </ResultsTable>
-          </Fragment>
-        );
       case 'application/pdf': {
         const pdfIframe = new URL(`https://docs.google.com/viewerng/viewer`);
         pdfIframe.searchParams.set('url', result.url);

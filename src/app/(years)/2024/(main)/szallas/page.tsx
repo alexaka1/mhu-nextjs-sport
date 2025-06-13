@@ -2,7 +2,7 @@ import { type Metadata } from 'next';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMountainSun } from '@fortawesome/free-solid-svg-icons/faMountainSun';
-import { env } from '@/app/lib/env';
+import GoogleMapsEmbedded from '@/app/ui/google-maps-embed';
 
 export const metadata: Metadata = {
   title: 'Szállás',
@@ -16,8 +16,6 @@ export const metadata: Metadata = {
 //   { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
 //   { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
 // ];
-
-const mapsApiKey = env.NEXT_PUBLIC_MAPS_API_KEY ?? 'null';
 
 export default function Lodging() {
   return (
@@ -39,13 +37,7 @@ export default function Lodging() {
             stadionnak és a lőtérnek is.
           </p>
           <div className={``}>
-            <iframe
-              title={`Sandra Hotel`}
-              className={`min-h-96 w-full border-0`}
-              loading="lazy"
-              allow={`fullscreen`}
-              src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSeMFrnefOEcRfHvxkjnMl70&key=${mapsApiKey}`}
-            ></iframe>
+            <GoogleMapsEmbedded title={`Sandra Hotel`} placeId={`ChIJSeMFrnefOEcRfHvxkjnMl70`} />
           </div>
           {/*<dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">*/}
           {/*  {features.map((feature) => (*/}
@@ -81,13 +73,7 @@ export default function Lodging() {
             ezért az itt élők méltán nevezik a város &quot;gyöngyszemének, ékességének&quot;.
           </p>
           <div>
-            <iframe
-              title={`Hotel Bessenyei`}
-              className={`min-h-96 w-full border-0`}
-              loading="lazy"
-              allow={`fullscreen`}
-              src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSeMFrnefOEcRTc8ve48eU88&key=${mapsApiKey}`}
-            ></iframe>
+            <GoogleMapsEmbedded title={`Hotel Bessenyei`} placeId={`ChIJSeMFrnefOEcRTc8ve48eU88`} />
           </div>
           {/*<dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">*/}
           {/*  {features.map((feature) => (*/}

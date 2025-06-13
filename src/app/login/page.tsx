@@ -29,7 +29,7 @@ const providers: LoginButton[] = [
         SimpleLogin belépés
       </>
     ),
-    recommended: true,
+    recommended: undefined,
   } as LoginButton,
   {
     id: 'github',
