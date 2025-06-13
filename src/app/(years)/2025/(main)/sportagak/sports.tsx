@@ -1,6 +1,6 @@
 'use client';
 
-import { DataList, DataListEntry, Entry, EntryContent, Media, Title } from '@/app/ui/text-content';
+import { DataList, DataListEntry, Entry, EntryContent, Title } from '@/app/ui/text-content';
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { tabs } from './menu';
