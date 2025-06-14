@@ -52,7 +52,7 @@
     "react-dom": "19.1.0",
     "react-zoom-pan-pinch": "3.7.0",
     "uploadthing": "7.7.2",
-    "zod": "3.25.57"
+    "zod": "3.25.58"
   },
   "devDependencies": {
     "@alexaka1/tailwindcss-oklch": "0.0.4",
