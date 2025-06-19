@@ -35,7 +35,7 @@ export default function Page() {
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
           </dl>
-          <div className={``}>
+          <div className={`grid grid-cols-1 gap-1`}>
             <GoogleMapsEmbedded title={`SZEGYA Kollégium`} placeId={`ChIJl9V4v6ArREcRmjTFbLQMVT0`} />
             <GoogleMapsEmbedded title={`Alma Mater Hostel`} placeId={`ChIJNeTWnQorREcRbTQR_jqibAg`} />
           </div>
@@ -142,6 +142,16 @@ export default function Page() {
             alwaysShow={true}
             src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhUSHz9jvLyBPcCq6vgGKUhVzHIwY3efJRk9da'}
             alt={'Csaba Park étterem'}
+          />
+          <Media
+            alwaysShow={true}
+            src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhqQBSq3ZRO1lM8Px3cBNfAXjphoQirKYHFIaS'}
+            alt={'Palinkahaz'}
+          />
+          <Media
+            alwaysShow={true}
+            src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhFWAUARDKkwsWnpSRf2eQhIcLA9H34zPYq6lV'}
+            alt={'Palinkahaz'}
           />
         </div>
       </Entry>

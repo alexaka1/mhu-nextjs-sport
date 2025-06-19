@@ -22,6 +22,7 @@ export default function Sports() {
 
   return (
     <>
+      <h1 className="sr-only">Sportágak</h1>
       <div className={`w-full`}>
         <TabGroup selectedIndex={selectedIndex} onChange={handleTabChange}>
           <TabList
@@ -56,7 +57,7 @@ export default function Sports() {
                       <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                         <ul>
                           <li>
-                            <time dateTime={`2025-06-27T15:00`}>2025. június 27. péntek 15:00-18:00</time>
+                            <time dateTime={`2025-06-27T16:00`}>2025. június 27. péntek 16:00-19:00</time>
                           </li>
                           <li>
                             <time dateTime={`2025-06-28T11:00`}>
@@ -154,32 +155,32 @@ export default function Sports() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>15:00</td>
+                        <td>16:00</td>
                         <td>A1-A2</td>
                         <td>C1-C2</td>
                       </tr>
                       <tr>
-                        <td>15:30</td>
+                        <td>16:30</td>
                         <td>B1-B2</td>
                         <td>D1-D2</td>
                       </tr>
                       <tr>
-                        <td>16:00</td>
+                        <td>17:00</td>
                         <td>A1-A3</td>
                         <td>C1-C3</td>
                       </tr>
                       <tr>
-                        <td>16:30</td>
+                        <td>17:30</td>
                         <td>B1-B3</td>
                         <td>D1-D3</td>
                       </tr>
                       <tr>
-                        <td>17:00</td>
+                        <td>18:00</td>
                         <td>A2-A3</td>
                         <td>C2-C3</td>
                       </tr>
                       <tr>
-                        <td>17:30</td>
+                        <td>18:30</td>
                         <td>B2-B3</td>
                         <td>D2-D3</td>
                       </tr>
@@ -409,7 +410,7 @@ export default function Sports() {
                     <DataListEntry>
                       <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
                       <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                        <time dateTime={`2025-06-28T21:00`}>2025. június 27. péntek 21:00 órától</time>
+                        <time dateTime={`2025-06-27T21:00`}>2025. június 27. péntek 21:00 órától</time>
                       </dd>
                     </DataListEntry>
                     {/*<DataListEntry >*/}
@@ -571,7 +572,7 @@ export default function Sports() {
                       <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                         <ul>
                           <li>
-                            <time dateTime={`2025-06-27T15:00`}>2025. június 27, péntek 15:00-18:00 óra</time>
+                            <time dateTime={`2025-06-27T16:00`}>2025. június 27, péntek 16:00-19:00 óra</time>
                           </li>
                           <li>
                             <time dateTime={`2025-06-28T14:00`}>2025. június 28, szombat 14.00-18:00 óra</time>
@@ -708,32 +709,32 @@ export default function Sports() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>15:00</td>
+                        <td>16:00</td>
                         <td>A1-A2</td>
                         <td>C1-C2</td>
                       </tr>
                       <tr>
-                        <td>15:30</td>
+                        <td>16:30</td>
                         <td>B1-B2</td>
                         <td>D1-D2</td>
                       </tr>
                       <tr>
-                        <td>16:00</td>
+                        <td>17:00</td>
                         <td>A1-A3</td>
                         <td>C1-C3</td>
                       </tr>
                       <tr>
-                        <td>16:30</td>
+                        <td>17:30</td>
                         <td>B1-B3</td>
                         <td>D1-D3</td>
                       </tr>
                       <tr>
-                        <td>17:00</td>
+                        <td>18:00</td>
                         <td>A2-A3</td>
                         <td>C2-C3</td>
                       </tr>
                       <tr>
-                        <td>17:30</td>
+                        <td>18:30</td>
                         <td>B2-B3</td>
                         <td>D2-D3</td>
                       </tr>
@@ -900,8 +901,8 @@ export default function Sports() {
                     <DataListEntry>
                       <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
                       <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                        <time dateTime={`2025-06-27T14:00`}>
-                          2025. június 27. péntek 14:00-15:00 óra [női, majd férfi futamok]
+                        <time dateTime={`2025-06-27T15:00`}>
+                          2025. június 27. péntek 15:00-16:00 óra [női, majd férfi futamok]
                         </time>
                       </dd>
                     </DataListEntry>
@@ -979,8 +980,8 @@ export default function Sports() {
                     <DataListEntry>
                       <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
                       <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                        <time dateTime={`2025-06-27T14:00`}>
-                          2025. június 27. péntek 14.00-15:00 óra [női, majd férfi verseny]
+                        <time dateTime={`2025-06-27T15:15`}>
+                          2025. június 27. péntek 15.15-16:00 óra [női, majd férfi verseny]
                         </time>
                       </dd>
                     </DataListEntry>
@@ -1041,7 +1042,7 @@ export default function Sports() {
                       <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                         <ul>
                           <li>
-                            <time dateTime={`2025-06-27T15:00`}>2025. június 27. péntek 15:00-18:00</time>
+                            <time dateTime={`2025-06-27T16:00`}>2025. június 27. péntek 16:00-19:00</time>
                           </li>
                           <li>
                             <time dateTime={`2025-06-28T11:00`}>
@@ -1141,32 +1142,32 @@ export default function Sports() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>15:00</td>
+                        <td>16:00</td>
                         <td>A1-A2</td>
                         <td>C1-C2</td>
                       </tr>
                       <tr>
-                        <td>15:30</td>
+                        <td>15630</td>
                         <td>B1-B2</td>
                         <td>D1-D2</td>
                       </tr>
                       <tr>
-                        <td>16:00</td>
+                        <td>17:00</td>
                         <td>A1-A3</td>
                         <td>C1-C3</td>
                       </tr>
                       <tr>
-                        <td>16:30</td>
+                        <td>17:30</td>
                         <td>B1-B3</td>
                         <td>D1-D3</td>
                       </tr>
                       <tr>
-                        <td>17:00</td>
+                        <td>18:00</td>
                         <td>A2-A3</td>
                         <td>C2-C3</td>
                       </tr>
                       <tr>
-                        <td>17:30</td>
+                        <td>18:30</td>
                         <td>B2-B3</td>
                         <td>D2-D3</td>
                       </tr>
@@ -1237,7 +1238,7 @@ export default function Sports() {
                       <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
                         <ul>
                           <li>
-                            <time dateTime={`2025-06-27T15:00`}>2025. június 27. péntek 15:00-18:00</time>
+                            <time dateTime={`2025-06-27T16:00`}>2025. június 27. péntek 16:00-19:00</time>
                           </li>
                           <li>
                             <time dateTime={`2025-06-28T11:00`}>
@@ -1341,32 +1342,32 @@ export default function Sports() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>15:00</td>
+                        <td>16:00</td>
                         <td>A1-A2</td>
                         <td>C1-C2</td>
                       </tr>
                       <tr>
-                        <td>15:30</td>
+                        <td>16:30</td>
                         <td>B1-B2</td>
                         <td>D1-D2</td>
                       </tr>
                       <tr>
-                        <td>16:00</td>
+                        <td>17:00</td>
                         <td>A1-A3</td>
                         <td>C1-C3</td>
                       </tr>
                       <tr>
-                        <td>16:30</td>
+                        <td>17:30</td>
                         <td>B1-B3</td>
                         <td>D1-D3</td>
                       </tr>
                       <tr>
-                        <td>17:00</td>
+                        <td>18:00</td>
                         <td>A2-A3</td>
                         <td>C2-C3</td>
                       </tr>
                       <tr>
-                        <td>17:30</td>
+                        <td>18:30</td>
                         <td>B2-B3</td>
                         <td>D2-D3</td>
                       </tr>
@@ -1536,9 +1537,38 @@ export default function Sports() {
                 {/*/>*/}
               </Entry>
             </TabPanel>
+            <TabPanel>
+              <Entry>
+                <EntryContent>
+                  <Title id={`Fougyeszi`}>Főügyészi megmérettetés</Title>
+                  <DataList>
+                    <DataListEntry>
+                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                        Csaba Park Rendezvényhelyszín
+                      </dd>
+                    </DataListEntry>
+                    <DataListEntry>
+                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                        <time dateTime={`2025-06-27T20:30`}>2025. június 27., péntek 20:30 órától</time>
+                      </dd>
+                    </DataListEntry>
+                  </DataList>
+                  <p>
+                    A főügyészek / csapatvezetők az előre megalkotott, és 2 profi táncos által a helyszínen bemutatott,
+                    majd betanított western koreográfiát együttesen adják elő.
+                  </p>
+                  <p>
+                    Pontozás: a bemutatón részt vevő csapatvezetők egységesen 3 pontban részesülnek, a távol maradó
+                    csapatvezetők pontot nem kapnak. A csapatvezetők által megszerzett pontok a csapatok összesített
+                    eredményébe beszámítanak.
+                  </p>
+                </EntryContent>
+              </Entry>
+            </TabPanel>
           </TabPanels>
         </TabGroup>
-        <h1 className="sr-only">Sportágak</h1>
         {/*<EntryContent>*/}
         {/*  <p className={`p-1 pt-4`}>*/}
         {/*    A sporttalálkozó rendezésével és szervezésével kapcsolatos bármilyen kérdés vagy probléma esetén forduljatok*/}

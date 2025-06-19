@@ -10,6 +10,8 @@ import {
   IconSwimming,
   IconTargetArrow,
 } from '@tabler/icons-react';
+import { faSection } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const tabs = [
   {
@@ -103,6 +105,16 @@ export const tabs = [
       <IconSwimming
         className="me-2 size-4 text-gray-400 group-data-[hover]:text-secondary-600 group-data-[selected]:text-primary dark:text-gray-500 dark:group-data-[hover]:text-gray-300 group-data-[selected]:dark:text-primary-400"
         aria-hidden="true"
+      />
+    ),
+  },
+  {
+    title: 'Főügyészi megmérettetés',
+    icon: (
+      <FontAwesomeIcon
+        className="me-2 size-4 text-gray-400 group-data-[hover]:text-secondary-600 group-data-[selected]:text-primary dark:text-gray-500 dark:group-data-[hover]:text-gray-300 group-data-[selected]:dark:text-primary-400"
+        aria-hidden="true"
+        icon={faSection}
       />
     ),
   },
