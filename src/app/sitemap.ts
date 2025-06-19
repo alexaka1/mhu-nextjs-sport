@@ -38,7 +38,7 @@ const years: Array<{ year: number; pages: MetadataRoute.Sitemap }> = [
       {
         url: 'https://sport.martossy.hu/2025/eredmenyek',
         lastModified: new Date(),
-        changeFrequency: 'never',
+        changeFrequency: 'hourly',
       },
     ],
   },
