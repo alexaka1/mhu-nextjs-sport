@@ -130,11 +130,6 @@ export default function Page() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4 sm:gap-6 lg:gap-8">
           <Media
             alwaysShow={true}
-            src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhqQB8gqRO1lM8Px3cBNfAXjphoQirKYHFIaSs'}
-            alt={'Csaba Park étterem'}
-          />
-          <Media
-            alwaysShow={true}
             src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3Hhx9Wb8nH9A3Hh72PtKgXWYs1OqfriZBcpRzva'}
             alt={'Csaba Park étterem'}
           />

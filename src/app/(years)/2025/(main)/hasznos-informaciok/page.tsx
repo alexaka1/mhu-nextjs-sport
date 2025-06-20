@@ -65,69 +65,65 @@ export default function Page() {
             előre le kell adni!
           </p>
           <h3>Helyszínek térképen</h3>
+          <ZoomWrapper>
+            <Image
+              id={`map`}
+              alt={`Térkép`}
+              src={`https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhUPlXIKvLyBPcCq6vgGKUhVzHIwY3efJRk9da`}
+              width={600}
+              height={1000}
+              quality={100}
+              priority={true}
+              unoptimized
+              className={`size-auto`}
+              aria-labelledby={`map-list`}
+            />
+          </ZoomWrapper>
+          <ol id={`map-list`} className={`list-inside list-decimal`}>
+            <li>
+              SZEGYA Kollégium és Alma Mater Hostel
+              <ul>
+                <li>szállások, VIP terem, versenyközpont</li>
+              </ul>
+            </li>
+            <li>
+              Egyetemi sportcsarnok és műfüves pálya
+              <ul>
+                <li>megnyitó, kosárlabda, tollaslabda, asztalitenisz, íjászat, labdarúgás (vasárnap), záróünnepség</li>
+              </ul>
+            </li>
+            <li>
+              Csaba Park
+              <ul>
+                <li>étkezések, darts, csocsó, főügyészi megmérettetés, esti rendezvények</li>
+              </ul>
+            </li>
+            <li>
+              Kórház utcai <q>Fű2</q> műfüves pálya
+              <ul>
+                <li>labdarúgás (péntek, szombat)</li>
+              </ul>
+            </li>
+            <li>
+              Tünde utcai atlétikai pálya
+              <ul>
+                <li>síkfutás, súlylökés</li>
+              </ul>
+            </li>
+            <li>
+              Árpád Fürdő
+              <ul>
+                <li>úszás</li>
+              </ul>
+            </li>
+          </ol>
           <p>
-            <ZoomWrapper>
-              <Image
-                id={`map`}
-                alt={`Térkép`}
-                src={`https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhUPlXIKvLyBPcCq6vgGKUhVzHIwY3efJRk9da`}
-                width={600}
-                height={1000}
-                quality={100}
-                priority={true}
-                unoptimized
-                className={`size-auto`}
-                aria-labelledby={`map-list`}
-              />
-            </ZoomWrapper>
-            <ol id={`map-list`} className={`list-inside list-decimal`}>
-              <li>
-                SZEGYA Kollégium és Alma Mater Hostel
-                <ul>
-                  <li>szállások, VIP terem, versenyközpont</li>
-                </ul>
-              </li>
-              <li>
-                Egyetemi sportcsarnok és műfüves pálya
-                <ul>
-                  <li>
-                    megnyitó, kosárlabda, tollaslabda, asztalitenisz, íjászat, labdarúgás (vasárnap), záróünnepség
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Csaba Park
-                <ul>
-                  <li>étkezések, darts, csocsó, főügyészi megmérettetés, esti rendezvények</li>
-                </ul>
-              </li>
-              <li>
-                Kórház utcai <q>Fű2</q> műfüves pálya
-                <ul>
-                  <li>labdarúgás (péntek, szombat)</li>
-                </ul>
-              </li>
-              <li>
-                Tünde utcai atlétikai pálya
-                <ul>
-                  <li>síkfutás, súlylökés</li>
-                </ul>
-              </li>
-              <li>
-                Árpád Fürdő
-                <ul>
-                  <li>úszás</li>
-                </ul>
-              </li>
-            </ol>
-            <p>
-              A piros szaggatott vonal{' '}
-              <span className={`tracking-[0.5em]`} aria-hidden={true}>
-                (<span className={`font-bold text-red-700 dark:text-red-400`}>---</span>)
-              </span>
-              jelzi a sportpályák (<span className={`font-bold text-red-700 dark:text-red-400`}>4, 5</span>) leggyorsabb
-              gyalogos megközelítését a Körgáton
-            </p>
+            A piros szaggatott vonal{' '}
+            <span className={`tracking-[0.5em]`} aria-hidden={true}>
+              (<span className={`font-bold text-red-700 dark:text-red-400`}>---</span>)
+            </span>
+            jelzi a sportpályák (<span className={`font-bold text-red-700 dark:text-red-400`}>4, 5</span>) leggyorsabb
+            gyalogos megközelítését a Körgáton
           </p>
           <Title id={`Asporttalálkozóidőbeosztása`}>
             <span data-counter>A sporttalálkozó időbeosztása</span>
@@ -376,7 +372,8 @@ export default function Page() {
             </thead>
             <tbody>
               <tr>
-                <td>Reggeli</td> <td>zsemle, szalámi, felvágott, mini vaj, paradicsom, paprika, tea</td>
+                <td>Reggeli</td>
+                <td>zsemle, szalámi, felvágott, mini vaj, paradicsom, paprika, tea</td>
               </tr>
               <tr>
                 <td>Ebéd</td>
