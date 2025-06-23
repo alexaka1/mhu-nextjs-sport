@@ -66,7 +66,7 @@ export default function ResultsContent({
               <div className={`sm:mx-auto`}>
                 <ZoomWrapper>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt={result.url} src={result.url} className={`size-auto`} />
+                  <img id={result.key} alt={result.url} src={result.url} className={`size-auto`} />
                 </ZoomWrapper>
               </div>
             </ResultsTable>
