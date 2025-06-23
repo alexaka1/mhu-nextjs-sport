@@ -9,4 +9,6 @@ publicHoistPattern:
   - '@uploadthing/*'
   - '@t3-oss/*'
   - '@sentry/core'
+  - 'import-in-the-middle'
+  - 'require-in-the-middle'
 savePrefix: ''

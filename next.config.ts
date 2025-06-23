@@ -145,6 +145,7 @@ const withAxiomConfig = withAxiom(nextConfig);
 const withSerwist = withSerwistInit({
   swSrc: 'src/app/lib/sw.ts',
   swDest: 'public/sw.js',
+  disable: process.env.NODE_ENV !== 'production',
 });
 
 const serwistConfig = withSerwist(withAxiomConfig);
