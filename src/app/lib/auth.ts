@@ -43,17 +43,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       switch (provider) {
         case 'github': {
           const castProfile = profile as unknown as GitHubProfile;
-          avatar = user.image !== castProfile.avatar_url ? castProfile.avatar_url : null;
+          avatar = castProfile.avatar_url;
           break;
         }
         case 'google': {
           const castProfile = profile as GoogleProfile;
-          avatar = user.image !== castProfile.picture ? castProfile.picture : null;
+          avatar = castProfile.picture;
           break;
         }
         case 'simplelogin': {
           const castProfile = profile as unknown as SimpleLoginProfile;
-          avatar = (user.image !== castProfile.avatar_url ? castProfile.avatar_url : null) ?? null;
+          avatar = castProfile.avatar_url ?? null;
           break;
         }
       }
