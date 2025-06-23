@@ -189,43 +189,9 @@ export default function Page() {
               <dt className="font-medium text-bg-contrast">súlylökés</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
-            <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">csocsó</dt>
-              {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
-            </div>
-            <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">főügyészi megmérettetés</dt>
-              {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
-            </div>
-            <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">esti rendezvények</dt>
-              {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
-            </div>
           </dl>
           <GoogleMapsEmbedded title={`Tünde utcai atlétikai pálya`} placeId={`ChIJYfVJA3orREcRlRI1fbm5nm0`} />
         </EntryContent>
-        {/*<div className="grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4 sm:gap-6 lg:gap-8">*/}
-        {/*  <Media*/}
-        {/*    alwaysShow={true}*/}
-        {/*    src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'}*/}
-        {/*    alt={'Úszás'}*/}
-        {/*  />*/}
-        {/*  <Media*/}
-        {/*    alwaysShow={true}*/}
-        {/*    src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'}*/}
-        {/*    alt={'Úszás'}*/}
-        {/*  />*/}
-        {/*  <Media*/}
-        {/*    alwaysShow={true}*/}
-        {/*    src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'}*/}
-        {/*    alt={'Úszás'}*/}
-        {/*  />*/}
-        {/*  <Media*/}
-        {/*    alwaysShow={true}*/}
-        {/*    src={'https://oeun8dfdch.ufs.sh/f/x6mUVjH9A3HhSpyW3BG09GWq6DTeZPYVX2ymvS5pouUljONQ'}*/}
-        {/*    alt={'Úszás'}*/}
-        {/*  />*/}
-        {/*</div>*/}
       </Entry>
       <Entry>
         <EntryContent>
@@ -270,8 +236,47 @@ export default function Page() {
               priority={true}
               unoptimized
               className={`size-auto`}
+              aria-describedby={`map-list`}
             />
           </ZoomWrapper>
+          <ol id={`map-list`} className={`list-inside list-decimal`}>
+            <li>
+              SZEGYA Kollégium és Alma Mater Hostel
+              <ul>
+                <li>szállások, VIP terem, versenyközpont</li>
+              </ul>
+            </li>
+            <li>
+              Egyetemi sportcsarnok és műfüves pálya
+              <ul>
+                <li>megnyitó, kosárlabda, tollaslabda, asztalitenisz, íjászat, labdarúgás (vasárnap), záróünnepség</li>
+              </ul>
+            </li>
+            <li>
+              Csaba Park
+              <ul>
+                <li>étkezések, darts, csocsó, főügyészi megmérettetés, esti rendezvények</li>
+              </ul>
+            </li>
+            <li>
+              Kórház utcai <q>Fű2</q> műfüves pálya
+              <ul>
+                <li>labdarúgás (péntek, szombat)</li>
+              </ul>
+            </li>
+            <li>
+              Tünde utcai atlétikai pálya
+              <ul>
+                <li>síkfutás, súlylökés</li>
+              </ul>
+            </li>
+            <li>
+              Árpád Fürdő
+              <ul>
+                <li>úszás</li>
+              </ul>
+            </li>
+          </ol>
           <p>
             A piros szaggatott vonal{' '}
             <span className={`tracking-[0.5em]`} aria-hidden={true}>
