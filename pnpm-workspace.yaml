@@ -1,14 +1,18 @@
 onlyBuiltDependencies:
   - '@sentry/cli'
   - '@vercel/speed-insights'
+  - esbuild
   - msgpackr-extract
+
 packageManagerStrictVersion: true
+
 publicHoistPattern:
   - '*eslint*'
   - '*@nextui-org/*'
   - '@uploadthing/*'
   - '@t3-oss/*'
   - '@sentry/core'
-  - 'import-in-the-middle'
-  - 'require-in-the-middle'
+  - import-in-the-middle
+  - require-in-the-middle
+
 savePrefix: ''
