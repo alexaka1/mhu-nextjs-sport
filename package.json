@@ -32,7 +32,7 @@
     "@fortawesome/react-fontawesome": "0.2.2",
     "@headlessui/react": "2.2.4",
     "@headlessui/tailwindcss": "0.2.2",
-    "@libsql/client": "0.15.9",
+    "@libsql/client": "0.15.10",
     "@sentry/nextjs": "9.39.0",
     "@serwist/next": "9.0.15",
     "@t3-oss/env-nextjs": "0.13.8",
