@@ -1,19 +1,18 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
-    'config:best-practices',
-    ':pinDependencies',
-    'security:openssf-scorecard',
-    ':automergeRequireAllStatusChecks',
-    ':rebaseStalePrs',
-    'npm:unpublishSafe',
+    "config:best-practices",
+    ":pinDependencies",
+    "security:openssf-scorecard",
+    ":automergeRequireAllStatusChecks",
+    ":rebaseStalePrs",
+    "npm:unpublishSafe",
   ],
   packageRules: [
     {
-      description: 'Group serwist packages',
-      groupName: 'Serwist monorepo',
-      matchPackageNames: ['serwist'],
-      matchPackagePatterns: ['^@serwist/'],
+      description: "Group serwist packages",
+      groupName: "Serwist monorepo",
+      matchPackageNames: ["serwist", "/^@serwist//"],
     },
   ],
 }
