@@ -11,7 +11,7 @@
   packageRules: [
     {
       description: 'Group serwist packages',
-      groupName: 'serwist packages',
+      groupName: 'Serwist monorepo',
       matchPackageNames: ['serwist'],
       matchPackagePatterns: ['^@serwist/'],
     },
