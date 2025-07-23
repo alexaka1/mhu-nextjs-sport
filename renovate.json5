@@ -8,4 +8,12 @@
     ':rebaseStalePrs',
     'npm:unpublishSafe',
   ],
+  packageRules: [
+    {
+      description: 'Group serwist packages',
+      groupName: 'serwist packages',
+      matchPackageNames: ['serwist'],
+      matchPackagePatterns: ['^@serwist/'],
+    },
+  ],
 }
