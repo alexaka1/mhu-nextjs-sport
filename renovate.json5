@@ -14,5 +14,15 @@
       groupName: "Serwist monorepo",
       matchPackageNames: ["serwist", "/^@serwist//"],
     },
+    {
+      description: "Auto-merge patch updates",
+      matchUpdateTypes: ["patch"],
+      automerge: true,
+    },
+    {
+      description: "Auto-merge digest updates",
+      matchUpdateTypes: ["digest"],
+      automerge: true,
+    },
   ],
 }
