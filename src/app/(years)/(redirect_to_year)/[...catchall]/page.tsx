@@ -7,8 +7,8 @@ export default async function FallbackToCurrentYear({ params }: { params: Promis
   if (catchall.length === 0) {
     redirect(`/`, RedirectType.replace);
   }
-  if (catchall[0] === currentYear.toString()) {
+  if (catchall[0] === currentYear) {
     return <NotFound />;
   }
-  redirect(`/${currentYear.toString()}/${catchall.join('/')}`, RedirectType.replace);
+  redirect(`/${currentYear}/${catchall.join('/')}`, RedirectType.replace);
 }
