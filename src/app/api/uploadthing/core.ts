@@ -4,13 +4,13 @@ import { auth } from '@/app/lib/auth';
 import { isAdmin } from '@/app/db/data';
 import { isNullOrEmpty } from '@/app/utils';
 import { MeetingYear, type MeetingYearType, Result, type ResultMimeType, resultMimeTypeSchema } from '@/app/lib/types';
-import { type FileRouterInputConfig } from '@uploadthing/shared';
 import { type FileUploadData } from 'uploadthing/types';
 import { uploadResult } from '@/app/lib/private-actions';
 
 const f = createUploadthing();
 const fileSize = 8_000_000;
 const allowed = 'Csak pdf és kép fájlok tölthetőek fel';
+type FileRouterInputConfig = Parameters<typeof f>[0];
 
 const resultUploader = {
   'application/pdf': {
