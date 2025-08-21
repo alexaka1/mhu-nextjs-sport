@@ -16,7 +16,6 @@
     "lint:fix": "next lint --fix",
     "fmt": "prettier --check . --experimental-ternaries",
     "fmt:fix": "prettier --write . --experimental-ternaries",
-    "doctor": "yarn dlx @yarnpkg/doctor",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
@@ -88,6 +87,6 @@
   "engines": {
     "node": "^22.0.0",
     "pnpm": "^10.0.0",
-    "npm": "Please use Yarn to install dependencies. 'yarn install'"
+    "npm": "Please use pnpm to install dependencies. 'pnpm install'"
   }
 }
