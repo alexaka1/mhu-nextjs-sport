@@ -51,7 +51,7 @@
     "react-device-detect": "2.2.3",
     "react-dom": "19.1.1",
     "react-zoom-pan-pinch": "3.7.0",
-    "uploadthing": "7.7.3",
+    "uploadthing": "7.7.4",
     "zod": "4.0.17"
   },
   "devDependencies": {
