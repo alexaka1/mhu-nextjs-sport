@@ -3,6 +3,7 @@ onlyBuiltDependencies:
   - '@vercel/speed-insights'
   - esbuild
   - msgpackr-extract
+  - sharp
 
 packageManagerStrictVersion: true
 
