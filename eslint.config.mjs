@@ -6,6 +6,7 @@ import ts from 'typescript-eslint';
 import tailwind from 'eslint-plugin-tailwindcss';
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginQuery from '@tanstack/eslint-plugin-query';
+// @ts-expect-error - missing types
 import drizzle from 'eslint-plugin-drizzle';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
