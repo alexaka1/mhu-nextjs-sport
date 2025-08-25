@@ -35,9 +35,12 @@ const config = ts.config(
   pluginQuery.configs['flat/recommended'],
   {
     plugins: {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       drizzle,
     },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     rules: {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       ...drizzle.configs.recommended.rules,
     },
   },
