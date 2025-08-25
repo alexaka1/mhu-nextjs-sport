@@ -6,7 +6,7 @@ import ts from 'typescript-eslint';
 import tailwind from 'eslint-plugin-tailwindcss';
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginQuery from '@tanstack/eslint-plugin-query';
-// @ts-expect-error - missing types
+// @ts-expect-error missing types
 import drizzle from 'eslint-plugin-drizzle';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
@@ -19,7 +19,7 @@ const config = ts.config(
   ...tailwind.configs['flat/recommended'],
   eslintConfigPrettier,
   {
-    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
+    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**'],
   },
   ...compat.extends('next/core-web-vitals' /*, 'next/typescript'*/ /*added by ts below*/),
   ...ts.configs.strictTypeChecked,
