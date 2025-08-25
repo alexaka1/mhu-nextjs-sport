@@ -27,8 +27,8 @@ importers:
         specifier: 7.0.0
         version: 7.0.0
       '@fortawesome/react-fontawesome':
-        specifier: 0.2.6
-        version: 0.2.6(@fortawesome/fontawesome-svg-core@7.0.0)(react@19.1.1)
+        specifier: 3.0.0
+        version: 3.0.0(@fortawesome/fontawesome-svg-core@7.0.0)(react@19.1.1)
       '@headlessui/react':
         specifier: 2.2.7
         version: 2.2.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -663,11 +663,11 @@ packages:
     resolution: {integrity: sha512-njSLAllkOddYDCXgTFboXn54Oe5FcvpkWq+FoetOHR64PbN0608kM02Lze0xtISGpXgP+i26VyXRQA0Irh3Obw==}
     engines: {node: '>=6'}
 
-  '@fortawesome/react-fontawesome@0.2.6':
-    resolution: {integrity: sha512-mtBFIi1UsYQo7rYonYFkjgYKGoL8T+fEH6NGUpvuqtY3ytMsAoDaPo5rk25KuMtKDipY4bGYM/CkmCHA1N3FUg==}
+  '@fortawesome/react-fontawesome@3.0.0':
+    resolution: {integrity: sha512-x6boc1RLEjf/QPrMS20VJcabTZeGCb1hbwNybPPLjJohGPowXfjOpwQlVK6aH6MVKfCq2JXeHRIlx+tYpS18FA==}
     peerDependencies:
-      '@fortawesome/fontawesome-svg-core': ~1 || ~6 || ~7
-      react: ^16.3 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      '@fortawesome/fontawesome-svg-core': ~6 || ~7
+      react: ^18.0.0 || ^19.0.0
 
   '@headlessui/react@2.2.7':
     resolution: {integrity: sha512-WKdTymY8Y49H8/gUc/lIyYK1M+/6dq0Iywh4zTZVAaiTDprRfioxSgD0wnXTQTBpjpGJuTL1NO/mqEvc//5SSg==}
@@ -4978,11 +4978,11 @@ snapshots:
     dependencies:
       '@fortawesome/fontawesome-common-types': 7.0.0
 
-  '@fortawesome/react-fontawesome@0.2.6(@fortawesome/fontawesome-svg-core@7.0.0)(react@19.1.1)':
+  '@fortawesome/react-fontawesome@3.0.0(@fortawesome/fontawesome-svg-core@7.0.0)(react@19.1.1)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 7.0.0
-      prop-types: 15.8.1
       react: 19.1.1
+      semver: 7.7.2
 
   '@headlessui/react@2.2.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
