@@ -56,7 +56,7 @@
   "devDependencies": {
     "@alexaka1/tailwindcss-oklch": "0.0.4",
     "@eslint/eslintrc": "3.3.1",
-    "@eslint/js": "9.33.0",
+    "@eslint/js": "9.34.0",
     "@tailwindcss/typography": "0.5.16",
     "@tanstack/eslint-plugin-query": "5.83.1",
     "@tanstack/react-query-devtools": "5.85.5",
@@ -70,7 +70,7 @@
     "cssnano": "7.1.1",
     "daisyui": "4.12.24",
     "drizzle-kit": "0.31.4",
-    "eslint": "9.33.0",
+    "eslint": "9.34.0",
     "eslint-config-next": "15.5.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-drizzle": "0.2.3",
