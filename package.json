@@ -65,7 +65,7 @@
     "@types/eslint-plugin-tailwindcss": "3.17.0",
     "@types/node": "22.17.2",
     "@types/react": "19.1.11",
-    "@types/react-dom": "19.1.7",
+    "@types/react-dom": "19.1.8",
     "autoprefixer": "10.4.21",
     "cssnano": "7.1.1",
     "daisyui": "4.12.24",
