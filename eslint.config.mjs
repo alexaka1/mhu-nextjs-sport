@@ -15,7 +15,7 @@ const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
 
-const config = defineConfig(
+const config = defineConfig([
   js.configs.recommended,
   eslintConfigPrettier,
   {
@@ -86,5 +86,5 @@ const config = defineConfig(
       ],
     },
   },
-);
+]);
 export default config;
