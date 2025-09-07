@@ -32,6 +32,7 @@ const config = defineConfig(
       },
     },
   },
+  // @ts-expect-error eslint plugins are not known for their type safety
   ...tailwind.configs['flat/recommended'],
   pluginQuery.configs['flat/recommended'],
   {
