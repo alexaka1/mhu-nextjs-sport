@@ -9,12 +9,13 @@ import pluginQuery from '@tanstack/eslint-plugin-query';
 // @ts-expect-error missing types
 import drizzle from 'eslint-plugin-drizzle';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import { defineConfig } from 'eslint/config';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
 
-const config = ts.config(
+const config = defineConfig(
   js.configs.recommended,
   ...tailwind.configs['flat/recommended'],
   eslintConfigPrettier,
