@@ -17,7 +17,6 @@ const compat = new FlatCompat({
 
 const config = defineConfig(
   js.configs.recommended,
-  ...tailwind.configs['flat/recommended'],
   eslintConfigPrettier,
   {
     ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**'],
@@ -33,6 +32,7 @@ const config = defineConfig(
       },
     },
   },
+  tailwind.configs['flat/recommended'],
   pluginQuery.configs['flat/recommended'],
   {
     plugins: {
