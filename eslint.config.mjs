@@ -32,7 +32,7 @@ const config = defineConfig(
       },
     },
   },
-  tailwind.configs['flat/recommended'],
+  ...tailwind.configs['flat/recommended'],
   pluginQuery.configs['flat/recommended'],
   {
     plugins: {
