@@ -46,7 +46,7 @@ importers:
         version: 9.2.1(next@15.5.2(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.2)(webpack@5.98.0(esbuild@0.25.5))
       '@t3-oss/env-nextjs':
         specifier: 0.13.8
-        version: 0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.5)
+        version: 0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.7)
       '@tabler/icons-react':
         specifier: 3.34.1
         version: 3.34.1(react@19.1.1)
@@ -96,8 +96,8 @@ importers:
         specifier: 7.7.4
         version: 7.7.4(express@5.1.0)(next@15.5.2(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(tailwindcss@3.4.17)
       zod:
-        specifier: 4.1.5
-        version: 4.1.5
+        specifier: 4.1.7
+        version: 4.1.7
     devDependencies:
       '@alexaka1/tailwindcss-oklch':
         specifier: 0.0.4
@@ -4636,6 +4636,9 @@ packages:
   zod@4.1.5:
     resolution: {integrity: sha512-rcUUZqlLJgBC33IT3PNMgsCq6TzLQEG/Ei/KTCU0PedSWRMAXoOUN+4t/0H+Q8bdnLPdqUYnvboJT0bn/229qg==}
 
+  zod@4.1.7:
+    resolution: {integrity: sha512-6qi6UYyzAl7W9uV29KvcSFXqK4QCYNYUz2YASPNBWpJE1RY6R1nArmmFPgGY/CBYWzpeMw3EOER+DR9a05O4IA==}
+
 snapshots:
 
   '@alexaka1/tailwindcss-oklch@0.0.4':
@@ -5975,19 +5978,19 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.5)':
+  '@t3-oss/env-core@0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.7)':
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.9.2
-      zod: 4.1.5
+      zod: 4.1.7
 
-  '@t3-oss/env-nextjs@0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.5)':
+  '@t3-oss/env-nextjs@0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.7)':
     dependencies:
-      '@t3-oss/env-core': 0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.5)
+      '@t3-oss/env-core': 0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@4.1.7)
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.9.2
-      zod: 4.1.5
+      zod: 4.1.7
 
   '@tabler/icons-react@3.34.1(react@19.1.1)':
     dependencies:
@@ -9351,3 +9354,5 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zod@4.1.5: {}
+
+  zod@4.1.7: {}
