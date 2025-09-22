@@ -57,7 +57,7 @@
     "@alexaka1/tailwindcss-oklch": "0.0.4",
     "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "9.36.0",
-    "@tailwindcss/typography": "0.5.17",
+    "@tailwindcss/typography": "0.5.18",
     "@tanstack/eslint-plugin-query": "5.89.0",
     "@tanstack/react-query-devtools": "5.89.0",
     "@total-typescript/ts-reset": "0.6.1",
