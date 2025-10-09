@@ -6,7 +6,7 @@
     "security:openssf-scorecard",
     ":automergeRequireAllStatusChecks",
     ":rebaseStalePrs",
-    "npm:unpublishSafe",
+    "security:minimumReleaseAgeNpm",
     ":automergePatch",
     ":automergeDigest",
   ],
