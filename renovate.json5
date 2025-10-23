@@ -3,18 +3,14 @@
   extends: [
     "config:best-practices",
     ":pinDependencies",
-    "security:openssf-scorecard",
+    "github>alexaka1/renovate-config",
+    "github>alexaka1/renovate-config:monorepos",
+    "github>alexaka1/renovate-config//opinionated/schedules",
+    "github>alexaka1/renovate-config//opinionated/labels",
     ":automergeRequireAllStatusChecks",
     ":rebaseStalePrs",
     "security:minimumReleaseAgeNpm",
     ":automergePatch",
     ":automergeDigest",
-  ],
-  packageRules: [
-    {
-      description: "Group serwist packages",
-      groupName: "Serwist monorepo",
-      matchPackageNames: ["serwist", "/^@serwist//"],
-    },
   ],
 }
