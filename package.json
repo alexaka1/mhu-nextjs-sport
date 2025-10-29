@@ -22,7 +22,7 @@
     "renovate:debug": "LOG_LEVEL=debug pnpx renovate --platform=local"
   },
   "dependencies": {
-    "@auth/core": "0.41.0",
+    "@auth/core": "0.41.1",
     "@auth/drizzle-adapter": "1.11.0",
     "@fortawesome/fontawesome-svg-core": "7.1.0",
     "@fortawesome/free-brands-svg-icons": "7.1.0",
