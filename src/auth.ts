@@ -61,12 +61,13 @@ export const auth = betterAuth({
           clientSecret: env.SIMPLELOGIN_CLIENT_SECRET,
           discoveryUrl: 'https://app.simplelogin.io/.well-known/openid-configuration',
           // SimpleLogin profile mapping
-          mapProfileToUser: (profile: SimpleLoginProfile) => {
+          mapProfileToUser: (profile: Record<string, unknown>) => {
+            const simpleLoginProfile = profile as unknown as SimpleLoginProfile;
             return {
-              id: profile.sub,
-              name: profile.name === '' ? 'SimpleLogin felhasználó' : profile.name,
-              email: profile.email,
-              image: profile.avatar_url,
+              id: simpleLoginProfile.sub,
+              name: simpleLoginProfile.name === '' ? 'SimpleLogin felhasználó' : simpleLoginProfile.name,
+              email: simpleLoginProfile.email,
+              image: simpleLoginProfile.avatar_url,
             };
           },
         },
