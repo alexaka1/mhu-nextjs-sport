@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "10d7558d-acf6-4018-a061-7437b75f753d",
+  "id": "33eab2a6-9d06-4a1a-a5e9-b18f524a5d1b",
   "prevId": "b0d0cc9f-aa5d-4fac-bfaa-77fa5a2a43f6",
   "tables": {
     "account": {
@@ -90,7 +90,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "(cast(unixepoch('subsecond') * 1000 as integer))"
+          "default": "1761839958376"
         },
         "updatedAt": {
           "name": "updatedAt",
@@ -98,7 +98,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "(cast(unixepoch('subsecond') * 1000 as integer))"
+          "default": "1761839958376"
         }
       },
       "indexes": {
@@ -235,7 +235,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "(cast(unixepoch('subsecond') * 1000 as integer))"
+          "default": "1761839958376"
         },
         "updatedAt": {
           "name": "updatedAt",
@@ -243,7 +243,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "(cast(unixepoch('subsecond') * 1000 as integer))"
+          "default": "1761839958376"
         }
       },
       "indexes": {

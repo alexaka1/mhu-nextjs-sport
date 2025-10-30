@@ -34,10 +34,12 @@ export const accounts = sqliteTable(
     session_state: text('session_state'),
     createdAt: integer('createdAt', { mode: 'timestamp_ms' })
       .notNull()
-      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
+      .default(sql`1761839958376`)
+      .$defaultFn(() => new Date()),
     updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
       .notNull()
-      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
+      .default(sql`1761839958376`)
+      .$defaultFn(() => new Date())
       .$onUpdate(() => new Date()),
   },
   (account) => [
@@ -58,10 +60,12 @@ export const sessions = sqliteTable(
     expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
     createdAt: integer('createdAt', { mode: 'timestamp_ms' })
       .notNull()
-      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
+      .default(sql`1761839958376`)
+      .$defaultFn(() => new Date()),
     updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
       .notNull()
-      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
+      .default(sql`1761839958376`)
+      .$defaultFn(() => new Date())
       .$onUpdate(() => new Date()),
   },
   (table) => [index('session_userId_idx').on(table.userId), index('session_token_idx').on(table.sessionToken)],
