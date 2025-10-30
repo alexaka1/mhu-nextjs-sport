@@ -4,6 +4,7 @@ import { db } from '@/app/db/db';
 import { env } from '@/app/lib/env';
 import { genericOAuth } from 'better-auth/plugins';
 import { session, user, account, verification } from '../auth-schema';
+import { updateUserAvatar } from '@/app/lib/private-actions';
 
 interface SimpleLoginProfile {
   sub: string;
@@ -22,6 +23,35 @@ export const auth = betterAuth({
       verification: verification,
     },
   }),
+  databaseHooks: {
+    account: {
+      create: {
+        async after(account) {
+          // Update user avatar from social provider profile
+          if (!account.userId) return;
+          
+          let avatar: string | null = null;
+          
+          // Extract avatar based on provider
+          switch (account.providerId) {
+            case 'github':
+              // GitHub stores avatar in idToken or we can fetch from API
+              // For now, better-auth will populate the image field during account creation
+              break;
+            case 'google':
+              // Google profile picture is handled by better-auth
+              break;
+            case 'simplelogin':
+              // SimpleLogin avatar is handled by mapProfileToUser
+              break;
+          }
+          
+          // Note: better-auth automatically updates user.image from social profiles
+          // This hook is here in case we need custom avatar update logic in the future
+        },
+      },
+    },
+  },
   socialProviders: {
     github: {
       clientId: env.GITHUB_CLIENT_ID,
