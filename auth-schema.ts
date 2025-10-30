@@ -24,8 +24,8 @@ export const session = sqliteTable(
   'session',
   {
     id: text('id').primaryKey(),
-    expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
-    sessionToken: text('session_token').notNull().unique(),
+    expiresAt: integer('expires_at', { mode: 'timestamp_ms' }).notNull(),
+    token: text('token').notNull().unique(),
     createdAt: integer('created_at', { mode: 'timestamp_ms' })
       .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
       .notNull(),
@@ -38,22 +38,24 @@ export const session = sqliteTable(
       .notNull()
       .references(() => user.id, { onDelete: 'cascade' }),
   },
-  (t) => [index('session_userId_idx').on(t.userId), index('session_token_idx').on(t.sessionToken)],
+  (t) => [index('session_userId_idx').on(t.userId), index('session_token_idx').on(t.token)],
 );
 
 export const account = sqliteTable(
   'account',
   {
     id: text('id').primaryKey(),
-    providerAccountId: text('provider_account_id').notNull(),
-    provider: text('provider').notNull(),
+    accountId: text('account_id').notNull(),
+    providerId: text('provider_id').notNull(),
     userId: text('user_id')
       .notNull()
       .references(() => user.id, { onDelete: 'cascade' }),
-    access_token: text('access_token'),
-    refresh_token: text('refresh_token'),
-    id_token: text('id_token'),
-    expires_at: integer('expires_at', { mode: 'timestamp_ms' }),
+    accessToken: text('access_token'),
+    refreshToken: text('refresh_token'),
+    idToken: text('id_token'),
+    accessTokenExpiresAt: integer('access_token_expires_at', {
+      mode: 'timestamp_ms',
+    }),
     refreshTokenExpiresAt: integer('refresh_token_expires_at', {
       mode: 'timestamp_ms',
     }),
@@ -75,7 +77,7 @@ export const verification = sqliteTable(
     id: text('id').primaryKey(),
     identifier: text('identifier').notNull(),
     value: text('value').notNull(),
-    expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
+    expiresAt: integer('expires_at', { mode: 'timestamp_ms' }).notNull(),
     createdAt: integer('created_at', { mode: 'timestamp_ms' })
       .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
       .notNull(),
