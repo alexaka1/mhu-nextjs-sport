@@ -1,84 +1,21 @@
 import { integer, sqliteTable, text, primaryKey, index } from 'drizzle-orm/sqlite-core';
-import { sql } from 'drizzle-orm';
 import { type Result, type ResultMimeType, type UserRolesType } from '@/app/lib/types';
+import { user } from '../../../auth-schema';
 
-export const users = sqliteTable(
-  'user',
+export const roles = sqliteTable(
+  'roles',
   {
-    id: text('id').notNull().primaryKey(),
-    name: text('name'),
-    email: text('email').notNull(),
-    emailVerified: integer('emailVerified', { mode: 'timestamp_ms' }),
-    image: text('image'),
     isAdmin: integer('isAdmin').default(0),
     roles: text('roles', { mode: 'json' }).$type<UserRolesType>().default({ roles: [] }),
+    id: text('id').primaryKey(),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
   },
-  (table) => [index('user_email_idx').on(table.email)],
-);
-
-export const accounts = sqliteTable(
-  'account',
-  {
-    userId: text('userId')
-      .notNull()
-      .references(() => users.id, { onDelete: 'cascade' }),
-    type: text('type').notNull(),
-    provider: text('provider').notNull(),
-    providerAccountId: text('providerAccountId').notNull(),
-    refresh_token: text('refresh_token'),
-    access_token: text('access_token'),
-    expires_at: integer('expires_at'),
-    token_type: text('token_type'),
-    scope: text('scope'),
-    id_token: text('id_token'),
-    session_state: text('session_state'),
-    createdAt: integer('createdAt', { mode: 'timestamp_ms' })
-      .notNull()
-      .default(sql`1761839958376`)
-      .$defaultFn(() => new Date()),
-    updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
-      .notNull()
-      .default(sql`1761839958376`)
-      .$defaultFn(() => new Date())
-      .$onUpdate(() => new Date()),
-  },
-  (account) => [
-    primaryKey({
-      columns: [account.provider, account.providerAccountId],
-    }),
-    index('account_userId_idx').on(account.userId),
+  (t) => [
+    index('roles_userId_idx').on(t.userId),
+    index('roles_isAdmin_idx').on(t.isAdmin), // optional
   ],
-);
-
-export const sessions = sqliteTable(
-  'session',
-  {
-    sessionToken: text('sessionToken').notNull().primaryKey(),
-    userId: text('userId')
-      .notNull()
-      .references(() => users.id, { onDelete: 'cascade' }),
-    expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
-    createdAt: integer('createdAt', { mode: 'timestamp_ms' })
-      .notNull()
-      .default(sql`1761839958376`)
-      .$defaultFn(() => new Date()),
-    updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
-      .notNull()
-      .default(sql`1761839958376`)
-      .$defaultFn(() => new Date())
-      .$onUpdate(() => new Date()),
-  },
-  (table) => [index('session_userId_idx').on(table.userId), index('session_token_idx').on(table.sessionToken)],
-);
-
-export const verificationTokens = sqliteTable(
-  'verificationToken',
-  {
-    identifier: text('identifier').notNull(),
-    token: text('token').notNull(),
-    expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
-  },
-  (vt) => [primaryKey({ columns: [vt.identifier, vt.token] }), index('verification_identifier_idx').on(vt.identifier)],
 );
 
 export const results = sqliteTable(
@@ -94,5 +31,9 @@ export const results = sqliteTable(
     deletedAt: integer('deletedAt', { mode: 'timestamp_ms' }),
     year: integer('year').notNull(),
   },
-  (r) => [primaryKey({ columns: [r.key, r.result] })],
+  (r) => [
+    primaryKey({ columns: [r.key, r.result] }),
+    index('result_key_idx').on(r.key),
+    index('result_result_year_isDeleted_createdAt_idx').on(r.result, r.year, r.isDeleted, r.createdAt),
+  ],
 );

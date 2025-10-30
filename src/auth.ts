@@ -3,7 +3,7 @@ import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { db } from '@/app/db/db';
 import { env } from '@/app/lib/env';
 import { genericOAuth } from 'better-auth/plugins';
-import * as schema from '@/app/db/schema';
+import { session, user, account, verification } from '../auth-schema';
 
 interface SimpleLoginProfile {
   sub: string;
@@ -16,38 +16,12 @@ export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: 'sqlite',
     schema: {
-      user: schema.users,
-      session: schema.sessions,
-      account: schema.accounts,
-      verification: schema.verificationTokens,
+      user: user,
+      session: session,
+      account: account,
+      verification: verification,
     },
   }),
-  // Field mapping for next-auth v5 compatibility
-  session: {
-    cookieCache: {
-      enabled: true,
-      maxAge: 5 * 60, // 5 minutes cache
-    },
-    fields: {
-      expiresAt: 'expires',
-      token: 'sessionToken',
-    },
-  },
-  account: {
-    fields: {
-      accountId: 'providerAccountId',
-      providerId: 'provider',
-      refreshToken: 'refresh_token',
-      accessToken: 'access_token',
-      accessTokenExpiresAt: 'expires_at',
-      idToken: 'id_token',
-    },
-  },
-  user: {
-    fields: {
-      emailVerified: 'emailVerified',
-    },
-  },
   socialProviders: {
     github: {
       clientId: env.GITHUB_CLIENT_ID,
@@ -82,4 +56,3 @@ export const auth = betterAuth({
     }),
   ],
 });
-
