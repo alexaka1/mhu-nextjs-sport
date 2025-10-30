@@ -4,7 +4,6 @@ import { db } from '@/app/db/db';
 import { env } from '@/app/lib/env';
 import { genericOAuth } from 'better-auth/plugins';
 import { session, user, account, verification } from '../auth-schema';
-import { updateUserAvatar } from '@/app/lib/private-actions';
 
 interface SimpleLoginProfile {
   sub: string;
@@ -26,12 +25,12 @@ export const auth = betterAuth({
   databaseHooks: {
     account: {
       create: {
-        async after(account) {
+        after: async (account, _) => {
           // Update user avatar from social provider profile
           if (!account.userId) return;
-          
-          let avatar: string | null = null;
-          
+
+          // const avatar: string | null = null;
+          await Promise.resolve();
           // Extract avatar based on provider
           switch (account.providerId) {
             case 'github':
@@ -45,9 +44,10 @@ export const auth = betterAuth({
               // SimpleLogin avatar is handled by mapProfileToUser
               break;
           }
-          
+
           // Note: better-auth automatically updates user.image from social profiles
           // This hook is here in case we need custom avatar update logic in the future
+          return;
         },
       },
     },
@@ -58,9 +58,9 @@ export const auth = betterAuth({
       clientSecret: env.GITHUB_CLIENT_SECRET,
     },
     google: {
+      prompt: 'select_account',
       clientId: env.GOOGLE_CLIENT_ID ?? '',
       clientSecret: env.GOOGLE_CLIENT_SECRET ?? '',
-      allowDangerousEmailAccountLinking: true,
     },
   },
   plugins: [
