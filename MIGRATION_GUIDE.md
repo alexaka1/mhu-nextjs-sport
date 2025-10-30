@@ -7,15 +7,19 @@ This migration has been carefully designed to preserve ALL existing user data. N
 ## What This Migration Does
 
 The migration adds two new timestamp columns to existing tables:
+
 - `createdAt` - timestamp when the record was created (default: current time)
 - `updatedAt` - timestamp when the record was last updated (default: current time)
 
 ### Tables Modified:
+
 1. **account** table: adds `createdAt` and `updatedAt` columns
 2. **session** table: adds `createdAt` and `updatedAt` columns
 
 ### Existing Columns Preserved:
+
 All existing columns are preserved through better-auth's field mapping feature:
+
 - `sessionToken` → mapped to better-auth's `token` field
 - `expires` → mapped to better-auth's `expiresAt` field
 - `providerAccountId` → mapped to better-auth's `accountId` field
@@ -43,6 +47,7 @@ drizzle-kit migrate
 ## Migration File Location
 
 The migration SQL file is located at:
+
 ```
 drizzle/0004_gray_paladin.sql
 ```
@@ -50,6 +55,7 @@ drizzle/0004_gray_paladin.sql
 ## Post-Migration Verification
 
 After applying the migration, verify that:
+
 1. All existing users can still log in
 2. Session data is preserved
 3. OAuth account linkages are intact

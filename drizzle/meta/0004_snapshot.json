@@ -62,10 +62,7 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {
         "result_key_result_pk": {
-          "columns": [
-            "key",
-            "result"
-          ],
+          "columns": ["key", "result"],
           "name": "result_key_result_pk"
         }
       },

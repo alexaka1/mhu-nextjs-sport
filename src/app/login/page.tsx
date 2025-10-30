@@ -97,7 +97,12 @@ export default async function Home(
 
         <div className="mt-10 flex flex-col gap-3 sm:mx-auto sm:w-full sm:max-w-sm sm:gap-4">
           {providers.map((provider) => (
-            <SignInButton key={provider.id} providerId={provider.id} callbackURL={page} recommended={provider.recommended}>
+            <SignInButton
+              key={provider.id}
+              providerId={provider.id}
+              callbackURL={page}
+              recommended={provider.recommended}
+            >
               {provider.button}
             </SignInButton>
           ))}

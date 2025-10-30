@@ -43,14 +43,6 @@
     "noErrorTruncation": true,
     "types": ["@serwist/next/typings"]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.mjs",
-    "**/*.cjs",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.mjs", "**/*.cjs", ".next/types/**/*.ts"],
   "exclude": ["node_modules", "public"]
 }

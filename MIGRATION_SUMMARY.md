@@ -7,16 +7,19 @@ This migration has been successfully completed with **zero data loss** and all c
 ## What Was Changed
 
 ### Dependencies
+
 - ✅ Removed: `next-auth`, `@auth/core`, `@auth/drizzle-adapter`
 - ✅ Added: `better-auth` v1.3.34
 
 ### Database Schema
+
 - ✅ Added `createdAt` and `updatedAt` columns to `account` table
 - ✅ Added `createdAt` and `updatedAt` columns to `session` table
 - ✅ All existing columns preserved (no renames, no deletions)
 - ✅ Migration file: `drizzle/0004_gray_paladin.sql`
 
 ### Code Changes
+
 1. **Authentication Configuration** (`src/auth.ts`)
    - New better-auth instance with Drizzle adapter
    - Field mapping for backward compatibility

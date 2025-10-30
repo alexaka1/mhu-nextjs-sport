@@ -296,12 +296,12 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { data: session } = useSession();
-  
+
   const auth = session?.user != null;
   const name = session?.user.name ?? '';
   const email = session?.user.email ?? '';
   const avatar = session?.user.image ?? '';
-  
+
   useEffect(() => {
     const deviceType = document.getElementById('device-type');
     if (deviceType != null) {
@@ -310,7 +310,7 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
       setTag('device-type', parsed.success ? parsed.data : 'unknown');
     }
   }, []);
-  
+
   const returnUrl = new URLSearchParams({ returnUrl: pathname });
   return (
     <>
