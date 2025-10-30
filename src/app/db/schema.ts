@@ -1,7 +1,9 @@
 import { integer, sqliteTable, text, primaryKey } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
-import type { AdapterAccount } from '@auth/core/adapters';
 import { type Result, type ResultMimeType, type UserRolesType } from '@/app/lib/types';
+
+// Define the AdapterAccount type locally since we removed @auth/core dependency
+type AdapterAccountType = 'oauth' | 'oidc' | 'email' | 'webauthn';
 
 export const users = sqliteTable('user', {
   id: text('id').notNull().primaryKey(),
@@ -19,7 +21,7 @@ export const accounts = sqliteTable(
     userId: text('userId')
       .notNull()
       .references(() => users.id, { onDelete: 'cascade' }),
-    type: text('type').$type<AdapterAccount['type']>().notNull(),
+    type: text('type').$type<AdapterAccountType>().notNull(),
     provider: text('provider').notNull(),
     providerAccountId: text('providerAccountId').notNull(),
     refresh_token: text('refresh_token'),
