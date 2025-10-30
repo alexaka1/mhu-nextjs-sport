@@ -1,19 +1,23 @@
-import { integer, sqliteTable, text, primaryKey } from 'drizzle-orm/sqlite-core';
+import { integer, sqliteTable, text, primaryKey, index } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 import { type Result, type ResultMimeType, type UserRolesType } from '@/app/lib/types';
 
 // Define the AdapterAccount type locally since we removed @auth/core dependency
 type AdapterAccountType = 'oauth' | 'oidc' | 'email' | 'webauthn';
 
-export const users = sqliteTable('user', {
-  id: text('id').notNull().primaryKey(),
-  name: text('name'),
-  email: text('email').notNull(),
-  emailVerified: integer('emailVerified', { mode: 'timestamp_ms' }),
-  image: text('image'),
-  isAdmin: integer('isAdmin').default(0),
-  roles: text('roles', { mode: 'json' }).$type<UserRolesType>().default({ roles: [] }),
-});
+export const users = sqliteTable(
+  'user',
+  {
+    id: text('id').notNull().primaryKey(),
+    name: text('name'),
+    email: text('email').notNull(),
+    emailVerified: integer('emailVerified', { mode: 'timestamp_ms' }),
+    image: text('image'),
+    isAdmin: integer('isAdmin').default(0),
+    roles: text('roles', { mode: 'json' }).$type<UserRolesType>().default({ roles: [] }),
+  },
+  (table) => [index('user_email_idx').on(table.email)],
+);
 
 export const accounts = sqliteTable(
   'account',
@@ -43,23 +47,28 @@ export const accounts = sqliteTable(
     primaryKey({
       columns: [account.provider, account.providerAccountId],
     }),
+    index('account_userId_idx').on(account.userId),
   ],
 );
 
-export const sessions = sqliteTable('session', {
-  sessionToken: text('sessionToken').notNull().primaryKey(),
-  userId: text('userId')
-    .notNull()
-    .references(() => users.id, { onDelete: 'cascade' }),
-  expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
-  createdAt: integer('createdAt', { mode: 'timestamp_ms' })
-    .notNull()
-    .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
-  updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
-    .notNull()
-    .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
-    .$onUpdate(() => new Date()),
-});
+export const sessions = sqliteTable(
+  'session',
+  {
+    sessionToken: text('sessionToken').notNull().primaryKey(),
+    userId: text('userId')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
+    createdAt: integer('createdAt', { mode: 'timestamp_ms' })
+      .notNull()
+      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
+    updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
+      .notNull()
+      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
+      .$onUpdate(() => new Date()),
+  },
+  (table) => [index('session_userId_idx').on(table.userId), index('session_token_idx').on(table.sessionToken)],
+);
 
 export const verificationTokens = sqliteTable(
   'verificationToken',
@@ -68,7 +77,7 @@ export const verificationTokens = sqliteTable(
     token: text('token').notNull(),
     expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
   },
-  (vt) => [primaryKey({ columns: [vt.identifier, vt.token] })],
+  (vt) => [primaryKey({ columns: [vt.identifier, vt.token] }), index('verification_identifier_idx').on(vt.identifier)],
 );
 
 export const results = sqliteTable(
