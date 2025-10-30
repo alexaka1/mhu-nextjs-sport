@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "bd309308-1fc8-41d9-b2a2-060c8f6e3c5e",
+  "id": "00f6b560-14a8-4963-bc9f-a27dda4f5b1d",
   "prevId": "42c49620-ef75-4a56-b56e-e772afff9129",
   "tables": {
     "account": {
@@ -14,15 +14,15 @@
           "notNull": true,
           "autoincrement": false
         },
-        "provider_account_id": {
-          "name": "provider_account_id",
+        "account_id": {
+          "name": "account_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
-        "provider": {
-          "name": "provider",
+        "provider_id": {
+          "name": "provider_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -56,8 +56,8 @@
           "notNull": false,
           "autoincrement": false
         },
-        "expires_at": {
-          "name": "expires_at",
+        "access_token_expires_at": {
+          "name": "access_token_expires_at",
           "type": "integer",
           "primaryKey": false,
           "notNull": false,
@@ -138,15 +138,15 @@
           "notNull": true,
           "autoincrement": false
         },
-        "expires": {
-          "name": "expires",
+        "expires_at": {
+          "name": "expires_at",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
-        "session_token": {
-          "name": "session_token",
+        "token": {
+          "name": "token",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -190,10 +190,10 @@
         }
       },
       "indexes": {
-        "session_session_token_unique": {
-          "name": "session_session_token_unique",
+        "session_token_unique": {
+          "name": "session_token_unique",
           "columns": [
-            "session_token"
+            "token"
           ],
           "isUnique": true
         },
@@ -207,7 +207,7 @@
         "session_token_idx": {
           "name": "session_token_idx",
           "columns": [
-            "session_token"
+            "token"
           ],
           "isUnique": false
         }
@@ -332,8 +332,8 @@
           "notNull": true,
           "autoincrement": false
         },
-        "expires": {
-          "name": "expires",
+        "expires_at": {
+          "name": "expires_at",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
