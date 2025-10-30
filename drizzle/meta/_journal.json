@@ -29,6 +29,13 @@
       "when": 1743244109760,
       "tag": "0003_orange_glorian",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1761830100512,
+      "tag": "0004_gray_paladin",
+      "breakpoints": true
     }
   ]
 }

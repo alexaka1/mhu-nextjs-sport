@@ -22,7 +22,7 @@ import {
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
-import { getSession, signOut } from 'next-auth/react';
+import { useSession, signOut } from '@/app/lib/auth-client';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
 import { z } from 'zod';
@@ -254,7 +254,13 @@ function UserInfo({
               <li>
                 <PopoverButton
                   onClick={() => {
-                    void signOut({ redirect: true, callbackUrl: pathname });
+                    void signOut({
+                      fetchOptions: {
+                        onSuccess: () => {
+                          window.location.href = pathname;
+                        },
+                      },
+                    });
                   }}
                   className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
@@ -269,7 +275,13 @@ function UserInfo({
       <button
         className={`hidden rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors duration-200 ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
         onClick={() => {
-          void signOut({ redirect: true, callbackUrl: pathname });
+          void signOut({
+            fetchOptions: {
+              onSuccess: () => {
+                window.location.href = pathname;
+              },
+            },
+          });
         }}
       >
         Kijelentkezés
@@ -282,24 +294,14 @@ const deviceTypeSchema = z.enum(['browser', 'standalone']);
 
 export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [auth, setAuth] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [avatar, setAvatar] = useState('');
   const pathname = usePathname();
-  useEffect(() => {
-    async function checkAuth() {
-      const session = await getSession();
-      if (session?.user != null) {
-        setName(session.user.name ?? '');
-        setEmail(session.user.email ?? '');
-        setAvatar(session.user.image ?? '');
-      }
-      setAuth(session?.user != null);
-    }
-
-    void checkAuth();
-  }, []);
+  const { data: session } = useSession();
+  
+  const auth = session?.user != null;
+  const name = session?.user.name ?? '';
+  const email = session?.user.email ?? '';
+  const avatar = session?.user.image ?? '';
+  
   useEffect(() => {
     const deviceType = document.getElementById('device-type');
     if (deviceType != null) {
@@ -308,6 +310,7 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
       setTag('device-type', parsed.success ? parsed.data : 'unknown');
     }
   }, []);
+  
   const returnUrl = new URLSearchParams({ returnUrl: pathname });
   return (
     <>

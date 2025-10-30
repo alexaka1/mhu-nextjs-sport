@@ -1,4 +1,5 @@
 import { integer, sqliteTable, text, primaryKey } from 'drizzle-orm/sqlite-core';
+import { sql } from 'drizzle-orm';
 import type { AdapterAccount } from '@auth/core/adapters';
 import { type Result, type ResultMimeType, type UserRolesType } from '@/app/lib/types';
 
@@ -28,6 +29,13 @@ export const accounts = sqliteTable(
     scope: text('scope'),
     id_token: text('id_token'),
     session_state: text('session_state'),
+    createdAt: integer('createdAt', { mode: 'timestamp_ms' })
+      .notNull()
+      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
+    updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
+      .notNull()
+      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
+      .$onUpdate(() => new Date()),
   },
   (account) => [
     primaryKey({
@@ -42,6 +50,13 @@ export const sessions = sqliteTable('session', {
     .notNull()
     .references(() => users.id, { onDelete: 'cascade' }),
   expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
+  createdAt: integer('createdAt', { mode: 'timestamp_ms' })
+    .notNull()
+    .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
+  updatedAt: integer('updatedAt', { mode: 'timestamp_ms' })
+    .notNull()
+    .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
+    .$onUpdate(() => new Date()),
 });
 
 export const verificationTokens = sqliteTable(
