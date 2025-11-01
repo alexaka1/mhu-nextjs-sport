@@ -189,6 +189,23 @@ function LoginButton({ returnUrl, auth }: Readonly<{ returnUrl: string; auth: bo
   return null;
 }
 
+function Avatar({ src, alt }: Readonly<{ src: string; alt: string }>) {
+  if (src === '') {
+    return (
+      <FontAwesomeIcon
+        icon={faUser}
+        className={`size-6 items-center justify-center rounded-full text-bg-contrast`}
+        aria-hidden="true"
+      />
+    );
+  }
+  return (
+    // User images should not be optimized because unauthorized sources throw an error instead of just not showing, which is unaccepatable
+    // eslint-disable-next-line @next/next/no-img-element
+    <img className="size-8 items-center justify-center rounded-full" src={src} alt={alt} width={36} height={36} />
+  );
+}
+
 function UserInfo({
   name,
   email,
@@ -204,23 +221,6 @@ function UserInfo({
 }>): ReactNode {
   if (!auth) {
     return null;
-  }
-
-  function Avatar({ src, alt }: Readonly<{ src: string; alt: string }>) {
-    if (src === '') {
-      return (
-        <FontAwesomeIcon
-          icon={faUser}
-          className={`size-6 items-center justify-center rounded-full text-bg-contrast`}
-          aria-hidden="true"
-        />
-      );
-    }
-    return (
-      // User images should not be optimized because unauthorized sources throw an error instead of just not showing, which is unaccepatable
-      // eslint-disable-next-line @next/next/no-img-element
-      <img className="size-8 items-center justify-center rounded-full" src={src} alt={alt} width={36} height={36} />
-    );
   }
 
   return (

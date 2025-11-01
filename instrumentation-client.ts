@@ -14,6 +14,7 @@ import { env } from '@/app/lib/env';
 const integrations = [];
 if (process.env.NODE_ENV !== 'development') {
   integrations.push(
+    // Replay may only be enabled for the client-side
     replayIntegration({
       // Additional Replay configuration goes in here, for example:
       maskAllText: true,
@@ -28,6 +29,7 @@ init({
   dsn: env.NEXT_PUBLIC_SENTRY_DSN,
 
   // Adjust this value in production, or use tracesSampler for greater control
+  // https://docs.sentry.io/platforms/javascript/configuration/options/#traces-sample-rate
   tracesSampleRate: 1,
 
   // Setting this option to true will print useful information to the console while you're setting up Sentry.
@@ -37,9 +39,17 @@ init({
 
   // This sets the sample rate to be 10%. You may want this to be 100% while
   // in development and sample at a lower rate in production
+  // https://docs.sentry.io/platforms/javascript/session-replay/configuration/#general-integration-configuration
   replaysSessionSampleRate: 0.1,
 
   // You can remove this option if you're not planning to use the Sentry Session Replay feature:
   integrations: integrations,
+  // Enable logs to be sent to Sentry
+  enableLogs: true,
+  // Note: if you want to override the automatic release value, do not set a
+  // `release` value here - use the environment variable `SENTRY_RELEASE`, so
+  // that it will also get attached to your source maps
 });
+
+// This export will instrument router navigations, and is only relevant if you enable tracing.
 export const onRouterTransitionStart = captureRouterTransitionStart;
