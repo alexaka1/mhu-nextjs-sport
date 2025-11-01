@@ -4,7 +4,7 @@ import { user as users } from '../../../auth-schema';
 import { and, eq, isNull, ne, or } from 'drizzle-orm/sql/expressions/conditions';
 import { captureException } from '@sentry/nextjs';
 import { Result, type ResultItem, resultMimeTypeSchema } from '@/app/lib/types';
-import { z } from 'zod';
+import * as z from 'zod';
 import { desc } from 'drizzle-orm/sql/expressions/select';
 
 const insertResultSchema = z.object({
