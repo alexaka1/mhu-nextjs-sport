@@ -65,7 +65,7 @@
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "autoprefixer": "10.4.21",
-    "cssnano": "7.1.1",
+    "cssnano": "7.1.2",
     "daisyui": "4.12.24",
     "drizzle-kit": "0.31.6",
     "eslint": "9.38.0",
