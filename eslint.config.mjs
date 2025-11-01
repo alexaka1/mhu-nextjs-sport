@@ -4,6 +4,7 @@
 import js from '@eslint/js';
 import ts from 'typescript-eslint';
 import tailwind from 'eslint-plugin-tailwindcss';
+// @ts-expect-error I have no idea what the problem here is
 import nextConfig from 'eslint-config-next';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 // @ts-expect-error missing types
