@@ -25,7 +25,7 @@ import { usePathname } from 'next/navigation';
 import { useSession, signOut } from '@/app/lib/auth-client';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
-import { z } from 'zod';
+import * as z from 'zod';
 import { type DropDownLinks, type Menu, type SimpleLink } from '@/app/ui/menu-types';
 
 function DialogLink({
