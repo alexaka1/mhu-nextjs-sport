@@ -1,5 +1,6 @@
 import { db } from '@/app/db/db';
-import { results, users } from '@/app/db/schema';
+import { results, roles } from '@/app/db/schema';
+import { user as users } from '../../../auth-schema';
 import { and, eq, isNull, ne, or } from 'drizzle-orm/sql/expressions/conditions';
 import { captureException } from '@sentry/nextjs';
 import { Result, type ResultItem, resultMimeTypeSchema } from '@/app/lib/types';
@@ -18,15 +19,18 @@ export async function isAdmin(email: string, year: number): Promise<boolean> {
   try {
     const user = await db
       .select({
-        isAdmin: users.isAdmin,
-        roles: users.roles,
+        id: users.id,
       })
       .from(users)
       .where(eq(users.email, email));
-    if (user.length === 0) {
+    if (user.length != 1 || user[0] == null) {
       return false;
     }
-    return user.every((u) => u.isAdmin === 1 && (u.roles?.roles.some((r) => r.years.includes(year)) ?? false));
+    const role = await db.select().from(roles).where(eq(roles.userId, user[0].id));
+    if (role.length === 0) {
+      return false;
+    }
+    return role.every((u) => u.isAdmin === 1 && (u.roles?.roles.some((r) => r.years.includes(year)) ?? false));
   } catch (e) {
     console.error(e);
     captureException(e);

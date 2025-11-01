@@ -29,6 +29,20 @@
       "when": 1743244109760,
       "tag": "0003_orange_glorian",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1761841550985,
+      "tag": "0004_strange_killraven",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1761990243142,
+      "tag": "0005_robust_barracuda",
+      "breakpoints": true
     }
   ]
 }

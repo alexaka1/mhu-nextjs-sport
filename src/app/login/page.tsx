@@ -1,10 +1,12 @@
-import { auth, signIn } from '@/app/lib/auth';
+import { auth } from '@/auth';
 import { IconPlayHandball } from '@tabler/icons-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import BackToHome from '@/app/ui/buttons/back-to-home';
 import { type ReactNode } from 'react';
+import { headers } from 'next/headers';
+import { SignInButton } from '@/app/ui/sign-in-button';
 
 type LoginButton = {
   id: string;
@@ -71,7 +73,9 @@ export default async function Home(
   if (page === '/login' || !page.startsWith('/')) {
     page = '/eredmenyek';
   }
-  const session = await auth();
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
   if (session?.user != null) {
     return (
       <main className="prose flex min-h-full flex-1 flex-col justify-center px-6 py-12 sm:mx-auto sm:w-full sm:max-w-md lg:px-8">
@@ -93,27 +97,14 @@ export default async function Home(
 
         <div className="mt-10 flex flex-col gap-3 sm:mx-auto sm:w-full sm:max-w-sm sm:gap-4">
           {providers.map((provider) => (
-            <form
+            <SignInButton
               key={provider.id}
-              id={provider.id}
-              action={async () => {
-                'use server';
-                await signIn(provider.id, { redirectTo: page });
-              }}
+              providerId={provider.id}
+              callbackURL={page}
+              recommended={provider.recommended}
             >
-              <button
-                form={provider.id}
-                type="submit"
-                className="relative flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm transition-colors duration-200 bg-primary text-bg-contrast hover:bg-secondary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400"
-              >
-                {provider.recommended ?
-                  <span className="absolute -right-0.5 -top-2 z-10 whitespace-nowrap rounded-full px-2.5 py-0.5 text-sm font-semibold bg-hun-green text-bg-contrast">
-                    Javasolt
-                  </span>
-                : null}
-                {provider.button}
-              </button>
-            </form>
+              {provider.button}
+            </SignInButton>
           ))}
         </div>
       </main>

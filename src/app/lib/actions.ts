@@ -2,10 +2,11 @@
 
 import { revalidatePath } from 'next/cache';
 import { deleteResultByKey, getResultItems, isAdmin } from '../db/data';
-import { auth } from '@/app/lib/auth';
+import { auth } from '@/auth';
 import { isNullOrEmpty } from '@/app/utils';
 import { type ResultItem } from '@/app/lib/types';
 import { env } from '@/app/lib/env';
+import { headers } from 'next/headers';
 
 export async function deleteResult(key: string, year: number) {
   if (!(await canEditResults({ year }))) {
@@ -19,8 +20,10 @@ export async function deleteResult(key: string, year: number) {
 }
 
 export async function canEditResults({ year }: Readonly<{ year: number }>) {
-  const session = await auth();
-  const email = session?.user?.email;
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  const email = session?.user.email;
   return !isNullOrEmpty(email) && (await isAdmin(email, year));
 }
 

@@ -1,11 +1,12 @@
 import { createUploadthing, type FileRouter } from 'uploadthing/next';
 import { UploadThingError } from 'uploadthing/server';
-import { auth } from '@/app/lib/auth';
+import { auth } from '@/auth';
 import { isAdmin } from '@/app/db/data';
 import { isNullOrEmpty } from '@/app/utils';
 import { MeetingYear, type MeetingYearType, Result, type ResultMimeType, resultMimeTypeSchema } from '@/app/lib/types';
 import { type FileUploadData } from 'uploadthing/types';
 import { uploadResult } from '@/app/lib/private-actions';
+import { headers } from 'next/headers';
 
 const f = createUploadthing();
 const fileSize = 8_000_000;
@@ -75,8 +76,10 @@ async function canEdit(year: MeetingYearType): Promise<
       userId: string;
     }
 > {
-  const session = await auth();
-  const email = session?.user?.email;
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  const email = session?.user.email;
   if (isNullOrEmpty(email)) {
     return { authorized: false, userId: null };
   }
