@@ -2,6 +2,8 @@
  * Utility functions for managing last used login provider in localStorage
  */
 
+import { useSyncExternalStore } from 'react';
+
 const STORAGE_KEY = 'lastUsedLoginProvider';
 
 /**
@@ -32,4 +34,19 @@ export function setLastUsedProvider(providerId: string): void {
   } catch {
     // Silently fail if localStorage is not available
   }
+}
+
+/**
+ * Hook to get the last used login provider from localStorage
+ * Uses useSyncExternalStore for proper React integration
+ * @returns The provider ID or null if not found
+ */
+export function useLastUsedProvider(): string | null {
+  return useSyncExternalStore(
+    // Subscribe function - no-op since we don't need to listen to changes
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    () => () => {},
+    getLastUsedProvider,
+    () => null, // Server snapshot
+  );
 }

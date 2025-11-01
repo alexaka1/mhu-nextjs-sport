@@ -1,8 +1,8 @@
 'use client';
 
 import { SignInButton } from '@/app/ui/sign-in-button';
-import { getLastUsedProvider } from '@/app/lib/last-used-provider';
-import { type ReactNode, useEffect, useState } from 'react';
+import { useLastUsedProvider } from '@/app/lib/last-used-provider';
+import { type ReactNode } from 'react';
 
 type LoginButton = {
   id: string;
@@ -17,12 +17,7 @@ export function LoginButtons({
   providers: LoginButton[];
   callbackURL: string;
 }>) {
-  const [lastUsedProvider, setLastUsedProvider] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Read last used provider from localStorage on mount
-    setLastUsedProvider(getLastUsedProvider());
-  }, []);
+  const lastUsedProvider = useLastUsedProvider();
 
   return (
     <>

@@ -2,10 +2,8 @@
 
 import { signIn, type SignInMethods } from '@/app/lib/auth-client';
 import { setLastUsedProvider } from '@/app/lib/last-used-provider';
+import { LoginBadge } from '@/app/ui/login-badge';
 import { type ReactNode } from 'react';
-
-const BADGE_BASE_CLASSES =
-  'absolute -right-0.5 -top-2 z-10 whitespace-nowrap rounded-full px-2.5 py-0.5 text-sm font-semibold text-bg-contrast';
 
 export function SignInButton({
   providerId,
@@ -48,10 +46,10 @@ export function SignInButton({
       className="relative flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm transition-colors duration-200 bg-primary text-bg-contrast hover:bg-secondary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400"
     >
       {recommended ?
-        <span className={`${BADGE_BASE_CLASSES} bg-hun-green`}>Javasolt</span>
+        <LoginBadge type="recommended" text="Javasolt" />
       : null}
       {isLastUsed && !recommended ?
-        <span className={`${BADGE_BASE_CLASSES} bg-secondary`}>utoljára használt</span>
+        <LoginBadge type="lastUsed" text="utoljára használt" />
       : null}
       {children}
     </button>
