@@ -17,10 +17,21 @@ type BeforeInstallPromptEvent = Event & {
 
 const bannerDismissedKey = 'pwa-banner-dismissed';
 
+// Compute device type once - this doesn't change during the component lifecycle
+const getDeviceType = (): 'mobil' | 'asztali' | 'iOS kezdőképernyős' => {
+  if (isMobile) {
+    return 'mobil';
+  } else if (isIOS) {
+    return 'iOS kezdőképernyős';
+  } else {
+    return 'asztali';
+  }
+};
+
 export default function InstallBanner() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstall, setShowInstall] = useState(false);
-  const [deviceType, setDeviceType] = useState<'mobil' | 'asztali' | 'iOS kezdőképernyős'>('mobil');
+  const deviceType = getDeviceType();
   const installPrompt = (e: BeforeInstallPromptEvent) => {
     // Prevents the default mini-infobar or install dialog from appearing on mobile
     e.preventDefault();
@@ -35,13 +46,6 @@ export default function InstallBanner() {
     }
     // @ts-expect-error - Before BeforeInstallPromptEvent type error
     window.addEventListener('beforeinstallprompt', installPrompt);
-    if (isMobile) {
-      setDeviceType('mobil');
-    } else if (isIOS) {
-      setDeviceType('iOS kezdőképernyős');
-    } else {
-      setDeviceType('asztali');
-    }
     return () => {
       // cleanup
       // @ts-expect-error - Before BeforeInstallPromptEvent type error

@@ -1,5 +1,5 @@
 'use client';
-import { type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faShareNodes, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -21,11 +21,12 @@ export default function ResultsTable({
   fileKey: string;
   year: number;
 }>) {
-  const [url, setUrl] = useState<string>('');
-  useEffect(() => {
+  // Compute URL with hash on the client side
+  const url = useMemo(() => {
+    if (typeof window === 'undefined') return '';
     const location = new URL(window.location.href);
     location.hash = fileKey;
-    setUrl(location.toString());
+    return location.toString();
   }, [fileKey]);
   return (
     <>

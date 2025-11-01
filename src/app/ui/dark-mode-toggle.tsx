@@ -3,20 +3,10 @@
 import { useTheme } from 'next-themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun, faComputer, faMobile } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 
 export default function DarkModeToggle() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   const nextTheme = () => {
     switch (theme) {
