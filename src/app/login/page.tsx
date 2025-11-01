@@ -4,17 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import BackToHome from '@/app/ui/buttons/back-to-home';
-import { type ReactNode } from 'react';
 import { headers } from 'next/headers';
-import { LoginButtons } from '@/app/ui/login-buttons';
-import { type SignInMethods } from '@/app/lib/auth-client';
-
-type LoginButton = {
-  id: string;
-  button: ReactNode;
-  recommended: true | undefined;
-  type: SignInMethods;
-};
+import { type LoginButton, LoginButtons } from '@/app/ui/login-buttons';
 
 const providers: LoginButton[] = [
   {
