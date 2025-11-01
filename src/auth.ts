@@ -71,6 +71,7 @@ export const auth = betterAuth({
           clientId: env.SIMPLELOGIN_CLIENT_ID,
           clientSecret: env.SIMPLELOGIN_CLIENT_SECRET,
           discoveryUrl: 'https://app.simplelogin.io/.well-known/openid-configuration',
+          scopes: ['openid', 'email', 'profile'],
           // SimpleLogin profile mapping
           mapProfileToUser: (profile: Record<string, unknown>) => {
             const simpleLoginProfile = profile as unknown as SimpleLoginProfile;
