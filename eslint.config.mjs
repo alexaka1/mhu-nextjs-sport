@@ -11,6 +11,7 @@ import pluginQuery from '@tanstack/eslint-plugin-query';
 import drizzle from 'eslint-plugin-drizzle';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import { defineConfig } from 'eslint/config';
+import importZod from 'eslint-plugin-import-zod';
 
 const config = defineConfig([
   js.configs.recommended,
@@ -43,6 +44,7 @@ const config = defineConfig([
       ...drizzle.configs.recommended.rules,
     },
   },
+  ...importZod.configs.recommended,
   {
     rules: {
       '@typescript-eslint/array-type': 'off',
