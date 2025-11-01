@@ -86,11 +86,5 @@
     "node": "^22.0.0",
     "pnpm": "^10.0.0",
     "npm": "Please use pnpm to install dependencies. 'pnpm install'"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.2.2",
-      "@types/react-dom": "19.2.2"
-    }
   }
 }
