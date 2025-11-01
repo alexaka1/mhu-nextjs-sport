@@ -1,7 +1,3 @@
-/**
- * Utility functions for managing last used login provider in localStorage
- */
-
 import { useSyncExternalStore } from 'react';
 
 const STORAGE_KEY = 'lastUsedLoginProvider';
