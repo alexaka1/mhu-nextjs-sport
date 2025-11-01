@@ -1,6 +1,6 @@
 'use client';
 
-import { signIn } from '@/app/lib/auth-client';
+import { signIn, type SignInMethods } from '@/app/lib/auth-client';
 import { type ReactNode } from 'react';
 
 export function SignInButton({
@@ -8,17 +8,29 @@ export function SignInButton({
   callbackURL,
   recommended,
   children,
+  type,
 }: Readonly<{
   providerId: string;
   callbackURL: string;
   recommended: true | undefined;
   children: ReactNode;
+  type: SignInMethods;
 }>) {
   const handleSignIn = async () => {
-    await signIn.social({
-      provider: providerId,
-      callbackURL,
-    });
+    switch (type) {
+      case 'social':
+        await signIn.social({
+          provider: providerId,
+          callbackURL,
+        });
+        break;
+      case 'oauth2':
+        await signIn.oauth2({
+          providerId,
+          callbackURL,
+        });
+        break;
+    }
   };
 
   return (

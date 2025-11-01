@@ -7,11 +7,13 @@ import BackToHome from '@/app/ui/buttons/back-to-home';
 import { type ReactNode } from 'react';
 import { headers } from 'next/headers';
 import { SignInButton } from '@/app/ui/sign-in-button';
+import { type SignInMethods } from '@/app/lib/auth-client';
 
 type LoginButton = {
   id: string;
   button: ReactNode;
   recommended: true | undefined;
+  type: SignInMethods;
 };
 
 const providers: LoginButton[] = [
@@ -32,7 +34,8 @@ const providers: LoginButton[] = [
       </>
     ),
     recommended: undefined,
-  } as LoginButton,
+    type: 'oauth2',
+  } satisfies LoginButton,
   {
     id: 'github',
     button: (
@@ -41,7 +44,8 @@ const providers: LoginButton[] = [
       </>
     ),
     recommended: undefined,
-  },
+    type: 'social',
+  } satisfies LoginButton,
   {
     id: 'google',
     button: (
@@ -50,7 +54,8 @@ const providers: LoginButton[] = [
       </>
     ),
     recommended: undefined,
-  },
+    type: 'social',
+  } satisfies LoginButton,
   // {
   //   id: 'twitter',
   //   button: (
@@ -58,7 +63,7 @@ const providers: LoginButton[] = [
   //       <FontAwesomeIcon icon={faXTwitter} className={`size-6 pr-4`} /> Twitter belépés
   //     </>
   //   ),
-  // },
+  // } satisfies LoginButton,
 ];
 
 export default async function Home(
@@ -102,6 +107,7 @@ export default async function Home(
               providerId={provider.id}
               callbackURL={page}
               recommended={provider.recommended}
+              type={provider.type}
             >
               {provider.button}
             </SignInButton>
