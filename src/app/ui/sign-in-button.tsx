@@ -1,22 +1,27 @@
 'use client';
 
 import { signIn, type SignInMethods } from '@/app/lib/auth-client';
+import { setLastUsedProvider } from '@/app/lib/last-used-provider';
 import { type ReactNode } from 'react';
 
 export function SignInButton({
   providerId,
   callbackURL,
   recommended,
+  isLastUsed,
   children,
   type,
 }: Readonly<{
   providerId: string;
   callbackURL: string;
   recommended: true | undefined;
+  isLastUsed?: boolean;
   children: ReactNode;
   type: SignInMethods;
 }>) {
   const handleSignIn = async () => {
+    // Store the provider in localStorage before signing in
+    setLastUsedProvider(providerId);
     switch (type) {
       case 'social':
         await signIn.social({
@@ -42,6 +47,11 @@ export function SignInButton({
       {recommended ?
         <span className="absolute -right-0.5 -top-2 z-10 whitespace-nowrap rounded-full px-2.5 py-0.5 text-sm font-semibold bg-hun-green text-bg-contrast">
           Javasolt
+        </span>
+      : null}
+      {isLastUsed && !recommended ?
+        <span className="absolute -right-0.5 -top-2 z-10 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold bg-secondary text-bg-contrast">
+          utoljára használt
         </span>
       : null}
       {children}

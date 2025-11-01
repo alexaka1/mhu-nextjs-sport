@@ -6,7 +6,7 @@ import Image from 'next/image';
 import BackToHome from '@/app/ui/buttons/back-to-home';
 import { type ReactNode } from 'react';
 import { headers } from 'next/headers';
-import { SignInButton } from '@/app/ui/sign-in-button';
+import { LoginButtons } from '@/app/ui/login-buttons';
 import { type SignInMethods } from '@/app/lib/auth-client';
 
 type LoginButton = {
@@ -101,17 +101,7 @@ export default async function Home(
         </div>
 
         <div className="mt-10 flex flex-col gap-3 sm:mx-auto sm:w-full sm:max-w-sm sm:gap-4">
-          {providers.map((provider) => (
-            <SignInButton
-              key={provider.id}
-              providerId={provider.id}
-              callbackURL={page}
-              recommended={provider.recommended}
-              type={provider.type}
-            >
-              {provider.button}
-            </SignInButton>
-          ))}
+          <LoginButtons providers={providers} callbackURL={page} />
         </div>
       </main>
     </>
