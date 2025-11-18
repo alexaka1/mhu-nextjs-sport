@@ -62,7 +62,7 @@
     "@types/eslint": "9.6.1",
     "@types/eslint-plugin-tailwindcss": "3.17.0",
     "@types/node": "22.19.1",
-    "@types/react": "19.2.4",
+    "@types/react": "19.2.5",
     "@types/react-dom": "19.2.3",
     "autoprefixer": "10.4.22",
     "cssnano": "7.1.2",
