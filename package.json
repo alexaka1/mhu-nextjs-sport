@@ -39,7 +39,7 @@
     "@uploadthing/react": "7.3.3",
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",
-    "better-auth": "1.4.2",
+    "better-auth": "1.4.3",
     "drizzle-orm": "0.44.7",
     "next": "16.0.4",
     "next-axiom": "1.9.3",
