@@ -3,7 +3,7 @@
 // based on https://github.com/vercel/next.js/pull/71218#issuecomment-2440754208
 import js from '@eslint/js';
 import ts from 'typescript-eslint';
-import tailwind from 'eslint-plugin-tailwindcss';
+// import tailwind from 'eslint-plugin-tailwindcss';
 import nextConfig from 'eslint-config-next';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 // @ts-expect-error missing types
@@ -30,7 +30,7 @@ const config = defineConfig([
       },
     },
   },
-  ...tailwind.configs['flat/recommended'],
+  // ...tailwind.configs['flat/recommended'],
   pluginQuery.configs['flat/recommended'],
   {
     plugins: {
