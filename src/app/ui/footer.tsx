@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
-import DarkModeToggle from '@/app/ui/dark-mode-toggle';
+import { DarkModeToggle } from '@/app/ui/dark-mode-toggle';
 import Link from 'next/link';
 
 export default function Footer() {

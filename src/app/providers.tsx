@@ -18,7 +18,7 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
   );
 
   return (
-    <ThemeProvider attribute={'class'} enableSystem={true}>
+    <ThemeProvider attribute={'class'} enableSystem defaultTheme={'system'} disableTransitionOnChange>
       <QueryClientProvider client={queryClient}>
         {children}
         <ReactQueryDevtools initialIsOpen={false} />
