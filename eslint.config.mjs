@@ -17,7 +17,7 @@ const config = defineConfig([
   js.configs.recommended,
   eslintConfigPrettier,
   {
-    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**'],
+    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**', 'src/components/**'],
   },
   ...nextVitals,
   ...nextTs,
