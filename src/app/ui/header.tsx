@@ -1,7 +1,6 @@
 'use client';
 import { IconPlayHandball } from '@tabler/icons-react';
 import Link from 'next/link';
-import Button from '@/app/ui/buttons/link';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment, type MouseEventHandler, type ReactNode, useEffect, useState } from 'react';
@@ -27,6 +26,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
 import * as z from 'zod';
 import { type DropDownLinks, type Menu, type SimpleLink } from '@/app/ui/menu-types';
+import { Button } from '@/components/ui/button';
 
 function DialogLink({
   href,
@@ -188,7 +188,11 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
 
 function LoginButton({ returnUrl, auth }: Readonly<{ returnUrl: string; auth: boolean }>): ReactNode {
   if (!auth) {
-    return <Button href={`/login?${returnUrl}`}>Bejelentkezés</Button>;
+    return (
+      <Button nativeButton={false} render={<Link href={`/login?${returnUrl}`} />}>
+        Bejelentkezés
+      </Button>
+    );
   }
   return null;
 }
