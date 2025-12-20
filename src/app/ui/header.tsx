@@ -20,13 +20,26 @@ import {
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { usePathname } from 'next/navigation';
 import { useSession, signOut } from '@/app/lib/auth-client';
-import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
 import { setTag } from '@sentry/nextjs';
 import * as z from 'zod';
 import { type DropDownLinks, type Menu, type SimpleLink } from '@/app/ui/menu-types';
 import { Button } from '@/components/ui/button';
 import { Menu as MenuIcon, User, X } from 'lucide-react';
 import { AvatarFallback, AvatarImage, Avatar as AvatarShadcn } from '@/components/ui/avatar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 function DialogLink({
   href,
@@ -227,52 +240,37 @@ function UserInfo({
 
   return (
     <>
-      <Popover className="relative">
-        <PopoverButton
-          className={`focus:ring-primary-600 dark:focus:ring-primary-200 flex rounded-full text-sm focus:ring-4 md:me-0`}
-        >
+      <DropdownMenu>
+        <DropdownMenuTrigger>
           <Avatar src={avatar} alt={`${name} profilképe`} />
-        </PopoverButton>
-        <PopoverBackdrop className="fixed inset-0 z-20 bg-black opacity-30" />
-        <Transition
-          as={Fragment}
-          enter="transition ease-out duration-200"
-          enterFrom="opacity-0 motion-safe:translate-y-1"
-          enterTo="opacity-100 motion-safe:translate-y-0"
-          leave="transition ease-in duration-150"
-          leaveFrom="opacity-100 motion-safe:translate-y-0"
-          leaveTo="opacity-0 motion-safe:translate-y-1"
-        >
-          <PopoverPanel className="absolute -left-8 z-50 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700">
-            <div className="px-4 py-3">
-              <span className="block text-sm text-gray-900 dark:text-white" title={name}>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuGroup>
+            <DropdownMenuLabel>
+              <span className="block text-sm" title={name}>
                 {name}
               </span>
-              <span className="block truncate text-sm text-gray-500 dark:text-white/80" title={email}>
+              <span className="block truncate text-sm opacity-80" title={email}>
                 {email}
               </span>
-            </div>
-            <ul className="py-2">
-              <li>
-                <PopoverButton
-                  onClick={() => {
-                    void signOut({
-                      fetchOptions: {
-                        onSuccess: () => {
-                          window.location.href = pathname;
-                        },
-                      },
-                    });
-                  }}
-                  className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Kijelentkezés
-                </PopoverButton>
-              </li>
-            </ul>
-          </PopoverPanel>
-        </Transition>
-      </Popover>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem
+              onClick={() => {
+                void signOut({
+                  fetchOptions: {
+                    onSuccess: () => {
+                      window.location.href = pathname;
+                    },
+                  },
+                });
+              }}
+            >
+              Kijelentkezés
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </>
   );
 }

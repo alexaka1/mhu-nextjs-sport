@@ -65,7 +65,7 @@ export default function InstallBanner() {
   return (
     <aside
       className={`bg-primary data-[show=true]:browser:inline-grid hidden grid-flow-col grid-cols-[2fr_auto] items-center gap-6 px-4 py-3 text-balance text-white print:hidden`}
-      data-show={showInstall || isIOS || true}
+      data-show={showInstall || isIOS}
     >
       <p className="text-center text-sm font-medium text-pretty">
         Már elérhető {deviceType} alkalmazásként is!&nbsp;
