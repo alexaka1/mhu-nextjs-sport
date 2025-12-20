@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import BackToHome from '@/app/ui/buttons/back-to-home';
 import { captureException } from '@sentry/nextjs';
+import { Button } from '@/components/ui/button';
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
@@ -16,8 +17,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           Valami hiba történt!
         </h1>
         <div className="mt-10 flex items-center justify-center gap-x-6">
-          <button
-            className={`bg-primary hover:bg-primary-600 focus-visible:outline-primary-600 rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2`}
+          <Button
             onClick={
               // Attempt to recover by trying to re-render the segment
               () => {
@@ -26,7 +26,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
             }
           >
             Próbáld újra
-          </button>
+          </Button>
           <BackToHome />
         </div>
       </div>

@@ -1,7 +1,6 @@
 'use client';
 import { IconPlayHandball } from '@tabler/icons-react';
 import Link from 'next/link';
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment, type MouseEventHandler, type ReactNode, useEffect, useState } from 'react';
 import {
@@ -19,7 +18,6 @@ import {
   TransitionChild,
 } from '@headlessui/react';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
-import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { usePathname } from 'next/navigation';
 import { useSession, signOut } from '@/app/lib/auth-client';
 import { faUser } from '@fortawesome/free-regular-svg-icons/faUser';
@@ -27,6 +25,7 @@ import { setTag } from '@sentry/nextjs';
 import * as z from 'zod';
 import { type DropDownLinks, type Menu, type SimpleLink } from '@/app/ui/menu-types';
 import { Button } from '@/components/ui/button';
+import { Menu as MenuIcon, X } from 'lucide-react';
 
 function DialogLink({
   href,
@@ -279,21 +278,6 @@ function UserInfo({
           </PopoverPanel>
         </Transition>
       </Popover>
-
-      <button
-        className={`bg-primary hover:bg-primary-600 focus-visible:outline-primary-600 active:bg-primary-800 hidden rounded-md px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 dark:text-white`}
-        onClick={() => {
-          void signOut({
-            fetchOptions: {
-              onSuccess: () => {
-                window.location.href = pathname;
-              },
-            },
-          });
-        }}
-      >
-        Kijelentkezés
-      </button>
     </>
   );
 }
@@ -368,17 +352,17 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
           </div>
           <span className={`grow lg:hidden`}></span>
           <div className="flex lg:hidden">
-            <button
+            <Button
               type={'button'}
-              className="text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200"
+              variant={'ghost'}
+              size={'icon'}
               onClick={() => {
                 setMobileMenuOpen(true);
               }}
             >
-              {/*<input type="checkbox" id="toggler" className={``} />*/}
               <span className="sr-only">Fő menü megnyitása</span>
-              <FontAwesomeIcon className={`size-6`} icon={faBars} aria-hidden="true" />
-            </button>
+              <MenuIcon aria-hidden="true" />
+            </Button>
           </div>
         </nav>
         <Transition as={Fragment} show={mobileMenuOpen}>
@@ -402,17 +386,17 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
                     <span className="sr-only">Főoldal</span>
                     <IconPlayHandball size={40} />
                   </Link>
-                  <button
+                  <Button
                     type={'button'}
                     onClick={() => {
                       setMobileMenuOpen(false);
                     }}
-                    // htmlFor="toggler"
-                    className="-m-2.5 rounded-md p-2.5 text-gray-700 transition-transform duration-200 dark:text-white"
+                    variant={'ghost'}
+                    size={'icon'}
                   >
                     <span className="sr-only">Menü bezárása</span>
-                    <FontAwesomeIcon icon={faXmark} className="size-6 hover:scale-105" aria-hidden="true" />
-                  </button>
+                    <X aria-hidden="true" />
+                  </Button>
                 </div>
                 <div className="mt-6 flow-root">
                   <div className="-my-6 divide-y divide-gray-500/10">
