@@ -32,14 +32,10 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { DarkModeToggle } from '@/app/ui/dark-mode-toggle';
 
 function DialogLink({
   href,
@@ -393,7 +389,7 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
                 </div>
                 <div className="mt-6 flow-root">
                   <div className="-my-6 divide-y divide-gray-500/10">
-                    <div className="space-y-2 py-6">
+                    <nav aria-label="Elsődleges" className="space-y-2 py-6">
                       {menus.map((menu) => {
                         switch (menu.type) {
                           case 'simple':
@@ -422,9 +418,10 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
                             );
                         }
                       })}
-                    </div>
+                    </nav>
                     <div className="py-6">
                       <LoginButton returnUrl={returnUrl.toString()} auth={auth} />
+                      <DarkModeToggle />
                     </div>
                   </div>
                 </div>
