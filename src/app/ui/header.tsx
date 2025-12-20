@@ -252,6 +252,7 @@ function UserInfo({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem
+              variant={'destructive'}
               onClick={() => {
                 void signOut({
                   fetchOptions: {
