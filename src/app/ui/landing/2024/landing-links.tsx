@@ -15,7 +15,9 @@ export default function LandingLinks() {
             -&gt;
           </span>
         </h2>
-        <p className={`m-0 max-w-[30ch] text-sm text-white/75`}>A főügyész köszöntője</p>
+        <p className={`m-0 max-w-[30ch] text-sm text-white/75 not-dark:group-hover:text-black/75`}>
+          A főügyész köszöntője
+        </p>
       </LandingLink>
       <LandingLink href={`/${year}/sportagak`}>
         <h2 className={`mb-3 text-2xl font-semibold text-nowrap`}>
@@ -33,7 +35,7 @@ export default function LandingLinks() {
             -&gt;
           </span>
         </h2>
-        <p className={`m-0 max-w-[30ch] text-sm text-white/75`}></p>
+        <p className={`m-0 max-w-[30ch] text-sm text-white/75 not-dark:group-hover:text-black/75`}></p>
       </LandingLink>
       <LandingLink href={`/${year}/szallas`}>
         <h2 className={`mb-3 text-2xl font-semibold text-nowrap`}>
@@ -42,7 +44,9 @@ export default function LandingLinks() {
             -&gt;
           </span>
         </h2>
-        <p className={`m-0 max-w-[30ch] text-sm text-white/75`}>Sandra Hotel és Hotel Bessenyei</p>
+        <p className={`m-0 max-w-[30ch] text-sm text-white/75 not-dark:group-hover:text-black/75`}>
+          Sandra Hotel és Hotel Bessenyei
+        </p>
       </LandingLink>
       <LandingLink href={`/${year}/programok`}>
         <h2 className={`mb-3 text-2xl font-semibold text-nowrap`}>
@@ -60,7 +64,7 @@ export default function LandingLinks() {
             -&gt;
           </span>
         </h2>
-        <p className={`m-0 max-w-[30ch] text-sm text-balance text-white/75`}></p>
+        <p className={`m-0 max-w-[30ch] text-sm text-balance text-white/75 not-dark:group-hover:text-black/75`}></p>
       </LandingLink>
     </nav>
   );
