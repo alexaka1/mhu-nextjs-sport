@@ -42,7 +42,7 @@ function DialogLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`data-active:bg-primary data-active:dark:bg-primary-600 -mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-50 dark:text-white`}
+      className={`data-active:bg-primary data-active:dark:bg-primary-600 -mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 data-active:text-white dark:text-white dark:hover:text-gray-900`}
       data-active={pathname === href}
     >
       {children}

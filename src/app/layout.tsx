@@ -11,6 +11,7 @@ import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
 import { extractRouterConfig } from 'uploadthing/server';
 import { ourFileRouter } from '@/app/api/uploadthing/core';
 import { Providers } from '@/app/providers';
+import { Toaster } from '@/components/ui/sonner';
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -101,6 +102,7 @@ export default function RootLayout({
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           {children}
           <Footer />
+          <Toaster position={'top-center'} />
           <SpeedInsights />
           <Analytics debug={true} />
         </Providers>
