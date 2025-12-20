@@ -25,7 +25,8 @@ import { setTag } from '@sentry/nextjs';
 import * as z from 'zod';
 import { type DropDownLinks, type Menu, type SimpleLink } from '@/app/ui/menu-types';
 import { Button } from '@/components/ui/button';
-import { Menu as MenuIcon, X } from 'lucide-react';
+import { Menu as MenuIcon, User, X } from 'lucide-react';
+import { AvatarFallback, AvatarImage, Avatar as AvatarShadcn } from '@/components/ui/avatar';
 
 function DialogLink({
   href,
@@ -197,19 +198,13 @@ function LoginButton({ returnUrl, auth }: Readonly<{ returnUrl: string; auth: bo
 }
 
 function Avatar({ src, alt }: Readonly<{ src: string; alt: string }>) {
-  if (src === '') {
-    return (
-      <FontAwesomeIcon
-        icon={faUser}
-        className={`size-6 items-center justify-center rounded-full text-gray-900 dark:text-white`}
-        aria-hidden="true"
-      />
-    );
-  }
   return (
-    // User images should not be optimized because unauthorized sources throw an error instead of just not showing, which is unaccepatable
-    // eslint-disable-next-line @next/next/no-img-element
-    <img className="size-8 items-center justify-center rounded-full" src={src} alt={alt} width={36} height={36} />
+    <AvatarShadcn>
+      <AvatarImage src={src} alt={alt} />
+      <AvatarFallback>
+        <User />
+      </AvatarFallback>
+    </AvatarShadcn>
   );
 }
 
