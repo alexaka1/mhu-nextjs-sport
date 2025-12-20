@@ -13,7 +13,7 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const IconButton = ({ children, ...props }: IconButtonProps) => {
   return (
     <button
-      className={`inline-flex size-10 items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium transition-colors bg-primary border-secondary text-bg-contrast ring-bg-contrast hover:bg-accent hover:text-bg-contrast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`}
+      className={`bg-primary border-secondary hover:bg-accent focus-visible:ring-ring inline-flex size-10 items-center justify-center gap-2 rounded-md border text-sm font-medium whitespace-nowrap text-white ring-white transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`}
       {...props}
     >
       {children}
@@ -60,7 +60,7 @@ export default function ZoomWrapper({ children }: Readonly<{ children: ReactNode
         {() => (
           <>
             <Controls />
-            <div className={`rounded-lg border border-solid p-1 border-primary`}>
+            <div className={`border-primary rounded-lg border border-solid p-1`}>
               <TransformComponent>{children}</TransformComponent>
             </div>
           </>

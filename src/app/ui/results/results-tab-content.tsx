@@ -15,7 +15,7 @@ export default function ResultsContent({
       return (
         <Fragment key={result.key}>
           <Heading />
-          <p className={`prose text-balance p-2 text-bg-contrast`}>Valami hiba történt.</p>
+          <p className={`prose p-2 text-balance text-gray-900 dark:text-white`}>Valami hiba történt.</p>
         </Fragment>
       );
     }
@@ -42,10 +42,10 @@ export default function ResultsContent({
                   className={`size-full`}
                   allow={`fullscreen`}
                 ></iframe>
-                <p className="prose text-balance p-0.5 text-sm text-bg-contrast">
+                <p className="prose p-0.5 text-sm text-balance text-gray-900 dark:text-white">
                   Ez az eszköz nem támogatja a PDF-ek megjelenítését{' '}
-                  <span className={`hidden browser:inline-block`}>böngészőben</span>
-                  <span className={`hidden standalone:inline-block`}>progresszív web alkalmazásban</span>. Helyette a
+                  <span className={`browser:inline-block hidden`}>böngészőben</span>
+                  <span className={`standalone:inline-block hidden`}>progresszív web alkalmazásban</span>. Helyette a
                   Google Docs Viewer van használva. Ez külső szolgáltatás, ezért ha nem jelenik meg semmi, akkor másik
                   fülre lapozással újra próbálhatod, vagy próbáld meg{' '}
                   <a className={`decoration-primary text-primary dark:text-primary-400`} href={result.url}>
@@ -76,5 +76,5 @@ export default function ResultsContent({
   });
   return tables.length > 0 ?
       tables
-    : <p className={`prose mx-auto p-4 text-bg-contrast`}>Nincs eredmény az adott sportágban.</p>;
+    : <p className={`prose mx-auto p-4 text-gray-900 dark:text-white`}>Nincs eredmény az adott sportágban.</p>;
 }

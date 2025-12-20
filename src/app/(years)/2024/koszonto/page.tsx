@@ -15,15 +15,13 @@ export default function Home() {
         <LandingBackground />
         <LandingTitle />
 
-        <section className="grid overflow-hidden rounded-lg bg-primary-800/95 md:grid-cols-2">
+        <section className="bg-primary-800/95 grid overflow-hidden rounded-lg md:grid-cols-2">
           <div className="p-4 pb-0 md:flex md:items-center md:p-12 lg:px-16 lg:py-24">
-            <div className="prose mx-auto max-w-xl text-balance text-center md:text-left rtl:md:text-right">
+            <div className="prose mx-auto max-w-xl text-center text-balance md:text-left rtl:md:text-right">
               <h2 className="sr-only">Főűgyész köszöntője</h2>
-              <span className="text-2xl font-bold capitalize text-bg-contrast md:text-3xl xl:text-5xl">
-                Kedves látogató!
-              </span>
+              <span className="text-2xl font-bold text-white capitalize md:text-3xl xl:text-5xl">Kedves látogató!</span>
 
-              <blockquote className={`prose hyphens-auto italic text-bg-contrast xl:text-3xl`}>
+              <blockquote className={`prose hyphens-auto text-white italic xl:text-3xl`}>
                 <p className="md:mt-4">
                   Idén negyvenkettedik alkalommal kerül megrendezésre a{' '}
                   <em className={`font-bold capitalize`}>Regionális ügyészségi sporttalálkozó</em>. 2024. június
@@ -36,7 +34,7 @@ export default function Home() {
                 </p>
               </blockquote>
 
-              <p className="hidden text-xl font-semibold text-bg-contrast before:content-['-_'] md:mt-4 md:block xl:text-4xl">
+              <p className="hidden text-xl font-semibold text-white before:content-['-_'] md:mt-4 md:block xl:text-4xl">
                 <span className="inline-block max-w-full text-balance capitalize">Martossy György</span> főügyész
               </p>
             </div>
@@ -53,7 +51,7 @@ export default function Home() {
               className="h-56 w-full rounded-lg object-scale-down md:h-full md:rounded-l-none md:rounded-r-lg md:bg-center md:object-cover"
               aria-labelledby={'greetings-label'}
             />
-            <p id="greetings-label" className="prose text-center text-xl text-bg-contrast md:hidden">
+            <p id="greetings-label" className="prose text-center text-xl text-white md:hidden">
               <span className="inline-block max-w-full text-balance">Martossy György</span> főügyész
             </p>
           </div>

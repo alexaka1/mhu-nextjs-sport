@@ -42,7 +42,7 @@ function DialogLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
+      className={`data-active:bg-primary data-active:dark:bg-primary-600 -mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-50 dark:text-white`}
       data-active={pathname === href}
     >
       {children}
@@ -62,7 +62,7 @@ function DisclosureMenu({
       {({ open }) => (
         <>
           <DisclosureButton
-            className={`flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
+            className={`data-active:bg-primary data-active:dark:bg-primary-600 flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base leading-7 font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-50 dark:text-white`}
             data-active={items.some(({ href }) => href === pathname)}
           >
             {title}
@@ -79,7 +79,7 @@ function DisclosureMenu({
                 as={Link}
                 href={item.href}
                 onClick={onClick}
-                className={`block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 transition-colors duration-200 text-bg-contrast hover:bg-gray-50 data-active:bg-primary data-active:dark:bg-primary-600`}
+                className={`data-active:bg-primary data-active:dark:bg-primary-600 block rounded-lg py-2 pr-3 pl-6 text-sm leading-7 font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-50 dark:text-white`}
                 data-active={pathname === item.href}
               >
                 {item.name}
@@ -97,7 +97,7 @@ function PopoverLink({ href, children }: Readonly<SimpleLink>) {
   return (
     <Link
       href={href}
-      className={`text-sm font-semibold leading-6 transition-colors duration-200 text-bg-contrast hover:underline hover:decoration-primary hover:decoration-1 hover:text-bg-contrast/80 data-active:font-extrabold data-active:underline data-active:decoration-primary data-active:decoration-2 data-active:drop-shadow-lg data-active:text-primary hover:dark:decoration-primary-400 data-active:dark:text-primary-600`}
+      className={`hover:decoration-primary data-active:decoration-primary data-active:text-primary hover:dark:decoration-primary-400 data-active:dark:text-primary-600 text-sm leading-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-white/80 hover:underline hover:decoration-1 data-active:font-extrabold data-active:underline data-active:decoration-2 data-active:drop-shadow-lg dark:text-white`}
       data-active={pathname === href || pathname.startsWith(href)}
     >
       {children}
@@ -111,7 +111,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
   return (
     <Popover className="relative">
       <PopoverButton
-        className={`flex items-center gap-x-1 text-sm font-semibold leading-6 text-bg-contrast data-active:font-extrabold data-active:underline data-active:decoration-primary data-active:decoration-2 data-active:drop-shadow-lg data-active:dark:text-primary-600`}
+        className={`data-active:decoration-primary data-active:dark:text-primary-600 flex items-center gap-x-1 text-sm leading-6 font-semibold text-gray-900 data-active:font-extrabold data-active:underline data-active:decoration-2 data-active:drop-shadow-lg dark:text-white`}
         data-active={isActive}
       >
         {title}
@@ -121,7 +121,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
           aria-hidden="true"
         />
       </PopoverButton>
-      <PopoverBackdrop className="fixed inset-0 opacity-30 bg-black" />
+      <PopoverBackdrop className="fixed inset-0 bg-black opacity-30" />
 
       <Transition
         as={Fragment}
@@ -132,7 +132,7 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
         leaveFrom="opacity-100 motion-safe:translate-y-0"
         leaveTo="opacity-0 motion-safe:translate-y-1"
       >
-        <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl border shadow-lg bg-white border-primary ring-primary ring-offset-primary dark:bg-gray-800">
+        <PopoverPanel className="border-primary ring-primary ring-offset-primary absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl border bg-white shadow-lg dark:bg-gray-800">
           <div className="p-4">
             {items.map((item) => (
               <div
@@ -141,18 +141,22 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
               >
                 <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-950 group-hover:dark:bg-gray-800">
                   <FontAwesomeIcon
-                    className="size-6 text-gray-600 group-hover:text-primary dark:text-gray-400 group-hover:dark:text-primary-400/75"
+                    className="group-hover:text-primary group-hover:dark:text-primary-400/75 size-6 text-gray-600 dark:text-gray-400"
                     aria-hidden="true"
                     icon={item.icon}
                   />
                 </div>
                 <div className="flex-auto">
-                  <PopoverButton as={Link} href={item.href} className="block font-semibold text-bg-contrast">
+                  <PopoverButton
+                    as={Link}
+                    href={item.href}
+                    className="block font-semibold text-gray-900 dark:text-white"
+                  >
                     {item.name}
                     <span className="absolute inset-0" />
                   </PopoverButton>
                   <p
-                    className={`mt-1 text-balance dark:text-bg-contrast/95 ${pathname === item.href ? 'text-bg-contrast' : 'text-gray-600'}`}
+                    className={`mt-1 text-balance dark:text-white/95 ${pathname === item.href ? 'text-white' : 'text-gray-600'}`}
                   >
                     {item.description}
                   </p>
@@ -165,10 +169,10 @@ function PopoverMenu({ title, items, callsToAction }: Readonly<DropDownLinks>) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="group flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 transition-colors duration-200 text-gray-900 hover:bg-gray-100 dark:text-bg-contrast dark:hover:bg-gray-600"
+                className="group flex items-center justify-center gap-x-2.5 p-3 text-sm leading-6 font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600"
               >
                 <FontAwesomeIcon
-                  className="size-5 flex-none text-gray-400 group-hover:text-primary group-hover:dark:text-primary-400/75"
+                  className="group-hover:text-primary group-hover:dark:text-primary-400/75 size-5 flex-none text-gray-400"
                   aria-hidden="true"
                   icon={item.icon}
                 />
@@ -194,7 +198,7 @@ function Avatar({ src, alt }: Readonly<{ src: string; alt: string }>) {
     return (
       <FontAwesomeIcon
         icon={faUser}
-        className={`size-6 items-center justify-center rounded-full text-bg-contrast`}
+        className={`size-6 items-center justify-center rounded-full text-gray-900 dark:text-white`}
         aria-hidden="true"
       />
     );
@@ -227,11 +231,11 @@ function UserInfo({
     <>
       <Popover className="relative">
         <PopoverButton
-          className={`flex rounded-full text-sm focus:ring-4 focus:ring-primary-600 md:me-0 dark:focus:ring-primary-200`}
+          className={`focus:ring-primary-600 dark:focus:ring-primary-200 flex rounded-full text-sm focus:ring-4 md:me-0`}
         >
           <Avatar src={avatar} alt={`${name} profilképe`} />
         </PopoverButton>
-        <PopoverBackdrop className="fixed inset-0 z-20 opacity-30 bg-black" />
+        <PopoverBackdrop className="fixed inset-0 z-20 bg-black opacity-30" />
         <Transition
           as={Fragment}
           enter="transition ease-out duration-200"
@@ -241,12 +245,12 @@ function UserInfo({
           leaveFrom="opacity-100 motion-safe:translate-y-0"
           leaveTo="opacity-0 motion-safe:translate-y-1"
         >
-          <PopoverPanel className="absolute -left-8 z-50 my-4 list-none divide-y rounded-lg text-base shadow divide-gray-100 bg-white dark:divide-gray-600 dark:bg-gray-700">
+          <PopoverPanel className="absolute -left-8 z-50 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700">
             <div className="px-4 py-3">
-              <span className="block text-sm text-gray-900 dark:text-bg-contrast" title={name}>
+              <span className="block text-sm text-gray-900 dark:text-white" title={name}>
                 {name}
               </span>
-              <span className="block truncate text-sm text-gray-500 dark:text-bg-contrast/80" title={email}>
+              <span className="block truncate text-sm text-gray-500 dark:text-white/80" title={email}>
                 {email}
               </span>
             </div>
@@ -273,7 +277,7 @@ function UserInfo({
       </Popover>
 
       <button
-        className={`hidden rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors duration-200 ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}
+        className={`bg-primary hover:bg-primary-600 focus-visible:outline-primary-600 active:bg-primary-800 hidden rounded-md px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 dark:text-white`}
         onClick={() => {
           void signOut({
             fetchOptions: {
@@ -318,13 +322,13 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
         <nav className="mx-auto flex max-w-7xl items-center p-6 lg:justify-between lg:px-8" aria-label="Elsődleges">
           <div className="flex lg:flex-1">
             <Link
-              className="block transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+              className="text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75 block transition-colors duration-200"
               href="/"
             >
               <span className="sr-only">Főoldal</span>
               <div
                 aria-hidden="true"
-                className={`sr-only browser:after:content-['browser'] standalone:after:content-['standalone']`}
+                className={`browser:after:content-['browser'] standalone:after:content-['standalone'] sr-only`}
                 id={`device-type`}
               ></div>
               <IconPlayHandball size={40} />
@@ -362,7 +366,7 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
           <div className="flex lg:hidden">
             <button
               type={'button'}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+              className="text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200"
               onClick={() => {
                 setMobileMenuOpen(true);
               }}
@@ -385,10 +389,10 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
               leaveFrom="opacity-100 motion-safe:translate-x-0"
               leaveTo="opacity-0 motion-safe:translate-x-full"
             >
-              <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto p-6 bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900">
+              <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900">
                 <div className="flex items-center justify-between">
                   <Link
-                    className="block transition-colors duration-200 text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75"
+                    className="text-primary hover:text-primary/75 dark:text-primary-600 dark:hover:text-primary-400/75 block transition-colors duration-200"
                     href="/"
                   >
                     <span className="sr-only">Főoldal</span>
@@ -400,7 +404,7 @@ export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
                       setMobileMenuOpen(false);
                     }}
                     // htmlFor="toggler"
-                    className="-m-2.5 rounded-md p-2.5 transition-transform duration-200 text-gray-700 dark:text-bg-contrast"
+                    className="-m-2.5 rounded-md p-2.5 text-gray-700 transition-transform duration-200 dark:text-white"
                   >
                     <span className="sr-only">Menü bezárása</span>
                     <FontAwesomeIcon icon={faXmark} className="size-6 hover:scale-105" aria-hidden="true" />

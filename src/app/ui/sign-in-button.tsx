@@ -43,7 +43,7 @@ export function SignInButton({
     <button
       onClick={handleSignIn}
       type="button"
-      className="relative flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm transition-colors duration-200 bg-primary text-bg-contrast hover:bg-secondary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400"
+      className="bg-primary hover:bg-secondary-600 focus-visible:outline-primary-400 relative flex w-full justify-center rounded-md px-3 py-1.5 text-sm leading-6 font-semibold text-white shadow-sm transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
     >
       {recommended ?
         <LoginBadge type="recommended">Javasolt</LoginBadge>

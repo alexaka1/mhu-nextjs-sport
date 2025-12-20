@@ -31,11 +31,11 @@ export default function ResultsTable({
   return (
     <>
       <div className={`relative flex grow flex-col overflow-auto shadow-md sm:rounded-lg lg:h-full lg:overflow-x-auto`}>
-        <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-bg-contrast">
+        <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-gray-900 dark:text-white">
           <DeleteButton fileKey={fileKey} canEdit={canEdit} year={year} />
           <button
             onClick={() => share(url, title)}
-            className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
+            className={`hover:text-primary hover:dark:text-primary-600 transition-colors duration-200`}
             title={`Megosztás`}
           >
             <FontAwesomeIcon icon={faShareNodes} className={`size-6`} />
@@ -43,7 +43,7 @@ export default function ResultsTable({
           <Link
             href={file}
             target={'_blank'}
-            className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
+            className={`hover:text-primary hover:dark:text-primary-600 transition-colors duration-200`}
             title={'Táblázat letöltése'}
           >
             <FontAwesomeIcon icon={faDownload} className={`size-6`} />
@@ -86,7 +86,7 @@ function DeleteButton({ fileKey, canEdit, year }: { fileKey: string; canEdit?: b
     >
       <button
         type={'submit'}
-        className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
+        className={`hover:text-primary hover:dark:text-primary-600 transition-colors duration-200`}
         title={`Törlés`}
       >
         <FontAwesomeIcon icon={faTrashCan} className={`size-6`} />

@@ -28,12 +28,12 @@ export default function Sports() {
           <TabList
             as={`nav`}
             aria-label={`Sportágak`}
-            className="-mb-px flex flex-wrap border-b text-center text-sm font-medium border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+            className="-mb-px flex flex-wrap border-b border-gray-200 text-center text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400"
           >
             {tabs.map((tab) => (
               <Tab
                 key={tab.title}
-                className="group me-2 inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent focus-visible:outline-1 focus-visible:outline-primary-800 data-[hover]:border-secondary-600 data-[selected]:border-primary data-[hover]:text-secondary-600 data-[selected]:text-primary dark:focus-visible:outline-primary-600 data-[selected]:dark:border-primary-400 dark:data-[hover]:text-gray-300 data-[selected]:dark:text-primary-400"
+                className="group focus-visible:outline-primary-800 data-[hover]:border-secondary-600 data-[selected]:border-primary data-[hover]:text-secondary-600 data-[selected]:text-primary dark:focus-visible:outline-primary-600 data-[selected]:dark:border-primary-400 data-[selected]:dark:text-primary-400 me-2 inline-flex items-center justify-center rounded-t-lg border-b-2 border-transparent p-4 focus-visible:outline-1 dark:data-[hover]:text-gray-300"
               >
                 {tab.icon}
                 {tab.title}
@@ -47,14 +47,14 @@ export default function Sports() {
                   <Title id={`Asztalitenisz`}>Asztalitenisz [női, férfi]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm capitalize text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 capitalize dark:text-white/80">
                         Egyetemi Sportcsarnok – a teremben váltócipő kötelező. A rendező a labdákat biztosítja.
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpontok</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ul>
                           <li>
                             <time dateTime={`2025-06-27T16:00`}>2025. június 27. péntek 16:00-18:30</time>
@@ -94,8 +94,8 @@ export default function Sports() {
                   <h3 className={`-mb-14 font-bold`}>Csoport beosztások</h3>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">A csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Főváros</li>
                           <li>Bács</li>
@@ -104,8 +104,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">B csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Szabolcs</li>
                           <li>Csongrád</li>
@@ -114,8 +114,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">C csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>LegfÜ</li>
                           <li>Békés</li>
@@ -124,8 +124,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">D csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Hajdú</li>
                           <li>Pest</li>
@@ -227,12 +227,12 @@ export default function Sports() {
                   <Title id={`csocso`}>Csocsó vegyespáros</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">CsabaPark Kolbászmúzeum</dd>
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">CsabaPark Kolbászmúzeum</dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <time dateTime={`2025-06-28T21:00`}>2025. június 28-a, szombat 21:00 órától</time>
                       </dd>
                     </DataListEntry>
@@ -250,8 +250,8 @@ export default function Sports() {
                   <h3 className={`-mb-14 font-bold`}>Csoportbeosztás</h3>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">A csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Borsod</li>
                           <li>Szolnok</li>
@@ -260,8 +260,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">B csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Szabolcs</li>
                           <li>Hajdú-Bihar</li>
@@ -270,8 +270,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">C csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Bács</li>
                           <li>KNYF</li>
@@ -280,8 +280,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">D csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Pest</li>
                           <li>Főváros</li>
@@ -369,12 +369,12 @@ export default function Sports() {
                   <Title id={`Darts`}>Darts [női, férfi]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">CsabaPark Kolbászmúzeum</dd>
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">CsabaPark Kolbászmúzeum</dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <time dateTime={`2025-06-27T21:00`}>2025. június 27-e, péntek 21:00 órától</time>
                       </dd>
                     </DataListEntry>
@@ -401,8 +401,8 @@ export default function Sports() {
                   <h3 className={`-mb-14 font-bold italic underline`}>Csoportbeosztás</h3>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">A csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Szolnok</li>
                           <li>Pest</li>
@@ -411,8 +411,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">B csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Csongrád</li>
                           <li>Bács</li>
@@ -421,8 +421,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">C csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>KNYF</li>
                           <li>Békés</li>
@@ -431,8 +431,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">D csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>LegfÜ</li>
                           <li>Szabolcs</li>
@@ -515,15 +515,15 @@ export default function Sports() {
                   <Title id={`Labdarugas`}>Labdarúgás [férfi]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         Kórház utcai „Fű2” műfüves pálya [péntek-szombat], valamint a Gál Ferenc Egyetem műfüves pályája
                         [vasárnap]
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpontok</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ul>
                           <li>
                             <time dateTime={`2025-06-27T16:00`}>2025. június 27-e, péntek 16:00-18:30</time>
@@ -605,8 +605,8 @@ export default function Sports() {
                   <h3 className={`-mb-14 font-bold italic underline`}>Csoportbeosztás</h3>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">A csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>KNYF</li>
                           <li>Bács</li>
@@ -615,8 +615,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">B csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Borsod</li>
                           <li>Heves-Nógrád</li>
@@ -625,8 +625,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">C csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Pest</li>
                           <li>Főváros</li>
@@ -635,8 +635,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">D csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Csongrád</li>
                           <li>Szolnok</li>
@@ -774,14 +774,14 @@ export default function Sports() {
                   <Title id={`Ijaszat`}>Íjászat [női, férfi]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         Egyetemi sportcsarnok mögötti tér
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <time dateTime={`2025-06-28T10:00:00`}>2025. június 28-a, szombat 10:00-12:00</time>
                       </dd>
                     </DataListEntry>
@@ -827,14 +827,12 @@ export default function Sports() {
                   <Title id={`Sikfutas`}>Síkfutás [női, férfi]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                        Tünde utcai atlétikai pálya
-                      </dd>
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">Tünde utcai atlétikai pálya</dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <time dateTime={`2025-06-27T15:00`}>
                           2025. június 27-e, péntek 15:00-15:15 óra [női, majd férfi futamok]
                         </time>
@@ -856,8 +854,8 @@ export default function Sports() {
                   <p>Szöges cipő használata nem engedélyezett.</p>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Első futam</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Első futam</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Bács</li>
                           <li>Békés</li>
@@ -867,8 +865,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Második futam</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Második futam</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Főváros</li>
                           <li>Hajdú-Bihar</li>
@@ -878,8 +876,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Harmadik futam</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Harmadik futam</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>KNYF</li>
                           <li>Legfőbb Ügyészség</li>
@@ -898,14 +896,12 @@ export default function Sports() {
                   <Title id={`Sulylokes`}>Súlylökés [női, férfi]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
-                        Tünde utcai atlétikai pálya
-                      </dd>
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">Tünde utcai atlétikai pálya</dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <time dateTime={`2025-06-27T15:15`}>
                           2025. június 27-e, péntek 15.15-16:00 óra [női, majd férfi verseny]
                         </time>
@@ -945,14 +941,14 @@ export default function Sports() {
                   <Title id={`Kosarlabda`}>Kosárlabda [női]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         Egyetemi Sportcsarnok – a teremben váltócipő kötelező. A rendező a labdákat biztosítja.
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpontok</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ul>
                           <li>
                             <time dateTime={`2025-06-27T16:00`}>2025. június 27-e, péntek 16:00-18:30</time>
@@ -994,8 +990,8 @@ export default function Sports() {
                   <h3 className={`-mb-14 font-bold`}>Csoportbeosztás</h3>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">A csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Hajdú</li>
                           <li>Szabolcs</li>
@@ -1004,8 +1000,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">B csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Bács</li>
                           <li>Heves-Nógrád</li>
@@ -1014,8 +1010,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">C csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Csongrád</li>
                           <li>LegfÜ</li>
@@ -1024,8 +1020,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">D csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Főváros</li>
                           <li>Borsod</li>
@@ -1127,14 +1123,14 @@ export default function Sports() {
                   <Title id={`Tollaslabda`}>Tollaslabda vegyespáros</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         Egyetemi Sportcsarnok – a teremben váltócipő kötelező. A rendező a labdákat biztosítja.
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpontok</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ul>
                           <li>
                             <time dateTime={`2025-06-27T16:00`}>2025. június 27-e, péntek 16:00-18:30</time>
@@ -1186,8 +1182,8 @@ export default function Sports() {
                   <h3 className={`-mb-14 font-bold`}>Csoportbeosztás</h3>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">A csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>KNYF</li>
                           <li>Szabolcs</li>
@@ -1196,8 +1192,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">B csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Borsod</li>
                           <li>Bács</li>
@@ -1206,8 +1202,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">C csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Pest</li>
                           <li>LegfÜ</li>
@@ -1216,8 +1212,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-bold text-gray-900 dark:text-white">D csoport</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Főváros</li>
                           <li>Békés</li>
@@ -1319,14 +1315,14 @@ export default function Sports() {
                   <Title id={`Uszas`}>Úszás [vegyescsapat]</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         Árpád Fürdő [50 méteres versenymedence] – öltöző biztosított
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <time dateTime={`2025-06-28T09:00`}>2025. június 28-a, szombat 09:00-10:00.</time>{' '}
                         <strong>Verseny kezdete 09.30.</strong>
                       </dd>
@@ -1383,8 +1379,8 @@ export default function Sports() {
                   <h3 className={`-mb-14 font-bold`}>Csoportbeosztás</h3>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Első futam</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Első futam</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Bács</li>
                           <li>Békés</li>
@@ -1394,8 +1390,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Második futam</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Második futam</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Főváros</li>
                           <li>Hajdú-Bihar</li>
@@ -1405,8 +1401,8 @@ export default function Sports() {
                       </dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Harmadik futam</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Harmadik futam</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <ol>
                           <li>Központi Nyomozó Főügyészség</li>
                           <li>Legfőbb Ügyészség</li>
@@ -1425,12 +1421,12 @@ export default function Sports() {
                   <Title id={`Fougyeszi`}>Főügyészi megmérettetés</Title>
                   <DataList>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">CsabaPark Pálinkamúzeum</dd>
+                      <dt className="font-medium text-gray-900 dark:text-white">Helyszín</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">CsabaPark Pálinkamúzeum</dd>
                     </DataListEntry>
                     <DataListEntry>
-                      <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-                      <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+                      <dt className="font-medium text-gray-900 dark:text-white">Időpont</dt>
+                      <dd className="mt-2 text-sm text-gray-500 dark:text-white/80">
                         <time dateTime={`2025-06-27T20:30`}>2025. június 27-e, péntek 20:30 órától</time>
                       </dd>
                     </DataListEntry>

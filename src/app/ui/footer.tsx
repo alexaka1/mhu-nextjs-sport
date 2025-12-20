@@ -19,7 +19,7 @@ export default function Footer() {
             {/*  <Image src="/vercel.svg" alt="Vercel Logó" className="h-6 dark:invert" width={100} height={24} /> -en*/}
             {/*  hosztolva.*/}
             {/*</a>*/}
-            <p className="prose text-balance text-bg-contrast">
+            <p className="prose text-balance text-gray-900 dark:text-white">
               Ez a weboldal egy hobbi projekt keretében készült. Nem hivatalos. Nem kapcsolódik semmilyen hivatalos
               szervezethez. A forráskód elérhető a GitHub-on.
             </p>
@@ -35,7 +35,7 @@ export default function Footer() {
                   href="https://www.facebook.com/Magyarorsz%C3%A1g-%C3%9Cgy%C3%A9szs%C3%A9ge-104594918109266"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                  className="text-primary transition hover:opacity-75 dark:text-gray-900 dark:text-white"
                 >
                   <span className="sr-only">Facebook</span>
 
@@ -48,7 +48,7 @@ export default function Footer() {
                   href="https://youtube.com/channel/UCouE-RnAm6zOsykseIe1wUA"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                  className="text-primary transition hover:opacity-75 dark:text-white"
                 >
                   <span className="sr-only">YouTube</span>
                   <FontAwesomeIcon icon={faYoutube} className={`size-6`} />
@@ -60,7 +60,7 @@ export default function Footer() {
                   href="https://x.com/ProsecutionHu"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                  className="text-primary transition hover:opacity-75 dark:text-white"
                 >
                   <span className="sr-only">X</span>
 
@@ -73,7 +73,7 @@ export default function Footer() {
                   href="https://github.com/alexaka1/mhu-nextjs-sport"
                   rel="noreferrer"
                   target="_blank"
-                  className="transition text-primary hover:opacity-75 dark:text-bg-contrast"
+                  className="text-primary transition hover:opacity-75 dark:text-white"
                 >
                   <span className="sr-only">GitHub</span>
 
@@ -84,7 +84,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 border-t pt-8 border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
+        <div className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 dark:border-gray-800">
           <div>
             <p id="year-links" className="font-medium text-gray-900 dark:text-white">
               Sporttalálkozók
@@ -93,12 +93,12 @@ export default function Footer() {
             <nav aria-labelledby="year-links">
               <menu className="mt-6 space-y-4 text-sm">
                 <li>
-                  <Link href="/2025" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  <Link href="/2025" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                     2025 - Békéscsaba
                   </Link>
                 </li>
                 <li>
-                  <Link href="/2024" className="transition text-gray-700 hover:opacity-75 dark:text-gray-200">
+                  <Link href="/2024" className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                     2024 - Nyíregyháza
                   </Link>
                 </li>
@@ -124,7 +124,7 @@ export default function Footer() {
             </nav>
           </div>
         </div>
-        <p className="prose whitespace-nowrap text-balance text-xs text-bg-contrast">
+        <p className="prose text-xs text-balance whitespace-nowrap text-gray-900 dark:text-white">
           &copy; {new Date().getFullYear()}.{' '}
           <span className="inline-block max-w-full text-balance">Martossy Alex Márk.</span> Minden jog fenntartva.
         </p>

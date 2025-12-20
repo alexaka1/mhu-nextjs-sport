@@ -8,18 +8,15 @@ export function Title({ children, id }: Readonly<{ children: ReactNode; id: stri
     <h2
       id={id}
       className={
-        'group/title inline-flex flex-row gap-2 text-balance text-3xl font-bold tracking-tight transition-colors duration-200 text-gray-900 has-[[data-counter]]:before:content-[counter(h2-counter,_upper-roman)_"._"] has-[[data-counter]]:before:[counter-increment:h2-counter] sm:text-4xl dark:text-bg-contrast'
+        'group/title inline-flex flex-row gap-2 text-3xl font-bold tracking-tight text-balance text-gray-900 transition-colors duration-200 has-[[data-counter]]:before:content-[counter(h2-counter,_upper-roman)_"._"] has-[[data-counter]]:before:[counter-increment:h2-counter] sm:text-4xl dark:text-white'
       }
     >
       <a
         href={`#${id}`}
         aria-labelledby={id}
-        className={`flex items-center align-middle standalone:hidden print:hidden`}
+        className={`standalone:hidden flex items-center align-middle print:hidden`}
       >
-        <FontAwesomeIcon
-          icon={faHashtag}
-          className={`invisible size-6 group-hover/title:visible dark:text-bg-contrast`}
-        />
+        <FontAwesomeIcon icon={faHashtag} className={`invisible size-6 group-hover/title:visible dark:text-white`} />
       </a>
       <span>{children}</span>
     </h2>
@@ -58,7 +55,7 @@ export function Entry({ children }: Readonly<{ children: ReactNode }>) {
 export function EntryContent({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <div
-      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-bg-contrast prose-p:dark:text-bg-contrast prose-a:dark:text-primary-600 prose-strong:dark:text-bg-contrast prose-ol:dark:text-bg-contrast prose-ul:dark:text-bg-contrast prose-table:dark:text-bg-contrast prose-td:dark:text-bg-contrast`}
+      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-white prose-p:dark:text-white prose-a:dark:text-primary-600 prose-strong:dark:text-white prose-ol:dark:text-white prose-ul:dark:text-white prose-table:dark:text-white prose-td:dark:text-white`}
     >
       {children}
     </div>
@@ -66,7 +63,7 @@ export function EntryContent({ children }: Readonly<{ children: ReactNode }>) {
 }
 
 export function DataListEntry({ children }: Readonly<{ children: ReactNode }>) {
-  return <div className="border-t pt-4 border-gray-200">{children}</div>;
+  return <div className="border-t border-gray-200 pt-4">{children}</div>;
 }
 
 export function DataList({ children }: Readonly<{ children: ReactNode }>) {

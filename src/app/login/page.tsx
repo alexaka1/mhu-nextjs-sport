@@ -18,7 +18,7 @@ const providers: LoginButton[] = [
             width={24}
             height={24}
             src={`/icons/simplelogin.svg`}
-            className={`size-6 rounded-lg p-0.5 pr-1 bg-white`}
+            className={`size-6 rounded-lg bg-white p-0.5 pr-1`}
           />
         </div>{' '}
         SimpleLogin belépés
@@ -75,7 +75,7 @@ export default async function Home(
   if (session?.user != null) {
     return (
       <main className="prose flex min-h-full flex-1 flex-col justify-center px-6 py-12 sm:mx-auto sm:w-full sm:max-w-md lg:px-8">
-        <h2 className={`text-center text-gray-900 dark:text-bg-contrast`}>Már be van jelentkezve.</h2>
+        <h2 className={`text-center text-gray-900 dark:text-white`}>Már be van jelentkezve.</h2>
         <div className="mt-10 flex flex-col gap-3 sm:mx-auto sm:w-full sm:max-w-sm sm:gap-4">
           <BackToHome />
         </div>
@@ -86,9 +86,9 @@ export default async function Home(
     <>
       <main className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:prose sm:mx-auto sm:w-full sm:max-w-sm">
-          <IconPlayHandball size={40} className={`mx-auto h-10 w-auto text-primary dark:text-bg-contrast`} />
-          <h2 className="mt-10 text-center text-gray-900 dark:text-bg-contrast">Jelentkezz be az alkalmazásba!</h2>
-          <h4 className={`text-center dark:text-bg-contrast`}>Válassz az alábbi lehetőségek közül</h4>
+          <IconPlayHandball size={40} className={`text-primary mx-auto h-10 w-auto dark:text-white`} />
+          <h2 className="mt-10 text-center text-gray-900 dark:text-white">Jelentkezz be az alkalmazásba!</h2>
+          <h4 className={`text-center dark:text-white`}>Válassz az alábbi lehetőségek közül</h4>
         </div>
 
         <div className="mt-10 flex flex-col gap-3 sm:mx-auto sm:w-full sm:max-w-sm sm:gap-4">
