@@ -4,7 +4,8 @@
 import js from '@eslint/js';
 import ts from 'typescript-eslint';
 // import tailwind from 'eslint-plugin-tailwindcss';
-import nextConfig from 'eslint-config-next';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 // @ts-expect-error missing types
 import drizzle from 'eslint-plugin-drizzle';
@@ -18,8 +19,8 @@ const config = defineConfig([
   {
     ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**'],
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  ...nextConfig,
+  ...nextVitals,
+  ...nextTs,
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
   {
