@@ -2,12 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { DarkModeToggle } from '@/app/ui/dark-mode-toggle';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className="mt-auto bg-gray-50 dark:bg-gray-900 print:hidden">
-      <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+      <div className="mx-auto max-w-7xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className={`flex flex-col items-start gap-2`}>
             {/*<a*/}
@@ -35,7 +36,7 @@ export default function Footer() {
                   href="https://www.facebook.com/Magyarorsz%C3%A1g-%C3%9Cgy%C3%A9szs%C3%A9ge-104594918109266"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-primary transition hover:opacity-75 dark:text-gray-900 dark:text-white"
+                  className="text-primary transition hover:opacity-75 dark:text-gray-900"
                 >
                   <span className="sr-only">Facebook</span>
 
