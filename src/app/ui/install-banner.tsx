@@ -63,7 +63,7 @@ export default function InstallBanner() {
 
   return (
     <aside
-      className={`hidden grid-flow-col grid-cols-[2fr_auto] items-center gap-6 text-balance px-4 py-3 bg-primary text-primary-800 dark:text-primary-200 print:hidden ${showInstall || isIOS ? 'browser:inline-grid' : ''}`}
+      className={`hidden grid-flow-col grid-cols-[2fr_auto] items-center gap-6 text-balance px-4 py-3 bg-primary text-bg-contrast print:hidden ${showInstall || isIOS ? 'browser:inline-grid' : ''}`}
     >
       <p className="text-pretty text-center text-sm font-medium">
         Már elérhető {deviceType} alkalmazásként is!&nbsp;
@@ -79,7 +79,7 @@ export default function InstallBanner() {
       {/*<button*/}
       {/*  className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors*/}
       {/*      duration-200*/}
-      {/*      ease-in-out bg-primary text-primary-800 dark:text-primary-200 hover:bg-primary-600 focus-visible:outline focus-visible:outline-2*/}
+      {/*      ease-in-out bg-primary text-bg-contrast hover:bg-primary-600 focus-visible:outline focus-visible:outline-2*/}
       {/*      focus-visible:outline-offset-2 focus-visible:outline-primary-600 active:bg-primary-800`}*/}
       {/*  onClick={Install}*/}
       {/*>*/}

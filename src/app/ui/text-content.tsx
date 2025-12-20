@@ -8,7 +8,7 @@ export function Title({ children, id }: Readonly<{ children: ReactNode; id: stri
     <h2
       id={id}
       className={
-        'group/title inline-flex flex-row gap-2 text-balance text-3xl font-bold tracking-tight transition-colors duration-200 text-gray-900 has-[[data-counter]]:before:content-[counter(h2-counter,_upper-roman)_"._"] has-[[data-counter]]:before:[counter-increment:h2-counter] sm:text-4xl dark:text-primary-800 dark:text-primary-200'
+        'group/title inline-flex flex-row gap-2 text-balance text-3xl font-bold tracking-tight transition-colors duration-200 text-gray-900 has-[[data-counter]]:before:content-[counter(h2-counter,_upper-roman)_"._"] has-[[data-counter]]:before:[counter-increment:h2-counter] sm:text-4xl dark:text-bg-contrast'
       }
     >
       <a
@@ -18,7 +18,7 @@ export function Title({ children, id }: Readonly<{ children: ReactNode; id: stri
       >
         <FontAwesomeIcon
           icon={faHashtag}
-          className={`invisible size-6 group-hover/title:visible dark:text-primary-800 dark:text-primary-200`}
+          className={`invisible size-6 group-hover/title:visible dark:text-bg-contrast`}
         />
       </a>
       <span>{children}</span>
@@ -58,7 +58,7 @@ export function Entry({ children }: Readonly<{ children: ReactNode }>) {
 export function EntryContent({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <div
-      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-primary-800 dark:text-primary-200 prose-p:dark:text-primary-800 dark:text-primary-200 prose-a:dark:text-primary-600 prose-strong:dark:text-primary-800 dark:text-primary-200 prose-ol:dark:text-primary-800 dark:text-primary-200 prose-ul:dark:text-primary-800 dark:text-primary-200 prose-table:dark:text-primary-800 dark:text-primary-200 prose-td:dark:text-primary-800 dark:text-primary-200`}
+      className={`prose prose-headings:text-gray-600 prose-p:hyphens-auto prose-p:text-justify prose-p:text-gray-600 prose-ol:text-gray-600 prose-ul:hyphens-auto prose-ul:text-justify prose-ul:text-gray-600 dark:prose-headings:text-bg-contrast prose-p:dark:text-bg-contrast prose-a:dark:text-primary-600 prose-strong:dark:text-bg-contrast prose-ol:dark:text-bg-contrast prose-ul:dark:text-bg-contrast prose-table:dark:text-bg-contrast prose-td:dark:text-bg-contrast`}
     >
       {children}
     </div>

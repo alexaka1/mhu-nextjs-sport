@@ -26,12 +26,12 @@ export default function Lodging() {
           <Link className={``} href={`https://sandraifjusagiszallo.hu/`} target={'_blank'} prefetch={false}>
             <h2
               id={`sandra`}
-              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-primary-800 dark:text-primary-200 dark:hover:text-primary-400/75"
+              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75"
             >
               Sandra Hotel
             </h2>
           </Link>
-          <p className="hyphens-auto text-balance text-gray-600 dark:text-primary-800 dark:text-primary-200">
+          <p className="hyphens-auto text-balance text-gray-600 dark:text-bg-contrast">
             Magyarország Észak – Keleti részén, Szabolcs megye központjában Nyíregyházán a Sóstói u 31/B. alatt
             található. A szálló közvetlenül a Nyíregyházi Egyetem területén található de közvetlen szomszédja a Városi
             stadionnak és a lőtérnek is.
@@ -60,12 +60,12 @@ export default function Lodging() {
           <Link className={``} href={`https://bessenyeihotel.hu/`} target={'_blank'} prefetch={false}>
             <h2
               id={`bessenyei`}
-              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-primary-800 dark:text-primary-200 dark:hover:text-primary-400/75"
+              className="text-3xl font-bold tracking-tight underline decoration-primary decoration-2 transition-colors duration-200 text-gray-900 hover:text-primary-600 sm:text-4xl dark:decoration-primary-400 dark:text-bg-contrast dark:hover:text-primary-400/75"
             >
               Hotel Bessenyei
             </h2>
           </Link>
-          <p className="hyphens-auto text-balance text-gray-600 dark:text-primary-800 dark:text-primary-200">
+          <p className="hyphens-auto text-balance text-gray-600 dark:text-bg-contrast">
             A környék látványosságai percek alatt elérhetőek. Nyíregyháza hangulatos belvárosával, szellemi életével,
             történelmi emlékeivel, kiránduló- és üdülőövezetével, és az utóbbi évek dinamikus és látványos fejlődésével
             nagy népszerűségnek örvend az idelátogató turisták, vendégek körében. A város és Sóstógyógyfürdő között

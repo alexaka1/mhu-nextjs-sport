@@ -18,7 +18,7 @@ export function UploadResult({
   }
   return (
     <UploadButton
-      className={`duration-200 ut-button:transition-colors ut-button:bg-primary ut-allowed-content:text-primary-800 dark:text-primary-200 ut-button:ut-readying:bg-primary-600 ut-button:ut-ready:hover:bg-primary-600 ut-button:ut-uploading:after:bg-primary-400/25`}
+      className={`duration-200 ut-button:transition-colors ut-button:bg-primary ut-allowed-content:text-bg-contrast ut-button:ut-readying:bg-primary-600 ut-button:ut-ready:hover:bg-primary-600 ut-button:ut-uploading:after:bg-primary-400/25`}
       endpoint="resultUploader"
       onClientUploadComplete={() => {
         router.refresh();
