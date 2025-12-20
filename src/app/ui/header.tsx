@@ -106,7 +106,7 @@ function PopoverLink({ href, children }: Readonly<SimpleLink>) {
   return (
     <Link
       href={href}
-      className={`hover:decoration-primary data-active:decoration-primary data-active:text-primary hover:dark:decoration-primary-400 data-active:dark:text-primary-600 text-sm leading-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-white/80 hover:underline hover:decoration-1 data-active:font-extrabold data-active:underline data-active:decoration-2 data-active:drop-shadow-lg dark:text-white`}
+      className={`hover:decoration-primary data-active:decoration-primary data-active:text-primary hover:dark:decoration-primary-400 data-active:dark:text-primary-600 hover:text-primary-400 text-sm leading-6 font-semibold text-gray-900 transition-colors duration-200 hover:underline hover:decoration-1 data-active:font-extrabold data-active:underline data-active:decoration-2 data-active:drop-shadow-lg dark:text-white dark:hover:text-white/80`}
       data-active={pathname === href || pathname.startsWith(href)}
     >
       {children}
