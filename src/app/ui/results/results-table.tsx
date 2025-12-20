@@ -35,7 +35,7 @@ export default function ResultsTable({
       <div className={`relative flex grow flex-col overflow-auto shadow-md sm:rounded-lg lg:h-full lg:overflow-x-auto`}>
         <DeleteForm fileKey={fileKey} canEdit={canEdit} year={year} />
         <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-gray-900 dark:text-white">
-          <ButtonGroup>
+          <ButtonGroup aria-label={`Eredmény akciók`}>
             <Button form={`delete_form_${fileKey}`} type={'submit'} title={`Törlés`} variant={'ghost'} size={'icon'}>
               <Trash2 />
             </Button>

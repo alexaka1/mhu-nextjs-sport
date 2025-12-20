@@ -32,7 +32,7 @@ export default function ResultsContent({
               <object
                 data={result.url}
                 type={result.type}
-                className={`flex h-[36rem] w-full flex-col sm:h-svh`}
+                className={`flex h-144 w-full flex-col sm:h-svh`}
                 title={`PDF megjelenítő`}
               >
                 <iframe

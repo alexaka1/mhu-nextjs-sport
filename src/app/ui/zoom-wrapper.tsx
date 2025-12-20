@@ -1,56 +1,46 @@
 'use client';
-import React, { type ReactNode, type ButtonHTMLAttributes } from 'react';
+import React, { type ReactNode } from 'react';
 import { TransformWrapper, TransformComponent, useControls } from 'react-zoom-pan-pinch';
-import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
-import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
-import { faRotateLeft } from '@fortawesome/free-solid-svg-icons/faRotateLeft';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-}
-
-const IconButton = ({ children, ...props }: IconButtonProps) => {
-  return (
-    <button
-      className={`bg-primary border-secondary hover:bg-accent focus-visible:ring-ring inline-flex size-10 items-center justify-center gap-2 rounded-md border text-sm font-medium whitespace-nowrap text-white ring-white transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+import { ButtonGroup } from '@/components/ui/button-group';
+import { Button } from '@/components/ui/button';
+import { Undo2, ZoomIn, ZoomOut } from 'lucide-react';
 
 const Controls = () => {
   const { zoomIn, zoomOut, resetTransform } = useControls();
 
   return (
-    <div className="grid auto-cols-min grid-flow-col gap-2 place-self-center">
-      <IconButton
+    <ButtonGroup className={`place-self-center`} aria-label="Nagyítás vezérlés">
+      <Button
+        size={'icon'}
+        variant={'default'}
         title="Nagyítás"
         onClick={() => {
           zoomIn();
         }}
       >
-        <FontAwesomeIcon icon={faPlus} className={`size-6`} />
-      </IconButton>
-      <IconButton
+        <ZoomIn />
+      </Button>
+      <Button
+        size={'icon'}
+        variant={'default'}
         title="Kicsinyítés"
         onClick={() => {
           zoomOut();
         }}
       >
-        <FontAwesomeIcon icon={faMinus} className={`size-6`} />
-      </IconButton>
-      <IconButton
+        <ZoomOut />
+      </Button>
+      <Button
+        size={'icon'}
+        variant={'default'}
         title="Visszaállítás"
         onClick={() => {
           resetTransform();
         }}
       >
-        <FontAwesomeIcon icon={faRotateLeft} className={`size-6`} />
-      </IconButton>
-    </div>
+        <Undo2 />
+      </Button>
+    </ButtonGroup>
   );
 };
 export default function ZoomWrapper({ children }: Readonly<{ children: ReactNode }>) {
