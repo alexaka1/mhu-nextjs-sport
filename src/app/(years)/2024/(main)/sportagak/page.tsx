@@ -25,14 +25,14 @@ export default function Page() {
           <Title id={`Labdarúgás`}>Labdarúgás</Title>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm capitalize text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm capitalize text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 városi stadion kispályás műfüvespálya
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpontok</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>
                     <time dateTime={`2024-06-28T13:00`}>2024. június 28. péntek 13:00 - 17:30</time>
@@ -44,8 +44,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>Toronicza Gyula</li>
                   <li>Dobos György</li>
@@ -114,8 +114,8 @@ export default function Page() {
           <h3 className={`-mb-14 font-bold`}>Csoport beosztások</h3>
           <DataList>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">A csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Szolnok</li>
                   <li>Békés</li>
@@ -124,8 +124,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">B csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Pest</li>
                   <li>Heves-Nógrád</li>
@@ -134,8 +134,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">C csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Főváros</li>
                   <li>Hajdú</li>
@@ -144,8 +144,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">D csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Központi Nyomozó Főügyészség</li>
                   <li>Szabolcs</li>
@@ -166,20 +166,20 @@ export default function Page() {
           <Title id={`Úszás`}>Úszás</Title>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 Egyetemi uszoda (25 méteres medence)
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpont</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <time dateTime={`2024-06-29T09:00`}>2024. június 29. szombat 9:00 - 11:00</time>
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>Kruták Gyula</li>
                   <li>Kisné Tarsoly Ildikó</li>
@@ -216,8 +216,8 @@ export default function Page() {
           </h3>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Első futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Első futam</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li className={``}>Bács-Kiskun</li>
                   <li className={``}>Békés</li>
@@ -227,8 +227,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Második futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Második futam</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol start={5}>
                   <li className={``}>Főváros</li>
                   <li className={``}>Hajdú-Bihar</li>
@@ -238,8 +238,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Harmadik futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Harmadik futam</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol start={9}>
                   <li className={``}>Központi Nyomozó Főügyészség</li>
                   <li className={``}>Legfőbb Ügyészség</li>
@@ -257,12 +257,12 @@ export default function Page() {
           <Title id={`Futás`}>Női és Férfi Síkfutás</Title>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">atlétikai pálya</dd>
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">atlétikai pálya</dd>
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpont</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <time dateTime={`2024-06-28`}>2024. június 28. péntek</time>
                 <ul>
                   <li>
@@ -277,8 +277,8 @@ export default function Page() {
               </dd>
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>Diczkó Mariann</li>
                   <li>Pasztucha Éva</li>
@@ -303,8 +303,8 @@ export default function Page() {
           </h3>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Első futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Első futam</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li className={``}>Bács-Kiskun</li>
                   <li className={``}>Békés</li>
@@ -314,8 +314,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Második futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Második futam</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li className={``}>Főváros</li>
                   <li className={``}>Hajdú-Bihar</li>
@@ -325,8 +325,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Harmadik futam</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Harmadik futam</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li className={``}>Központi Nyomozó Főügyészség</li>
                   <li className={``}>Legfőbb Ügyészség</li>
@@ -344,14 +344,14 @@ export default function Page() {
           <Title id={`Asztalitenisz`}>Asztalitenisz (Női-Férfi)</Title>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 Atlétika pálya melletti sportcsarnok
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpontok</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>
                     <time dateTime={`2024-06-28T13:00`}>2024. június 28. péntek 13:00 - 17:30</time>
@@ -363,8 +363,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>Sável Krisztina</li>
                   <li>Dobos Alexandra</li>
@@ -393,8 +393,8 @@ export default function Page() {
           <p>A verseny lebonyolítása az alábbi sorsolás alapján történik.</p>
           <DataList>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">A csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Főváros</li>
                   <li>Csongrád</li>
@@ -403,8 +403,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">B csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Legfőbb Ügyészség</li>
                   <li>Szolnok</li>
@@ -413,8 +413,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">C csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Szabolcs</li>
                   <li>Központi Nyomozó Főügyészség</li>
@@ -423,8 +423,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">D csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Pest</li>
                   <li>Hajdú</li>
@@ -444,18 +444,18 @@ export default function Page() {
           <Title id={`Súlylökés`}>Női és Férfi Súlylökés</Title>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">atlétikai pálya</dd>
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">atlétikai pálya</dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpont</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <time dateTime={`2024-06-28T13:00:00`}>2024. június 28. 13:00</time>
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>Pintérné Varga Anita</li>
                   <li>Szekeres Zsuzsa</li>
@@ -495,20 +495,20 @@ export default function Page() {
           <Title id={`Darts`}>Darts</Title>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 Nyíregyházi Egyetem Campus étterem (az esti rendezvény helyszíne)
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpont</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <time dateTime={`2024-06-28T21:00`}>2024. június 28. péntek 21:00</time>
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>Buss Emese</li>
                   <li>Tóth Tibor</li>
@@ -532,8 +532,8 @@ export default function Page() {
           <p>A verseny sorsolása az alábbi:</p>
           <DataList>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">A csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Csongrád</li>
                   <li>Hajdú</li>
@@ -543,8 +543,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">B csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol start={5}>
                   <li>Pest</li>
                   <li>Békés</li>
@@ -554,8 +554,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">C csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol start={9}>
                   <li>Legfőbb Ügyészség</li>
                   <li>Heves-Nógrád</li>
@@ -574,14 +574,14 @@ export default function Page() {
           <Title id={`Kosárlabda`}>Női Kosárlabda 1 palánkra</Title>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 Sportcsarnok – öltöző biztosított, normál edzőcipő használható.
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpontok</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpontok</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>
                     <time dateTime={`2024-06-28T13:00`}>2024. június 28. péntek 13:00 - 17:30</time>
@@ -593,8 +593,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li>Birta Alíz</li>
                   <li>Tóth Adél</li>
@@ -626,8 +626,8 @@ export default function Page() {
           <p>5-8, 9-12 helyezések eldöntése 3 büntetődobás, mindig másnak kell dobnia.</p>
           <DataList>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">A csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">A csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Pest</li>
                   <li>Hajdú</li>
@@ -636,8 +636,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">B csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">B csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Borsod</li>
                   <li>Központi Nyomozó Főügyészség</li>
@@ -646,8 +646,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">C csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">C csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Legfőbb Ügyészség</li>
                   <li>Bács</li>
@@ -656,8 +656,8 @@ export default function Page() {
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-bold text-gray-900 dark:text-bg-contrast">D csoport</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-bold text-gray-900 dark:text-primary-800 dark:text-primary-200">D csoport</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ol>
                   <li>Csongrád</li>
                   <li>Főváros</li>
@@ -677,18 +677,18 @@ export default function Page() {
           <Title id={`Főügyésziverseny`}>Főügyészi verseny</Title>
           <DataList>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Helyszín</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">kosárlabdapálya</dd>
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Helyszín</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">kosárlabdapálya</dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Időpont</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Időpont</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <time dateTime={`2024-06-29T10:00`}>2024. június 29. szombat 10:00</time>
               </dd>
             </DataListEntry>
             <DataListEntry>
-              <dt className="font-medium text-gray-900 dark:text-bg-contrast">Sportág felelős</dt>
-              <dd className="mt-2 text-sm text-gray-500 dark:text-bg-contrast/80">
+              <dt className="font-medium text-gray-900 dark:text-primary-800 dark:text-primary-200">Sportág felelős</dt>
+              <dd className="mt-2 text-sm text-gray-500 dark:text-primary-800 dark:text-primary-200/80">
                 <ul>
                   <li className={`inline-block`}>Martossy György</li>
                 </ul>

@@ -13,7 +13,7 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const IconButton = ({ children, ...props }: IconButtonProps) => {
   return (
     <button
-      className={`inline-flex size-10 items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium transition-colors bg-primary border-secondary text-bg-contrast ring-bg-contrast hover:bg-accent hover:text-bg-contrast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`}
+      className={`inline-flex size-10 items-center justify-center gap-2 whitespace-nowrap rounded-md border text-sm font-medium transition-colors bg-primary border-secondary text-primary-800 dark:text-primary-200 ring-bg hover:bg-accent hover:text-primary-800 dark:text-primary-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`}
       {...props}
     >
       {children}

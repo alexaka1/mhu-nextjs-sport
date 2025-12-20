@@ -1,6 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+@plugin '@headlessui/tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+
+  --color-primary: oklch(33.14% 0.1186 18.15);
+  --color-primary-800: oklch(33.14% 0.1186 18.15);
+  --color-primary-600: oklch(49.99% 0.183 18.06);
+  --color-primary-400: oklch(67.31% 0.1949 18.81);
+  --color-primary-200: oklch(83.46% 0.0802 20.19);
+
+  --color-hun-red: oklch(48.75% 0.184 20.24);
+  --color-hun-green: oklch(57.26% 0.104 136.15);
+
+  --color-secondary: oklch(41.85% 0.1658 25.77);
+  --color-secondary-800: oklch(32.5% 0.129 25.77);
+  --color-secondary-600: oklch(41.85% 0.1658 25.77);
+  --color-secondary-400: oklch(66.5% 0.216 25.77);
+  --color-secondary-200: oklch(83.2% 0.085 25.77);
+
+  --color-accent: oklch(47.01% 0.1653 18.33);
+  --color-accent-800: oklch(32.5% 0.115 18.33);
+  --color-accent-600: oklch(47.01% 0.1653 18.33);
+  --color-accent-400: oklch(66.5% 0.196 18.33);
+  --color-accent-200: oklch(83.2% 0.077 18.33);
+}
+
+@custom-variant browser (@media (display-mode: browser));
+@custom-variant standalone (@media (display-mode: standalone));
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to sure everything still looks the same.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   html {

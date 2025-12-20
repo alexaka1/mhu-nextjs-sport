@@ -20,15 +20,13 @@ export default function DarkModeToggle() {
   if (!mounted) {
     // Return a placeholder with the same structure to avoid layout shift
     return (
-      <label className="dui-swap dui-swap-rotate" title="Téma váltás">
-        <input id={'dark-mode-toggle'} type="checkbox" className={``} disabled />
-        <FontAwesomeIcon icon={faSun} className={`dui-swap-off size-7 text-primary dark:text-bg-contrast`} />
-        <FontAwesomeIcon
-          icon={faComputer}
-          className={`dui-swap-indeterminate size-7 text-primary dark:text-bg-contrast`}
-        />
-        <FontAwesomeIcon icon={faMoon} className={`dui-swap-on size-7 fill-current`} />
-      </label>
+      <button
+        className="flex size-10 items-center justify-center rounded-full transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+        title="Téma váltás"
+        disabled
+      >
+        <FontAwesomeIcon icon={faSun} className="text-primary dark:text-primary-200 size-6 opacity-50" />
+      </button>
     );
   }
 
@@ -44,10 +42,6 @@ export default function DarkModeToggle() {
         return 'system';
     }
   };
-  const setInputState = (input: HTMLInputElement) => {
-    input.checked = theme === 'dark';
-    input.indeterminate = theme === 'system';
-  };
 
   const title = (theme: string) => {
     switch (theme) {
@@ -62,29 +56,20 @@ export default function DarkModeToggle() {
     }
   };
 
-  const deviceIcon = isMobile ? faMobile : faComputer;
+  const currentIcon = () => {
+    if (theme === 'dark') return faMoon;
+    if (theme === 'light') return faSun;
+    return isMobile ? faMobile : faComputer;
+  };
 
   return (
-    <label className="dui-swap dui-swap-rotate" title={title(theme ?? 'light')}>
-      <input
-        id={'dark-mode-toggle'}
-        type="checkbox"
-        className={``}
-        ref={(input) => {
-          if (input) {
-            setInputState(input);
-          }
-        }}
-        onClick={() => {
-          setTheme(nextTheme());
-        }}
-      />
-      <FontAwesomeIcon icon={faSun} className={`dui-swap-off size-7 text-primary dark:text-bg-contrast`} />
-      <FontAwesomeIcon
-        icon={deviceIcon}
-        className={`dui-swap-indeterminate size-7 text-primary dark:text-bg-contrast`}
-      />
-      <FontAwesomeIcon icon={faMoon} className={`dui-swap-on size-7 fill-current`} />
-    </label>
+    <button
+      onClick={() => setTheme(nextTheme())}
+      className="flex size-10 items-center justify-center rounded-full transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+      title={title(theme ?? 'light')}
+      type="button"
+    >
+      <FontAwesomeIcon icon={currentIcon()} className="text-primary dark:text-primary-200 size-6" />
+    </button>
   );
 }

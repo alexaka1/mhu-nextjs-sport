@@ -31,7 +31,7 @@ export default function ResultsTable({
   return (
     <>
       <div className={`relative flex grow flex-col overflow-auto shadow-md sm:rounded-lg lg:h-full lg:overflow-x-auto`}>
-        <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-bg-contrast">
+        <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-primary-800 dark:text-primary-200">
           <DeleteButton fileKey={fileKey} canEdit={canEdit} year={year} />
           <button
             onClick={() => share(url, title)}

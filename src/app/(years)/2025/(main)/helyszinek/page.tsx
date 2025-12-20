@@ -23,15 +23,15 @@ export default function Page() {
           <Title id={`SZEGYA`}>1. SZEGYA Kollégium és Alma Mater Hostel </Title>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">szállások</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">szállások</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">VIP terem</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">VIP terem</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">versenyközpont</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">versenyközpont</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
           </dl>
@@ -58,27 +58,27 @@ export default function Page() {
           <Title id={`Egyetemisportcsarnok`}>2. Egyetemi sportcsarnok és műfüves pálya</Title>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">megnyitó kosárlabda</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">megnyitó kosárlabda</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">tollaslabda</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">tollaslabda</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">asztalitenisz</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">asztalitenisz</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">íjászat</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">íjászat</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">labdarúgás (vasárnap)</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">labdarúgás (vasárnap)</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">záróünnepség</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">záróünnepség</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
           </dl>
@@ -105,23 +105,23 @@ export default function Page() {
           <Title id={`CsabaPark`}>3. Csaba Park</Title>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">étkezések</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">étkezések</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">darts</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">darts</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">csocsó</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">csocsó</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">főügyészi megmérettetés</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">főügyészi megmérettetés</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">esti rendezvények</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">esti rendezvények</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
           </dl>
@@ -157,7 +157,7 @@ export default function Page() {
           </Title>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">labdarúgás (péntek, szombat)</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">labdarúgás (péntek, szombat)</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
           </dl>
@@ -182,11 +182,11 @@ export default function Page() {
           <Title id={`TundeUtca`}>5. Tünde utcai atlétikai pálya</Title>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">síkfutás</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">síkfutás</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">súlylökés</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">súlylökés</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
           </dl>
@@ -198,7 +198,7 @@ export default function Page() {
           <Title id={`ArpadFurdo`}>6. Árpád Fürdő</Title>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             <div className="border-t pt-4 border-gray-200">
-              <dt className="font-medium text-bg-contrast">úszás</dt>
+              <dt className="font-medium text-primary-800 dark:text-primary-200">úszás</dt>
               {/*<dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>*/}
             </div>
           </dl>

@@ -21,9 +21,9 @@ export default function Page() {
   return (
     <>
       <main
-        className={`prose prose-sm m-auto box-border max-w-7xl p-2 dark:text-bg-contrast dark:prose-headings:text-bg-contrast`}
+        className={`prose prose-sm m-auto box-border max-w-7xl p-2 dark:text-primary-800 dark:text-primary-200 dark:prose-headings:text-primary-800 dark:text-primary-200`}
       >
-        <h1 className={`dark:text-bg-contrast`}>Programok - 2024</h1>
+        <h1 className={`dark:text-primary-800 dark:text-primary-200`}>Programok - 2024</h1>
         <section>
           <h2 className={`font-medium`}>Június 28. péntek</h2>
           <Grid>
