@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { DarkModeToggle } from '@/app/ui/dark-mode-toggle';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -36,11 +35,11 @@ export default function Footer() {
                   href="https://www.facebook.com/Magyarorsz%C3%A1g-%C3%9Cgy%C3%A9szs%C3%A9ge-104594918109266"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-primary transition hover:opacity-75 dark:text-gray-900"
+                  className="text-primary transition hover:opacity-75 dark:text-white"
                 >
                   <span className="sr-only">Facebook</span>
 
-                  <FontAwesomeIcon icon={faFacebook} className={`size-6`} />
+                  <FontAwesomeIcon icon={faFacebook} size={'xl'} />
                 </a>
               </li>
 
@@ -52,7 +51,7 @@ export default function Footer() {
                   className="text-primary transition hover:opacity-75 dark:text-white"
                 >
                   <span className="sr-only">YouTube</span>
-                  <FontAwesomeIcon icon={faYoutube} className={`size-6`} />
+                  <FontAwesomeIcon icon={faYoutube} size={'xl'} />
                 </a>
               </li>
 
@@ -65,7 +64,7 @@ export default function Footer() {
                 >
                   <span className="sr-only">X</span>
 
-                  <FontAwesomeIcon icon={faXTwitter} className={`size-6`} />
+                  <FontAwesomeIcon icon={faXTwitter} size={'xl'} />
                 </a>
               </li>
 
@@ -78,7 +77,7 @@ export default function Footer() {
                 >
                   <span className="sr-only">GitHub</span>
 
-                  <FontAwesomeIcon icon={faGithub} className={`size-6`} />
+                  <FontAwesomeIcon icon={faGithub} size={'xl'} />
                 </a>
               </li>
             </menu>
