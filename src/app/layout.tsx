@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase:
     process.env.NODE_ENV === 'development' ?
       'http://localhost:3000'
-    : (env.VERCEL_PROJECT_PRODUCTION_URL ?? 'https://sport.martossy.hu'),
+    : `https://${env.VERCEL_PROJECT_PRODUCTION_URL ?? 'sport.martossy.hu'}`,
   applicationName: APP_NAME,
   title: {
     default: APP_DEFAULT_TITLE,
