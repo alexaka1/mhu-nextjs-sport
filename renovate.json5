@@ -12,6 +12,13 @@
     ':rebaseStalePrs',
     'security:minimumReleaseAgeNpm',
     ':automergePatch',
-    ':automergeDigest',
+    ':automergeDigest'
   ],
+  packageRules: [
+    {
+      description: 'Disable automatic updates for better-auth as patch version can contain breaking changes',
+      matchDepNames: ['better-auth'],
+      automerge: false
+    }
+  ]
 }
