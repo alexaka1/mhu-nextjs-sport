@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="mx-auto flex flex-col gap-8 p-4 bg-white dark:bg-gray-800">
+    <main className="mx-auto flex flex-col gap-8 bg-white p-4 dark:bg-gray-800">
       <h1 className="sr-only">Helyszínek</h1>
       <EntryContent>
         <a className={`print:hidden`} href={`#map`}>

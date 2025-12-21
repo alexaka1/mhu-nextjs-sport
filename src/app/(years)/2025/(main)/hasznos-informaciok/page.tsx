@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="mx-auto flex flex-col gap-8 p-4 bg-white [counter-reset:h2-counter] dark:bg-gray-800">
+    <main className="mx-auto flex flex-col gap-8 bg-white p-4 [counter-reset:h2-counter] dark:bg-gray-800">
       <h1 className="sr-only">{metadata.title}</h1>
       <Entry>
         <EntryContent>

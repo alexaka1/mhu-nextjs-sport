@@ -1,8 +1,8 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-@import "uploadthing/tw/v4";
-@source "../../node_modules/@uploadthing/react/dist";
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import 'uploadthing/tw/v4';
+@source '../../node_modules/@uploadthing/react/dist';
 @plugin '@tailwindcss/typography';
 @plugin '@headlessui/tailwindcss';
 
@@ -52,10 +52,12 @@
 }
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-  'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-  monospace;
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
   /*--color-primary: oklch(33.14% 0.1186 18.15);*/
   --color-primary-800: oklch(33.14% 0.1186 18.15);
   --color-primary-600: oklch(49.99% 0.183 18.06);

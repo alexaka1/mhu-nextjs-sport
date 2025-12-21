@@ -13,16 +13,16 @@ export default function ResultsTabLinks({
   return (
     <nav
       aria-label={`Sportágak`}
-      className="-mb-px flex flex-wrap border-b text-center text-sm font-medium border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400"
+      className="-mb-px flex flex-wrap border-b border-gray-200 text-center text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400"
     >
       {tabs.map((tab) => (
         <div
           key={tab.title}
-          className="me-2 focus-visible:outline-1 focus-visible:outline-primary-800 dark:focus-visible:outline-primary-600"
+          className="focus-visible:outline-primary-800 dark:focus-visible:outline-primary-600 me-2 focus-visible:outline-1"
         >
           <Link
             href={`/${year.toString()}/eredmenyek/${encodeURIComponent(tab.title)}`}
-            className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 border-transparent hover:border-secondary-600 hover:text-secondary-600 data-active:border-primary data-active:text-primary dark:hover:text-gray-300 data-active:dark:border-primary-400 data-active:dark:text-primary-400`}
+            className={`group hover:border-secondary-600 hover:text-secondary-600 data-active:border-primary data-active:text-primary data-active:dark:border-primary-400 data-active:dark:text-primary-400 inline-flex items-center justify-center rounded-t-lg border-b-2 border-transparent p-4 dark:hover:text-gray-300`}
             data-active={
               pathname === `/${year.toString()}/eredmenyek/${encodeURIComponent(tab.title)}` ||
               (pathname === `/${year.toString()}/eredmenyek` && tab.title === fallbackResult)
