@@ -3,8 +3,9 @@
 // based on https://github.com/vercel/next.js/pull/71218#issuecomment-2440754208
 import js from '@eslint/js';
 import ts from 'typescript-eslint';
-import tailwind from 'eslint-plugin-tailwindcss';
-import nextConfig from 'eslint-config-next';
+// import tailwind from 'eslint-plugin-tailwindcss';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 // @ts-expect-error missing types
 import drizzle from 'eslint-plugin-drizzle';
@@ -16,10 +17,10 @@ const config = defineConfig([
   js.configs.recommended,
   eslintConfigPrettier,
   {
-    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**'],
+    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**', 'src/components/**'],
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  ...nextConfig,
+  ...nextVitals,
+  ...nextTs,
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
   {
@@ -30,7 +31,7 @@ const config = defineConfig([
       },
     },
   },
-  ...tailwind.configs['flat/recommended'],
+  // ...tailwind.configs['flat/recommended'],
   pluginQuery.configs['flat/recommended'],
   {
     plugins: {

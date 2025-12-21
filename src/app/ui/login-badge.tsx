@@ -1,15 +1,10 @@
 import { type PropsWithChildren } from 'react';
+import { Badge } from '@/components/ui/badge';
 
-type LoginBadgeProps = {
-  type: 'recommended' | 'lastUsed';
-};
-
-export function LoginBadge({ children }: Readonly<PropsWithChildren<LoginBadgeProps>>) {
+export function LoginBadge({ children }: Readonly<PropsWithChildren>) {
   return (
-    <span
-      className={`absolute -right-0.5 -top-2 z-10 whitespace-nowrap rounded-full px-2.5 py-0.5 text-sm font-semibold capitalize bg-hun-green text-bg-contrast`}
-    >
+    <Badge variant={'secondary'} className={'bg-hun-green absolute -top-2 -right-0.5 z-10 text-white capitalize'}>
       {children}
-    </span>
+    </Badge>
   );
 }

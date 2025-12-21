@@ -1,10 +1,12 @@
 'use client';
 import { type ReactNode, useMemo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faShareNodes, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { deleteResult } from '@/app/lib/actions';
+import { Button } from '@/components/ui/button';
+import { ButtonGroup } from '@/components/ui/button-group';
+import { toast } from 'sonner';
+import { Download, Share2, Trash2 } from 'lucide-react';
 
 export default function ResultsTable({
   file,
@@ -31,23 +33,27 @@ export default function ResultsTable({
   return (
     <>
       <div className={`relative flex grow flex-col overflow-auto shadow-md sm:rounded-lg lg:h-full lg:overflow-x-auto`}>
-        <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-bg-contrast">
-          <DeleteButton fileKey={fileKey} canEdit={canEdit} year={year} />
-          <button
-            onClick={() => share(url, title)}
-            className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
-            title={`Megosztás`}
-          >
-            <FontAwesomeIcon icon={faShareNodes} className={`size-6`} />
-          </button>
-          <Link
-            href={file}
-            target={'_blank'}
-            className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
-            title={'Táblázat letöltése'}
-          >
-            <FontAwesomeIcon icon={faDownload} className={`size-6`} />
-          </Link>
+        <DeleteForm fileKey={fileKey} canEdit={canEdit} year={year} />
+        <div className="flex flex-row items-center justify-end gap-6 px-6 py-2 text-gray-900 dark:text-white">
+          <ButtonGroup aria-label={`Eredmény akciók`}>
+            {canEdit && (
+              <Button form={`delete_form_${fileKey}`} type={'submit'} title={`Törlés`} variant={'ghost'} size={'icon'}>
+                <Trash2 />
+              </Button>
+            )}
+            <Button variant={'ghost'} size={'icon'} onClick={() => share(url, title)} title={`Megosztás`}>
+              <Share2 />
+            </Button>
+            <Button
+              variant={'ghost'}
+              size={'icon'}
+              title={'Táblázat letöltése'}
+              nativeButton={false}
+              render={<Link href={file} target={'_blank'} />}
+            >
+              <Download />
+            </Button>
+          </ButtonGroup>
         </div>
         {children}
       </div>
@@ -55,23 +61,27 @@ export default function ResultsTable({
   );
 }
 
-function DeleteButton({ fileKey, canEdit, year }: { fileKey: string; canEdit?: boolean; year: number }): ReactNode {
+function DeleteForm({ fileKey, canEdit, year }: { fileKey: string; canEdit?: boolean; year: number }): ReactNode {
   const router = useRouter();
   if (!canEdit) {
     return null;
   }
   return (
     <form
+      id={`delete_form_${fileKey}`}
+      className={'sr-only'}
       action={async () => {
         try {
           const result = await deleteResult(fileKey, year);
           if (result?.error != null) {
-            alert(result.error);
+            toast.error(result.error);
+          } else {
+            toast.success('Sikeres törlés');
           }
         } catch (e) {
           console.error(e);
           if (e instanceof Error) {
-            alert(`Hiba történt a törlés során! ${e.message}`);
+            toast.error(`Hiba történt a törlés során! ${e.message}`);
           }
           return;
         }
@@ -83,15 +93,7 @@ function DeleteButton({ fileKey, canEdit, year }: { fileKey: string; canEdit?: b
           e.preventDefault();
         }
       }}
-    >
-      <button
-        type={'submit'}
-        className={`transition-colors duration-200 hover:text-primary hover:dark:text-primary-600`}
-        title={`Törlés`}
-      >
-        <FontAwesomeIcon icon={faTrashCan} className={`size-6`} />
-      </button>
-    </form>
+    />
   );
 }
 

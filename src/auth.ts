@@ -22,6 +22,15 @@ export const auth = betterAuth({
       verification: verification,
     },
   }),
+  logger: {
+    level: process.env.NODE_ENV === 'production' ? 'warn' : 'debug',
+  },
+  // trustedOrigins: () => {
+  //   if (process.env.NODE_ENV !== 'production') {
+  //     return ['http://localhost:3000', 'https://sport.martossy.hu'];
+  //   }
+  //   return ['https://sport.martossy.hu'];
+  // },
   databaseHooks: {
     account: {
       create: {

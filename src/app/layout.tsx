@@ -11,8 +11,14 @@ import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
 import { extractRouterConfig } from 'uploadthing/server';
 import { ourFileRouter } from '@/app/api/uploadthing/core';
 import { Providers } from '@/app/providers';
+import { Toaster } from '@/components/ui/sonner';
+import { env } from '@/app/lib/env';
 
 export const metadata: Metadata = {
+  metadataBase:
+    process.env.NODE_ENV === 'development' ?
+      'http://localhost:3000'
+    : `https://${env.VERCEL_PROJECT_PRODUCTION_URL ?? 'sport.martossy.hu'}`,
   applicationName: APP_NAME,
   title: {
     default: APP_DEFAULT_TITLE,
@@ -60,6 +66,7 @@ export const metadata: Metadata = {
     },
     description: APP_DESCRIPTION,
     images: ['/screenshots/landing-desktop-2025.webp', '/screenshots/landing-mobile-2025.webp'],
+    creator: '@alexaka1',
   },
   other: {
     'darkreader-lock': 'true',
@@ -101,6 +108,7 @@ export default function RootLayout({
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           {children}
           <Footer />
+          <Toaster position={'top-center'} />
           <SpeedInsights />
           <Analytics debug={true} />
         </Providers>

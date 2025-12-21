@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { isIOS, isMobile } from 'react-device-detect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Button } from '@/components/ui/button';
 
 type UserChoice = {
   outcome: 'accepted' | 'dismissed';
@@ -63,18 +64,21 @@ export default function InstallBanner() {
 
   return (
     <aside
-      className={`hidden grid-flow-col grid-cols-[2fr_auto] items-center gap-6 text-balance px-4 py-3 bg-primary text-bg-contrast print:hidden ${showInstall || isIOS ? 'browser:inline-grid' : ''}`}
+      className={`bg-primary data-[show=true]:browser:inline-grid hidden grid-flow-col grid-cols-[2fr_auto] items-center gap-6 px-4 py-3 text-balance text-white print:hidden`}
+      data-show={showInstall || isIOS}
     >
-      <p className="text-pretty text-center text-sm font-medium">
+      <p className="text-center text-sm font-medium text-pretty">
         Már elérhető {deviceType} alkalmazásként is!&nbsp;
-        <button
+        <Button
+          variant={'link'}
+          size={'sm'}
+          className={`inline-block text-white`}
           onClick={() => {
             void Install().then();
           }}
-          className="inline-block text-pretty underline"
         >
           Telepítsd az alkalmazást az eszközödre!
-        </button>
+        </Button>
       </p>
       {/*<button*/}
       {/*  className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors*/}
@@ -85,7 +89,9 @@ export default function InstallBanner() {
       {/*>*/}
       {/*  Telepites*/}
       {/*</button>*/}
-      <button
+      <Button
+        variant={'ghost'}
+        size={'icon'}
         onClick={() => {
           localStorage.setItem(bannerDismissedKey, 'true');
           setShowInstall(false);
@@ -93,7 +99,7 @@ export default function InstallBanner() {
         title="Bezárás"
       >
         <FontAwesomeIcon icon={faTimes} className="size-6" />
-      </button>
+      </Button>
     </aside>
   );
 }

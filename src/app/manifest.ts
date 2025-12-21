@@ -4,7 +4,8 @@ import { currentYear } from '@/app/ui/menus/current-year';
 export const APP_NAME = 'Ügyészségi sporttalálkozó';
 export const APP_DEFAULT_TITLE = 'Ügyészségi sporttalálkozó';
 export const APP_TITLE_TEMPLATE = '%s | Ügyészségi sporttalálkozó';
-export const APP_DESCRIPTION = 'Ügyészségi sporttalálkozó weboldala.';
+export const APP_DESCRIPTION =
+  'Ügyészségi sporttalálkozó weboldala. Kövesd az eredményeket élőben vagy tudj meg többet a megrendezett sport versenyekről.';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

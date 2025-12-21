@@ -1,90 +1,50 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun, faComputer, faMobile } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
-import { isMobile } from 'react-device-detect';
+import * as React from 'react';
+import { Moon, Sun } from 'lucide-react';
 
-export default function DarkModeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
-  // useEffect only runs on the client, so now we can safely show the UI
-  // This is the recommended pattern for next-themes to avoid hydration mismatches
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    // Return a placeholder with the same structure to avoid layout shift
-    return (
-      <label className="dui-swap dui-swap-rotate" title="Téma váltás">
-        <input id={'dark-mode-toggle'} type="checkbox" className={``} disabled />
-        <FontAwesomeIcon icon={faSun} className={`dui-swap-off size-7 text-primary dark:text-bg-contrast`} />
-        <FontAwesomeIcon
-          icon={faComputer}
-          className={`dui-swap-indeterminate size-7 text-primary dark:text-bg-contrast`}
-        />
-        <FontAwesomeIcon icon={faMoon} className={`dui-swap-on size-7 fill-current`} />
-      </label>
-    );
-  }
-
-  const nextTheme = () => {
-    switch (theme) {
-      case 'dark':
-        return 'light';
-      case 'light':
-        return 'system';
-      case 'system':
-        return 'dark';
-      default:
-        return 'system';
-    }
-  };
-  const setInputState = (input: HTMLInputElement) => {
-    input.checked = theme === 'dark';
-    input.indeterminate = theme === 'system';
-  };
-
-  const title = (theme: string) => {
-    switch (theme) {
-      case 'dark':
-        return 'Világos téma';
-      case 'light':
-        return 'Rendszer téma';
-      case 'system':
-        return 'Sötét téma';
-      default:
-        return 'Ismeretlen mód';
-    }
-  };
-
-  const deviceIcon = isMobile ? faMobile : faComputer;
+export function DarkModeToggle() {
+  const { setTheme } = useTheme();
 
   return (
-    <label className="dui-swap dui-swap-rotate" title={title(theme ?? 'light')}>
-      <input
-        id={'dark-mode-toggle'}
-        type="checkbox"
-        className={``}
-        ref={(input) => {
-          if (input) {
-            setInputState(input);
-          }
-        }}
-        onClick={() => {
-          setTheme(nextTheme());
-        }}
-      />
-      <FontAwesomeIcon icon={faSun} className={`dui-swap-off size-7 text-primary dark:text-bg-contrast`} />
-      <FontAwesomeIcon
-        icon={deviceIcon}
-        className={`dui-swap-indeterminate size-7 text-primary dark:text-bg-contrast`}
-      />
-      <FontAwesomeIcon icon={faMoon} className={`dui-swap-on size-7 fill-current`} />
-    </label>
+    <DropdownMenu>
+      <DropdownMenuTrigger render={<Button variant={'outline'} size={'icon'} title="Téma váltás" />}>
+        <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+        <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+        <span className="sr-only">Téma váltás</span>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme('light');
+          }}
+        >
+          Világos
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme('dark');
+          }}
+        >
+          Sötét
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme('system');
+          }}
+        >
+          Rendszer
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 function Entry({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <article className={`border-collapse border-b border-solid pb-1 border-primary dark:border-primary-600`}>
+    <article className={`border-primary dark:border-primary-600 border-collapse border-b border-solid pb-1`}>
       {children}
     </article>
   );
@@ -20,10 +20,8 @@ function Grid({ children }: Readonly<{ children: ReactNode }>) {
 export default function Page() {
   return (
     <>
-      <main
-        className={`prose prose-sm m-auto box-border max-w-7xl p-2 dark:text-bg-contrast dark:prose-headings:text-bg-contrast`}
-      >
-        <h1 className={`dark:text-bg-contrast`}>Programok - 2024</h1>
+      <main className={`prose prose-sm dark:prose-headings:text-white m-auto box-border max-w-7xl p-2 dark:text-white`}>
+        <h1 className={`dark:text-white`}>Programok - 2024</h1>
         <section>
           <h2 className={`font-medium`}>Június 28. péntek</h2>
           <Grid>
@@ -31,8 +29,8 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T10:30:00`}>10:00</time>- <time dateTime={`2024-06-28T12:00:00`}>12:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Érkezés, szállás elfoglalása és regisztráció.</p>
-              <p className={`text-balance text-base`}>
+              <p className={`text-base text-balance`}>Érkezés, szállás elfoglalása és regisztráció.</p>
+              <p className={`text-base text-balance`}>
                 A vármegye felelősök segítenek az érkező csapatoknak a regisztrációban és a szállás elfoglalásában:
               </p>
               <ul className={`grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-1`}>
@@ -82,7 +80,7 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T12:00:00`}>12:00</time>
               </h3>
-              <p className={`text-balance text-base`}>
+              <p className={`text-base text-balance`}>
                 Technikai értekezlet a Nyíregyházi Egyetem közös helyiségben 12:00 órától, ezért{' '}
                 <span className={`font-bold`}>
                   kérjük a sportfelelősöket, hogy ezen időpontig a helyszínre mindenképp érkezzenek meg!
@@ -93,13 +91,13 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T12:30:00`}>12:30</time>
               </h3>
-              <p className={`text-balance text-base`}>Megnyitó a Nyíregyházi Egyetem sportudvarán.</p>
+              <p className={`text-base text-balance`}>Megnyitó a Nyíregyházi Egyetem sportudvarán.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Futás - atlétikai pálya.</p>
+              <p className={`text-base text-balance`}>Futás - atlétikai pálya.</p>
               {/*<FontAwesomeIcon*/}
               {/*  icon={faMountainSun}*/}
               {/*  className={`h-[250px] w-full rounded-md object-cover bg-gray-100 sm:h-min sm:object-none`}*/}
@@ -110,43 +108,43 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Labdarúgás - futballpályák.</p>
+              <p className={`text-base text-balance`}>Labdarúgás - futballpályák.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Súlylökés - atlétikai pálya.</p>
+              <p className={`text-base text-balance`}>Súlylökés - atlétikai pálya.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Kosárlabda - sportcsarnok T2 terem.</p>
+              <p className={`text-base text-balance`}>Kosárlabda - sportcsarnok T2 terem.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T13:00:00`}>13:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Asztalitenisz - atlétika pálya melletti sportcsarnok.</p>
+              <p className={`text-base text-balance`}>Asztalitenisz - atlétika pálya melletti sportcsarnok.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T18:00:00`}>18:00</time>- <time dateTime={`2024-06-28T20:00:00`}>20:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Vacsora</p>
+              <p className={`text-base text-balance`}>Vacsora</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T20:00:00`}>20:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Esti zenés rendezvény: Campus Étterem és Bistro</p>
+              <p className={`text-base text-balance`}>Esti zenés rendezvény: Campus Étterem és Bistro</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-28T21:00:00`}>21:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Darts - Campus Étterem és Bistro.</p>
+              <p className={`text-base text-balance`}>Darts - Campus Étterem és Bistro.</p>
             </Entry>
           </Grid>
         </section>
@@ -157,37 +155,37 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T07:00:00`}>7:00</time>- <time dateTime={`2024-06-29T09:00:00`}>9:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Reggeli.</p>
+              <p className={`text-base text-balance`}>Reggeli.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T09:00:00`}>9:00</time>- <time dateTime={`2024-06-29T11:00:00`}>11:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Úszás - egyetemi uszoda.</p>
+              <p className={`text-base text-balance`}>Úszás - egyetemi uszoda.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Labdarúgás folytatás - futballpályák.</p>
+              <p className={`text-base text-balance`}>Labdarúgás folytatás - futballpályák.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Kosárlabda folytatás - sportcsarnok T2 terem.</p>
+              <p className={`text-base text-balance`}>Kosárlabda folytatás - sportcsarnok T2 terem.</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Főügyészi verseny</p>
+              <p className={`text-base text-balance`}>Főügyészi verseny</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T10:00:00`}>10:00</time>
               </h3>
-              <p className={`text-balance text-base`}>
+              <p className={`text-base text-balance`}>
                 asztalitenisz folytatás - atlétika pálya melletti sportcsarnok.
               </p>
             </Entry>
@@ -195,13 +193,13 @@ export default function Page() {
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T07:00:00`}>13:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Eredményhirdetés</p>
+              <p className={`text-base text-balance`}>Eredményhirdetés</p>
             </Entry>
             <Entry>
               <h3 className={`mx-0.5 my-0 font-medium`}>
                 <time dateTime={`2024-06-29T14:00:00`}>14:00</time>
               </h3>
-              <p className={`text-balance text-base`}>Ebéd</p>
+              <p className={`text-base text-balance`}>Ebéd</p>
             </Entry>
           </Grid>
         </section>
