@@ -8,7 +8,7 @@ export function Title({ children, id }: Readonly<{ children: ReactNode; id: stri
     <h2
       id={id}
       className={
-        'group/title inline-flex flex-row gap-2 text-3xl font-bold tracking-tight text-balance text-gray-900 transition-colors duration-200 has-[[data-counter]]:before:content-[counter(h2-counter,_upper-roman)_"._"] has-[[data-counter]]:before:[counter-increment:h2-counter] sm:text-4xl dark:text-white'
+        'group/title inline-flex flex-row gap-2 text-3xl font-bold tracking-tight text-balance text-gray-900 transition-colors duration-200 has-data-counter:before:content-[counter(h2-counter,upper-roman)_"._"] has-data-counter:before:[counter-increment:h2-counter] sm:text-4xl dark:text-white'
       }
     >
       <a

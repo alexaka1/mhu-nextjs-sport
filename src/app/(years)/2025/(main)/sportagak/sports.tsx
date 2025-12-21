@@ -33,7 +33,7 @@ export default function Sports() {
             {tabs.map((tab) => (
               <Tab
                 key={tab.title}
-                className="group focus-visible:outline-primary-800 data-[hover]:border-secondary-600 data-[selected]:border-primary data-[hover]:text-secondary-600 data-[selected]:text-primary dark:focus-visible:outline-primary-600 data-[selected]:dark:border-primary-400 data-[selected]:dark:text-primary-400 me-2 inline-flex items-center justify-center rounded-t-lg border-b-2 border-transparent p-4 focus-visible:outline-1 dark:data-[hover]:text-gray-300"
+                className="group focus-visible:outline-primary-800 data-hover:border-secondary-600 data-selected:border-primary data-hover:text-secondary-600 data-selected:text-primary dark:focus-visible:outline-primary-600 data-selected:dark:border-primary-400 data-selected:dark:text-primary-400 me-2 inline-flex items-center justify-center rounded-t-lg border-b-2 border-transparent p-4 focus-visible:outline-1 dark:data-hover:text-gray-300"
               >
                 {tab.icon}
                 {tab.title}
