@@ -62,6 +62,7 @@
     "@eslint/eslintrc": "3.3.3",
     "@eslint/js": "9.39.2",
     "@headlessui/tailwindcss": "0.2.2",
+    "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@tailwindcss/postcss": "4.1.18",
     "@tailwindcss/typography": "0.5.19",
     "@tanstack/eslint-plugin-query": "5.91.2",
