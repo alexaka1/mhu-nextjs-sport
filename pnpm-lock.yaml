@@ -36,8 +36,8 @@ importers:
         specifier: 10.32.1
         version: 10.32.1(@opentelemetry/context-async-hooks@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/core@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.2.0(@opentelemetry/api@1.9.0))(next@16.1.1(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)(webpack@5.98.0(esbuild@0.25.5))
       '@serwist/next':
-        specifier: 9.3.1
-        version: 9.3.1(next@16.1.1(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
+        specifier: 9.4.1
+        version: 9.4.1(next@16.1.1(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
       '@t3-oss/env-nextjs':
         specifier: 0.13.10
         version: 0.13.10(arktype@2.1.20)(typescript@5.9.3)(zod@4.2.1)
@@ -190,8 +190,8 @@ importers:
         specifier: 0.7.2
         version: 0.7.2(prettier@3.7.4)
       serwist:
-        specifier: 9.3.1
-        version: 9.3.1(typescript@5.9.3)
+        specifier: 9.4.1
+        version: 9.4.1(typescript@5.9.3)
       tailwindcss:
         specifier: 4.1.18
         version: 4.1.18
@@ -1760,8 +1760,8 @@ packages:
     peerDependencies:
       webpack: '>=4.40.0'
 
-  '@serwist/build@9.3.1':
-    resolution: {integrity: sha512-wSnA0woP1VemtePqH/mH0jWjWuoipfMmGBfLEuZ+tHILOoAIpnkvIepfO1h4IafX6cKdArJFTyAIE232KY6ZOQ==}
+  '@serwist/build@9.4.1':
+    resolution: {integrity: sha512-NnFW4bmH68qtCSRKelOnBrM5HYO5Hht/Axc4mR8Qd33TnizQMLLARLwWwjuLkO4FieAsrafbGNGe0GXW5+OvDQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1769,11 +1769,11 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/next@9.3.1':
-    resolution: {integrity: sha512-C1MOEFG3dnKl1eLyJJDWshCwXXP9KMvj1s3f25qqEM3KtGcJv0f8AvvFOQJw3PugLr+BAC30yDV9U4+PvbFShA==}
+  '@serwist/next@9.4.1':
+    resolution: {integrity: sha512-WwVUaCJMcfkL5rZxxop4lU4CAiJ5tFoXW3gQxhAdAquGuZVMt6FeRtWCIpwhIDL8Suit/w3Nk51cayykwjxHqA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      '@serwist/cli': 9.3.1
+      '@serwist/cli': ^9.4.1
       next: '>=14.0.0'
       react: '>=18.0.0'
       typescript: '>=5.0.0'
@@ -1783,8 +1783,8 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/webpack-plugin@9.3.1':
-    resolution: {integrity: sha512-GWTWMY8MOi5bIp4YdvEAPTg2Jazsan3q+1s1RxSfeICFFYZxbvJlM2sSgPog/bCbKQojuw23isZoUXkjS/D9Mg==}
+  '@serwist/webpack-plugin@9.4.1':
+    resolution: {integrity: sha512-e4Eusmoxqa+clkyyrMwkp5GFgX+9H/AErpXj9I6kKb877kVxX9gbiSMFodfec+pQQe4hdFjet1YNoxkqS4WKOg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1795,8 +1795,8 @@ packages:
       webpack:
         optional: true
 
-  '@serwist/window@9.3.1':
-    resolution: {integrity: sha512-AKRFaqUb2KUWLxkjd67FGwLGUdnLuOfEJyBh6O3aPJopLM5d4vON04vTkAOQ7dBbtVkrO2s5f8ySNLMcy3QcqA==}
+  '@serwist/window@9.4.1':
+    resolution: {integrity: sha512-4LQ2Z6umfeU5hVJJJGA0NwQOqLiC6ntv0pLOE2p0fsFZrV1dyjjTSN2T0OMxOmgiTrDHdssM4ag+5zM4gh16pQ==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -4897,8 +4897,8 @@ packages:
     resolution: {integrity: sha512-61g9pCh0Vnh7IutZjtLGGpTA355+OPn2TyDv/6ivP2h/AdAVX9azsoxmg2/M6nZeQZNYBEwIcsne1mJd9oQItQ==}
     engines: {node: '>= 18'}
 
-  serwist@9.3.1:
-    resolution: {integrity: sha512-y7+N+5QpC7VeUOwvaES7aQ15DwHEtz2KE4v0i9n18e77dGglT9aN88/HUiDIc5CXru29qRJfaneKUr01UFgcAA==}
+  serwist@9.4.1:
+    resolution: {integrity: sha512-5Rl0MWSWhqbTsfio2E531jmOIvyVqpGEODv5W7TK1wCwCOS9xe7mRwAC6wypG3m2mTEI/0VFkC9bDG3GFqi3Vw==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -7071,7 +7071,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@serwist/build@9.3.1(typescript@5.9.3)':
+  '@serwist/build@9.4.1(typescript@5.9.3)':
     dependencies:
       common-tags: 1.8.2
       glob: 10.5.0
@@ -7081,36 +7081,36 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  '@serwist/next@9.3.1(next@16.1.1(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
+  '@serwist/next@9.4.1(next@16.1.1(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
     dependencies:
-      '@serwist/build': 9.3.1(typescript@5.9.3)
-      '@serwist/webpack-plugin': 9.3.1(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
-      '@serwist/window': 9.3.1(typescript@5.9.3)
+      '@serwist/build': 9.4.1(typescript@5.9.3)
+      '@serwist/webpack-plugin': 9.4.1(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
+      '@serwist/window': 9.4.1(typescript@5.9.3)
       glob: 10.5.0
       kolorist: 1.8.0
       next: 16.1.1(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       semver: 7.7.3
-      serwist: 9.3.1(typescript@5.9.3)
+      serwist: 9.4.1(typescript@5.9.3)
       zod: 4.2.1
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
       - webpack
 
-  '@serwist/webpack-plugin@9.3.1(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
+  '@serwist/webpack-plugin@9.4.1(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
     dependencies:
-      '@serwist/build': 9.3.1(typescript@5.9.3)
+      '@serwist/build': 9.4.1(typescript@5.9.3)
       pretty-bytes: 6.1.1
       zod: 4.2.1
     optionalDependencies:
       typescript: 5.9.3
       webpack: 5.98.0(esbuild@0.25.5)
 
-  '@serwist/window@9.3.1(typescript@5.9.3)':
+  '@serwist/window@9.4.1(typescript@5.9.3)':
     dependencies:
       '@types/trusted-types': 2.0.7
-      serwist: 9.3.1(typescript@5.9.3)
+      serwist: 9.4.1(typescript@5.9.3)
     optionalDependencies:
       typescript: 5.9.3
 
@@ -10365,7 +10365,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  serwist@9.3.1(typescript@5.9.3):
+  serwist@9.4.1(typescript@5.9.3):
     dependencies:
       idb: 8.0.3
     optionalDependencies:
