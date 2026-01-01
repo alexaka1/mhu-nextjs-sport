@@ -35,7 +35,7 @@
     "@serwist/next": "9.4.2",
     "@t3-oss/env-nextjs": "0.13.10",
     "@tabler/icons-react": "3.36.0",
-    "@tanstack/react-query": "5.90.14",
+    "@tanstack/react-query": "5.90.15",
     "@tanstack/react-table": "8.21.3",
     "@uploadthing/react": "7.3.3",
     "@vercel/analytics": "1.6.1",
