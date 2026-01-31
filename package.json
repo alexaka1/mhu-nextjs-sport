@@ -31,7 +31,7 @@
     "@fortawesome/react-fontawesome": "3.1.1",
     "@headlessui/react": "2.2.9",
     "@libsql/client": "0.17.0",
-    "@sentry/nextjs": "10.36.0",
+    "@sentry/nextjs": "10.37.0",
     "@serwist/next": "9.5.0",
     "@t3-oss/env-nextjs": "0.13.10",
     "@tabler/icons-react": "3.36.1",
