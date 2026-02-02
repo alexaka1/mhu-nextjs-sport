@@ -36,8 +36,8 @@ importers:
         specifier: 10.38.0
         version: 10.38.0(@opentelemetry/context-async-hooks@2.5.0(@opentelemetry/api@1.9.0))(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.5.0(@opentelemetry/api@1.9.0))(next@16.1.6(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(webpack@5.98.0(esbuild@0.25.5))
       '@serwist/next':
-        specifier: 9.5.0
-        version: 9.5.0(next@16.1.6(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
+        specifier: 9.5.1
+        version: 9.5.1(next@16.1.6(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
       '@t3-oss/env-nextjs':
         specifier: 0.13.10
         version: 0.13.10(arktype@2.1.20)(typescript@5.9.3)(zod@4.3.6)
@@ -190,8 +190,8 @@ importers:
         specifier: 0.7.2
         version: 0.7.2(prettier@3.8.1)
       serwist:
-        specifier: 9.5.0
-        version: 9.5.0(typescript@5.9.3)
+        specifier: 9.5.1
+        version: 9.5.1(typescript@5.9.3)
       tailwindcss:
         specifier: 4.1.18
         version: 4.1.18
@@ -1786,8 +1786,8 @@ packages:
     peerDependencies:
       webpack: '>=4.40.0'
 
-  '@serwist/build@9.5.0':
-    resolution: {integrity: sha512-8D330WwYjBI5MadyVOphwUqJLMNQK76KWBoDykIPrbtt0C3uGFPxG4XNZCFXBkRG3O1QLedv9BWqH27SeqhcLg==}
+  '@serwist/build@9.5.1':
+    resolution: {integrity: sha512-nHmE5hPIZhor0+KpcVizMFRqPdRJEgRKFOMvmzz6aMGbX1W7oPORaoG4xxatq9GoS6JfYGbB4bhS2wYR2BTxjQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1795,11 +1795,11 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/next@9.5.0':
-    resolution: {integrity: sha512-amJUpLzOd3F9xY8/Le0W9pf47PtDvRZrJ27gDSJESohsfoBRfnabsatjNuQdUnVE8rgl0YFIMYyVgLejNOb06g==}
+  '@serwist/next@9.5.1':
+    resolution: {integrity: sha512-ggePY5jY/Eaq+biBCcXK4v44jXpaLsueUXYzQ634riLNhJgoDGSXF7S1zpUad4qDvriyidGKb9vJHtRLy6IG2w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      '@serwist/cli': ^9.5.0
+      '@serwist/cli': ^9.5.1
       next: '>=14.0.0'
       react: '>=18.0.0'
       typescript: '>=5.0.0'
@@ -1809,11 +1809,11 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/utils@9.5.0':
-    resolution: {integrity: sha512-DBzmJgL63/VYcQ/TpSYXW1FJKRILesOxytu+1MHY0vW2WFhW7pYkLgVuHqksP5K+3ypt54M3+2QNDDMixrnutQ==}
+  '@serwist/utils@9.5.1':
+    resolution: {integrity: sha512-E2Ih74oKGA+7FYhapvZSq/hZB9MTyFMx6lBleG8BI0iI0RjY851EX8XTvMUVBasRPLjXoCSthNPSge4bsqiqoA==}
 
-  '@serwist/webpack-plugin@9.5.0':
-    resolution: {integrity: sha512-76o1GZRS6r5nUtfam55c3T/Fe5NoqqW70RyFTjZAIPj6jjIRufcHXQHBpedT5jfew/7toCCmvtZ8GI60aFigVg==}
+  '@serwist/webpack-plugin@9.5.1':
+    resolution: {integrity: sha512-KeWrQPz+obLYLWAVNmCxupi3Y61bjkL2SYB17CqHTSrT8l854GKW3SM5mQkovVWe/JQvCI9LCxvk6jDMzXBoIw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1824,8 +1824,8 @@ packages:
       webpack:
         optional: true
 
-  '@serwist/window@9.5.0':
-    resolution: {integrity: sha512-WqmEZjJ+u841sbUJh2LAbtPNrz8mU/wCTo9sEVqsMOk+EM5oBz5FRpF3kDzx1cF5rTIfXer1df0D354lIdFw1Q==}
+  '@serwist/window@9.5.1':
+    resolution: {integrity: sha512-IV9CkZoh2CmeLwwKp99tyOMbm2xSJ+E11a2XZxcdBa9yWw8DZRDBL+OD3f6fcF+is1wFYUvQ14XPXWA78TkXug==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -2605,11 +2605,6 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  browserslist@4.27.0:
-    resolution: {integrity: sha512-AXVQwdhot1eqLihwasPElhX2tAZiBjWdJ9i/Zcj2S6QYIjkx62OKSfnobkriB81C3l4w0rVy3Nt4jaTBltYEpw==}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-
   browserslist@4.28.1:
     resolution: {integrity: sha512-ZC5Bd0LgJXgwGqUknZY/vkUQ04r8NXnJZ3yYi4vDmSiZmC/pdSN0NbNRPxZpbtO4uAfDUAFffO8IZoM3Gj8IkA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -3065,9 +3060,6 @@ packages:
 
   effect@3.17.7:
     resolution: {integrity: sha512-dpt0ONUn3zzAuul6k4nC/coTTw27AL5nhkORXgTi6NfMPzqWYa1M05oKmOMTxpVSTKepqXVcW9vIwkuaaqx9zA==}
-
-  electron-to-chromium@1.5.244:
-    resolution: {integrity: sha512-OszpBN7xZX4vWMPJwB9illkN/znA8M36GQqQxi6MNy9axWxhOfJyZZJtSLQCpEFLHP2xK33BiWx9aIuIEXVCcw==}
 
   electron-to-chromium@1.5.267:
     resolution: {integrity: sha512-0Drusm6MVRXSOJpGbaSVgcQsuB4hEkMpHXaVstcPmhu5LIedxs1xNK/nIxmQIU/RPC0+1/o0AVZfBTkTNJOdUw==}
@@ -4964,8 +4956,8 @@ packages:
     resolution: {integrity: sha512-61g9pCh0Vnh7IutZjtLGGpTA355+OPn2TyDv/6ivP2h/AdAVX9azsoxmg2/M6nZeQZNYBEwIcsne1mJd9oQItQ==}
     engines: {node: '>= 18'}
 
-  serwist@9.5.0:
-    resolution: {integrity: sha512-wjrsPWHI5ZM20jIsVKZGN/uAdS2aKOgmIOE4dqUaFhK6SVIzgoJZjTnZ3v29T+NmneuD753jlhGui9eYypsj0A==}
+  serwist@9.5.1:
+    resolution: {integrity: sha512-gs6bEdmiwc1qPAho2vkOxORSEW/NBXPQ7Y46hX8mUPThCJPt/HHWFOpYoQm8SMOonPByobJ5NDNDUR0N7DB0Uw==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -5372,12 +5364,6 @@ packages:
   until-async@3.0.2:
     resolution: {integrity: sha512-IiSk4HlzAMqTUseHHe3VhIGyuFmN90zMTpD3Z3y8jeQbzLIq500MVM7Jq2vUAnTKAFPJrqwkzr6PoTcPhGcOiw==}
 
-  update-browserslist-db@1.1.4:
-    resolution: {integrity: sha512-q0SPT4xyU84saUX+tomz1WLkxUbuaJnR1xWt17M7fJtEJigJeWUNGUqrauFXsHnqev9y9JTRGwk13tFBuKby4A==}
-    hasBin: true
-    peerDependencies:
-      browserslist: '>= 4.21.0'
-
   update-browserslist-db@1.2.3:
     resolution: {integrity: sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==}
     hasBin: true
@@ -5599,9 +5585,6 @@ packages:
 
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
-
-  zod@4.3.5:
-    resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
 
   zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
@@ -7150,52 +7133,52 @@ snapshots:
       - encoding
       - supports-color
 
-  '@serwist/build@9.5.0(typescript@5.9.3)':
+  '@serwist/build@9.5.1(typescript@5.9.3)':
     dependencies:
-      '@serwist/utils': 9.5.0
+      '@serwist/utils': 9.5.1
       common-tags: 1.8.2
       glob: 10.5.0
       pretty-bytes: 6.1.1
       source-map: 0.8.0-beta.0
-      zod: 4.3.5
+      zod: 4.3.6
     optionalDependencies:
       typescript: 5.9.3
 
-  '@serwist/next@9.5.0(next@16.1.6(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
+  '@serwist/next@9.5.1(next@16.1.6(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
     dependencies:
-      '@serwist/build': 9.5.0(typescript@5.9.3)
-      '@serwist/utils': 9.5.0
-      '@serwist/webpack-plugin': 9.5.0(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
-      '@serwist/window': 9.5.0(typescript@5.9.3)
+      '@serwist/build': 9.5.1(typescript@5.9.3)
+      '@serwist/utils': 9.5.1
+      '@serwist/webpack-plugin': 9.5.1(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))
+      '@serwist/window': 9.5.1(typescript@5.9.3)
       browserslist: 4.28.1
       glob: 10.5.0
       kolorist: 1.8.0
       next: 16.1.6(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react: 19.2.4
       semver: 7.7.3
-      serwist: 9.5.0(typescript@5.9.3)
-      zod: 4.3.5
+      serwist: 9.5.1(typescript@5.9.3)
+      zod: 4.3.6
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
       - webpack
 
-  '@serwist/utils@9.5.0': {}
+  '@serwist/utils@9.5.1': {}
 
-  '@serwist/webpack-plugin@9.5.0(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
+  '@serwist/webpack-plugin@9.5.1(typescript@5.9.3)(webpack@5.98.0(esbuild@0.25.5))':
     dependencies:
-      '@serwist/build': 9.5.0(typescript@5.9.3)
-      '@serwist/utils': 9.5.0
+      '@serwist/build': 9.5.1(typescript@5.9.3)
+      '@serwist/utils': 9.5.1
       pretty-bytes: 6.1.1
-      zod: 4.3.5
+      zod: 4.3.6
     optionalDependencies:
       typescript: 5.9.3
       webpack: 5.98.0(esbuild@0.25.5)
 
-  '@serwist/window@9.5.0(typescript@5.9.3)':
+  '@serwist/window@9.5.1(typescript@5.9.3)':
     dependencies:
       '@types/trusted-types': 2.0.7
-      serwist: 9.5.0(typescript@5.9.3)
+      serwist: 9.5.1(typescript@5.9.3)
     optionalDependencies:
       typescript: 5.9.3
 
@@ -7981,14 +7964,6 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  browserslist@4.27.0:
-    dependencies:
-      baseline-browser-mapping: 2.9.9
-      caniuse-lite: 1.0.30001760
-      electron-to-chromium: 1.5.244
-      node-releases: 2.0.27
-      update-browserslist-db: 1.1.4(browserslist@4.27.0)
-
   browserslist@4.28.1:
     dependencies:
       baseline-browser-mapping: 2.9.9
@@ -8174,7 +8149,7 @@ snapshots:
 
   cssnano-preset-default@7.0.10(postcss@8.5.6):
     dependencies:
-      browserslist: 4.27.0
+      browserslist: 4.28.1
       css-declaration-sorter: 7.2.0(postcss@8.5.6)
       cssnano-utils: 5.0.1(postcss@8.5.6)
       postcss: 8.5.6
@@ -8362,8 +8337,6 @@ snapshots:
     dependencies:
       '@standard-schema/spec': 1.0.0
       fast-check: 3.23.2
-
-  electron-to-chromium@1.5.244: {}
 
   electron-to-chromium@1.5.267: {}
 
@@ -10451,9 +10424,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  serwist@9.5.0(typescript@5.9.3):
+  serwist@9.5.1(typescript@5.9.3):
     dependencies:
-      '@serwist/utils': 9.5.0
+      '@serwist/utils': 9.5.1
       idb: 8.0.3
     optionalDependencies:
       typescript: 5.9.3
@@ -10950,12 +10923,6 @@ snapshots:
 
   until-async@3.0.2: {}
 
-  update-browserslist-db@1.1.4(browserslist@4.27.0):
-    dependencies:
-      browserslist: 4.27.0
-      escalade: 3.2.0
-      picocolors: 1.1.1
-
   update-browserslist-db@1.2.3(browserslist@4.28.1):
     dependencies:
       browserslist: 4.28.1
@@ -11188,7 +11155,5 @@ snapshots:
       zod: 4.3.6
 
   zod@3.25.76: {}
-
-  zod@4.3.5: {}
 
   zod@4.3.6: {}
