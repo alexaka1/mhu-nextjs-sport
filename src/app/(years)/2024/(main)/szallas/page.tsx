@@ -49,10 +49,10 @@ export default function Lodging() {
           {/*</dl>*/}
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4 sm:gap-6 lg:gap-8">
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
         </div>
       </div>
       <div className="mx-auto grid max-w-2xl grid-cols-[repeat(auto-fit,minmax(min(350px,100%),1fr))] items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 [&>div:first-of-type]:even:lg:order-last">
@@ -85,10 +85,10 @@ export default function Lodging() {
           {/*</dl>*/}
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4 sm:gap-6 lg:gap-8">
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
-          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} title={`Kép helye`} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
+          <FontAwesomeIcon icon={faMountainSun} className={`size-20 rounded-lg bg-gray-100`} aria-hidden={true} />
         </div>
       </div>
     </main>
