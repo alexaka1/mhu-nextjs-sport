@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.3",
-    "@eslint/js": "9.39.2",
+    "@eslint/js": "10.0.1",
     "@headlessui/tailwindcss": "0.2.2",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@tailwindcss/postcss": "4.1.18",
@@ -76,7 +76,7 @@
     "@types/react-dom": "19.2.3",
     "cssnano": "7.1.2",
     "drizzle-kit": "0.31.9",
-    "eslint": "9.39.2",
+    "eslint": "10.0.0",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-drizzle": "0.2.3",
