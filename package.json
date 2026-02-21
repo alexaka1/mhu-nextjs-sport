@@ -64,7 +64,7 @@
     "@eslint/js": "9.39.2",
     "@headlessui/tailwindcss": "0.2.2",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
-    "@tailwindcss/postcss": "4.1.18",
+    "@tailwindcss/postcss": "4.2.0",
     "@tailwindcss/typography": "0.5.19",
     "@tanstack/eslint-plugin-query": "5.91.4",
     "@tanstack/react-query-devtools": "5.91.3",
@@ -86,7 +86,7 @@
     "prettier": "3.8.1",
     "prettier-plugin-tailwindcss": "0.7.2",
     "serwist": "9.5.6",
-    "tailwindcss": "4.1.18",
+    "tailwindcss": "4.2.0",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.9.3",
     "typescript-eslint": "8.56.0"
