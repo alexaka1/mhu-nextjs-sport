@@ -17,4 +17,10 @@ publicHoistPattern:
   - import-in-the-middle
   - require-in-the-middle
 
+overrides:
+  '@hono/node-server@<1.19.10': ^1.19.10
+  esbuild@<0.25.0: ^0.25.0
+  express-rate-limit@<8.2.2: ^8.2.2
+  hono@<4.12.4: ^4.12.4
+
 savePrefix: ''
