@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext", "webworker"],
+    "lib": ["dom", "esnext", "webworker"],
     "allowJs": true,
     "checkJs": true,
     "skipLibCheck": true,
