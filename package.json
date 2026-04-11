@@ -78,7 +78,7 @@
     "cssnano": "7.1.4",
     "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
-    "eslint-config-next": "16.2.2",
+    "eslint-config-next": "16.2.3",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-drizzle": "0.2.3",
     "eslint-plugin-import-zod": "1.2.1",
