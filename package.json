@@ -82,7 +82,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-drizzle": "0.2.3",
     "eslint-plugin-import-zod": "1.2.1",
-    "eslint-plugin-tailwindcss": "3.18.2",
+    "eslint-plugin-tailwindcss": "3.18.3",
     "postcss": "8.5.9",
     "prettier": "3.8.2",
     "prettier-plugin-tailwindcss": "0.7.2",
