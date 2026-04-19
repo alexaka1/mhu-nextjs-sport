@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@base-ui/react": "1.4.0",
-    "@better-auth/drizzle-adapter": "1.6.4",
+    "@better-auth/drizzle-adapter": "1.6.5",
     "@fortawesome/fontawesome-svg-core": "7.2.0",
     "@fortawesome/free-brands-svg-icons": "7.2.0",
     "@fortawesome/free-regular-svg-icons": "7.2.0",
