@@ -170,8 +170,8 @@ importers:
         specifier: 19.2.3
         version: 19.2.3(@types/react@19.2.14)
       cssnano:
-        specifier: 7.1.7
-        version: 7.1.7(postcss@8.5.13)
+        specifier: 7.1.8
+        version: 7.1.8(postcss@8.5.13)
       drizzle-kit:
         specifier: 0.31.10
         version: 0.31.10
@@ -3127,11 +3127,11 @@ packages:
     peerDependencies:
       postcss: ^8.5.13
 
-  cssnano@7.1.7:
-    resolution: {integrity: sha512-N5LGn/OlhMxDTvKACwUPMzT34SSj1b022pvUAE/Vh6r2WD1aUCbc+QNIP/JjX9VVxebdJWZQ3352Lt4oF7dQ/g==}
+  cssnano@7.1.8:
+    resolution: {integrity: sha512-OGXtXqXmwEoIGfXM2QoD35vweUAtx+J8ZvLSZHOEV0Jv9Hs9ScTdGGjRzZXun5J4PEZhEoytKig2O2NR8NXxKw==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
-      postcss: ^8.5.10
+      postcss: ^8.5.13
 
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
@@ -8475,7 +8475,7 @@ snapshots:
     dependencies:
       postcss: 8.5.13
 
-  cssnano@7.1.7(postcss@8.5.13):
+  cssnano@7.1.8(postcss@8.5.13):
     dependencies:
       cssnano-preset-default: 7.0.16(postcss@8.5.13)
       lilconfig: 3.1.3
