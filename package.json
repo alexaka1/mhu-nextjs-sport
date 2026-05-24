@@ -2,7 +2,7 @@
   "name": "mhu-nextjs-sport",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@11.2.1",
+  "packageManager": "pnpm@11.2.2",
   "scripts": {
     "check-site-meta": "pnpx check-site-meta --no-analytics http://localhost:3000",
     "doctor:lockfile": "pnpm i --fix-lockfile",
