@@ -12,21 +12,8 @@ import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import { defineConfig } from 'eslint/config';
 import importZod from 'eslint-plugin-import-zod';
 
-/**
- * @param {import('eslint').Linter.Config[]} configs
- * @param {string} pluginName
- */
-function withoutPlugin(configs, pluginName) {
-  return configs.map((config) => {
-    const configPlugins = config.plugins;
-    if (!configPlugins || !(pluginName in configPlugins)) return config;
-    const plugins = Object.fromEntries(Object.entries(configPlugins).filter(([key]) => key !== pluginName));
-    if (Object.keys(plugins).length === 0) {
-      return Object.fromEntries(Object.entries(config).filter(([key]) => key !== 'plugins'));
-    }
-    return { ...config, plugins };
-  });
-}
+// next/typescript only registers @typescript-eslint; we use strictTypeChecked instead
+const nextConfig = nextVitals.filter((config) => config.name !== 'next/typescript');
 
 const config = defineConfig([
   js.configs.recommended,
@@ -34,7 +21,7 @@ const config = defineConfig([
   {
     ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**', 'src/components/**'],
   },
-  ...withoutPlugin(nextVitals, '@typescript-eslint'),
+  ...nextConfig,
   {
     settings: {
       react: { version: '19' },
