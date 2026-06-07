@@ -5,12 +5,12 @@ import { useLastUsedProvider } from '@/app/lib/last-used-provider';
 import { type ReactNode } from 'react';
 import { type SignInMethods } from '@/app/lib/auth-client';
 
-export interface LoginButton {
+export type LoginButton = {
   id: string;
   button: ReactNode;
   recommended: true | undefined;
   type: SignInMethods;
-}
+};
 
 export function LoginButtons({
   providers,

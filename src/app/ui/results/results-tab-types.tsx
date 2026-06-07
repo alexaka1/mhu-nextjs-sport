@@ -1,7 +1,7 @@
 import type { Result } from '@/app/lib/types';
 import type { ReactNode } from 'react';
 
-export interface Tab {
+export type Tab = {
   title: Result;
   icon: ReactNode;
-}
+};

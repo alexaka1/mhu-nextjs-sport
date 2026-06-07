@@ -53,8 +53,8 @@ const config = defineConfig([
   ...importZod.configs.recommended,
   {
     rules: {
-      // strictTypeChecked + stylisticTypeChecked are stricter than eslint-config-next/typescript
-      // (recommended + no-unused-vars/no-unused-expressions downgraded to warn). Only overrides below.
+      '@typescript-eslint/array-type': 'off',
+      '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/consistent-type-imports': [
         'warn',
         {

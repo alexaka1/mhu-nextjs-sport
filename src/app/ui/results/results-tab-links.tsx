@@ -7,7 +7,7 @@ export default function ResultsTabLinks({
   tabs,
   year,
   fallbackResult,
-}: Readonly<{ tabs: Tab[]; year: number; fallbackResult: string }>) {
+}: Readonly<{ tabs: Array<Tab>; year: number; fallbackResult: string }>) {
   const pathname = usePathname();
 
   return (

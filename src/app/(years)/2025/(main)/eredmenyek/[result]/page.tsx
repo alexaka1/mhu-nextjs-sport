@@ -6,11 +6,11 @@ import { type Result } from '@/app/lib/types';
 import ResultsTabLinks from '@/app/ui/results/results-tab-links';
 import { tabs } from '@/app/ui/menus/2025/menu';
 
-interface Props {
+type Props = {
   params?: Promise<{
     result?: string;
   }>;
-}
+};
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;

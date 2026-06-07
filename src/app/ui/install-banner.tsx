@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '@/components/ui/button';
 
-interface UserChoice {
+type UserChoice = {
   outcome: 'accepted' | 'dismissed';
   platform: string;
-}
+};
 type BeforeInstallPromptEvent = Event & {
   prompt: () => Promise<UserChoice>;
   platforms: string[];

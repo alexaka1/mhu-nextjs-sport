@@ -13,7 +13,7 @@ export default async function ResultsTab({
 }: Readonly<{
   className?: string;
   result: string;
-  tabs: Tab[];
+  tabs: Array<Tab>;
   year: number;
   fallbackResult: string;
 }>) {
