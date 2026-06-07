@@ -12,13 +12,21 @@ import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import { defineConfig } from 'eslint/config';
 import importZod from 'eslint-plugin-import-zod';
 
+// next/typescript only registers @typescript-eslint, which conflicts with strictTypeChecked below.
+const nextConfig = nextVitals.filter((config) => config.name !== 'next/typescript');
+
 const config = defineConfig([
   js.configs.recommended,
   eslintConfigPrettier,
   {
     ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/**', 'src/components/**'],
   },
-  ...nextVitals,
+  ...nextConfig,
+  {
+    settings: {
+      react: { version: '19' },
+    },
+  },
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
   {
