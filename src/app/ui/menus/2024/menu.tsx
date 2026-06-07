@@ -103,4 +103,4 @@ export const tabs = [
       />
     ),
   },
-] as const satisfies Array<Tab>;
+] as const satisfies Tab[];

@@ -274,7 +274,7 @@ function UserInfo({
 
 const deviceTypeSchema = z.enum(['browser', 'standalone']);
 
-export default function Header({ menus }: Readonly<{ menus: Array<Menu> }>) {
+export default function Header({ menus }: Readonly<{ menus: Menu[] }>) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { data: session } = useSession();

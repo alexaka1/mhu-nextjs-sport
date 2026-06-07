@@ -95,7 +95,7 @@ export async function updateAvatar({
   return { updatedId: '' };
 }
 
-export async function getResultItems(sportag: string, year: number): Promise<Array<ResultItem>> {
+export async function getResultItems(sportag: string, year: number): Promise<ResultItem[]> {
   try {
     let where: unknown = and(eq(results.isDeleted, false));
     const parsed = Result.safeParse(sportag);

@@ -87,7 +87,7 @@ async function canEdit(year: MeetingYearType): Promise<
   return { authorized: admin, userId: email };
 }
 
-function validateFiles(files: Readonly<Array<FileUploadData>>) {
+function validateFiles(files: readonly FileUploadData[]) {
   for (const file of files) {
     const fileType = file.type;
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition

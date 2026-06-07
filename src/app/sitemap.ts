@@ -1,7 +1,7 @@
 import { type MetadataRoute } from 'next';
 import { events2024, events2025 } from '@/app/lib/types';
 
-const years: Array<{ year: number; pages: MetadataRoute.Sitemap }> = [
+const years: { year: number; pages: MetadataRoute.Sitemap }[] = [
   {
     year: 2025,
     pages: [

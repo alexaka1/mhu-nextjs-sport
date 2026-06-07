@@ -42,7 +42,7 @@ export const resultMimeTypeSchema = z
     ),
   );
 export type ResultMimeType = z.infer<typeof resultMimeTypeSchema>;
-export type ResultItem = { key: string; type: ResultMimeType; result: Result; url?: string };
+export interface ResultItem { key: string; type: ResultMimeType; result: Result; url?: string }
 
 export const UserRoles = z.object({
   roles: z.array(
