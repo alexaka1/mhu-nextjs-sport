@@ -12,8 +12,7 @@ import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import { defineConfig } from 'eslint/config';
 import importZod from 'eslint-plugin-import-zod';
 
-// core-web-vitals = next (react, hooks, import, jsx-a11y, @next/next) + ignores + core-web-vitals rules.
-// Exclude next/typescript — it only registers @typescript-eslint parser/plugin (no rules); handled below.
+// next/typescript only registers @typescript-eslint, which conflicts with strictTypeChecked below.
 const nextConfig = nextVitals.filter((config) => config.name !== 'next/typescript');
 
 const config = defineConfig([
