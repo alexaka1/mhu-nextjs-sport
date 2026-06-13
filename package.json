@@ -66,7 +66,7 @@
     "@headlessui/tailwindcss": "0.2.2",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@tailwindcss/postcss": "4.3.0",
-    "@tailwindcss/typography": "0.5.19",
+    "@tailwindcss/typography": "0.5.20",
     "@tanstack/eslint-plugin-query": "5.101.0",
     "@tanstack/react-query-devtools": "5.101.0",
     "@total-typescript/ts-reset": "0.6.1",
