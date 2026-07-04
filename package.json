@@ -77,7 +77,7 @@
     "@types/react-dom": "19.2.3",
     "cssnano": "8.0.2",
     "drizzle-kit": "0.31.10",
-    "eslint": "10.5.0",
+    "eslint": "10.6.0",
     "eslint-config-next": "16.2.9",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-drizzle": "0.2.3",
