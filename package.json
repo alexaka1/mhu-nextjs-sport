@@ -61,7 +61,7 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.5",
+    "@eslint/eslintrc": "3.3.6",
     "@eslint/js": "10.0.1",
     "@headlessui/tailwindcss": "0.2.2",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
