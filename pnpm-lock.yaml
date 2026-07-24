@@ -55,8 +55,8 @@ importers:
         specifier: 0.13.11
         version: 0.13.11(typescript@6.0.3)(zod@4.4.3)
       '@tabler/icons-react':
-        specifier: 3.44.0
-        version: 3.44.0(react@19.2.7)
+        specifier: 3.45.0
+        version: 3.45.0(react@19.2.7)
       '@tanstack/react-query':
         specifier: 5.101.3
         version: 5.101.3(react@19.2.7)
@@ -1817,13 +1817,13 @@ packages:
       zod:
         optional: true
 
-  '@tabler/icons-react@3.44.0':
-    resolution: {integrity: sha512-8+rvzBbVm/1Z3sG3x7GUNAaxIKxwgz8xaMhRs23nrCnMTKRFAhEC+82zAIFeAA0seXdrAGX5HFCkaLpGK2rVHg==}
+  '@tabler/icons-react@3.45.0':
+    resolution: {integrity: sha512-t/AuKs7ALMDDTY+B9IvfZnlO0mbLlP/lJxP/HnGC49QkM8mCsTN38kYyxjXxgrb1+TeK53ioVBJqIV7n/eysXQ==}
     peerDependencies:
       react: '>= 16'
 
-  '@tabler/icons@3.44.0':
-    resolution: {integrity: sha512-Wn0AOZG9sg0L+bjfMqq4eNhC6pQjIrk94LvvWYNYkY8KH8wC3YILRzQlrnVJc4FUeMxH/AK97QsYCX35H3LndA==}
+  '@tabler/icons@3.45.0':
+    resolution: {integrity: sha512-jiATwV8+zGYLTZ7gMLGivCic+KtsMZXcDmufIG8umlLxoHhI6902hGYIEt0Oa9Y9SXblNzUlrisHm5jOFMxOQA==}
 
   '@tailwindcss/node@4.3.3':
     resolution: {integrity: sha512-/T8IKEsf9VTU6tLjgC7+sv2mOPtQxzE2jMw7u4Tt40Tx+QSZxpzh95/H6cMKoja9XuW7iMdLJYBB0o9G1CaAgg==}
@@ -6863,12 +6863,12 @@ snapshots:
       typescript: 6.0.3
       zod: 4.4.3
 
-  '@tabler/icons-react@3.44.0(react@19.2.7)':
+  '@tabler/icons-react@3.45.0(react@19.2.7)':
     dependencies:
-      '@tabler/icons': 3.44.0
+      '@tabler/icons': 3.45.0
       react: 19.2.7
 
-  '@tabler/icons@3.44.0': {}
+  '@tabler/icons@3.45.0': {}
 
   '@tailwindcss/node@4.3.3':
     dependencies:
