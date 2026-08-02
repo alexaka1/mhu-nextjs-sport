@@ -11,7 +11,7 @@
     ':automergeRequireAllStatusChecks',
     ':rebaseStalePrs',
     'security:minimumReleaseAgeNpm',
-    ':automergePatch',
+    ':automergeMinor',
     ':automergeDigest',
   ],
   packageRules: [
