@@ -109,8 +109,8 @@ importers:
         specifier: 4.0.3
         version: 4.0.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       shadcn:
-        specifier: 4.15.0
-        version: 4.15.0(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: 4.16.0
+        version: 4.16.0(supports-color@8.1.1)(typescript@6.0.3)
       sonner:
         specifier: 2.0.7
         version: 2.0.7(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -4934,8 +4934,8 @@ packages:
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
-  shadcn@4.15.0:
-    resolution: {integrity: sha512-fFTpfOuRwqjpXGp/sKpAxJkjdgv1jf8bDrW1xi0cVn2k7WJ5ijV/gjkAlkAidGDjhEkgcUuxVdm4oRB9r8BivA==}
+  shadcn@4.16.0:
+    resolution: {integrity: sha512-kPr4RrQmbbZeAjwBYeBSpFvAHV8rkTlNPUluIxkRriq5TpevfFelVO5xvcF6oguHPVn0R6wPuVer4HudfcLy/A==}
     engines: {node: '>=20.18.1'}
     hasBin: true
 
@@ -10013,7 +10013,7 @@ snapshots:
 
   setprototypeof@1.2.0: {}
 
-  shadcn@4.15.0(supports-color@8.1.1)(typescript@6.0.3):
+  shadcn@4.16.0(supports-color@8.1.1)(typescript@6.0.3):
     dependencies:
       '@babel/core': 7.29.7(supports-color@8.1.1)
       '@babel/parser': 7.29.7
