@@ -81,7 +81,9 @@ export const auth = betterAuth({
           clientId: env.SIMPLELOGIN_CLIENT_ID,
           clientSecret: env.SIMPLELOGIN_CLIENT_SECRET,
           discoveryUrl: 'https://app.simplelogin.io/.well-known/openid-configuration',
-          redirectURI: 'https://sport.martossy.hu/api/auth/callback/simplelogin',
+          // 1.6 callback path already registered with SimpleLogin. 1.7 would send
+          // /api/auth/callback/simplelogin; keep the old URI and rewrite it in next.config.ts.
+          redirectURI: 'https://sport.martossy.hu/api/auth/oauth2/callback/simplelogin',
           scopes: ['openid', 'email', 'profile'],
           // SimpleLogin does not implement PKCE; 1.7 defaults it on.
           pkce: false,
