@@ -6,9 +6,10 @@ import { genericOAuth } from 'better-auth/plugins';
 import { session, user, account, verification } from '../auth-schema';
 
 interface SimpleLoginProfile {
-  sub: string;
-  name: string;
-  email: string;
+  sub?: string;
+  name?: string;
+  email?: string;
+  image?: string;
   avatar_url?: string;
 }
 
@@ -80,15 +81,27 @@ export const auth = betterAuth({
           clientId: env.SIMPLELOGIN_CLIENT_ID,
           clientSecret: env.SIMPLELOGIN_CLIENT_SECRET,
           discoveryUrl: 'https://app.simplelogin.io/.well-known/openid-configuration',
+          // 1.6 callback path already registered with SimpleLogin. 1.7 would send
+          // /api/auth/callback/simplelogin; keep the old URI and rewrite it in next.config.ts.
+          redirectURI: 'https://sport.martossy.hu/api/auth/oauth2/callback/simplelogin',
           scopes: ['openid', 'email', 'profile'],
-          // SimpleLogin profile mapping
-          mapProfileToUser: (profile: Record<string, unknown>) => {
-            const simpleLoginProfile = profile as unknown as SimpleLoginProfile;
+          // SimpleLogin does not implement PKCE; 1.7 defaults it on.
+          pkce: false,
+          // SimpleLogin id_tokens may omit nonce; keep the authorization-code flow working.
+          disableIdTokenNonceBinding: true,
+          // Keep sign-out local instead of redirecting to SimpleLogin's end-session endpoint.
+          disableProviderLogout: true,
+          // SimpleLogin profile mapping. Provider identity comes from OIDC `sub`, not `id`.
+          mapProfileToUser: (profile) => {
+            const simpleLoginProfile = profile as SimpleLoginProfile;
+            const name =
+              simpleLoginProfile.name === '' || simpleLoginProfile.name == null ?
+                'SimpleLogin felhasználó'
+              : simpleLoginProfile.name;
             return {
-              id: simpleLoginProfile.sub,
-              name: simpleLoginProfile.name === '' ? 'SimpleLogin felhasználó' : simpleLoginProfile.name,
+              name,
               email: simpleLoginProfile.email,
-              image: simpleLoginProfile.avatar_url,
+              image: simpleLoginProfile.avatar_url ?? simpleLoginProfile.image,
             };
           },
         },

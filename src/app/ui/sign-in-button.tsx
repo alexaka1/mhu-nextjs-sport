@@ -30,12 +30,6 @@ export function SignInButton({
           callbackURL,
         });
         break;
-      case 'oauth2':
-        await signIn.oauth2({
-          providerId,
-          callbackURL,
-        });
-        break;
     }
   };
 

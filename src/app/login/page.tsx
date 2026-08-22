@@ -25,7 +25,7 @@ const providers: LoginButton[] = [
       </>
     ),
     recommended: undefined,
-    type: 'oauth2',
+    type: 'social',
   } satisfies LoginButton,
   {
     id: 'github',

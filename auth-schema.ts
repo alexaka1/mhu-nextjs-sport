@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { sqliteTable, text, integer, index } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
 export const user = sqliteTable(
   'user',
@@ -46,6 +46,7 @@ export const account = sqliteTable(
   'account',
   {
     id: text('id').primaryKey(),
+    issuer: text('issuer').notNull(),
     accountId: text('account_id').notNull(),
     providerId: text('provider_id').notNull(),
     userId: text('user_id')
@@ -70,7 +71,10 @@ export const account = sqliteTable(
       .$onUpdate(() => /* @__PURE__ */ new Date())
       .notNull(),
   },
-  (t) => [index('account_userId_idx').on(t.userId)],
+  (t) => [
+    index('account_userId_idx').on(t.userId),
+    uniqueIndex('account_issuer_accountId_uidx').on(t.issuer, t.accountId),
+  ],
 );
 
 export const verification = sqliteTable(

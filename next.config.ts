@@ -139,6 +139,14 @@ const nextConfig = {
   headers() {
     return Promise.resolve([cspHeaders]);
   },
+  rewrites() {
+    return Promise.resolve([
+      {
+        source: '/api/auth/oauth2/callback/:provider',
+        destination: '/api/auth/callback/:provider',
+      },
+    ]);
+  },
 } satisfies NextConfig;
 
 const withAxiomConfig = withAxiom(nextConfig);
