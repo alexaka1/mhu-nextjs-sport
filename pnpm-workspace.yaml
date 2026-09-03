@@ -28,3 +28,7 @@ allowBuilds:
   msw: true
   sharp: true
   unrs-resolver: true
+
+# cn@0.2.4 was published 2026-09-02; allow install before minimumReleaseAge elapses
+minimumReleaseAgeExclude:
+  - cn@0.2.4
