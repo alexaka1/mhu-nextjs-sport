@@ -106,8 +106,8 @@ importers:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
       react-zoom-pan-pinch:
-        specifier: 4.0.6
-        version: 4.0.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 4.1.1
+        version: 4.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       shadcn:
         specifier: 4.19.1
         version: 4.19.1(supports-color@8.1.1)(typescript@6.0.3)
@@ -4810,8 +4810,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
-  react-zoom-pan-pinch@4.0.6:
-    resolution: {integrity: sha512-iwqWBOkzfbtVHVGDkEcKbTCrZ8NqG3MJMZI0VmXK/tSYW4si8kw3CiFVxpkG8lW0fMoRPk8WnqC/BjlcQTF9OQ==}
+  react-zoom-pan-pinch@4.1.1:
+    resolution: {integrity: sha512-t7DHx6d1NqdpNtnFvYB//xvpklyWOG55e7wJAsNXGqwOOoRaEHaVAqHdqdKokiwEy3xHI6acek1+511p0qD1AA==}
     engines: {node: '>=8', npm: '>=5'}
     peerDependencies:
       react: '*'
@@ -9861,7 +9861,7 @@ snapshots:
       react: 19.2.8
       use-sync-external-store: 1.6.0(react@19.2.8)
 
-  react-zoom-pan-pinch@4.0.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  react-zoom-pan-pinch@4.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
