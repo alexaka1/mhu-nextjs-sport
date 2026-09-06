@@ -2,7 +2,7 @@
   "name": "mhu-nextjs-sport",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@12.3.1",
   "scripts": {
     "check-site-meta": "pnpx check-site-meta --no-analytics http://localhost:3000",
     "doctor:lockfile": "pnpm i --fix-lockfile",
@@ -94,7 +94,7 @@
   "engineStrict": true,
   "engines": {
     "node": "^24.0.0",
-    "pnpm": "^11.0.0",
+    "pnpm": "^12.0.0",
     "npm": "Please use pnpm to install dependencies. 'pnpm install'"
   }
 }
