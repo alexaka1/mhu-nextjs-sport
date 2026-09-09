@@ -15,7 +15,7 @@ const Controls = () => {
         variant={'default'}
         title="Nagyítás"
         onClick={() => {
-          zoomIn();
+          void zoomIn();
         }}
       >
         <ZoomIn />
@@ -25,7 +25,7 @@ const Controls = () => {
         variant={'default'}
         title="Kicsinyítés"
         onClick={() => {
-          zoomOut();
+          void zoomOut();
         }}
       >
         <ZoomOut />
@@ -35,7 +35,7 @@ const Controls = () => {
         variant={'default'}
         title="Visszaállítás"
         onClick={() => {
-          resetTransform();
+          void resetTransform();
         }}
       >
         <Undo2 />
