@@ -83,7 +83,7 @@
     "eslint-plugin-import-zod": "1.2.1",
     "eslint-plugin-tailwindcss": "4.4.0",
     "postcss": "8.5.28",
-    "prettier": "3.9.6",
+    "prettier": "3.9.7",
     "prettier-plugin-tailwindcss": "0.8.1",
     "serwist": "9.5.12",
     "tailwindcss": "4.3.3",
