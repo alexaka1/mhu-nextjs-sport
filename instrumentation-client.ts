@@ -44,8 +44,6 @@ init({
 
   // You can remove this option if you're not planning to use the Sentry Session Replay feature:
   integrations: integrations,
-  // Enable logs to be sent to Sentry
-  enableLogs: true,
   // Note: if you want to override the automatic release value, do not set a
   // `release` value here - use the environment variable `SENTRY_RELEASE`, so
   // that it will also get attached to your source maps
